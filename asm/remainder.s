@@ -1843,10 +1843,4 @@
 	INCLUDE	..\build\code\code_0800fe30.s
 	INCLUDE	..\build\code\code_0800fe34.s
 	INCLUDE	..\build\code\code_0800fe3a.s
-	INCBIN	baserom.gba_0xfe3e_0x6cfe40.extracted
-|loc_086CFE40|
-	INCBIN	baserom.gba_0x6cfe40_0x6cfe42.extracted
-|loc_086CFE42|
-	INCBIN	baserom.gba_0x6cfe42_0x6cfe88.extracted
-	INCLUDE	..\build\code\code_086cfe88.s
-	INCBIN	baserom.gba_0x6cfeaa_0x800000.extracted
+	INCBIN	baserom.gba_0xfe3e_0x800000.extracted

@@ -123,6 +123,25 @@ def test_the_remainder_classes_partition_a_crafted_image():
     assert result["proven_bytes"] + table["bytes"] == len(image)
 
 
+def test_an_empty_register_list_halfword_is_recognised():
+    assert census.empty_list(bytearray(b"\x00\xcd"), 0x08000000) is True
+    assert census.empty_list(bytearray(b"\x00\xc0"), 0x08000000) is True
+    assert census.empty_list(bytearray(b"\x01\xcd"), 0x08000000) is False
+    assert census.empty_list(bytearray(b"\x00\xdd"), 0x08000000) is False
+
+
+def test_a_body_with_an_empty_register_list_is_flagged_data():
+    image = bytearray(crafted())
+    put(image, CALLER, [0xB500, 0xD000, 0xCD00, 0x4770], 2)
+    result = census.census_result(bytes(image))
+    assert "data" in result["flags"][CALLER]
+
+
+def test_a_body_without_an_empty_register_list_is_not_flagged_data():
+    result = census.census_result(crafted())
+    assert "data" not in result["flags"][CALLER]
+
+
 def test_the_tracked_evidence_is_what_the_retail_image_gives():
     path = os.path.join(ROOT, "baserom.gba")
     if not os.path.exists(path):

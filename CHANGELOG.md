@@ -29,3 +29,6 @@ All notable changes to this tree are recorded here. The format follows
   one class and its reason, each channel that claims those bytes is measured on the proven code and
   against a pair-permuted null at a 5 % bar, and a body walk that reaches the 0x400 B cap now ends
   at its measured stop instead.
+- A start whose Thumb body carries a halfword with an empty register list is flagged `data`: no
+  assembler emits that encoding and no ARMv4T core executes it as code, so the row's bytes stay raw
+  instead of being assembled. `0x086cfe88` is the one row on this image.

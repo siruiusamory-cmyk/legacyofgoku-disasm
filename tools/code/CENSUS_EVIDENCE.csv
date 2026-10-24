@@ -1518,4 +1518,4 @@ address,kind,channel,mode,end,reason,flags,evidence
 0x0800fe30,start,proven,thumb,0x0800fe34,-,-,a run of address-taken words names it
 0x0800fe34,start,proven,thumb,0x0800fe3a,no-return,-,a run of address-taken words names it
 0x0800fe3a,start,proven,thumb,0x0800fe3e,no-return,-,a run of address-taken words names it
-0x086cfe88,start,table,thumb,0x086cfeaa,-,-,a run of address-taken words names it
+0x086cfe88,start,table,thumb,0x086cfeaa,-,data,a run of address-taken words names it

@@ -32,9 +32,12 @@ Entry flags:
 
 | flag | starts |
 | --- | --- |
-| data | 17 |
+| data | 18 |
 | undecodable | 0 |
 | clobber | 0 |
+
+A `data` start is one whose first instructions are a data prefix before its own prologue, or one whose body carries a Thumb halfword with an empty register list, which no assembler emits and no ARMv4T core executes as code.
+
 
 A `no-return` end is where the walk stopped at a halfword the CPU cannot execute before it met a return, so it is a measured stop and not a return. Runtime-only entries: none, because this title carries no runtime capture, so no row here is credited by one.
 

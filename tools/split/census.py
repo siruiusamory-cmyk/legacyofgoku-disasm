@@ -917,6 +917,10 @@ def flag_of(rom, address, mode):
     return flags
 
 
+def empty_list(rom, addr):
+    return (hw(rom, addr) & 0xF0FF) == 0xC000
+
+
 def ends_of(rom, starts, modes, pools):
     bounds = sorted(set(starts))
     pool_edges = sorted(pools)
@@ -988,6 +992,10 @@ def census_result(rom, channels=CHANNELS):
     modes = {address: item["mode"] for address, item in starts.items()}
     ends, bodies = ends_of(rom, starts, modes, measured["pools"])
     flags = {address: flag_of(rom, address, modes[address]) for address in starts}
+    for address in starts:
+        if modes[address] == MODE_THUMB and any(empty_list(rom, at)
+                                               for at in bodies.get(address, ())):
+            flags[address].append("data")
     fragments = fragments_of(starts, ends, bodies)
     proven_bytes = sum(end - address for address, (end, _reason) in ends.items() if end)
     return {"measured": measured, "classes": classes, "starts": starts, "ends": ends,
@@ -1237,6 +1245,9 @@ def doc_text(result, remainder_result):
               "| flag | starts |", "| --- | --- |"]
     for flag in FLAGS:
         lines.append("| %s | %d |" % (flag, flagged.get(flag, 0)))
+    lines += ["", "A `data` start is one whose first instructions are a data prefix before its "
+              "own prologue, or one whose body carries a Thumb halfword with an empty register "
+              "list, which no assembler emits and no ARMv4T core executes as code.", ""]
     lines += ["", "A `no-return` end is where the walk stopped at a halfword the CPU cannot "
               "execute before it met a return, so it is a measured stop and not a return. "
               "Runtime-only entries: none, because this title carries no runtime capture, so no "

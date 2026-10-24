@@ -43,7 +43,7 @@ does not measure how much of the code has been turned into C.
 
 ## Progress
 
-0.5296 % of the ROM (44,422 of 8,388,608 bytes) builds from tracked source: the startup block at
+0.5291 % of the ROM (44,388 of 8,388,608 bytes) builds from tracked source: the startup block at
 `0x080000c0` in [asm/crt0.s](asm/crt0.s) and every census code row, disassembled into `build/code/`
 by [tools/code/emit_code.py](tools/code/emit_code.py). The rest is INCBIN slices of the retail
 image. `python tools\gate\gate.py` prints the split, and the code and data classes it derives are
