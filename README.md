@@ -7,7 +7,7 @@
 
 ![License](https://img.shields.io/badge/license-MPL--2.0-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-Game%20Boy%20Advance-lightgrey.svg)
-![Code starts](https://img.shields.io/badge/code%20starts-1520-blueviolet.svg)
+![Code starts](https://img.shields.io/badge/code%20starts-1518-blueviolet.svg)
 
 ## Contents
 
@@ -43,7 +43,7 @@ does not measure how much of the code has been turned into C.
 
 ## Progress
 
-0.5291 % of the ROM (44,388 of 8,388,608 bytes) builds from tracked source: the startup block at
+0.5316 % of the ROM (44,590 of 8,388,608 bytes) builds from tracked source: the startup block at
 `0x080000c0` in [asm/crt0.s](asm/crt0.s) and every census code row, disassembled into `build/code/`
 by [tools/code/emit_code.py](tools/code/emit_code.py). The rest is INCBIN slices of the retail
 image. `python tools\gate\gate.py` prints the split, and the code and data classes it derives are

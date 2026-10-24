@@ -32,3 +32,7 @@ All notable changes to this tree are recorded here. The format follows
 - A start whose Thumb body carries a halfword with an empty register list is flagged `data`: no
   assembler emits that encoding and no ARMv4T core executes it as code, so the row's bytes stay raw
   instead of being assembled. `0x086cfe88` is the one row on this image.
+- The census refuses a seed that falls inside an instruction of a row in the other mode, and a
+  copy-seeded ARM start whose save is its own frame save is not flagged `data`: `0x080001f2` stops
+  being a start, `0x08000138` becomes an ARM code row, and the interrupt handler the startup copies
+  to IWRAM is emitted as code.

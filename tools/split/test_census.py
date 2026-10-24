@@ -130,6 +130,37 @@ def test_an_empty_register_list_halfword_is_recognised():
     assert census.empty_list(bytearray(b"\x00\xdd"), 0x08000000) is False
 
 
+def test_a_seed_inside_another_modes_instruction_is_not_a_start():
+    image = bytearray(0x400)
+    put(image, 0x08000000, [0xEA00002E], 4)
+    put(image, 0x080000C0, [0xD0000000, 0x47704770, 0xE8BD8000], 4)
+    put(image, 0x08000100, [0x080000C3, 0x00000000], 4)
+    result = census.census_result(bytes(image))
+    assert 0x080000C2 not in result["starts"]
+    starts = {0x080000C0: census.MODE_ARM, 0x080000C2: census.MODE_THUMB}
+    modes = dict(starts)
+    ends, bodies = census.ends_of(bytes(image), starts, modes, set())
+    assert census.interior_seeds(bytes(image), starts, modes, ends, bodies) == {0x080000C2}
+
+
+def test_a_copy_seeded_frame_save_is_not_a_data_prefix():
+    image = bytearray(crafted())
+    put(image, COPY, [0xE1A00000, 0xE1A01001, 0xE92D403F, 0xE8BD8000], 4)
+    assert census.closest(bytes(image), COPY, census.MODE_ARM) == COPY + 8
+    assert "data" in census.flag_of(bytes(image), COPY, census.MODE_ARM)
+    assert "data" not in census.census_result(bytes(image))["flags"][COPY]
+
+
+def test_the_handler_rows_the_image_gives():
+    path = os.path.join(ROOT, "baserom.gba")
+    if not os.path.exists(path):
+        pytest.skip("%s is absent, so this ROM-gated test cannot run" % path)
+    result = census.census_result(open(path, "rb").read())
+    assert 0x080001F2 not in result["starts"]
+    assert result["starts"][0x08000138]["mode"] == census.MODE_ARM
+    assert "data" not in result["flags"][0x08000138]
+
+
 def test_a_body_with_an_empty_register_list_is_flagged_data():
     image = bytearray(crafted())
     put(image, CALLER, [0xB500, 0xD000, 0xCD00, 0x4770], 2)

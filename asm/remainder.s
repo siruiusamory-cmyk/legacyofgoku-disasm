@@ -1,8 +1,6 @@
 	AREA	Remainder, CODE, READONLY
 
-	INCBIN	baserom.gba_0x138_0x1f2.extracted
-	INCLUDE	..\build\code\code_080001f2.s
-	INCBIN	baserom.gba_0x1f4_0x204.extracted
+	INCLUDE	..\build\code\code_08000138.s
 	INCLUDE	..\build\code\code_08000204.s
 	INCLUDE	..\build\code\code_08000208.s
 	INCLUDE	..\build\code\code_0800020c.s

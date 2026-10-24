@@ -1,9 +1,7 @@
 address,kind,channel,mode,end,reason,flags,evidence
 0x08000000,start,vector,arm,0x08000004,no-return,-,the reset vector at 0x08000000
-0x080000c0,start,vector,arm,0x080000da,next-start,-,the startup block's entry
-0x080000da,start,table,thumb,0x080000dc,no-return,-,a run of address-taken words names it
-0x08000138,start,copy,arm,0x080001f2,next-start,data,the DMA3 copy setup at 0x0800996e names it
-0x080001f2,start,table,thumb,0x080001f4,no-return,-,the DMA3 copy setup at 0x0800996e names it
+0x080000c0,start,vector,arm,0x08000100,no-return,-,the startup block's entry
+0x08000138,start,copy,arm,0x08000204,no-return,-,the DMA3 copy setup at 0x0800996e names it
 0x08000204,start,copy,arm,0x08000208,no-return,-,the DMA3 copy setup at 0x0800996e names it
 0x08000208,start,copy,arm,0x0800020c,no-return,-,the DMA3 copy setup at 0x0800996e names it
 0x0800020c,start,copy,arm,0x08000254,no-return,-,the DMA3 copy setup at 0x0800996e names it

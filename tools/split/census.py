@@ -917,6 +917,11 @@ def flag_of(rom, address, mode):
     return flags
 
 
+def own_frame_save(rom, address, mode):
+    at = closest(rom, address, mode)
+    return at is not None and mode == MODE_ARM and bool(effects(rom, at, mode)["saving"])
+
+
 def empty_list(rom, addr):
     return (hw(rom, addr) & 0xF0FF) == 0xC000
 
@@ -972,6 +977,26 @@ def fragments_of(accepted, ends, bodies):
     return out
 
 
+def interior_seeds(rom, starts, modes, ends, bodies):
+    spans = {}
+    for start, seen in bodies.items():
+        mode = modes[start]
+        for at in seen:
+            size = effects(rom, at, mode)["size"]
+            if size:
+                spans.setdefault(mode, []).append((at, at + size))
+    refused = set()
+    for address in starts:
+        if ends[address][0] is None:
+            continue
+        for mode, found in spans.items():
+            if mode != modes[address] and any(begin < address < stop
+                                              for begin, stop in found):
+                refused.add(address)
+                break
+    return refused
+
+
 def census_result(rom, channels=CHANNELS):
     measured = census(rom, channels)
     classes = measured["classes"]
@@ -990,9 +1015,19 @@ def census_result(rom, channels=CHANNELS):
                 if starts[address]["limbs"] == ["proven"]:
                     starts[address]["limbs"] = ["copy"]
     modes = {address: item["mode"] for address, item in starts.items()}
-    ends, bodies = ends_of(rom, starts, modes, measured["pools"])
+    while True:
+        ends, bodies = ends_of(rom, starts, modes, measured["pools"])
+        refused = interior_seeds(rom, starts, modes, ends, bodies)
+        if not refused:
+            break
+        for address in refused:
+            del starts[address]
+            del modes[address]
     flags = {address: flag_of(rom, address, modes[address]) for address in starts}
     for address in starts:
+        if ("data" in flags[address] and "copy" in starts[address]["limbs"]
+                and own_frame_save(rom, address, modes[address])):
+            flags[address].remove("data")
         if modes[address] == MODE_THUMB and any(empty_list(rom, at)
                                                for at in bodies.get(address, ())):
             flags[address].append("data")
@@ -1238,6 +1273,8 @@ def doc_text(result, remainder_result):
               "%d starts, %d with an end, %d open; %d fragment entries lie inside another start."
               % (len(result["starts"]), len(closed), len(open_bounds),
                  len(result["fragments"])), "",
+              "A seed that falls inside an instruction of a row in the other mode is not a start.",
+              "",
               "| reason | starts |", "| --- | --- |"]
     for reason in REASONS:
         lines.append("| %s | %d |" % (reason, reasons.get(reason, 0)))
@@ -1246,7 +1283,8 @@ def doc_text(result, remainder_result):
     for flag in FLAGS:
         lines.append("| %s | %d |" % (flag, flagged.get(flag, 0)))
     lines += ["", "A `data` start is one whose first instructions are a data prefix before its "
-              "own prologue, or one whose body carries a Thumb halfword with an empty register "
+              "own prologue, unless a copy names its first byte and its save is the routine's "
+              "own frame save; or one whose body carries a Thumb halfword with an empty register "
               "list, which no assembler emits and no ARMv4T core executes as code.", ""]
     lines += ["", "A `no-return` end is where the walk stopped at a halfword the CPU cannot "
               "execute before it met a return, so it is a measured stop and not a return. "
