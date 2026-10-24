@@ -36,3 +36,7 @@ All notable changes to this tree are recorded here. The format follows
   copy-seeded ARM start whose save is its own frame save is not flagged `data`: `0x080001f2` stops
   being a start, `0x08000138` becomes an ARM code row, and the interrupt handler the startup copies
   to IWRAM is emitted as code.
+- The static recompiler input in `tools/recomp/`: one row per census start with its closed bound,
+  mode and channel, the rows the emitter leaves raw with their reason, the image identity and the
+  code copy the startup makes to IWRAM. `export_inputs.py --check` re-derives it, and the gate
+  refuses a missing, duplicated or open row.

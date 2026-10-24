@@ -97,7 +97,7 @@ checks, and then the whole suite one file per process. A test that needs the ret
 | Path | Contents |
 | --- | --- |
 | `asm/` | the assembly the image is built from: the transcribed startup block, the equates, the include list and the generated remainder |
-| `tools/` | the gate, the source checks, the slice writer, the census, the emitter, the compressor and the tests; `tools/README.md` says what runs each one |
+| `tools/` | the gate, the source checks, the slice writer, the census, the emitter, the recompiler input, the compressor and the tests; `tools/README.md` says what runs each one |
 | `docs/` | the reader guide; `docs/README.md` says where to start |
 | `build/` | the objects, the generated assembly files and the image; never tracked |
 | `work/` | the rebuild log the gate writes; never tracked |

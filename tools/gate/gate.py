@@ -166,6 +166,21 @@ def code_row_count():
     return len(emit_code.code_rows(emit_code.census_rows()))
 
 
+def recomp_export(root=None):
+    root = ROOT if root is None else root
+    command = [sys.executable, os.path.join(root, "tools", "recomp", "export_inputs.py"),
+               "--check"]
+    proc = subprocess.run(command, cwd=root, capture_output=True)
+    lines = [line for line in proc.stdout.decode("utf-8", "replace").splitlines() if line.strip()]
+    if proc.returncode:
+        return None, (lines[-1] if lines else "the export check exits %d" % proc.returncode)
+    for line in lines:
+        if line.startswith("RECOMP PASS"):
+            return line, None
+    return None, "the export check printed no RECOMP PASS line"
+
+
+
 def missing_slices(root=None):
     root = ROOT if root is None else root
     missing = []
@@ -287,6 +302,13 @@ def main():
         print("GATE FAIL: %s" % problem)
         return 1
     print("EXPORT PASS uncovered=0 modeless=0 over %d code rows" % code_row_count())
+
+    line, problem = recomp_export()
+    if problem:
+        print("GATE FAIL: %s" % problem)
+        return 1
+    print(line)
+
 
     cited = [("tools/gate/test_gate.py", "test_the_source_count_is_the_slices_and_the_rest"),
              ("tools/gate/test_gate.py",

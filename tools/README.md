@@ -10,6 +10,7 @@ Every tool the build and the checks run, and what runs it.
 | `tools/extract/slice_rom.py` | `tools/incbin.bat` | writes one byte range of the retail image to a `.extracted` file |
 | `tools/split/census.py` | a person, `tools/split/test_census.py` | seeds the code census from every static pointer channel, walks each start to an end, flags the entries and writes `tools/code/CENSUS_EVIDENCE.csv` and `docs/CODE_SPLIT.md`; `--check` re-derives both |
 | `tools/code/emit_code.py` | `rebuild.cmd`, a person | disassembles every census code row to Thumb or ARM assembly in the mode the row records, writes `build/code/`, `asm/remainder.s` and the raw slices; `--check` re-derives them |
+| `tools/recomp/export_inputs.py` | `tools/gate/gate.py` (`--check`), a person | writes `tools/recomp/RECOMP_INPUTS.toml`: one row per census start with its closed bound, mode and channel, the rows the emitter leaves raw with their reason, the image identity and its one code copy; `--check` re-derives it |
 | `tools/incbin.bat` | `rebuild.cmd` | writes a slice if it is absent, then stops |
 | `tools/compress/build.cmd` | `rebuild.cmd`, `tools/compress/jcalg1.py` | builds `compress.exe` from `tools/compress/jcalg1/` with CMake and the Visual C++ toolset |
 | `tools/compress/jcalg1.py` | nothing yet | the JCALG1 body grammar, and the encoder call that builds the compressor on first use |
@@ -21,5 +22,5 @@ never tracked.
 
 The tests sit beside what they test: `tools/gate/test_gate.py`, `tools/lint/test_lint.py`,
 `tools/extract/test_slice_rom.py`, `tools/compress/test_jcalg1.py`,
-`tools/research/test_startup_writes.py`, `tools/split/test_census.py`, `tools/code/test_emit_code.py`
-and `tools/test_check_links.py`.
+`tools/research/test_startup_writes.py`, `tools/split/test_census.py`, `tools/code/test_emit_code.py`,
+`tools/recomp/test_export_inputs.py` and `tools/test_check_links.py`.

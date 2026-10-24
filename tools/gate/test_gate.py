@@ -187,7 +187,7 @@ def test_the_cold_start_purges_the_slices_and_runs_the_extract_step():
     assert state == {"slice": False, "object": False, "retail": True}
 
 
-def gate_run(monkeypatch, tmp_path, canonical=None):
+def gate_run(monkeypatch, tmp_path, canonical=None, recomp=None):
     image = tmp_path / "ROM_START"
     image.write_bytes(bytes(gate.ROM_SIZE))
     monkeypatch.setattr(gate, "IMAGE", str(image))
@@ -200,6 +200,9 @@ def gate_run(monkeypatch, tmp_path, canonical=None):
     monkeypatch.setattr(gate.lints, "run", lambda: [])
     monkeypatch.setattr(gate.lints, "run_cited_tests",
                         lambda pairs, launch=None: dict((pair, (0, "")) for pair in pairs))
+    monkeypatch.setattr(gate, "recomp_export",
+                        recomp or (lambda root=None:
+                                   ("RECOMP PASS rows=0 uncovered=0 modeless=0", None)))
     monkeypatch.setattr(gate.sys, "argv", ["gate.py"])
     if canonical is not None:
         monkeypatch.setattr(gate, "CANONICAL_SHA256", canonical)
@@ -232,6 +235,16 @@ def test_main_prints_the_digest_the_counted_split_and_the_verdict(monkeypatch, t
     assert sum(int(part) for part in parts.groups()) == gate.ROM_SIZE
     assert " of %d (100.0000 %%)" % gate.ROM_SIZE in accounted[0]
     assert lines[-1] == "GATE PASS"
+
+
+def test_the_gate_refuses_an_export_check_that_reports_a_row_defect(monkeypatch, tmp_path):
+    defect = ("tools/recomp/RECOMP_INPUTS.toml: 1 census start(s) have no row, the first "
+              "0x08000000")
+    rc, lines = gate_run(monkeypatch, tmp_path,
+                         hashlib.sha256(bytes(gate.ROM_SIZE)).hexdigest(),
+                         recomp=lambda root=None: (None, defect))
+    assert rc == 1
+    assert [line for line in lines if line.startswith("GATE FAIL: ")] == ["GATE FAIL: " + defect]
 
 
 def test_the_gate_fails_when_the_image_is_not_the_retail_digest(monkeypatch, tmp_path):

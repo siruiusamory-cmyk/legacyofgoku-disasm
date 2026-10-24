@@ -1,0 +1,10672 @@
+[counts]
+functions = 1492
+code_bytes = 44470
+entries = 0
+jump_tables = 0
+code_copies = 1
+raw_rows = 26
+rows = 1518
+
+[identity]
+sha1 = "a3c8c76742f11fc6a3f6e3fcca20992458cac0b5"
+md5 = "3100fc5a4427a7b0cc20b861134e60f2"
+
+[program]
+entry_pc = 0x08000000
+
+[[code_copy]]
+runtime_start = 0x03003bc0
+source_start = 0x08000138
+size = 0x13c
+
+[[raw]]
+addr = 0x08000000
+mode = "arm"
+size = 4
+end = 0x08000004
+origin = "vector"
+reason = "below-image"
+
+[[raw]]
+addr = 0x080000c0
+mode = "arm"
+size = 64
+end = 0x08000100
+origin = "vector"
+reason = "below-image"
+
+[[code]]
+addr = 0x08000138
+mode = "arm"
+size = 204
+end = 0x08000204
+origin = "copy"
+
+[[code]]
+addr = 0x08000204
+mode = "arm"
+size = 4
+end = 0x08000208
+origin = "copy"
+
+[[code]]
+addr = 0x08000208
+mode = "arm"
+size = 4
+end = 0x0800020c
+origin = "copy"
+
+[[code]]
+addr = 0x0800020c
+mode = "arm"
+size = 72
+end = 0x08000254
+origin = "copy"
+
+[[code]]
+addr = 0x08000254
+mode = "arm"
+size = 20
+end = 0x08000268
+origin = "copy"
+
+[[raw]]
+addr = 0x08000274
+mode = "thumb"
+size = 56
+end = 0x080002ac
+origin = "pool"
+reason = "pool"
+
+[[code]]
+addr = 0x080002c0
+mode = "thumb"
+size = 84
+end = 0x08000314
+origin = "call"
+
+[[code]]
+addr = 0x0800035c
+mode = "thumb"
+size = 42
+end = 0x08000386
+origin = "table"
+
+[[code]]
+addr = 0x080003f2
+mode = "thumb"
+size = 8
+end = 0x080003fa
+origin = "table"
+
+[[code]]
+addr = 0x08000432
+mode = "thumb"
+size = 42
+end = 0x0800045c
+origin = "table"
+
+[[code]]
+addr = 0x0800045c
+mode = "thumb"
+size = 190
+end = 0x0800051a
+origin = "table"
+
+[[code]]
+addr = 0x08000520
+mode = "thumb"
+size = 52
+end = 0x08000554
+origin = "table"
+
+[[code]]
+addr = 0x08000732
+mode = "thumb"
+size = 42
+end = 0x0800075c
+origin = "call"
+
+[[code]]
+addr = 0x0800075c
+mode = "thumb"
+size = 14
+end = 0x0800076a
+origin = "table"
+
+[[code]]
+addr = 0x0800076a
+mode = "thumb"
+size = 12
+end = 0x08000776
+origin = "table"
+
+[[code]]
+addr = 0x08000776
+mode = "thumb"
+size = 10
+end = 0x08000780
+origin = "proven"
+
+[[code]]
+addr = 0x08000780
+mode = "thumb"
+size = 4
+end = 0x08000784
+origin = "proven"
+
+[[code]]
+addr = 0x080007d2
+mode = "thumb"
+size = 46
+end = 0x08000800
+origin = "call"
+
+[[code]]
+addr = 0x08000800
+mode = "thumb"
+size = 6
+end = 0x08000806
+origin = "call"
+
+[[code]]
+addr = 0x08000806
+mode = "thumb"
+size = 4
+end = 0x0800080a
+origin = "table"
+
+[[code]]
+addr = 0x0800080a
+mode = "thumb"
+size = 4
+end = 0x0800080e
+origin = "proven"
+
+[[code]]
+addr = 0x0800080e
+mode = "thumb"
+size = 4
+end = 0x08000812
+origin = "proven"
+
+[[code]]
+addr = 0x08000812
+mode = "thumb"
+size = 18
+end = 0x08000824
+origin = "proven"
+
+[[code]]
+addr = 0x08000824
+mode = "thumb"
+size = 14
+end = 0x08000832
+origin = "proven"
+
+[[code]]
+addr = 0x08000832
+mode = "thumb"
+size = 14
+end = 0x08000840
+origin = "table"
+
+[[code]]
+addr = 0x08000840
+mode = "thumb"
+size = 4
+end = 0x08000844
+origin = "proven"
+
+[[code]]
+addr = 0x08000844
+mode = "thumb"
+size = 6
+end = 0x0800084a
+origin = "table"
+
+[[code]]
+addr = 0x0800084a
+mode = "thumb"
+size = 22
+end = 0x08000860
+origin = "call"
+
+[[code]]
+addr = 0x08000860
+mode = "thumb"
+size = 6
+end = 0x08000866
+origin = "proven"
+
+[[code]]
+addr = 0x08000866
+mode = "thumb"
+size = 10
+end = 0x08000870
+origin = "table"
+
+[[code]]
+addr = 0x08000870
+mode = "thumb"
+size = 10
+end = 0x0800087a
+origin = "table"
+
+[[code]]
+addr = 0x0800087a
+mode = "thumb"
+size = 4
+end = 0x0800087e
+origin = "proven"
+
+[[code]]
+addr = 0x0800087e
+mode = "thumb"
+size = 4
+end = 0x08000882
+origin = "proven"
+
+[[code]]
+addr = 0x08000882
+mode = "thumb"
+size = 16
+end = 0x08000892
+origin = "call"
+
+[[code]]
+addr = 0x08000892
+mode = "thumb"
+size = 24
+end = 0x080008aa
+origin = "table"
+
+[[code]]
+addr = 0x080008aa
+mode = "thumb"
+size = 10
+end = 0x080008b4
+origin = "table"
+
+[[code]]
+addr = 0x0800091c
+mode = "thumb"
+size = 10
+end = 0x08000926
+origin = "call"
+
+[[code]]
+addr = 0x08000926
+mode = "thumb"
+size = 28
+end = 0x08000942
+origin = "call"
+
+[[code]]
+addr = 0x08000942
+mode = "thumb"
+size = 2
+end = 0x08000944
+origin = "proven"
+
+[[code]]
+addr = 0x08000944
+mode = "thumb"
+size = 12
+end = 0x08000950
+origin = "table"
+
+[[code]]
+addr = 0x08000950
+mode = "thumb"
+size = 4
+end = 0x08000954
+origin = "proven"
+
+[[code]]
+addr = 0x08000954
+mode = "thumb"
+size = 40
+end = 0x0800097c
+origin = "call"
+
+[[code]]
+addr = 0x0800097c
+mode = "thumb"
+size = 4
+end = 0x08000980
+origin = "proven"
+
+[[code]]
+addr = 0x08000980
+mode = "thumb"
+size = 4
+end = 0x08000984
+origin = "proven"
+
+[[code]]
+addr = 0x080009b8
+mode = "thumb"
+size = 2
+end = 0x080009ba
+origin = "call"
+
+[[code]]
+addr = 0x080009ba
+mode = "thumb"
+size = 118
+end = 0x08000a30
+origin = "table"
+
+[[code]]
+addr = 0x08000a32
+mode = "thumb"
+size = 38
+end = 0x08000a58
+origin = "call"
+
+[[code]]
+addr = 0x08000a58
+mode = "thumb"
+size = 4
+end = 0x08000a5c
+origin = "call"
+
+[[code]]
+addr = 0x08000a5c
+mode = "thumb"
+size = 16
+end = 0x08000a6c
+origin = "table"
+
+[[code]]
+addr = 0x08000a6c
+mode = "thumb"
+size = 6
+end = 0x08000a72
+origin = "proven"
+
+[[code]]
+addr = 0x08000a72
+mode = "thumb"
+size = 16
+end = 0x08000a82
+origin = "proven"
+
+[[code]]
+addr = 0x08000a82
+mode = "thumb"
+size = 30
+end = 0x08000aa0
+origin = "proven"
+
+[[code]]
+addr = 0x08000aa0
+mode = "thumb"
+size = 6
+end = 0x08000aa6
+origin = "table"
+
+[[code]]
+addr = 0x08000aa6
+mode = "thumb"
+size = 6
+end = 0x08000aac
+origin = "proven"
+
+[[code]]
+addr = 0x08000aac
+mode = "thumb"
+size = 46
+end = 0x08000ada
+origin = "proven"
+
+[[raw]]
+addr = 0x08000af8
+mode = "thumb"
+size = 2
+end = 0x08000afa
+origin = "table"
+reason = "data"
+
+[[raw]]
+addr = 0x08000afa
+mode = "thumb"
+size = 2
+end = 0x08000afc
+origin = "repeated"
+reason = "data"
+
+[[code]]
+addr = 0x08000b40
+mode = "thumb"
+size = 38
+end = 0x08000b66
+origin = "table"
+
+[[code]]
+addr = 0x08000b66
+mode = "thumb"
+size = 26
+end = 0x08000b80
+origin = "table"
+
+[[code]]
+addr = 0x08000b80
+mode = "thumb"
+size = 26
+end = 0x08000b9a
+origin = "table"
+
+[[code]]
+addr = 0x08000b9e
+mode = "thumb"
+size = 36
+end = 0x08000bc2
+origin = "table"
+
+[[code]]
+addr = 0x08000bc2
+mode = "thumb"
+size = 18
+end = 0x08000bd4
+origin = "table"
+
+[[code]]
+addr = 0x08000bd4
+mode = "thumb"
+size = 2
+end = 0x08000bd6
+origin = "table"
+
+[[code]]
+addr = 0x08000bd6
+mode = "thumb"
+size = 26
+end = 0x08000bf0
+origin = "table"
+
+[[code]]
+addr = 0x08000bf0
+mode = "thumb"
+size = 4
+end = 0x08000bf4
+origin = "table"
+
+[[code]]
+addr = 0x08000bf4
+mode = "thumb"
+size = 14
+end = 0x08000c02
+origin = "table"
+
+[[code]]
+addr = 0x08000c0a
+mode = "thumb"
+size = 20
+end = 0x08000c1e
+origin = "table"
+
+[[code]]
+addr = 0x08000c1e
+mode = "thumb"
+size = 22
+end = 0x08000c34
+origin = "table"
+
+[[code]]
+addr = 0x08000c50
+mode = "thumb"
+size = 44
+end = 0x08000c7c
+origin = "table"
+
+[[code]]
+addr = 0x08000cc0
+mode = "thumb"
+size = 10
+end = 0x08000cca
+origin = "table"
+
+[[code]]
+addr = 0x08000cce
+mode = "thumb"
+size = 2
+end = 0x08000cd0
+origin = "table"
+
+[[code]]
+addr = 0x08000cd0
+mode = "thumb"
+size = 20
+end = 0x08000ce4
+origin = "table"
+
+[[code]]
+addr = 0x08000ce4
+mode = "thumb"
+size = 6
+end = 0x08000cea
+origin = "table"
+
+[[code]]
+addr = 0x08000cea
+mode = "thumb"
+size = 4
+end = 0x08000cee
+origin = "table"
+
+[[code]]
+addr = 0x08000cee
+mode = "thumb"
+size = 4
+end = 0x08000cf2
+origin = "table"
+
+[[code]]
+addr = 0x08000cf2
+mode = "thumb"
+size = 4
+end = 0x08000cf6
+origin = "table"
+
+[[code]]
+addr = 0x08000cf6
+mode = "thumb"
+size = 2
+end = 0x08000cf8
+origin = "table"
+
+[[code]]
+addr = 0x08000cf8
+mode = "thumb"
+size = 2
+end = 0x08000cfa
+origin = "table"
+
+[[code]]
+addr = 0x08000cfa
+mode = "thumb"
+size = 4
+end = 0x08000cfe
+origin = "table"
+
+[[code]]
+addr = 0x08000cfe
+mode = "thumb"
+size = 48
+end = 0x08000d2e
+origin = "table"
+
+[[code]]
+addr = 0x08000d2e
+mode = "thumb"
+size = 10
+end = 0x08000d38
+origin = "table"
+
+[[code]]
+addr = 0x08000d38
+mode = "thumb"
+size = 8
+end = 0x08000d40
+origin = "table"
+
+[[code]]
+addr = 0x08000d40
+mode = "thumb"
+size = 26
+end = 0x08000d5a
+origin = "table"
+
+[[code]]
+addr = 0x08000d5a
+mode = "thumb"
+size = 6
+end = 0x08000d60
+origin = "table"
+
+[[code]]
+addr = 0x08000d6a
+mode = "thumb"
+size = 56
+end = 0x08000da2
+origin = "table"
+
+[[code]]
+addr = 0x08000da2
+mode = "thumb"
+size = 44
+end = 0x08000dce
+origin = "table"
+
+[[code]]
+addr = 0x08000e7a
+mode = "thumb"
+size = 46
+end = 0x08000ea8
+origin = "call"
+
+[[code]]
+addr = 0x08000efa
+mode = "thumb"
+size = 52
+end = 0x08000f2e
+origin = "table"
+
+[[code]]
+addr = 0x08000f2e
+mode = "thumb"
+size = 2
+end = 0x08000f30
+origin = "table"
+
+[[code]]
+addr = 0x08000f30
+mode = "thumb"
+size = 40
+end = 0x08000f58
+origin = "table"
+
+[[code]]
+addr = 0x08000f8c
+mode = "thumb"
+size = 18
+end = 0x08000f9e
+origin = "call"
+
+[[code]]
+addr = 0x08000fec
+mode = "thumb"
+size = 28
+end = 0x08001008
+origin = "table"
+
+[[code]]
+addr = 0x08001040
+mode = "thumb"
+size = 12
+end = 0x0800104c
+origin = "table"
+
+[[raw]]
+addr = 0x08001066
+mode = "thumb"
+size = 6
+end = 0x0800106c
+origin = "table"
+reason = "data"
+
+[[code]]
+addr = 0x0800106c
+mode = "thumb"
+size = 34
+end = 0x0800108e
+origin = "call"
+
+[[code]]
+addr = 0x0800108e
+mode = "thumb"
+size = 10
+end = 0x08001098
+origin = "proven"
+
+[[code]]
+addr = 0x08001098
+mode = "thumb"
+size = 44
+end = 0x080010c4
+origin = "proven"
+
+[[code]]
+addr = 0x080010c4
+mode = "thumb"
+size = 32
+end = 0x080010e4
+origin = "proven"
+
+[[code]]
+addr = 0x080010e4
+mode = "thumb"
+size = 10
+end = 0x080010ee
+origin = "proven"
+
+[[code]]
+addr = 0x080010ee
+mode = "thumb"
+size = 8
+end = 0x080010f6
+origin = "table"
+
+[[code]]
+addr = 0x080010f6
+mode = "thumb"
+size = 2
+end = 0x080010f8
+origin = "table"
+
+[[code]]
+addr = 0x080010f8
+mode = "thumb"
+size = 2
+end = 0x080010fa
+origin = "table"
+
+[[code]]
+addr = 0x080010fa
+mode = "thumb"
+size = 52
+end = 0x0800112e
+origin = "table"
+
+[[code]]
+addr = 0x0800112e
+mode = "thumb"
+size = 26
+end = 0x08001148
+origin = "table"
+
+[[code]]
+addr = 0x08001148
+mode = "thumb"
+size = 4
+end = 0x0800114c
+origin = "proven"
+
+[[code]]
+addr = 0x0800114c
+mode = "thumb"
+size = 40
+end = 0x08001174
+origin = "proven"
+
+[[code]]
+addr = 0x08001174
+mode = "thumb"
+size = 134
+end = 0x080011fa
+origin = "call"
+
+[[code]]
+addr = 0x080011fa
+mode = "thumb"
+size = 14
+end = 0x08001208
+origin = "repeated"
+
+[[code]]
+addr = 0x08001252
+mode = "thumb"
+size = 20
+end = 0x08001266
+origin = "table"
+
+[[code]]
+addr = 0x080012f2
+mode = "thumb"
+size = 6
+end = 0x080012f8
+origin = "table"
+
+[[code]]
+addr = 0x080012f8
+mode = "thumb"
+size = 2
+end = 0x080012fa
+origin = "table"
+
+[[code]]
+addr = 0x080012fa
+mode = "thumb"
+size = 150
+end = 0x08001390
+origin = "table"
+
+[[code]]
+addr = 0x080013f6
+mode = "thumb"
+size = 2
+end = 0x080013f8
+origin = "table"
+
+[[code]]
+addr = 0x080013f8
+mode = "thumb"
+size = 2
+end = 0x080013fa
+origin = "table"
+
+[[code]]
+addr = 0x080013fa
+mode = "thumb"
+size = 112
+end = 0x0800146a
+origin = "repeated"
+
+[[code]]
+addr = 0x080014a2
+mode = "thumb"
+size = 44
+end = 0x080014ce
+origin = "table"
+
+[[code]]
+addr = 0x080014f8
+mode = "thumb"
+size = 2
+end = 0x080014fa
+origin = "table"
+
+[[code]]
+addr = 0x080014fa
+mode = "thumb"
+size = 34
+end = 0x0800151c
+origin = "repeated"
+
+[[code]]
+addr = 0x080015d2
+mode = "thumb"
+size = 30
+end = 0x080015f0
+origin = "table"
+
+[[code]]
+addr = 0x080015f8
+mode = "thumb"
+size = 2
+end = 0x080015fa
+origin = "table"
+
+[[code]]
+addr = 0x080015fa
+mode = "thumb"
+size = 48
+end = 0x0800162a
+origin = "table"
+
+[[code]]
+addr = 0x08001708
+mode = "thumb"
+size = 4
+end = 0x0800170c
+origin = "repeated"
+
+[[code]]
+addr = 0x0800170c
+mode = "thumb"
+size = 36
+end = 0x08001730
+origin = "table"
+
+[[raw]]
+addr = 0x08001730
+mode = "thumb"
+size = 26
+end = 0x0800174a
+origin = "table"
+reason = "data"
+
+[[code]]
+addr = 0x0800174a
+mode = "thumb"
+size = 32
+end = 0x0800176a
+origin = "call"
+
+[[code]]
+addr = 0x0800176a
+mode = "thumb"
+size = 34
+end = 0x0800178c
+origin = "proven"
+
+[[code]]
+addr = 0x0800178c
+mode = "thumb"
+size = 32
+end = 0x080017ac
+origin = "proven"
+
+[[code]]
+addr = 0x080017ac
+mode = "thumb"
+size = 10
+end = 0x080017b6
+origin = "proven"
+
+[[code]]
+addr = 0x080017f6
+mode = "thumb"
+size = 2
+end = 0x080017f8
+origin = "table"
+
+[[code]]
+addr = 0x080017f8
+mode = "thumb"
+size = 2
+end = 0x080017fa
+origin = "table"
+
+[[code]]
+addr = 0x080017fa
+mode = "thumb"
+size = 122
+end = 0x08001874
+origin = "table"
+
+[[code]]
+addr = 0x08001876
+mode = "thumb"
+size = 122
+end = 0x080018f0
+origin = "table"
+
+[[code]]
+addr = 0x080018f0
+mode = "thumb"
+size = 6
+end = 0x080018f6
+origin = "table"
+
+[[code]]
+addr = 0x080018f6
+mode = "thumb"
+size = 2
+end = 0x080018f8
+origin = "table"
+
+[[code]]
+addr = 0x080018f8
+mode = "thumb"
+size = 2
+end = 0x080018fa
+origin = "table"
+
+[[code]]
+addr = 0x080018fa
+mode = "thumb"
+size = 4
+end = 0x080018fe
+origin = "repeated"
+
+[[code]]
+addr = 0x080018fe
+mode = "thumb"
+size = 114
+end = 0x08001970
+origin = "table"
+
+[[code]]
+addr = 0x08001afa
+mode = "thumb"
+size = 42
+end = 0x08001b24
+origin = "repeated"
+
+[[code]]
+addr = 0x08001cfa
+mode = "thumb"
+size = 88
+end = 0x08001d52
+origin = "table"
+
+[[code]]
+addr = 0x08001df6
+mode = "thumb"
+size = 2
+end = 0x08001df8
+origin = "table"
+
+[[code]]
+addr = 0x08001df8
+mode = "thumb"
+size = 10
+end = 0x08001e02
+origin = "table"
+
+[[code]]
+addr = 0x08001efa
+mode = "thumb"
+size = 10
+end = 0x08001f04
+origin = "repeated"
+
+[[code]]
+addr = 0x08001fa8
+mode = "thumb"
+size = 78
+end = 0x08001ff6
+origin = "call"
+
+[[code]]
+addr = 0x08001ff6
+mode = "thumb"
+size = 4
+end = 0x08001ffa
+origin = "table"
+
+[[code]]
+addr = 0x08001ffa
+mode = "thumb"
+size = 66
+end = 0x0800203c
+origin = "repeated"
+
+[[code]]
+addr = 0x0800203c
+mode = "thumb"
+size = 10
+end = 0x08002046
+origin = "proven"
+
+[[code]]
+addr = 0x08002046
+mode = "thumb"
+size = 26
+end = 0x08002060
+origin = "proven"
+
+[[code]]
+addr = 0x08002060
+mode = "thumb"
+size = 10
+end = 0x0800206a
+origin = "proven"
+
+[[code]]
+addr = 0x0800206a
+mode = "thumb"
+size = 24
+end = 0x08002082
+origin = "proven"
+
+[[code]]
+addr = 0x08002082
+mode = "thumb"
+size = 10
+end = 0x0800208c
+origin = "proven"
+
+[[code]]
+addr = 0x0800208c
+mode = "thumb"
+size = 22
+end = 0x080020a2
+origin = "proven"
+
+[[code]]
+addr = 0x080020a2
+mode = "thumb"
+size = 78
+end = 0x080020f0
+origin = "proven"
+
+[[code]]
+addr = 0x080020f0
+mode = "thumb"
+size = 4
+end = 0x080020f4
+origin = "proven"
+
+[[code]]
+addr = 0x080020f4
+mode = "thumb"
+size = 6
+end = 0x080020fa
+origin = "table"
+
+[[code]]
+addr = 0x080020fa
+mode = "thumb"
+size = 14
+end = 0x08002108
+origin = "table"
+
+[[code]]
+addr = 0x08002108
+mode = "thumb"
+size = 14
+end = 0x08002116
+origin = "proven"
+
+[[code]]
+addr = 0x08002116
+mode = "thumb"
+size = 30
+end = 0x08002134
+origin = "proven"
+
+[[code]]
+addr = 0x08002134
+mode = "thumb"
+size = 80
+end = 0x08002184
+origin = "call"
+
+[[code]]
+addr = 0x08002184
+mode = "thumb"
+size = 14
+end = 0x08002192
+origin = "proven"
+
+[[code]]
+addr = 0x08002192
+mode = "thumb"
+size = 28
+end = 0x080021ae
+origin = "proven"
+
+[[code]]
+addr = 0x080021ae
+mode = "thumb"
+size = 12
+end = 0x080021ba
+origin = "proven"
+
+[[code]]
+addr = 0x080021ba
+mode = "thumb"
+size = 26
+end = 0x080021d4
+origin = "proven"
+
+[[code]]
+addr = 0x080021d4
+mode = "thumb"
+size = 2
+end = 0x080021d6
+origin = "table"
+
+[[code]]
+addr = 0x080021d6
+mode = "thumb"
+size = 14
+end = 0x080021e4
+origin = "proven"
+
+[[code]]
+addr = 0x080021e4
+mode = "thumb"
+size = 16
+end = 0x080021f4
+origin = "proven"
+
+[[code]]
+addr = 0x080021f4
+mode = "thumb"
+size = 4
+end = 0x080021f8
+origin = "table"
+
+[[code]]
+addr = 0x080021f8
+mode = "thumb"
+size = 2
+end = 0x080021fa
+origin = "table"
+
+[[code]]
+addr = 0x080021fa
+mode = "thumb"
+size = 6
+end = 0x08002200
+origin = "table"
+
+[[code]]
+addr = 0x08002200
+mode = "thumb"
+size = 12
+end = 0x0800220c
+origin = "proven"
+
+[[code]]
+addr = 0x0800220c
+mode = "thumb"
+size = 56
+end = 0x08002244
+origin = "proven"
+
+[[code]]
+addr = 0x08002244
+mode = "thumb"
+size = 16
+end = 0x08002254
+origin = "proven"
+
+[[code]]
+addr = 0x08002254
+mode = "thumb"
+size = 24
+end = 0x0800226c
+origin = "proven"
+
+[[code]]
+addr = 0x0800226c
+mode = "thumb"
+size = 20
+end = 0x08002280
+origin = "proven"
+
+[[code]]
+addr = 0x08002280
+mode = "thumb"
+size = 28
+end = 0x0800229c
+origin = "proven"
+
+[[code]]
+addr = 0x0800229c
+mode = "thumb"
+size = 4
+end = 0x080022a0
+origin = "proven"
+
+[[code]]
+addr = 0x080022a0
+mode = "thumb"
+size = 4
+end = 0x080022a4
+origin = "proven"
+
+[[code]]
+addr = 0x08002300
+mode = "thumb"
+size = 40
+end = 0x08002328
+origin = "call"
+
+[[code]]
+addr = 0x08002328
+mode = "thumb"
+size = 70
+end = 0x0800236e
+origin = "call"
+
+[[code]]
+addr = 0x0800236e
+mode = "thumb"
+size = 40
+end = 0x08002396
+origin = "call"
+
+[[code]]
+addr = 0x08002396
+mode = "thumb"
+size = 88
+end = 0x080023ee
+origin = "call"
+
+[[code]]
+addr = 0x080023fa
+mode = "thumb"
+size = 36
+end = 0x0800241e
+origin = "table"
+
+[[code]]
+addr = 0x0800241e
+mode = "thumb"
+size = 14
+end = 0x0800242c
+origin = "call"
+
+[[code]]
+addr = 0x0800242c
+mode = "thumb"
+size = 36
+end = 0x08002450
+origin = "call"
+
+[[code]]
+addr = 0x08002450
+mode = "thumb"
+size = 10
+end = 0x0800245a
+origin = "call"
+
+[[code]]
+addr = 0x0800245a
+mode = "thumb"
+size = 12
+end = 0x08002466
+origin = "call"
+
+[[code]]
+addr = 0x08002466
+mode = "thumb"
+size = 32
+end = 0x08002486
+origin = "call"
+
+[[code]]
+addr = 0x08002486
+mode = "thumb"
+size = 50
+end = 0x080024b8
+origin = "call"
+
+[[code]]
+addr = 0x080024b8
+mode = "thumb"
+size = 28
+end = 0x080024d4
+origin = "call"
+
+[[code]]
+addr = 0x080024d4
+mode = "thumb"
+size = 16
+end = 0x080024e4
+origin = "proven"
+
+[[code]]
+addr = 0x080024e4
+mode = "thumb"
+size = 16
+end = 0x080024f4
+origin = "proven"
+
+[[code]]
+addr = 0x080024f4
+mode = "thumb"
+size = 4
+end = 0x080024f8
+origin = "table"
+
+[[code]]
+addr = 0x080024f8
+mode = "thumb"
+size = 50
+end = 0x0800252a
+origin = "table"
+
+[[code]]
+addr = 0x0800252a
+mode = "thumb"
+size = 4
+end = 0x0800252e
+origin = "proven"
+
+[[code]]
+addr = 0x0800252e
+mode = "thumb"
+size = 36
+end = 0x08002552
+origin = "call"
+
+[[code]]
+addr = 0x08002552
+mode = "thumb"
+size = 4
+end = 0x08002556
+origin = "repeated"
+
+[[code]]
+addr = 0x08002556
+mode = "thumb"
+size = 44
+end = 0x08002582
+origin = "call"
+
+[[code]]
+addr = 0x08002582
+mode = "thumb"
+size = 46
+end = 0x080025b0
+origin = "proven"
+
+[[code]]
+addr = 0x080025b0
+mode = "thumb"
+size = 6
+end = 0x080025b6
+origin = "proven"
+
+[[code]]
+addr = 0x080025b6
+mode = "thumb"
+size = 14
+end = 0x080025c4
+origin = "proven"
+
+[[code]]
+addr = 0x080025c4
+mode = "thumb"
+size = 10
+end = 0x080025ce
+origin = "proven"
+
+[[code]]
+addr = 0x080025ce
+mode = "thumb"
+size = 44
+end = 0x080025fa
+origin = "proven"
+
+[[code]]
+addr = 0x080025fa
+mode = "thumb"
+size = 12
+end = 0x08002606
+origin = "table"
+
+[[code]]
+addr = 0x08002606
+mode = "thumb"
+size = 4
+end = 0x0800260a
+origin = "proven"
+
+[[code]]
+addr = 0x0800260a
+mode = "thumb"
+size = 8
+end = 0x08002612
+origin = "proven"
+
+[[code]]
+addr = 0x08002612
+mode = "thumb"
+size = 2
+end = 0x08002614
+origin = "proven"
+
+[[code]]
+addr = 0x08002614
+mode = "thumb"
+size = 16
+end = 0x08002624
+origin = "proven"
+
+[[code]]
+addr = 0x08002624
+mode = "thumb"
+size = 26
+end = 0x0800263e
+origin = "proven"
+
+[[code]]
+addr = 0x0800263e
+mode = "thumb"
+size = 14
+end = 0x0800264c
+origin = "proven"
+
+[[code]]
+addr = 0x0800264c
+mode = "thumb"
+size = 22
+end = 0x08002662
+origin = "proven"
+
+[[code]]
+addr = 0x08002662
+mode = "thumb"
+size = 4
+end = 0x08002666
+origin = "proven"
+
+[[code]]
+addr = 0x08002666
+mode = "thumb"
+size = 14
+end = 0x08002674
+origin = "call"
+
+[[code]]
+addr = 0x08002674
+mode = "thumb"
+size = 16
+end = 0x08002684
+origin = "proven"
+
+[[code]]
+addr = 0x08002684
+mode = "thumb"
+size = 4
+end = 0x08002688
+origin = "proven"
+
+[[code]]
+addr = 0x08002688
+mode = "thumb"
+size = 34
+end = 0x080026aa
+origin = "proven"
+
+[[code]]
+addr = 0x080026aa
+mode = "thumb"
+size = 52
+end = 0x080026de
+origin = "proven"
+
+[[code]]
+addr = 0x080026de
+mode = "thumb"
+size = 4
+end = 0x080026e2
+origin = "table"
+
+[[code]]
+addr = 0x080026e2
+mode = "thumb"
+size = 16
+end = 0x080026f2
+origin = "table"
+
+[[code]]
+addr = 0x080026f2
+mode = "thumb"
+size = 4
+end = 0x080026f6
+origin = "table"
+
+[[code]]
+addr = 0x080026f6
+mode = "thumb"
+size = 2
+end = 0x080026f8
+origin = "table"
+
+[[code]]
+addr = 0x080026fa
+mode = "thumb"
+size = 28
+end = 0x08002716
+origin = "table"
+
+[[code]]
+addr = 0x08002716
+mode = "thumb"
+size = 10
+end = 0x08002720
+origin = "call"
+
+[[code]]
+addr = 0x08002720
+mode = "thumb"
+size = 70
+end = 0x08002766
+origin = "proven"
+
+[[code]]
+addr = 0x08002766
+mode = "thumb"
+size = 6
+end = 0x0800276c
+origin = "proven"
+
+[[code]]
+addr = 0x0800276c
+mode = "thumb"
+size = 50
+end = 0x0800279e
+origin = "proven"
+
+[[code]]
+addr = 0x0800279e
+mode = "thumb"
+size = 20
+end = 0x080027b2
+origin = "call"
+
+[[code]]
+addr = 0x080027b2
+mode = "thumb"
+size = 2
+end = 0x080027b4
+origin = "proven"
+
+[[code]]
+addr = 0x080027b4
+mode = "thumb"
+size = 4
+end = 0x080027b8
+origin = "proven"
+
+[[code]]
+addr = 0x080027e8
+mode = "thumb"
+size = 14
+end = 0x080027f6
+origin = "proven"
+
+[[code]]
+addr = 0x080027f6
+mode = "thumb"
+size = 2
+end = 0x080027f8
+origin = "table"
+
+[[code]]
+addr = 0x080027f8
+mode = "thumb"
+size = 2
+end = 0x080027fa
+origin = "table"
+
+[[code]]
+addr = 0x080027fa
+mode = "thumb"
+size = 18
+end = 0x0800280c
+origin = "table"
+
+[[code]]
+addr = 0x0800280c
+mode = "thumb"
+size = 4
+end = 0x08002810
+origin = "proven"
+
+[[code]]
+addr = 0x08002810
+mode = "thumb"
+size = 12
+end = 0x0800281c
+origin = "call"
+
+[[code]]
+addr = 0x0800281c
+mode = "thumb"
+size = 18
+end = 0x0800282e
+origin = "proven"
+
+[[code]]
+addr = 0x0800282e
+mode = "thumb"
+size = 4
+end = 0x08002832
+origin = "proven"
+
+[[code]]
+addr = 0x08002832
+mode = "thumb"
+size = 6
+end = 0x08002838
+origin = "proven"
+
+[[code]]
+addr = 0x08002838
+mode = "thumb"
+size = 4
+end = 0x0800283c
+origin = "proven"
+
+[[code]]
+addr = 0x0800283c
+mode = "thumb"
+size = 14
+end = 0x0800284a
+origin = "call"
+
+[[code]]
+addr = 0x0800284a
+mode = "thumb"
+size = 22
+end = 0x08002860
+origin = "proven"
+
+[[code]]
+addr = 0x08002860
+mode = "thumb"
+size = 2
+end = 0x08002862
+origin = "proven"
+
+[[code]]
+addr = 0x08002862
+mode = "thumb"
+size = 4
+end = 0x08002866
+origin = "proven"
+
+[[code]]
+addr = 0x08002866
+mode = "thumb"
+size = 4
+end = 0x0800286a
+origin = "proven"
+
+[[code]]
+addr = 0x0800286a
+mode = "thumb"
+size = 16
+end = 0x0800287a
+origin = "call"
+
+[[code]]
+addr = 0x0800287a
+mode = "thumb"
+size = 24
+end = 0x08002892
+origin = "proven"
+
+[[code]]
+addr = 0x08002892
+mode = "thumb"
+size = 4
+end = 0x08002896
+origin = "proven"
+
+[[code]]
+addr = 0x08002896
+mode = "thumb"
+size = 44
+end = 0x080028c2
+origin = "call"
+
+[[code]]
+addr = 0x080028c2
+mode = "thumb"
+size = 2
+end = 0x080028c4
+origin = "proven"
+
+[[code]]
+addr = 0x080028c4
+mode = "thumb"
+size = 22
+end = 0x080028da
+origin = "call"
+
+[[code]]
+addr = 0x080028fa
+mode = "thumb"
+size = 2
+end = 0x080028fc
+origin = "repeated"
+
+[[code]]
+addr = 0x080028fc
+mode = "thumb"
+size = 6
+end = 0x08002902
+origin = "repeated"
+
+[[code]]
+addr = 0x08002902
+mode = "thumb"
+size = 14
+end = 0x08002910
+origin = "repeated"
+
+[[code]]
+addr = 0x08002910
+mode = "thumb"
+size = 6
+end = 0x08002916
+origin = "call"
+
+[[code]]
+addr = 0x08002916
+mode = "thumb"
+size = 26
+end = 0x08002930
+origin = "repeated"
+
+[[code]]
+addr = 0x08002930
+mode = "thumb"
+size = 12
+end = 0x0800293c
+origin = "call"
+
+[[code]]
+addr = 0x0800293c
+mode = "thumb"
+size = 34
+end = 0x0800295e
+origin = "repeated"
+
+[[code]]
+addr = 0x08002960
+mode = "thumb"
+size = 12
+end = 0x0800296c
+origin = "table"
+
+[[code]]
+addr = 0x0800296c
+mode = "thumb"
+size = 42
+end = 0x08002996
+origin = "table"
+
+[[code]]
+addr = 0x08002998
+mode = "thumb"
+size = 14
+end = 0x080029a6
+origin = "table"
+
+[[code]]
+addr = 0x080029a6
+mode = "thumb"
+size = 82
+end = 0x080029f8
+origin = "table"
+
+[[code]]
+addr = 0x080029f8
+mode = "thumb"
+size = 2
+end = 0x080029fa
+origin = "table"
+
+[[code]]
+addr = 0x080029fa
+mode = "thumb"
+size = 28
+end = 0x08002a16
+origin = "repeated"
+
+[[code]]
+addr = 0x08002a16
+mode = "thumb"
+size = 30
+end = 0x08002a34
+origin = "table"
+
+[[code]]
+addr = 0x08002a34
+mode = "thumb"
+size = 30
+end = 0x08002a52
+origin = "table"
+
+[[code]]
+addr = 0x08002a52
+mode = "thumb"
+size = 40
+end = 0x08002a7a
+origin = "table"
+
+[[code]]
+addr = 0x08002a88
+mode = "thumb"
+size = 218
+end = 0x08002b62
+origin = "table"
+
+[[code]]
+addr = 0x08002b62
+mode = "thumb"
+size = 14
+end = 0x08002b70
+origin = "table"
+
+[[code]]
+addr = 0x08002b70
+mode = "thumb"
+size = 28
+end = 0x08002b8c
+origin = "table"
+
+[[code]]
+addr = 0x08002b8c
+mode = "thumb"
+size = 14
+end = 0x08002b9a
+origin = "table"
+
+[[code]]
+addr = 0x08002b9a
+mode = "thumb"
+size = 22
+end = 0x08002bb0
+origin = "table"
+
+[[code]]
+addr = 0x08002bb0
+mode = "thumb"
+size = 42
+end = 0x08002bda
+origin = "table"
+
+[[code]]
+addr = 0x08002be8
+mode = "thumb"
+size = 4
+end = 0x08002bec
+origin = "table"
+
+[[code]]
+addr = 0x08002bf8
+mode = "thumb"
+size = 4
+end = 0x08002bfc
+origin = "table"
+
+[[code]]
+addr = 0x08002c04
+mode = "thumb"
+size = 20
+end = 0x08002c18
+origin = "repeated"
+
+[[code]]
+addr = 0x08002c18
+mode = "thumb"
+size = 40
+end = 0x08002c40
+origin = "repeated"
+
+[[code]]
+addr = 0x08002c40
+mode = "thumb"
+size = 12
+end = 0x08002c4c
+origin = "table"
+
+[[code]]
+addr = 0x08002c4c
+mode = "thumb"
+size = 42
+end = 0x08002c76
+origin = "table"
+
+[[code]]
+addr = 0x08002c78
+mode = "thumb"
+size = 12
+end = 0x08002c84
+origin = "table"
+
+[[code]]
+addr = 0x08002c84
+mode = "thumb"
+size = 38
+end = 0x08002caa
+origin = "repeated"
+
+[[code]]
+addr = 0x08002cac
+mode = "thumb"
+size = 12
+end = 0x08002cb8
+origin = "table"
+
+[[code]]
+addr = 0x08002cb8
+mode = "thumb"
+size = 38
+end = 0x08002cde
+origin = "table"
+
+[[code]]
+addr = 0x08002ce0
+mode = "thumb"
+size = 22
+end = 0x08002cf6
+origin = "call"
+
+[[code]]
+addr = 0x08002cf6
+mode = "thumb"
+size = 28
+end = 0x08002d12
+origin = "table"
+
+[[code]]
+addr = 0x08002d12
+mode = "thumb"
+size = 38
+end = 0x08002d38
+origin = "proven"
+
+[[code]]
+addr = 0x08002d38
+mode = "thumb"
+size = 30
+end = 0x08002d56
+origin = "proven"
+
+[[code]]
+addr = 0x08002d56
+mode = "thumb"
+size = 38
+end = 0x08002d7c
+origin = "proven"
+
+[[code]]
+addr = 0x08002d7c
+mode = "thumb"
+size = 20
+end = 0x08002d90
+origin = "proven"
+
+[[code]]
+addr = 0x08002d90
+mode = "thumb"
+size = 38
+end = 0x08002db6
+origin = "proven"
+
+[[code]]
+addr = 0x08002db6
+mode = "thumb"
+size = 2
+end = 0x08002db8
+origin = "proven"
+
+[[code]]
+addr = 0x08002db8
+mode = "thumb"
+size = 30
+end = 0x08002dd6
+origin = "proven"
+
+[[code]]
+addr = 0x08002dd6
+mode = "thumb"
+size = 32
+end = 0x08002df6
+origin = "proven"
+
+[[code]]
+addr = 0x08002df6
+mode = "thumb"
+size = 2
+end = 0x08002df8
+origin = "table"
+
+[[code]]
+addr = 0x08002df8
+mode = "thumb"
+size = 2
+end = 0x08002dfa
+origin = "table"
+
+[[code]]
+addr = 0x08002dfa
+mode = "thumb"
+size = 2
+end = 0x08002dfc
+origin = "table"
+
+[[code]]
+addr = 0x08002dfc
+mode = "thumb"
+size = 48
+end = 0x08002e2c
+origin = "proven"
+
+[[code]]
+addr = 0x08002e2c
+mode = "thumb"
+size = 4
+end = 0x08002e30
+origin = "proven"
+
+[[code]]
+addr = 0x08002e42
+mode = "thumb"
+size = 62
+end = 0x08002e80
+origin = "call"
+
+[[code]]
+addr = 0x08002e80
+mode = "thumb"
+size = 52
+end = 0x08002eb4
+origin = "call"
+
+[[code]]
+addr = 0x08002eb4
+mode = "thumb"
+size = 76
+end = 0x08002f00
+origin = "proven"
+
+[[code]]
+addr = 0x08002f00
+mode = "thumb"
+size = 4
+end = 0x08002f04
+origin = "proven"
+
+[[code]]
+addr = 0x08002f04
+mode = "thumb"
+size = 8
+end = 0x08002f0c
+origin = "proven"
+
+[[code]]
+addr = 0x08002f0c
+mode = "thumb"
+size = 32
+end = 0x08002f2c
+origin = "proven"
+
+[[code]]
+addr = 0x08002f2c
+mode = "thumb"
+size = 18
+end = 0x08002f3e
+origin = "proven"
+
+[[code]]
+addr = 0x08002f3e
+mode = "thumb"
+size = 66
+end = 0x08002f80
+origin = "call"
+
+[[code]]
+addr = 0x08002f80
+mode = "thumb"
+size = 68
+end = 0x08002fc4
+origin = "call"
+
+[[code]]
+addr = 0x08002fc4
+mode = "thumb"
+size = 48
+end = 0x08002ff4
+origin = "call"
+
+[[code]]
+addr = 0x08002ff4
+mode = "thumb"
+size = 2
+end = 0x08002ff6
+origin = "proven"
+
+[[code]]
+addr = 0x08002ff6
+mode = "thumb"
+size = 38
+end = 0x0800301c
+origin = "call"
+
+[[code]]
+addr = 0x08003032
+mode = "thumb"
+size = 120
+end = 0x080030aa
+origin = "table"
+
+[[code]]
+addr = 0x080030f8
+mode = "thumb"
+size = 40
+end = 0x08003120
+origin = "table"
+
+[[code]]
+addr = 0x08003120
+mode = "thumb"
+size = 192
+end = 0x080031e0
+origin = "call"
+
+[[code]]
+addr = 0x080031e0
+mode = "thumb"
+size = 2
+end = 0x080031e2
+origin = "proven"
+
+[[code]]
+addr = 0x080031e2
+mode = "thumb"
+size = 22
+end = 0x080031f8
+origin = "call"
+
+[[code]]
+addr = 0x080031f8
+mode = "thumb"
+size = 2
+end = 0x080031fa
+origin = "proven"
+
+[[code]]
+addr = 0x080031fa
+mode = "thumb"
+size = 52
+end = 0x0800322e
+origin = "table"
+
+[[code]]
+addr = 0x0800322e
+mode = "thumb"
+size = 4
+end = 0x08003232
+origin = "proven"
+
+[[code]]
+addr = 0x08003232
+mode = "thumb"
+size = 28
+end = 0x0800324e
+origin = "call"
+
+[[code]]
+addr = 0x0800324e
+mode = "thumb"
+size = 36
+end = 0x08003272
+origin = "call"
+
+[[code]]
+addr = 0x08003272
+mode = "thumb"
+size = 10
+end = 0x0800327c
+origin = "proven"
+
+[[code]]
+addr = 0x0800327c
+mode = "thumb"
+size = 2
+end = 0x0800327e
+origin = "proven"
+
+[[code]]
+addr = 0x0800327e
+mode = "thumb"
+size = 6
+end = 0x08003284
+origin = "proven"
+
+[[code]]
+addr = 0x08003290
+mode = "thumb"
+size = 10
+end = 0x0800329a
+origin = "call"
+
+[[code]]
+addr = 0x0800329a
+mode = "thumb"
+size = 8
+end = 0x080032a2
+origin = "proven"
+
+[[code]]
+addr = 0x080032a2
+mode = "thumb"
+size = 20
+end = 0x080032b6
+origin = "call"
+
+[[code]]
+addr = 0x080032b6
+mode = "thumb"
+size = 2
+end = 0x080032b8
+origin = "proven"
+
+[[code]]
+addr = 0x080032f2
+mode = "thumb"
+size = 2
+end = 0x080032f4
+origin = "table"
+
+[[code]]
+addr = 0x080032f4
+mode = "thumb"
+size = 2
+end = 0x080032f6
+origin = "table"
+
+[[code]]
+addr = 0x080032f6
+mode = "thumb"
+size = 2
+end = 0x080032f8
+origin = "table"
+
+[[code]]
+addr = 0x080032f8
+mode = "thumb"
+size = 2
+end = 0x080032fa
+origin = "table"
+
+[[code]]
+addr = 0x080032fa
+mode = "thumb"
+size = 158
+end = 0x08003398
+origin = "table"
+
+[[raw]]
+addr = 0x08003398
+mode = "thumb"
+size = 84
+end = 0x080033ec
+origin = "call"
+reason = "data"
+
+[[code]]
+addr = 0x080033ec
+mode = "thumb"
+size = 12
+end = 0x080033f8
+origin = "table"
+
+[[code]]
+addr = 0x080033f8
+mode = "thumb"
+size = 26
+end = 0x08003412
+origin = "table"
+
+[[code]]
+addr = 0x08003412
+mode = "thumb"
+size = 4
+end = 0x08003416
+origin = "proven"
+
+[[code]]
+addr = 0x08003416
+mode = "thumb"
+size = 16
+end = 0x08003426
+origin = "proven"
+
+[[code]]
+addr = 0x08003426
+mode = "thumb"
+size = 16
+end = 0x08003436
+origin = "proven"
+
+[[code]]
+addr = 0x08003436
+mode = "thumb"
+size = 16
+end = 0x08003446
+origin = "proven"
+
+[[raw]]
+addr = 0x08003446
+mode = "thumb"
+size = 124
+end = 0x080034c2
+origin = "call"
+reason = "data"
+
+[[code]]
+addr = 0x080034c2
+mode = "thumb"
+size = 4
+end = 0x080034c6
+origin = "proven"
+
+[[code]]
+addr = 0x080034f4
+mode = "thumb"
+size = 16
+end = 0x08003504
+origin = "proven"
+
+[[code]]
+addr = 0x08003504
+mode = "thumb"
+size = 14
+end = 0x08003512
+origin = "proven"
+
+[[code]]
+addr = 0x08003512
+mode = "thumb"
+size = 18
+end = 0x08003524
+origin = "proven"
+
+[[code]]
+addr = 0x08003524
+mode = "thumb"
+size = 10
+end = 0x0800352e
+origin = "call"
+
+[[code]]
+addr = 0x0800352e
+mode = "thumb"
+size = 18
+end = 0x08003540
+origin = "proven"
+
+[[code]]
+addr = 0x08003540
+mode = "thumb"
+size = 4
+end = 0x08003544
+origin = "proven"
+
+[[code]]
+addr = 0x08003544
+mode = "thumb"
+size = 12
+end = 0x08003550
+origin = "proven"
+
+[[raw]]
+addr = 0x08003550
+mode = "thumb"
+size = 18
+end = 0x08003562
+origin = "call"
+reason = "data"
+
+[[raw]]
+addr = 0x0800356c
+mode = "thumb"
+size = 16
+end = 0x0800357c
+origin = "repeated"
+reason = "data"
+
+[[code]]
+addr = 0x0800357c
+mode = "thumb"
+size = 52
+end = 0x080035b0
+origin = "repeated"
+
+[[code]]
+addr = 0x080035b0
+mode = "thumb"
+size = 6
+end = 0x080035b6
+origin = "table"
+
+[[code]]
+addr = 0x080035b6
+mode = "thumb"
+size = 22
+end = 0x080035cc
+origin = "table"
+
+[[code]]
+addr = 0x080035cc
+mode = "thumb"
+size = 24
+end = 0x080035e4
+origin = "table"
+
+[[code]]
+addr = 0x080035e4
+mode = "thumb"
+size = 22
+end = 0x080035fa
+origin = "table"
+
+[[code]]
+addr = 0x080035fa
+mode = "thumb"
+size = 274
+end = 0x0800370c
+origin = "table"
+
+[[code]]
+addr = 0x08003750
+mode = "thumb"
+size = 26
+end = 0x0800376a
+origin = "call"
+
+[[code]]
+addr = 0x0800376a
+mode = "thumb"
+size = 40
+end = 0x08003792
+origin = "proven"
+
+[[code]]
+addr = 0x08003792
+mode = "thumb"
+size = 6
+end = 0x08003798
+origin = "proven"
+
+[[code]]
+addr = 0x08003798
+mode = "thumb"
+size = 12
+end = 0x080037a4
+origin = "proven"
+
+[[code]]
+addr = 0x080037a4
+mode = "thumb"
+size = 2
+end = 0x080037a6
+origin = "proven"
+
+[[code]]
+addr = 0x080037a6
+mode = "thumb"
+size = 20
+end = 0x080037ba
+origin = "proven"
+
+[[code]]
+addr = 0x080037ba
+mode = "thumb"
+size = 58
+end = 0x080037f4
+origin = "proven"
+
+[[code]]
+addr = 0x080037f4
+mode = "thumb"
+size = 2
+end = 0x080037f6
+origin = "proven"
+
+[[code]]
+addr = 0x080037f6
+mode = "thumb"
+size = 138
+end = 0x08003880
+origin = "table"
+
+[[code]]
+addr = 0x080039f8
+mode = "thumb"
+size = 258
+end = 0x08003afa
+origin = "table"
+
+[[code]]
+addr = 0x08003b0c
+mode = "thumb"
+size = 12
+end = 0x08003b18
+origin = "table"
+
+[[code]]
+addr = 0x08003b18
+mode = "thumb"
+size = 16
+end = 0x08003b28
+origin = "table"
+
+[[code]]
+addr = 0x08003b28
+mode = "thumb"
+size = 12
+end = 0x08003b34
+origin = "table"
+
+[[code]]
+addr = 0x08003b34
+mode = "thumb"
+size = 38
+end = 0x08003b5a
+origin = "table"
+
+[[code]]
+addr = 0x08003b5c
+mode = "thumb"
+size = 10
+end = 0x08003b66
+origin = "table"
+
+[[code]]
+addr = 0x08003b66
+mode = "thumb"
+size = 2
+end = 0x08003b68
+origin = "table"
+
+[[code]]
+addr = 0x08003b68
+mode = "thumb"
+size = 10
+end = 0x08003b72
+origin = "table"
+
+[[code]]
+addr = 0x08003b72
+mode = "thumb"
+size = 2
+end = 0x08003b74
+origin = "table"
+
+[[code]]
+addr = 0x08003bd6
+mode = "thumb"
+size = 28
+end = 0x08003bf2
+origin = "table"
+
+[[code]]
+addr = 0x08003bf2
+mode = "thumb"
+size = 12
+end = 0x08003bfe
+origin = "table"
+
+[[code]]
+addr = 0x08003cfa
+mode = "thumb"
+size = 106
+end = 0x08003d64
+origin = "table"
+
+[[code]]
+addr = 0x08003d94
+mode = "thumb"
+size = 42
+end = 0x08003dbe
+origin = "table"
+
+[[code]]
+addr = 0x08003dbe
+mode = "thumb"
+size = 60
+end = 0x08003dfa
+origin = "table"
+
+[[code]]
+addr = 0x08003dfa
+mode = "thumb"
+size = 8
+end = 0x08003e02
+origin = "repeated"
+
+[[code]]
+addr = 0x08003e02
+mode = "thumb"
+size = 248
+end = 0x08003efa
+origin = "table"
+
+[[code]]
+addr = 0x08003efa
+mode = "thumb"
+size = 240
+end = 0x08003fea
+origin = "table"
+
+[[code]]
+addr = 0x08003fea
+mode = "thumb"
+size = 10
+end = 0x08003ff4
+origin = "table"
+
+[[code]]
+addr = 0x08003ff4
+mode = "thumb"
+size = 6
+end = 0x08003ffa
+origin = "table"
+
+[[code]]
+addr = 0x08003ffa
+mode = "thumb"
+size = 246
+end = 0x080040f0
+origin = "table"
+
+[[code]]
+addr = 0x080040f0
+mode = "thumb"
+size = 2
+end = 0x080040f2
+origin = "table"
+
+[[code]]
+addr = 0x080040f2
+mode = "thumb"
+size = 6
+end = 0x080040f8
+origin = "table"
+
+[[code]]
+addr = 0x080040f8
+mode = "thumb"
+size = 2
+end = 0x080040fa
+origin = "table"
+
+[[code]]
+addr = 0x080040fa
+mode = "thumb"
+size = 24
+end = 0x08004112
+origin = "table"
+
+[[code]]
+addr = 0x08004112
+mode = "thumb"
+size = 44
+end = 0x0800413e
+origin = "table"
+
+[[code]]
+addr = 0x0800413e
+mode = "thumb"
+size = 72
+end = 0x08004186
+origin = "table"
+
+[[code]]
+addr = 0x0800426e
+mode = "thumb"
+size = 32
+end = 0x0800428e
+origin = "table"
+
+[[code]]
+addr = 0x0800428e
+mode = "thumb"
+size = 22
+end = 0x080042a4
+origin = "call"
+
+[[code]]
+addr = 0x080042b4
+mode = "thumb"
+size = 52
+end = 0x080042e8
+origin = "repeated"
+
+[[code]]
+addr = 0x080042f4
+mode = "thumb"
+size = 4
+end = 0x080042f8
+origin = "call"
+
+[[code]]
+addr = 0x080042f8
+mode = "thumb"
+size = 34
+end = 0x0800431a
+origin = "table"
+
+[[code]]
+addr = 0x0800431a
+mode = "thumb"
+size = 2
+end = 0x0800431c
+origin = "proven"
+
+[[code]]
+addr = 0x0800431c
+mode = "thumb"
+size = 20
+end = 0x08004330
+origin = "proven"
+
+[[code]]
+addr = 0x08004330
+mode = "thumb"
+size = 52
+end = 0x08004364
+origin = "proven"
+
+[[code]]
+addr = 0x08004364
+mode = "thumb"
+size = 4
+end = 0x08004368
+origin = "proven"
+
+[[code]]
+addr = 0x08004368
+mode = "thumb"
+size = 28
+end = 0x08004384
+origin = "proven"
+
+[[code]]
+addr = 0x08004384
+mode = "thumb"
+size = 10
+end = 0x0800438e
+origin = "proven"
+
+[[code]]
+addr = 0x0800438e
+mode = "thumb"
+size = 10
+end = 0x08004398
+origin = "proven"
+
+[[code]]
+addr = 0x08004398
+mode = "thumb"
+size = 16
+end = 0x080043a8
+origin = "proven"
+
+[[code]]
+addr = 0x080043a8
+mode = "thumb"
+size = 4
+end = 0x080043ac
+origin = "proven"
+
+[[code]]
+addr = 0x080043ec
+mode = "thumb"
+size = 26
+end = 0x08004406
+origin = "table"
+
+[[code]]
+addr = 0x080044fa
+mode = "thumb"
+size = 64
+end = 0x0800453a
+origin = "table"
+
+[[code]]
+addr = 0x080045f8
+mode = "thumb"
+size = 2
+end = 0x080045fa
+origin = "table"
+
+[[code]]
+addr = 0x080045fa
+mode = "thumb"
+size = 184
+end = 0x080046b2
+origin = "table"
+
+[[code]]
+addr = 0x080046ee
+mode = "thumb"
+size = 8
+end = 0x080046f6
+origin = "table"
+
+[[code]]
+addr = 0x080046f6
+mode = "thumb"
+size = 2
+end = 0x080046f8
+origin = "table"
+
+[[code]]
+addr = 0x080046f8
+mode = "thumb"
+size = 2
+end = 0x080046fa
+origin = "table"
+
+[[code]]
+addr = 0x080046fa
+mode = "thumb"
+size = 122
+end = 0x08004774
+origin = "table"
+
+[[code]]
+addr = 0x080047f8
+mode = "thumb"
+size = 2
+end = 0x080047fa
+origin = "table"
+
+[[code]]
+addr = 0x080047fa
+mode = "thumb"
+size = 56
+end = 0x08004832
+origin = "table"
+
+[[code]]
+addr = 0x080048fa
+mode = "thumb"
+size = 80
+end = 0x0800494a
+origin = "table"
+
+[[code]]
+addr = 0x0800494a
+mode = "thumb"
+size = 36
+end = 0x0800496e
+origin = "call"
+
+[[code]]
+addr = 0x0800496e
+mode = "thumb"
+size = 2
+end = 0x08004970
+origin = "proven"
+
+[[code]]
+addr = 0x08004970
+mode = "thumb"
+size = 8
+end = 0x08004978
+origin = "proven"
+
+[[code]]
+addr = 0x080049b4
+mode = "thumb"
+size = 32
+end = 0x080049d4
+origin = "table"
+
+[[code]]
+addr = 0x080049d4
+mode = "thumb"
+size = 22
+end = 0x080049ea
+origin = "table"
+
+[[code]]
+addr = 0x080049ea
+mode = "thumb"
+size = 10
+end = 0x080049f4
+origin = "table"
+
+[[raw]]
+addr = 0x080049fa
+mode = "thumb"
+size = 2
+end = 0x080049fc
+origin = "table"
+reason = "data"
+
+[[code]]
+addr = 0x080049fc
+mode = "thumb"
+size = 32
+end = 0x08004a1c
+origin = "table"
+
+[[code]]
+addr = 0x08004a1e
+mode = "thumb"
+size = 78
+end = 0x08004a6c
+origin = "table"
+
+[[code]]
+addr = 0x08004a76
+mode = "thumb"
+size = 46
+end = 0x08004aa4
+origin = "table"
+
+[[code]]
+addr = 0x08004ab2
+mode = "thumb"
+size = 80
+end = 0x08004b02
+origin = "table"
+
+[[code]]
+addr = 0x08004b16
+mode = "thumb"
+size = 30
+end = 0x08004b34
+origin = "table"
+
+[[code]]
+addr = 0x08004b40
+mode = "thumb"
+size = 32
+end = 0x08004b60
+origin = "table"
+
+[[code]]
+addr = 0x08004b60
+mode = "thumb"
+size = 32
+end = 0x08004b80
+origin = "table"
+
+[[code]]
+addr = 0x08004b88
+mode = "thumb"
+size = 32
+end = 0x08004ba8
+origin = "table"
+
+[[code]]
+addr = 0x08004ba8
+mode = "thumb"
+size = 34
+end = 0x08004bca
+origin = "table"
+
+[[code]]
+addr = 0x08004bca
+mode = "thumb"
+size = 48
+end = 0x08004bfa
+origin = "table"
+
+[[code]]
+addr = 0x08004bfa
+mode = "thumb"
+size = 8
+end = 0x08004c02
+origin = "table"
+
+[[code]]
+addr = 0x08004c10
+mode = "thumb"
+size = 32
+end = 0x08004c30
+origin = "table"
+
+[[code]]
+addr = 0x08004c32
+mode = "thumb"
+size = 38
+end = 0x08004c58
+origin = "table"
+
+[[code]]
+addr = 0x08004c5c
+mode = "thumb"
+size = 16
+end = 0x08004c6c
+origin = "call"
+
+[[code]]
+addr = 0x08004c6c
+mode = "thumb"
+size = 46
+end = 0x08004c9a
+origin = "proven"
+
+[[code]]
+addr = 0x08004c9a
+mode = "thumb"
+size = 6
+end = 0x08004ca0
+origin = "proven"
+
+[[code]]
+addr = 0x08004ca0
+mode = "thumb"
+size = 8
+end = 0x08004ca8
+origin = "proven"
+
+[[code]]
+addr = 0x08004ca8
+mode = "thumb"
+size = 4
+end = 0x08004cac
+origin = "proven"
+
+[[code]]
+addr = 0x08004cac
+mode = "thumb"
+size = 12
+end = 0x08004cb8
+origin = "call"
+
+[[code]]
+addr = 0x08004cb8
+mode = "thumb"
+size = 20
+end = 0x08004ccc
+origin = "proven"
+
+[[code]]
+addr = 0x08004ccc
+mode = "thumb"
+size = 2
+end = 0x08004cce
+origin = "proven"
+
+[[code]]
+addr = 0x08004cce
+mode = "thumb"
+size = 8
+end = 0x08004cd6
+origin = "proven"
+
+[[code]]
+addr = 0x08004cd6
+mode = "thumb"
+size = 4
+end = 0x08004cda
+origin = "proven"
+
+[[code]]
+addr = 0x08004d10
+mode = "thumb"
+size = 12
+end = 0x08004d1c
+origin = "call"
+
+[[code]]
+addr = 0x08004d1c
+mode = "thumb"
+size = 22
+end = 0x08004d32
+origin = "proven"
+
+[[code]]
+addr = 0x08004d32
+mode = "thumb"
+size = 2
+end = 0x08004d34
+origin = "proven"
+
+[[code]]
+addr = 0x08004d34
+mode = "thumb"
+size = 12
+end = 0x08004d40
+origin = "call"
+
+[[code]]
+addr = 0x08004d40
+mode = "thumb"
+size = 22
+end = 0x08004d56
+origin = "proven"
+
+[[code]]
+addr = 0x08004d56
+mode = "thumb"
+size = 2
+end = 0x08004d58
+origin = "proven"
+
+[[code]]
+addr = 0x08004e3c
+mode = "thumb"
+size = 18
+end = 0x08004e4e
+origin = "table"
+
+[[code]]
+addr = 0x08004e98
+mode = "thumb"
+size = 56
+end = 0x08004ed0
+origin = "call"
+
+[[code]]
+addr = 0x08004ef4
+mode = "thumb"
+size = 56
+end = 0x08004f2c
+origin = "call"
+
+[[code]]
+addr = 0x08004f2c
+mode = "thumb"
+size = 4
+end = 0x08004f30
+origin = "proven"
+
+[[code]]
+addr = 0x08004f30
+mode = "thumb"
+size = 12
+end = 0x08004f3c
+origin = "proven"
+
+[[code]]
+addr = 0x08004f3c
+mode = "thumb"
+size = 6
+end = 0x08004f42
+origin = "proven"
+
+[[code]]
+addr = 0x08004f42
+mode = "thumb"
+size = 14
+end = 0x08004f50
+origin = "proven"
+
+[[code]]
+addr = 0x08004f50
+mode = "thumb"
+size = 6
+end = 0x08004f56
+origin = "proven"
+
+[[code]]
+addr = 0x08004f56
+mode = "thumb"
+size = 44
+end = 0x08004f82
+origin = "call"
+
+[[code]]
+addr = 0x08004f82
+mode = "thumb"
+size = 24
+end = 0x08004f9a
+origin = "proven"
+
+[[code]]
+addr = 0x08004f9a
+mode = "thumb"
+size = 22
+end = 0x08004fb0
+origin = "proven"
+
+[[code]]
+addr = 0x08004fb0
+mode = "thumb"
+size = 30
+end = 0x08004fce
+origin = "proven"
+
+[[code]]
+addr = 0x08004fce
+mode = "thumb"
+size = 2
+end = 0x08004fd0
+origin = "proven"
+
+[[code]]
+addr = 0x08004ffa
+mode = "thumb"
+size = 64
+end = 0x0800503a
+origin = "table"
+
+[[code]]
+addr = 0x0800503a
+mode = "thumb"
+size = 2
+end = 0x0800503c
+origin = "proven"
+
+[[code]]
+addr = 0x0800503c
+mode = "thumb"
+size = 2
+end = 0x0800503e
+origin = "proven"
+
+[[code]]
+addr = 0x0800503e
+mode = "thumb"
+size = 12
+end = 0x0800504a
+origin = "proven"
+
+[[code]]
+addr = 0x0800504a
+mode = "thumb"
+size = 10
+end = 0x08005054
+origin = "proven"
+
+[[code]]
+addr = 0x08005054
+mode = "thumb"
+size = 22
+end = 0x0800506a
+origin = "proven"
+
+[[code]]
+addr = 0x0800506a
+mode = "thumb"
+size = 6
+end = 0x08005070
+origin = "proven"
+
+[[code]]
+addr = 0x08005070
+mode = "thumb"
+size = 6
+end = 0x08005076
+origin = "proven"
+
+[[code]]
+addr = 0x08005076
+mode = "thumb"
+size = 4
+end = 0x0800507a
+origin = "proven"
+
+[[code]]
+addr = 0x0800507a
+mode = "thumb"
+size = 54
+end = 0x080050b0
+origin = "call"
+
+[[code]]
+addr = 0x080050b0
+mode = "thumb"
+size = 16
+end = 0x080050c0
+origin = "proven"
+
+[[code]]
+addr = 0x080050c0
+mode = "thumb"
+size = 28
+end = 0x080050dc
+origin = "proven"
+
+[[code]]
+addr = 0x080050dc
+mode = "thumb"
+size = 4
+end = 0x080050e0
+origin = "proven"
+
+[[code]]
+addr = 0x080050e0
+mode = "thumb"
+size = 6
+end = 0x080050e6
+origin = "proven"
+
+[[code]]
+addr = 0x080050e6
+mode = "thumb"
+size = 8
+end = 0x080050ee
+origin = "proven"
+
+[[code]]
+addr = 0x080050ee
+mode = "thumb"
+size = 4
+end = 0x080050f2
+origin = "proven"
+
+[[code]]
+addr = 0x08005108
+mode = "thumb"
+size = 2
+end = 0x0800510a
+origin = "table"
+
+[[code]]
+addr = 0x0800510a
+mode = "thumb"
+size = 14
+end = 0x08005118
+origin = "table"
+
+[[code]]
+addr = 0x08005118
+mode = "thumb"
+size = 156
+end = 0x080051b4
+origin = "table"
+
+[[code]]
+addr = 0x080051b4
+mode = "thumb"
+size = 28
+end = 0x080051d0
+origin = "table"
+
+[[code]]
+addr = 0x080051d0
+mode = "thumb"
+size = 40
+end = 0x080051f8
+origin = "call"
+
+[[code]]
+addr = 0x080051f8
+mode = "thumb"
+size = 2
+end = 0x080051fa
+origin = "table"
+
+[[code]]
+addr = 0x080051fa
+mode = "thumb"
+size = 8
+end = 0x08005202
+origin = "table"
+
+[[code]]
+addr = 0x08005202
+mode = "thumb"
+size = 46
+end = 0x08005230
+origin = "proven"
+
+[[code]]
+addr = 0x08005230
+mode = "thumb"
+size = 46
+end = 0x0800525e
+origin = "proven"
+
+[[code]]
+addr = 0x0800525e
+mode = "thumb"
+size = 4
+end = 0x08005262
+origin = "proven"
+
+[[code]]
+addr = 0x08005262
+mode = "thumb"
+size = 16
+end = 0x08005272
+origin = "proven"
+
+[[code]]
+addr = 0x08005272
+mode = "thumb"
+size = 10
+end = 0x0800527c
+origin = "proven"
+
+[[code]]
+addr = 0x0800527c
+mode = "thumb"
+size = 8
+end = 0x08005284
+origin = "proven"
+
+[[code]]
+addr = 0x08005284
+mode = "thumb"
+size = 116
+end = 0x080052f8
+origin = "proven"
+
+[[code]]
+addr = 0x080052f8
+mode = "thumb"
+size = 116
+end = 0x0800536c
+origin = "table"
+
+[[raw]]
+addr = 0x0800536c
+mode = "thumb"
+size = 20
+end = 0x08005380
+origin = "call"
+reason = "data"
+
+[[code]]
+addr = 0x080053f0
+mode = "thumb"
+size = 16
+end = 0x08005400
+origin = "call"
+
+[[code]]
+addr = 0x08005400
+mode = "thumb"
+size = 14
+end = 0x0800540e
+origin = "proven"
+
+[[code]]
+addr = 0x0800540e
+mode = "thumb"
+size = 50
+end = 0x08005440
+origin = "proven"
+
+[[code]]
+addr = 0x08005440
+mode = "thumb"
+size = 8
+end = 0x08005448
+origin = "proven"
+
+[[code]]
+addr = 0x08005448
+mode = "thumb"
+size = 38
+end = 0x0800546e
+origin = "proven"
+
+[[code]]
+addr = 0x0800546e
+mode = "thumb"
+size = 10
+end = 0x08005478
+origin = "proven"
+
+[[code]]
+addr = 0x08005478
+mode = "thumb"
+size = 16
+end = 0x08005488
+origin = "call"
+
+[[code]]
+addr = 0x08005488
+mode = "thumb"
+size = 24
+end = 0x080054a0
+origin = "proven"
+
+[[code]]
+addr = 0x080054a0
+mode = "thumb"
+size = 2
+end = 0x080054a2
+origin = "proven"
+
+[[code]]
+addr = 0x080054a2
+mode = "thumb"
+size = 8
+end = 0x080054aa
+origin = "proven"
+
+[[code]]
+addr = 0x080054aa
+mode = "thumb"
+size = 4
+end = 0x080054ae
+origin = "proven"
+
+[[code]]
+addr = 0x080054ae
+mode = "thumb"
+size = 8
+end = 0x080054b6
+origin = "call"
+
+[[code]]
+addr = 0x080054b6
+mode = "thumb"
+size = 66
+end = 0x080054f8
+origin = "proven"
+
+[[code]]
+addr = 0x080054f8
+mode = "thumb"
+size = 2
+end = 0x080054fa
+origin = "table"
+
+[[code]]
+addr = 0x080054fa
+mode = "thumb"
+size = 4
+end = 0x080054fe
+origin = "table"
+
+[[code]]
+addr = 0x080054fe
+mode = "thumb"
+size = 30
+end = 0x0800551c
+origin = "proven"
+
+[[code]]
+addr = 0x0800551c
+mode = "thumb"
+size = 6
+end = 0x08005522
+origin = "proven"
+
+[[code]]
+addr = 0x08005522
+mode = "thumb"
+size = 4
+end = 0x08005526
+origin = "proven"
+
+[[code]]
+addr = 0x08005526
+mode = "thumb"
+size = 28
+end = 0x08005542
+origin = "call"
+
+[[code]]
+addr = 0x08005542
+mode = "thumb"
+size = 12
+end = 0x0800554e
+origin = "call"
+
+[[code]]
+addr = 0x0800554e
+mode = "thumb"
+size = 58
+end = 0x08005588
+origin = "proven"
+
+[[code]]
+addr = 0x08005588
+mode = "thumb"
+size = 12
+end = 0x08005594
+origin = "proven"
+
+[[code]]
+addr = 0x080055a0
+mode = "thumb"
+size = 36
+end = 0x080055c4
+origin = "table"
+
+[[code]]
+addr = 0x080055c6
+mode = "thumb"
+size = 26
+end = 0x080055e0
+origin = "table"
+
+[[raw]]
+addr = 0x080055e6
+mode = "thumb"
+size = 14
+end = 0x080055f4
+origin = "table"
+reason = "data"
+
+[[code]]
+addr = 0x080055f6
+mode = "thumb"
+size = 2
+end = 0x080055f8
+origin = "table"
+
+[[code]]
+addr = 0x080055f8
+mode = "thumb"
+size = 2
+end = 0x080055fa
+origin = "table"
+
+[[code]]
+addr = 0x080055fa
+mode = "thumb"
+size = 8
+end = 0x08005602
+origin = "table"
+
+[[code]]
+addr = 0x08005604
+mode = "thumb"
+size = 152
+end = 0x0800569c
+origin = "table"
+
+[[code]]
+addr = 0x0800569c
+mode = "thumb"
+size = 88
+end = 0x080056f4
+origin = "table"
+
+[[code]]
+addr = 0x080056f4
+mode = "thumb"
+size = 2
+end = 0x080056f6
+origin = "table"
+
+[[code]]
+addr = 0x080056f6
+mode = "thumb"
+size = 26
+end = 0x08005710
+origin = "table"
+
+[[code]]
+addr = 0x0800573a
+mode = "thumb"
+size = 110
+end = 0x080057a8
+origin = "call"
+
+[[code]]
+addr = 0x080057a8
+mode = "thumb"
+size = 78
+end = 0x080057f6
+origin = "table"
+
+[[code]]
+addr = 0x080057f6
+mode = "thumb"
+size = 74
+end = 0x08005840
+origin = "table"
+
+[[code]]
+addr = 0x08005840
+mode = "thumb"
+size = 150
+end = 0x080058d6
+origin = "table"
+
+[[code]]
+addr = 0x080058d6
+mode = "thumb"
+size = 34
+end = 0x080058f8
+origin = "call"
+
+[[code]]
+addr = 0x080058f8
+mode = "thumb"
+size = 24
+end = 0x08005910
+origin = "table"
+
+[[code]]
+addr = 0x08005910
+mode = "thumb"
+size = 4
+end = 0x08005914
+origin = "proven"
+
+[[code]]
+addr = 0x08005914
+mode = "thumb"
+size = 32
+end = 0x08005934
+origin = "proven"
+
+[[code]]
+addr = 0x08005934
+mode = "thumb"
+size = 46
+end = 0x08005962
+origin = "proven"
+
+[[code]]
+addr = 0x08005962
+mode = "thumb"
+size = 4
+end = 0x08005966
+origin = "proven"
+
+[[code]]
+addr = 0x08005966
+mode = "thumb"
+size = 28
+end = 0x08005982
+origin = "proven"
+
+[[code]]
+addr = 0x08005982
+mode = "thumb"
+size = 24
+end = 0x0800599a
+origin = "proven"
+
+[[code]]
+addr = 0x0800599a
+mode = "thumb"
+size = 92
+end = 0x080059f6
+origin = "table"
+
+[[code]]
+addr = 0x080059f6
+mode = "thumb"
+size = 4
+end = 0x080059fa
+origin = "table"
+
+[[code]]
+addr = 0x080059fa
+mode = "thumb"
+size = 26
+end = 0x08005a14
+origin = "table"
+
+[[code]]
+addr = 0x08005a94
+mode = "thumb"
+size = 80
+end = 0x08005ae4
+origin = "call"
+
+[[code]]
+addr = 0x08005ae4
+mode = "thumb"
+size = 22
+end = 0x08005afa
+origin = "call"
+
+[[code]]
+addr = 0x08005afa
+mode = "thumb"
+size = 28
+end = 0x08005b16
+origin = "table"
+
+[[code]]
+addr = 0x08005bbc
+mode = "thumb"
+size = 38
+end = 0x08005be2
+origin = "call"
+
+[[code]]
+addr = 0x08005be2
+mode = "thumb"
+size = 14
+end = 0x08005bf0
+origin = "call"
+
+[[code]]
+addr = 0x08005bf0
+mode = "thumb"
+size = 14
+end = 0x08005bfe
+origin = "call"
+
+[[code]]
+addr = 0x08005bfe
+mode = "thumb"
+size = 48
+end = 0x08005c2e
+origin = "call"
+
+[[code]]
+addr = 0x08005c2e
+mode = "thumb"
+size = 4
+end = 0x08005c32
+origin = "proven"
+
+[[code]]
+addr = 0x08005c32
+mode = "thumb"
+size = 14
+end = 0x08005c40
+origin = "call"
+
+[[code]]
+addr = 0x08005c40
+mode = "thumb"
+size = 4
+end = 0x08005c44
+origin = "proven"
+
+[[code]]
+addr = 0x08005c44
+mode = "thumb"
+size = 14
+end = 0x08005c52
+origin = "proven"
+
+[[code]]
+addr = 0x08005c52
+mode = "thumb"
+size = 10
+end = 0x08005c5c
+origin = "proven"
+
+[[code]]
+addr = 0x08005c7a
+mode = "thumb"
+size = 14
+end = 0x08005c88
+origin = "call"
+
+[[code]]
+addr = 0x08005ca8
+mode = "thumb"
+size = 46
+end = 0x08005cd6
+origin = "call"
+
+[[code]]
+addr = 0x08005cd6
+mode = "thumb"
+size = 16
+end = 0x08005ce6
+origin = "call"
+
+[[code]]
+addr = 0x08005d04
+mode = "thumb"
+size = 162
+end = 0x08005da6
+origin = "table"
+
+[[code]]
+addr = 0x08005da6
+mode = "thumb"
+size = 46
+end = 0x08005dd4
+origin = "call"
+
+[[code]]
+addr = 0x08005de0
+mode = "thumb"
+size = 14
+end = 0x08005dee
+origin = "table"
+
+[[code]]
+addr = 0x08005dee
+mode = "thumb"
+size = 4
+end = 0x08005df2
+origin = "table"
+
+[[code]]
+addr = 0x08005df2
+mode = "thumb"
+size = 20
+end = 0x08005e06
+origin = "table"
+
+[[code]]
+addr = 0x08005e06
+mode = "thumb"
+size = 12
+end = 0x08005e12
+origin = "table"
+
+[[code]]
+addr = 0x08005e12
+mode = "thumb"
+size = 18
+end = 0x08005e24
+origin = "table"
+
+[[code]]
+addr = 0x08005e24
+mode = "thumb"
+size = 2
+end = 0x08005e26
+origin = "table"
+
+[[code]]
+addr = 0x08005e26
+mode = "thumb"
+size = 16
+end = 0x08005e36
+origin = "table"
+
+[[code]]
+addr = 0x08005e36
+mode = "thumb"
+size = 2
+end = 0x08005e38
+origin = "table"
+
+[[code]]
+addr = 0x08005e38
+mode = "thumb"
+size = 20
+end = 0x08005e4c
+origin = "table"
+
+[[code]]
+addr = 0x08005e4c
+mode = "thumb"
+size = 22
+end = 0x08005e62
+origin = "table"
+
+[[code]]
+addr = 0x08005e62
+mode = "thumb"
+size = 30
+end = 0x08005e80
+origin = "table"
+
+[[code]]
+addr = 0x08005e8c
+mode = "thumb"
+size = 26
+end = 0x08005ea6
+origin = "call"
+
+[[code]]
+addr = 0x08005ea6
+mode = "thumb"
+size = 6
+end = 0x08005eac
+origin = "call"
+
+[[code]]
+addr = 0x08005eac
+mode = "thumb"
+size = 14
+end = 0x08005eba
+origin = "proven"
+
+[[code]]
+addr = 0x08005eba
+mode = "thumb"
+size = 8
+end = 0x08005ec2
+origin = "proven"
+
+[[code]]
+addr = 0x08005ec2
+mode = "thumb"
+size = 34
+end = 0x08005ee4
+origin = "proven"
+
+[[code]]
+addr = 0x08005ee4
+mode = "thumb"
+size = 4
+end = 0x08005ee8
+origin = "proven"
+
+[[code]]
+addr = 0x08005ee8
+mode = "thumb"
+size = 44
+end = 0x08005f14
+origin = "proven"
+
+[[code]]
+addr = 0x08005f58
+mode = "thumb"
+size = 28
+end = 0x08005f74
+origin = "call"
+
+[[code]]
+addr = 0x08005f74
+mode = "thumb"
+size = 28
+end = 0x08005f90
+origin = "proven"
+
+[[code]]
+addr = 0x08005f90
+mode = "thumb"
+size = 10
+end = 0x08005f9a
+origin = "proven"
+
+[[code]]
+addr = 0x08005fc0
+mode = "thumb"
+size = 32
+end = 0x08005fe0
+origin = "table"
+
+[[code]]
+addr = 0x08005fe2
+mode = "thumb"
+size = 50
+end = 0x08006014
+origin = "table"
+
+[[code]]
+addr = 0x08006018
+mode = "thumb"
+size = 32
+end = 0x08006038
+origin = "table"
+
+[[code]]
+addr = 0x08006038
+mode = "thumb"
+size = 20
+end = 0x0800604c
+origin = "table"
+
+[[code]]
+addr = 0x08006054
+mode = "thumb"
+size = 32
+end = 0x08006074
+origin = "table"
+
+[[code]]
+addr = 0x08006074
+mode = "thumb"
+size = 34
+end = 0x08006096
+origin = "table"
+
+[[code]]
+addr = 0x080060a0
+mode = "thumb"
+size = 12
+end = 0x080060ac
+origin = "call"
+
+[[code]]
+addr = 0x080060ac
+mode = "thumb"
+size = 16
+end = 0x080060bc
+origin = "proven"
+
+[[code]]
+addr = 0x080060bc
+mode = "thumb"
+size = 4
+end = 0x080060c0
+origin = "proven"
+
+[[code]]
+addr = 0x080060c0
+mode = "thumb"
+size = 34
+end = 0x080060e2
+origin = "proven"
+
+[[code]]
+addr = 0x080060e2
+mode = "thumb"
+size = 4
+end = 0x080060e6
+origin = "proven"
+
+[[code]]
+addr = 0x080060e6
+mode = "thumb"
+size = 40
+end = 0x0800610e
+origin = "call"
+
+[[code]]
+addr = 0x0800610e
+mode = "thumb"
+size = 10
+end = 0x08006118
+origin = "proven"
+
+[[code]]
+addr = 0x080061b0
+mode = "thumb"
+size = 32
+end = 0x080061d0
+origin = "repeated"
+
+[[code]]
+addr = 0x080061d0
+mode = "thumb"
+size = 22
+end = 0x080061e6
+origin = "repeated"
+
+[[code]]
+addr = 0x080061ec
+mode = "thumb"
+size = 30
+end = 0x0800620a
+origin = "table"
+
+[[code]]
+addr = 0x0800622e
+mode = "thumb"
+size = 16
+end = 0x0800623e
+origin = "table"
+
+[[code]]
+addr = 0x08006244
+mode = "thumb"
+size = 18
+end = 0x08006256
+origin = "repeated"
+
+[[code]]
+addr = 0x08006258
+mode = "thumb"
+size = 32
+end = 0x08006278
+origin = "table"
+
+[[code]]
+addr = 0x08006278
+mode = "thumb"
+size = 20
+end = 0x0800628c
+origin = "table"
+
+[[code]]
+addr = 0x08006294
+mode = "thumb"
+size = 30
+end = 0x080062b2
+origin = "call"
+
+[[code]]
+addr = 0x080062b2
+mode = "thumb"
+size = 8
+end = 0x080062ba
+origin = "proven"
+
+[[code]]
+addr = 0x080062ba
+mode = "thumb"
+size = 10
+end = 0x080062c4
+origin = "proven"
+
+[[code]]
+addr = 0x080062c4
+mode = "thumb"
+size = 38
+end = 0x080062ea
+origin = "call"
+
+[[code]]
+addr = 0x080062ea
+mode = "thumb"
+size = 8
+end = 0x080062f2
+origin = "proven"
+
+[[code]]
+addr = 0x080062f2
+mode = "thumb"
+size = 10
+end = 0x080062fc
+origin = "proven"
+
+[[code]]
+addr = 0x080062fc
+mode = "thumb"
+size = 16
+end = 0x0800630c
+origin = "call"
+
+[[code]]
+addr = 0x0800630c
+mode = "thumb"
+size = 4
+end = 0x08006310
+origin = "proven"
+
+[[code]]
+addr = 0x08006310
+mode = "thumb"
+size = 14
+end = 0x0800631e
+origin = "proven"
+
+[[code]]
+addr = 0x0800631e
+mode = "thumb"
+size = 4
+end = 0x08006322
+origin = "proven"
+
+[[code]]
+addr = 0x08006322
+mode = "thumb"
+size = 14
+end = 0x08006330
+origin = "proven"
+
+[[code]]
+addr = 0x08006330
+mode = "thumb"
+size = 60
+end = 0x0800636c
+origin = "call"
+
+[[code]]
+addr = 0x0800636c
+mode = "thumb"
+size = 160
+end = 0x0800640c
+origin = "table"
+
+[[code]]
+addr = 0x0800640c
+mode = "thumb"
+size = 94
+end = 0x0800646a
+origin = "call"
+
+[[code]]
+addr = 0x0800646a
+mode = "thumb"
+size = 4
+end = 0x0800646e
+origin = "proven"
+
+[[code]]
+addr = 0x0800646e
+mode = "thumb"
+size = 14
+end = 0x0800647c
+origin = "proven"
+
+[[code]]
+addr = 0x0800647c
+mode = "thumb"
+size = 24
+end = 0x08006494
+origin = "table"
+
+[[code]]
+addr = 0x080064a8
+mode = "thumb"
+size = 32
+end = 0x080064c8
+origin = "table"
+
+[[code]]
+addr = 0x080064ca
+mode = "thumb"
+size = 44
+end = 0x080064f6
+origin = "table"
+
+[[code]]
+addr = 0x080064f6
+mode = "thumb"
+size = 4
+end = 0x080064fa
+origin = "table"
+
+[[code]]
+addr = 0x080064fa
+mode = "thumb"
+size = 32
+end = 0x0800651a
+origin = "table"
+
+[[code]]
+addr = 0x08006530
+mode = "thumb"
+size = 84
+end = 0x08006584
+origin = "table"
+
+[[code]]
+addr = 0x0800658c
+mode = "thumb"
+size = 126
+end = 0x0800660a
+origin = "table"
+
+[[code]]
+addr = 0x0800660a
+mode = "thumb"
+size = 240
+end = 0x080066fa
+origin = "table"
+
+[[code]]
+addr = 0x080066fa
+mode = "thumb"
+size = 58
+end = 0x08006734
+origin = "table"
+
+[[code]]
+addr = 0x080067a6
+mode = "thumb"
+size = 62
+end = 0x080067e4
+origin = "table"
+
+[[code]]
+addr = 0x080067e8
+mode = "thumb"
+size = 12
+end = 0x080067f4
+origin = "table"
+
+[[code]]
+addr = 0x080067f4
+mode = "thumb"
+size = 166
+end = 0x0800689a
+origin = "table"
+
+[[code]]
+addr = 0x0800689a
+mode = "thumb"
+size = 96
+end = 0x080068fa
+origin = "table"
+
+[[code]]
+addr = 0x080068fa
+mode = "thumb"
+size = 132
+end = 0x0800697e
+origin = "table"
+
+[[code]]
+addr = 0x0800697e
+mode = "thumb"
+size = 78
+end = 0x080069cc
+origin = "call"
+
+[[code]]
+addr = 0x080069e8
+mode = "thumb"
+size = 18
+end = 0x080069fa
+origin = "table"
+
+[[code]]
+addr = 0x080069fa
+mode = "thumb"
+size = 88
+end = 0x08006a52
+origin = "table"
+
+[[code]]
+addr = 0x08006a52
+mode = "thumb"
+size = 32
+end = 0x08006a72
+origin = "table"
+
+[[code]]
+addr = 0x08006a72
+mode = "thumb"
+size = 92
+end = 0x08006ace
+origin = "call"
+
+[[code]]
+addr = 0x08006ace
+mode = "thumb"
+size = 4
+end = 0x08006ad2
+origin = "proven"
+
+[[code]]
+addr = 0x08006ad2
+mode = "thumb"
+size = 40
+end = 0x08006afa
+origin = "proven"
+
+[[code]]
+addr = 0x08006afa
+mode = "thumb"
+size = 14
+end = 0x08006b08
+origin = "table"
+
+[[code]]
+addr = 0x08006b08
+mode = "thumb"
+size = 4
+end = 0x08006b0c
+origin = "proven"
+
+[[code]]
+addr = 0x08006b0c
+mode = "thumb"
+size = 64
+end = 0x08006b4c
+origin = "proven"
+
+[[code]]
+addr = 0x08006b4c
+mode = "thumb"
+size = 4
+end = 0x08006b50
+origin = "proven"
+
+[[code]]
+addr = 0x08006b50
+mode = "thumb"
+size = 4
+end = 0x08006b54
+origin = "proven"
+
+[[code]]
+addr = 0x08006b54
+mode = "thumb"
+size = 34
+end = 0x08006b76
+origin = "proven"
+
+[[code]]
+addr = 0x08006b76
+mode = "thumb"
+size = 2
+end = 0x08006b78
+origin = "proven"
+
+[[code]]
+addr = 0x08006b78
+mode = "thumb"
+size = 24
+end = 0x08006b90
+origin = "proven"
+
+[[code]]
+addr = 0x08006b90
+mode = "thumb"
+size = 4
+end = 0x08006b94
+origin = "proven"
+
+[[code]]
+addr = 0x08006b94
+mode = "thumb"
+size = 4
+end = 0x08006b98
+origin = "proven"
+
+[[code]]
+addr = 0x08006b98
+mode = "thumb"
+size = 240
+end = 0x08006c88
+origin = "table"
+
+[[code]]
+addr = 0x08006c9a
+mode = "thumb"
+size = 188
+end = 0x08006d56
+origin = "table"
+
+[[code]]
+addr = 0x08006d70
+mode = "thumb"
+size = 30
+end = 0x08006d8e
+origin = "call"
+
+[[code]]
+addr = 0x08006d8e
+mode = "thumb"
+size = 2
+end = 0x08006d90
+origin = "proven"
+
+[[code]]
+addr = 0x08006d90
+mode = "thumb"
+size = 12
+end = 0x08006d9c
+origin = "call"
+
+[[code]]
+addr = 0x08006d9c
+mode = "thumb"
+size = 76
+end = 0x08006de8
+origin = "proven"
+
+[[code]]
+addr = 0x08006de8
+mode = "thumb"
+size = 20
+end = 0x08006dfc
+origin = "proven"
+
+[[code]]
+addr = 0x08006dfc
+mode = "thumb"
+size = 86
+end = 0x08006e52
+origin = "proven"
+
+[[code]]
+addr = 0x08006e52
+mode = "thumb"
+size = 20
+end = 0x08006e66
+origin = "proven"
+
+[[code]]
+addr = 0x08006e66
+mode = "thumb"
+size = 2
+end = 0x08006e68
+origin = "proven"
+
+[[code]]
+addr = 0x08006e68
+mode = "thumb"
+size = 30
+end = 0x08006e86
+origin = "proven"
+
+[[code]]
+addr = 0x08006e86
+mode = "thumb"
+size = 48
+end = 0x08006eb6
+origin = "proven"
+
+[[code]]
+addr = 0x08006eb6
+mode = "thumb"
+size = 100
+end = 0x08006f1a
+origin = "proven"
+
+[[code]]
+addr = 0x08006f1a
+mode = "thumb"
+size = 48
+end = 0x08006f4a
+origin = "call"
+
+[[code]]
+addr = 0x08006f4a
+mode = "thumb"
+size = 18
+end = 0x08006f5c
+origin = "proven"
+
+[[code]]
+addr = 0x08006f5c
+mode = "thumb"
+size = 2
+end = 0x08006f5e
+origin = "proven"
+
+[[code]]
+addr = 0x08006f5e
+mode = "thumb"
+size = 4
+end = 0x08006f62
+origin = "proven"
+
+[[code]]
+addr = 0x08006f62
+mode = "thumb"
+size = 38
+end = 0x08006f88
+origin = "proven"
+
+[[code]]
+addr = 0x08006f88
+mode = "thumb"
+size = 4
+end = 0x08006f8c
+origin = "proven"
+
+[[code]]
+addr = 0x08006f8c
+mode = "thumb"
+size = 90
+end = 0x08006fe6
+origin = "proven"
+
+[[code]]
+addr = 0x08006fe6
+mode = "thumb"
+size = 4
+end = 0x08006fea
+origin = "proven"
+
+[[code]]
+addr = 0x08006fea
+mode = "thumb"
+size = 2
+end = 0x08006fec
+origin = "proven"
+
+[[code]]
+addr = 0x08006fec
+mode = "thumb"
+size = 10
+end = 0x08006ff6
+origin = "table"
+
+[[code]]
+addr = 0x08006ff6
+mode = "thumb"
+size = 4
+end = 0x08006ffa
+origin = "table"
+
+[[code]]
+addr = 0x08006ffa
+mode = "thumb"
+size = 62
+end = 0x08007038
+origin = "table"
+
+[[code]]
+addr = 0x08007038
+mode = "thumb"
+size = 10
+end = 0x08007042
+origin = "proven"
+
+[[code]]
+addr = 0x08007042
+mode = "thumb"
+size = 64
+end = 0x08007082
+origin = "proven"
+
+[[code]]
+addr = 0x08007082
+mode = "thumb"
+size = 62
+end = 0x080070c0
+origin = "proven"
+
+[[code]]
+addr = 0x080070c0
+mode = "thumb"
+size = 2
+end = 0x080070c2
+origin = "proven"
+
+[[code]]
+addr = 0x080070c2
+mode = "thumb"
+size = 40
+end = 0x080070ea
+origin = "proven"
+
+[[code]]
+addr = 0x080070ea
+mode = "thumb"
+size = 10
+end = 0x080070f4
+origin = "proven"
+
+[[code]]
+addr = 0x080070f4
+mode = "thumb"
+size = 6
+end = 0x080070fa
+origin = "table"
+
+[[code]]
+addr = 0x080070fa
+mode = "thumb"
+size = 36
+end = 0x0800711e
+origin = "table"
+
+[[code]]
+addr = 0x0800711e
+mode = "thumb"
+size = 16
+end = 0x0800712e
+origin = "proven"
+
+[[code]]
+addr = 0x0800712e
+mode = "thumb"
+size = 58
+end = 0x08007168
+origin = "proven"
+
+[[code]]
+addr = 0x08007194
+mode = "thumb"
+size = 12
+end = 0x080071a0
+origin = "proven"
+
+[[code]]
+addr = 0x080071a0
+mode = "thumb"
+size = 18
+end = 0x080071b2
+origin = "proven"
+
+[[code]]
+addr = 0x080071b2
+mode = "thumb"
+size = 4
+end = 0x080071b6
+origin = "proven"
+
+[[code]]
+addr = 0x080071b6
+mode = "thumb"
+size = 20
+end = 0x080071ca
+origin = "proven"
+
+[[code]]
+addr = 0x080071ca
+mode = "thumb"
+size = 4
+end = 0x080071ce
+origin = "proven"
+
+[[code]]
+addr = 0x080071ce
+mode = "thumb"
+size = 18
+end = 0x080071e0
+origin = "proven"
+
+[[code]]
+addr = 0x080071e0
+mode = "thumb"
+size = 18
+end = 0x080071f2
+origin = "table"
+
+[[code]]
+addr = 0x080071f2
+mode = "thumb"
+size = 8
+end = 0x080071fa
+origin = "table"
+
+[[code]]
+addr = 0x080071fa
+mode = "thumb"
+size = 66
+end = 0x0800723c
+origin = "table"
+
+[[code]]
+addr = 0x0800723c
+mode = "thumb"
+size = 2
+end = 0x0800723e
+origin = "proven"
+
+[[code]]
+addr = 0x0800723e
+mode = "thumb"
+size = 94
+end = 0x0800729c
+origin = "proven"
+
+[[code]]
+addr = 0x0800729c
+mode = "thumb"
+size = 80
+end = 0x080072ec
+origin = "proven"
+
+[[code]]
+addr = 0x080072ec
+mode = "thumb"
+size = 4
+end = 0x080072f0
+origin = "proven"
+
+[[code]]
+addr = 0x080072f0
+mode = "thumb"
+size = 92
+end = 0x0800734c
+origin = "table"
+
+[[code]]
+addr = 0x0800734c
+mode = "thumb"
+size = 2
+end = 0x0800734e
+origin = "proven"
+
+[[code]]
+addr = 0x0800734e
+mode = "thumb"
+size = 4
+end = 0x08007352
+origin = "proven"
+
+[[code]]
+addr = 0x08007352
+mode = "thumb"
+size = 36
+end = 0x08007376
+origin = "call"
+
+[[code]]
+addr = 0x08007376
+mode = "thumb"
+size = 2
+end = 0x08007378
+origin = "proven"
+
+[[code]]
+addr = 0x08007378
+mode = "thumb"
+size = 2
+end = 0x0800737a
+origin = "proven"
+
+[[code]]
+addr = 0x0800737a
+mode = "thumb"
+size = 32
+end = 0x0800739a
+origin = "proven"
+
+[[code]]
+addr = 0x0800739a
+mode = "thumb"
+size = 4
+end = 0x0800739e
+origin = "proven"
+
+[[code]]
+addr = 0x0800739e
+mode = "thumb"
+size = 18
+end = 0x080073b0
+origin = "proven"
+
+[[code]]
+addr = 0x080073b0
+mode = "thumb"
+size = 4
+end = 0x080073b4
+origin = "proven"
+
+[[code]]
+addr = 0x080073b4
+mode = "thumb"
+size = 18
+end = 0x080073c6
+origin = "proven"
+
+[[code]]
+addr = 0x080073c6
+mode = "thumb"
+size = 4
+end = 0x080073ca
+origin = "proven"
+
+[[code]]
+addr = 0x080073ca
+mode = "thumb"
+size = 12
+end = 0x080073d6
+origin = "proven"
+
+[[code]]
+addr = 0x080073d6
+mode = "thumb"
+size = 24
+end = 0x080073ee
+origin = "proven"
+
+[[code]]
+addr = 0x080073ee
+mode = "thumb"
+size = 8
+end = 0x080073f6
+origin = "proven"
+
+[[code]]
+addr = 0x080073f6
+mode = "thumb"
+size = 2
+end = 0x080073f8
+origin = "table"
+
+[[code]]
+addr = 0x080073f8
+mode = "thumb"
+size = 18
+end = 0x0800740a
+origin = "table"
+
+[[code]]
+addr = 0x0800740a
+mode = "thumb"
+size = 8
+end = 0x08007412
+origin = "proven"
+
+[[code]]
+addr = 0x08007412
+mode = "thumb"
+size = 4
+end = 0x08007416
+origin = "proven"
+
+[[code]]
+addr = 0x08007416
+mode = "thumb"
+size = 42
+end = 0x08007440
+origin = "call"
+
+[[code]]
+addr = 0x08007440
+mode = "thumb"
+size = 6
+end = 0x08007446
+origin = "proven"
+
+[[code]]
+addr = 0x08007446
+mode = "thumb"
+size = 4
+end = 0x0800744a
+origin = "proven"
+
+[[code]]
+addr = 0x0800744a
+mode = "thumb"
+size = 30
+end = 0x08007468
+origin = "proven"
+
+[[code]]
+addr = 0x08007468
+mode = "thumb"
+size = 24
+end = 0x08007480
+origin = "proven"
+
+[[code]]
+addr = 0x08007480
+mode = "thumb"
+size = 22
+end = 0x08007496
+origin = "proven"
+
+[[code]]
+addr = 0x08007496
+mode = "thumb"
+size = 20
+end = 0x080074aa
+origin = "proven"
+
+[[code]]
+addr = 0x080074aa
+mode = "thumb"
+size = 16
+end = 0x080074ba
+origin = "proven"
+
+[[code]]
+addr = 0x080074ba
+mode = "thumb"
+size = 38
+end = 0x080074e0
+origin = "proven"
+
+[[code]]
+addr = 0x080074e0
+mode = "thumb"
+size = 6
+end = 0x080074e6
+origin = "proven"
+
+[[code]]
+addr = 0x080074e6
+mode = "thumb"
+size = 6
+end = 0x080074ec
+origin = "proven"
+
+[[code]]
+addr = 0x080074ec
+mode = "thumb"
+size = 10
+end = 0x080074f6
+origin = "proven"
+
+[[code]]
+addr = 0x080074f6
+mode = "thumb"
+size = 4
+end = 0x080074fa
+origin = "proven"
+
+[[code]]
+addr = 0x080074fa
+mode = "thumb"
+size = 12
+end = 0x08007506
+origin = "table"
+
+[[code]]
+addr = 0x08007506
+mode = "thumb"
+size = 54
+end = 0x0800753c
+origin = "proven"
+
+[[code]]
+addr = 0x0800753c
+mode = "thumb"
+size = 22
+end = 0x08007552
+origin = "proven"
+
+[[code]]
+addr = 0x08007552
+mode = "thumb"
+size = 8
+end = 0x0800755a
+origin = "proven"
+
+[[code]]
+addr = 0x0800755a
+mode = "thumb"
+size = 32
+end = 0x0800757a
+origin = "call"
+
+[[code]]
+addr = 0x0800757a
+mode = "thumb"
+size = 26
+end = 0x08007594
+origin = "proven"
+
+[[code]]
+addr = 0x08007594
+mode = "thumb"
+size = 4
+end = 0x08007598
+origin = "proven"
+
+[[code]]
+addr = 0x08007598
+mode = "thumb"
+size = 76
+end = 0x080075e4
+origin = "proven"
+
+[[code]]
+addr = 0x08007600
+mode = "thumb"
+size = 2
+end = 0x08007602
+origin = "proven"
+
+[[code]]
+addr = 0x08007602
+mode = "thumb"
+size = 14
+end = 0x08007610
+origin = "proven"
+
+[[code]]
+addr = 0x08007610
+mode = "thumb"
+size = 12
+end = 0x0800761c
+origin = "proven"
+
+[[code]]
+addr = 0x0800761c
+mode = "thumb"
+size = 24
+end = 0x08007634
+origin = "proven"
+
+[[code]]
+addr = 0x08007634
+mode = "thumb"
+size = 12
+end = 0x08007640
+origin = "proven"
+
+[[code]]
+addr = 0x08007640
+mode = "thumb"
+size = 18
+end = 0x08007652
+origin = "proven"
+
+[[code]]
+addr = 0x08007652
+mode = "thumb"
+size = 2
+end = 0x08007654
+origin = "proven"
+
+[[code]]
+addr = 0x08007654
+mode = "thumb"
+size = 2
+end = 0x08007656
+origin = "proven"
+
+[[code]]
+addr = 0x08007656
+mode = "thumb"
+size = 8
+end = 0x0800765e
+origin = "proven"
+
+[[code]]
+addr = 0x0800765e
+mode = "thumb"
+size = 2
+end = 0x08007660
+origin = "proven"
+
+[[code]]
+addr = 0x08007660
+mode = "thumb"
+size = 12
+end = 0x0800766c
+origin = "proven"
+
+[[code]]
+addr = 0x0800766c
+mode = "thumb"
+size = 34
+end = 0x0800768e
+origin = "proven"
+
+[[code]]
+addr = 0x0800768e
+mode = "thumb"
+size = 66
+end = 0x080076d0
+origin = "proven"
+
+[[code]]
+addr = 0x080076d0
+mode = "thumb"
+size = 12
+end = 0x080076dc
+origin = "proven"
+
+[[code]]
+addr = 0x080076dc
+mode = "thumb"
+size = 6
+end = 0x080076e2
+origin = "proven"
+
+[[code]]
+addr = 0x080076e2
+mode = "thumb"
+size = 8
+end = 0x080076ea
+origin = "proven"
+
+[[code]]
+addr = 0x080076ea
+mode = "thumb"
+size = 4
+end = 0x080076ee
+origin = "proven"
+
+[[code]]
+addr = 0x080076ee
+mode = "thumb"
+size = 8
+end = 0x080076f6
+origin = "proven"
+
+[[code]]
+addr = 0x080076f6
+mode = "thumb"
+size = 4
+end = 0x080076fa
+origin = "proven"
+
+[[code]]
+addr = 0x080076fa
+mode = "thumb"
+size = 22
+end = 0x08007710
+origin = "table"
+
+[[code]]
+addr = 0x08007710
+mode = "thumb"
+size = 6
+end = 0x08007716
+origin = "table"
+
+[[code]]
+addr = 0x08007716
+mode = "thumb"
+size = 16
+end = 0x08007726
+origin = "proven"
+
+[[code]]
+addr = 0x08007726
+mode = "thumb"
+size = 10
+end = 0x08007730
+origin = "proven"
+
+[[code]]
+addr = 0x08007730
+mode = "thumb"
+size = 10
+end = 0x0800773a
+origin = "proven"
+
+[[code]]
+addr = 0x0800773a
+mode = "thumb"
+size = 38
+end = 0x08007760
+origin = "proven"
+
+[[code]]
+addr = 0x0800786a
+mode = "thumb"
+size = 102
+end = 0x080078d0
+origin = "call"
+
+[[code]]
+addr = 0x080078d0
+mode = "thumb"
+size = 42
+end = 0x080078fa
+origin = "proven"
+
+[[code]]
+addr = 0x080078fa
+mode = "thumb"
+size = 44
+end = 0x08007926
+origin = "table"
+
+[[code]]
+addr = 0x08007926
+mode = "thumb"
+size = 86
+end = 0x0800797c
+origin = "proven"
+
+[[code]]
+addr = 0x0800797c
+mode = "thumb"
+size = 90
+end = 0x080079d6
+origin = "proven"
+
+[[code]]
+addr = 0x080079d6
+mode = "thumb"
+size = 6
+end = 0x080079dc
+origin = "proven"
+
+[[code]]
+addr = 0x080079e4
+mode = "thumb"
+size = 12
+end = 0x080079f0
+origin = "call"
+
+[[code]]
+addr = 0x080079f0
+mode = "thumb"
+size = 4
+end = 0x080079f4
+origin = "proven"
+
+[[code]]
+addr = 0x080079f4
+mode = "thumb"
+size = 14
+end = 0x08007a02
+origin = "proven"
+
+[[code]]
+addr = 0x08007a02
+mode = "thumb"
+size = 8
+end = 0x08007a0a
+origin = "proven"
+
+[[code]]
+addr = 0x08007a0a
+mode = "thumb"
+size = 20
+end = 0x08007a1e
+origin = "proven"
+
+[[code]]
+addr = 0x08007a1e
+mode = "thumb"
+size = 2
+end = 0x08007a20
+origin = "proven"
+
+[[code]]
+addr = 0x08007a20
+mode = "thumb"
+size = 28
+end = 0x08007a3c
+origin = "proven"
+
+[[code]]
+addr = 0x08007a3c
+mode = "thumb"
+size = 8
+end = 0x08007a44
+origin = "proven"
+
+[[code]]
+addr = 0x08007a44
+mode = "thumb"
+size = 2
+end = 0x08007a46
+origin = "proven"
+
+[[code]]
+addr = 0x08007a46
+mode = "thumb"
+size = 4
+end = 0x08007a4a
+origin = "proven"
+
+[[code]]
+addr = 0x08007a4a
+mode = "thumb"
+size = 4
+end = 0x08007a4e
+origin = "proven"
+
+[[code]]
+addr = 0x08007a4e
+mode = "thumb"
+size = 44
+end = 0x08007a7a
+origin = "call"
+
+[[code]]
+addr = 0x08007a7a
+mode = "thumb"
+size = 4
+end = 0x08007a7e
+origin = "proven"
+
+[[code]]
+addr = 0x08007a7e
+mode = "thumb"
+size = 58
+end = 0x08007ab8
+origin = "proven"
+
+[[code]]
+addr = 0x08007ab8
+mode = "thumb"
+size = 60
+end = 0x08007af4
+origin = "proven"
+
+[[code]]
+addr = 0x08007af4
+mode = "thumb"
+size = 54
+end = 0x08007b2a
+origin = "proven"
+
+[[code]]
+addr = 0x08007b2a
+mode = "thumb"
+size = 16
+end = 0x08007b3a
+origin = "proven"
+
+[[code]]
+addr = 0x08007b3a
+mode = "thumb"
+size = 110
+end = 0x08007ba8
+origin = "proven"
+
+[[code]]
+addr = 0x08007ba8
+mode = "thumb"
+size = 18
+end = 0x08007bba
+origin = "proven"
+
+[[code]]
+addr = 0x08007bba
+mode = "thumb"
+size = 6
+end = 0x08007bc0
+origin = "proven"
+
+[[code]]
+addr = 0x08007bc0
+mode = "thumb"
+size = 56
+end = 0x08007bf8
+origin = "proven"
+
+[[code]]
+addr = 0x08007bf8
+mode = "thumb"
+size = 20
+end = 0x08007c0c
+origin = "table"
+
+[[code]]
+addr = 0x08007c0c
+mode = "thumb"
+size = 28
+end = 0x08007c28
+origin = "proven"
+
+[[code]]
+addr = 0x08007c28
+mode = "thumb"
+size = 42
+end = 0x08007c52
+origin = "proven"
+
+[[code]]
+addr = 0x08007c52
+mode = "thumb"
+size = 102
+end = 0x08007cb8
+origin = "proven"
+
+[[code]]
+addr = 0x08007cb8
+mode = "thumb"
+size = 10
+end = 0x08007cc2
+origin = "proven"
+
+[[code]]
+addr = 0x08007cc2
+mode = "thumb"
+size = 6
+end = 0x08007cc8
+origin = "proven"
+
+[[code]]
+addr = 0x08007cc8
+mode = "thumb"
+size = 14
+end = 0x08007cd6
+origin = "proven"
+
+[[code]]
+addr = 0x08007cd6
+mode = "thumb"
+size = 6
+end = 0x08007cdc
+origin = "proven"
+
+[[code]]
+addr = 0x08007cdc
+mode = "thumb"
+size = 20
+end = 0x08007cf0
+origin = "proven"
+
+[[code]]
+addr = 0x08007cf0
+mode = "thumb"
+size = 6
+end = 0x08007cf6
+origin = "proven"
+
+[[code]]
+addr = 0x08007cf6
+mode = "thumb"
+size = 70
+end = 0x08007d3c
+origin = "proven"
+
+[[code]]
+addr = 0x08007d3c
+mode = "thumb"
+size = 38
+end = 0x08007d62
+origin = "proven"
+
+[[code]]
+addr = 0x08007d62
+mode = "thumb"
+size = 2
+end = 0x08007d64
+origin = "proven"
+
+[[code]]
+addr = 0x08007d64
+mode = "thumb"
+size = 108
+end = 0x08007dd0
+origin = "proven"
+
+[[code]]
+addr = 0x08007dd0
+mode = "thumb"
+size = 8
+end = 0x08007dd8
+origin = "proven"
+
+[[code]]
+addr = 0x08007dd8
+mode = "thumb"
+size = 8
+end = 0x08007de0
+origin = "proven"
+
+[[code]]
+addr = 0x08007de0
+mode = "thumb"
+size = 24
+end = 0x08007df8
+origin = "proven"
+
+[[code]]
+addr = 0x08007df8
+mode = "thumb"
+size = 2
+end = 0x08007dfa
+origin = "proven"
+
+[[code]]
+addr = 0x08007dfa
+mode = "thumb"
+size = 12
+end = 0x08007e06
+origin = "table"
+
+[[code]]
+addr = 0x08007e06
+mode = "thumb"
+size = 60
+end = 0x08007e42
+origin = "proven"
+
+[[code]]
+addr = 0x08007e50
+mode = "thumb"
+size = 2
+end = 0x08007e52
+origin = "proven"
+
+[[code]]
+addr = 0x08007e52
+mode = "thumb"
+size = 6
+end = 0x08007e58
+origin = "proven"
+
+[[code]]
+addr = 0x08007e58
+mode = "thumb"
+size = 50
+end = 0x08007e8a
+origin = "proven"
+
+[[code]]
+addr = 0x08007e8a
+mode = "thumb"
+size = 6
+end = 0x08007e90
+origin = "proven"
+
+[[code]]
+addr = 0x08007e90
+mode = "thumb"
+size = 8
+end = 0x08007e98
+origin = "proven"
+
+[[code]]
+addr = 0x08007e98
+mode = "thumb"
+size = 34
+end = 0x08007eba
+origin = "proven"
+
+[[code]]
+addr = 0x08007eba
+mode = "thumb"
+size = 6
+end = 0x08007ec0
+origin = "proven"
+
+[[code]]
+addr = 0x08007ec0
+mode = "thumb"
+size = 2
+end = 0x08007ec2
+origin = "proven"
+
+[[code]]
+addr = 0x08007ec2
+mode = "thumb"
+size = 8
+end = 0x08007eca
+origin = "proven"
+
+[[code]]
+addr = 0x08007eca
+mode = "thumb"
+size = 10
+end = 0x08007ed4
+origin = "proven"
+
+[[code]]
+addr = 0x08007ed4
+mode = "thumb"
+size = 58
+end = 0x08007f0e
+origin = "proven"
+
+[[code]]
+addr = 0x08007f0e
+mode = "thumb"
+size = 14
+end = 0x08007f1c
+origin = "proven"
+
+[[code]]
+addr = 0x08007f1c
+mode = "thumb"
+size = 24
+end = 0x08007f34
+origin = "proven"
+
+[[code]]
+addr = 0x08007f34
+mode = "thumb"
+size = 4
+end = 0x08007f38
+origin = "proven"
+
+[[code]]
+addr = 0x08007f38
+mode = "thumb"
+size = 14
+end = 0x08007f46
+origin = "proven"
+
+[[code]]
+addr = 0x08007f4c
+mode = "thumb"
+size = 30
+end = 0x08007f6a
+origin = "call"
+
+[[code]]
+addr = 0x08007f6a
+mode = "thumb"
+size = 4
+end = 0x08007f6e
+origin = "proven"
+
+[[code]]
+addr = 0x08007f6e
+mode = "thumb"
+size = 4
+end = 0x08007f72
+origin = "proven"
+
+[[code]]
+addr = 0x08007f72
+mode = "thumb"
+size = 24
+end = 0x08007f8a
+origin = "proven"
+
+[[code]]
+addr = 0x08007f8a
+mode = "thumb"
+size = 16
+end = 0x08007f9a
+origin = "proven"
+
+[[code]]
+addr = 0x08007f9a
+mode = "thumb"
+size = 44
+end = 0x08007fc6
+origin = "proven"
+
+[[code]]
+addr = 0x08007fc6
+mode = "thumb"
+size = 2
+end = 0x08007fc8
+origin = "proven"
+
+[[code]]
+addr = 0x08007fc8
+mode = "thumb"
+size = 14
+end = 0x08007fd6
+origin = "proven"
+
+[[code]]
+addr = 0x08007fd6
+mode = "thumb"
+size = 2
+end = 0x08007fd8
+origin = "proven"
+
+[[code]]
+addr = 0x08007fd8
+mode = "thumb"
+size = 22
+end = 0x08007fee
+origin = "proven"
+
+[[code]]
+addr = 0x08007fee
+mode = "thumb"
+size = 40
+end = 0x08008016
+origin = "proven"
+
+[[code]]
+addr = 0x080080f8
+mode = "thumb"
+size = 2
+end = 0x080080fa
+origin = "table"
+
+[[code]]
+addr = 0x080080fa
+mode = "thumb"
+size = 256
+end = 0x080081fa
+origin = "table"
+
+[[code]]
+addr = 0x080081fa
+mode = "thumb"
+size = 254
+end = 0x080082f8
+origin = "table"
+
+[[code]]
+addr = 0x080082f8
+mode = "thumb"
+size = 2
+end = 0x080082fa
+origin = "table"
+
+[[code]]
+addr = 0x080082fa
+mode = "thumb"
+size = 24
+end = 0x08008312
+origin = "table"
+
+[[code]]
+addr = 0x080083fa
+mode = "thumb"
+size = 422
+end = 0x080085a0
+origin = "repeated"
+
+[[code]]
+addr = 0x080085a0
+mode = "thumb"
+size = 90
+end = 0x080085fa
+origin = "call"
+
+[[code]]
+addr = 0x080085fa
+mode = "thumb"
+size = 112
+end = 0x0800866a
+origin = "table"
+
+[[code]]
+addr = 0x0800866a
+mode = "thumb"
+size = 4
+end = 0x0800866e
+origin = "proven"
+
+[[code]]
+addr = 0x0800866e
+mode = "thumb"
+size = 34
+end = 0x08008690
+origin = "proven"
+
+[[code]]
+addr = 0x08008690
+mode = "thumb"
+size = 2
+end = 0x08008692
+origin = "proven"
+
+[[code]]
+addr = 0x08008692
+mode = "thumb"
+size = 26
+end = 0x080086ac
+origin = "proven"
+
+[[code]]
+addr = 0x080086ac
+mode = "thumb"
+size = 78
+end = 0x080086fa
+origin = "proven"
+
+[[code]]
+addr = 0x080086fa
+mode = "thumb"
+size = 22
+end = 0x08008710
+origin = "table"
+
+[[code]]
+addr = 0x08008710
+mode = "thumb"
+size = 24
+end = 0x08008728
+origin = "proven"
+
+[[code]]
+addr = 0x08008728
+mode = "thumb"
+size = 2
+end = 0x0800872a
+origin = "proven"
+
+[[code]]
+addr = 0x0800872a
+mode = "thumb"
+size = 18
+end = 0x0800873c
+origin = "proven"
+
+[[code]]
+addr = 0x0800873c
+mode = "thumb"
+size = 4
+end = 0x08008740
+origin = "proven"
+
+[[code]]
+addr = 0x08008740
+mode = "thumb"
+size = 4
+end = 0x08008744
+origin = "proven"
+
+[[code]]
+addr = 0x08008760
+mode = "thumb"
+size = 4
+end = 0x08008764
+origin = "proven"
+
+[[code]]
+addr = 0x08008764
+mode = "thumb"
+size = 60
+end = 0x080087a0
+origin = "call"
+
+[[code]]
+addr = 0x080087a0
+mode = "thumb"
+size = 22
+end = 0x080087b6
+origin = "call"
+
+[[code]]
+addr = 0x080087b6
+mode = "thumb"
+size = 14
+end = 0x080087c4
+origin = "proven"
+
+[[code]]
+addr = 0x080087c4
+mode = "thumb"
+size = 14
+end = 0x080087d2
+origin = "proven"
+
+[[code]]
+addr = 0x080087d2
+mode = "thumb"
+size = 8
+end = 0x080087da
+origin = "proven"
+
+[[code]]
+addr = 0x080087da
+mode = "thumb"
+size = 10
+end = 0x080087e4
+origin = "proven"
+
+[[code]]
+addr = 0x080087e4
+mode = "thumb"
+size = 14
+end = 0x080087f2
+origin = "proven"
+
+[[code]]
+addr = 0x080087f2
+mode = "thumb"
+size = 14
+end = 0x08008800
+origin = "proven"
+
+[[code]]
+addr = 0x08008800
+mode = "thumb"
+size = 8
+end = 0x08008808
+origin = "proven"
+
+[[code]]
+addr = 0x08008808
+mode = "thumb"
+size = 2
+end = 0x0800880a
+origin = "proven"
+
+[[code]]
+addr = 0x08008a60
+mode = "thumb"
+size = 14
+end = 0x08008a6e
+origin = "call"
+
+[[code]]
+addr = 0x08008a6e
+mode = "thumb"
+size = 18
+end = 0x08008a80
+origin = "proven"
+
+[[code]]
+addr = 0x08008a80
+mode = "thumb"
+size = 8
+end = 0x08008a88
+origin = "proven"
+
+[[code]]
+addr = 0x08008a88
+mode = "thumb"
+size = 12
+end = 0x08008a94
+origin = "proven"
+
+[[code]]
+addr = 0x08008a94
+mode = "thumb"
+size = 4
+end = 0x08008a98
+origin = "proven"
+
+[[code]]
+addr = 0x08008a98
+mode = "thumb"
+size = 4
+end = 0x08008a9c
+origin = "proven"
+
+[[code]]
+addr = 0x08008a9c
+mode = "thumb"
+size = 4
+end = 0x08008aa0
+origin = "proven"
+
+[[code]]
+addr = 0x08008aa0
+mode = "thumb"
+size = 4
+end = 0x08008aa4
+origin = "proven"
+
+[[raw]]
+addr = 0x08008aa4
+mode = "thumb"
+size = 2
+end = 0x08008aa6
+origin = "pool"
+reason = "pool"
+
+[[code]]
+addr = 0x08008b30
+mode = "thumb"
+size = 8
+end = 0x08008b38
+origin = "call"
+
+[[code]]
+addr = 0x08008b38
+mode = "thumb"
+size = 20
+end = 0x08008b4c
+origin = "proven"
+
+[[code]]
+addr = 0x08008b4c
+mode = "thumb"
+size = 8
+end = 0x08008b54
+origin = "proven"
+
+[[code]]
+addr = 0x08008b54
+mode = "thumb"
+size = 4
+end = 0x08008b58
+origin = "proven"
+
+[[code]]
+addr = 0x08008b58
+mode = "thumb"
+size = 38
+end = 0x08008b7e
+origin = "proven"
+
+[[code]]
+addr = 0x08008b7e
+mode = "thumb"
+size = 14
+end = 0x08008b8c
+origin = "proven"
+
+[[code]]
+addr = 0x08008b8c
+mode = "thumb"
+size = 22
+end = 0x08008ba2
+origin = "proven"
+
+[[code]]
+addr = 0x08008ba2
+mode = "thumb"
+size = 20
+end = 0x08008bb6
+origin = "proven"
+
+[[code]]
+addr = 0x08008bb6
+mode = "thumb"
+size = 6
+end = 0x08008bbc
+origin = "proven"
+
+[[code]]
+addr = 0x08008bbc
+mode = "thumb"
+size = 14
+end = 0x08008bca
+origin = "proven"
+
+[[code]]
+addr = 0x08008bca
+mode = "thumb"
+size = 10
+end = 0x08008bd4
+origin = "proven"
+
+[[code]]
+addr = 0x08008bd4
+mode = "thumb"
+size = 6
+end = 0x08008bda
+origin = "proven"
+
+[[code]]
+addr = 0x08008bda
+mode = "thumb"
+size = 12
+end = 0x08008be6
+origin = "proven"
+
+[[code]]
+addr = 0x08008be6
+mode = "thumb"
+size = 20
+end = 0x08008bfa
+origin = "proven"
+
+[[code]]
+addr = 0x08008bfa
+mode = "thumb"
+size = 22
+end = 0x08008c10
+origin = "proven"
+
+[[code]]
+addr = 0x08008c10
+mode = "thumb"
+size = 14
+end = 0x08008c1e
+origin = "proven"
+
+[[code]]
+addr = 0x08008c1e
+mode = "thumb"
+size = 10
+end = 0x08008c28
+origin = "proven"
+
+[[code]]
+addr = 0x08008c28
+mode = "thumb"
+size = 2
+end = 0x08008c2a
+origin = "proven"
+
+[[code]]
+addr = 0x08008c2a
+mode = "thumb"
+size = 2
+end = 0x08008c2c
+origin = "proven"
+
+[[code]]
+addr = 0x08008c2c
+mode = "thumb"
+size = 4
+end = 0x08008c30
+origin = "proven"
+
+[[code]]
+addr = 0x08008c30
+mode = "thumb"
+size = 14
+end = 0x08008c3e
+origin = "proven"
+
+[[code]]
+addr = 0x08008c3e
+mode = "thumb"
+size = 2
+end = 0x08008c40
+origin = "proven"
+
+[[code]]
+addr = 0x08008c40
+mode = "thumb"
+size = 6
+end = 0x08008c46
+origin = "proven"
+
+[[code]]
+addr = 0x08008c46
+mode = "thumb"
+size = 10
+end = 0x08008c50
+origin = "proven"
+
+[[code]]
+addr = 0x08008c50
+mode = "thumb"
+size = 34
+end = 0x08008c72
+origin = "proven"
+
+[[code]]
+addr = 0x08008c72
+mode = "thumb"
+size = 10
+end = 0x08008c7c
+origin = "proven"
+
+[[code]]
+addr = 0x08008c7c
+mode = "thumb"
+size = 6
+end = 0x08008c82
+origin = "proven"
+
+[[code]]
+addr = 0x08008c82
+mode = "thumb"
+size = 2
+end = 0x08008c84
+origin = "proven"
+
+[[code]]
+addr = 0x08008c84
+mode = "thumb"
+size = 2
+end = 0x08008c86
+origin = "proven"
+
+[[code]]
+addr = 0x08008c86
+mode = "thumb"
+size = 14
+end = 0x08008c94
+origin = "proven"
+
+[[code]]
+addr = 0x08008c94
+mode = "thumb"
+size = 2
+end = 0x08008c96
+origin = "proven"
+
+[[code]]
+addr = 0x08008c96
+mode = "thumb"
+size = 12
+end = 0x08008ca2
+origin = "proven"
+
+[[code]]
+addr = 0x08008ca2
+mode = "thumb"
+size = 16
+end = 0x08008cb2
+origin = "proven"
+
+[[code]]
+addr = 0x08008cb2
+mode = "thumb"
+size = 14
+end = 0x08008cc0
+origin = "proven"
+
+[[code]]
+addr = 0x08008cc0
+mode = "thumb"
+size = 2
+end = 0x08008cc2
+origin = "proven"
+
+[[code]]
+addr = 0x08008cc2
+mode = "thumb"
+size = 6
+end = 0x08008cc8
+origin = "proven"
+
+[[code]]
+addr = 0x08008cc8
+mode = "thumb"
+size = 12
+end = 0x08008cd4
+origin = "proven"
+
+[[code]]
+addr = 0x08008cd4
+mode = "thumb"
+size = 8
+end = 0x08008cdc
+origin = "proven"
+
+[[code]]
+addr = 0x08008cdc
+mode = "thumb"
+size = 4
+end = 0x08008ce0
+origin = "proven"
+
+[[code]]
+addr = 0x08008ce0
+mode = "thumb"
+size = 8
+end = 0x08008ce8
+origin = "proven"
+
+[[raw]]
+addr = 0x08008ce8
+mode = "thumb"
+size = 24
+end = 0x08008d00
+origin = "call"
+reason = "data"
+
+[[code]]
+addr = 0x08008d14
+mode = "thumb"
+size = 38
+end = 0x08008d3a
+origin = "call"
+
+[[code]]
+addr = 0x08008d3a
+mode = "thumb"
+size = 80
+end = 0x08008d8a
+origin = "call"
+
+[[code]]
+addr = 0x08008d8a
+mode = "thumb"
+size = 22
+end = 0x08008da0
+origin = "call"
+
+[[code]]
+addr = 0x08008da0
+mode = "thumb"
+size = 30
+end = 0x08008dbe
+origin = "call"
+
+[[code]]
+addr = 0x08008dbe
+mode = "thumb"
+size = 68
+end = 0x08008e02
+origin = "call"
+
+[[code]]
+addr = 0x08008e02
+mode = "thumb"
+size = 4
+end = 0x08008e06
+origin = "proven"
+
+[[code]]
+addr = 0x08008e06
+mode = "thumb"
+size = 8
+end = 0x08008e0e
+origin = "call"
+
+[[code]]
+addr = 0x08008e0e
+mode = "thumb"
+size = 32
+end = 0x08008e2e
+origin = "proven"
+
+[[code]]
+addr = 0x08008e2e
+mode = "thumb"
+size = 6
+end = 0x08008e34
+origin = "proven"
+
+[[code]]
+addr = 0x08008e34
+mode = "thumb"
+size = 4
+end = 0x08008e38
+origin = "proven"
+
+[[code]]
+addr = 0x08008e38
+mode = "thumb"
+size = 2
+end = 0x08008e3a
+origin = "proven"
+
+[[raw]]
+addr = 0x08008e3a
+mode = "thumb"
+size = 14
+end = 0x08008e48
+origin = "call"
+reason = "data"
+
+[[code]]
+addr = 0x08008e48
+mode = "thumb"
+size = 24
+end = 0x08008e60
+origin = "proven"
+
+[[code]]
+addr = 0x08008e60
+mode = "thumb"
+size = 24
+end = 0x08008e78
+origin = "proven"
+
+[[code]]
+addr = 0x08008e78
+mode = "thumb"
+size = 38
+end = 0x08008e9e
+origin = "proven"
+
+[[code]]
+addr = 0x08008e9e
+mode = "thumb"
+size = 18
+end = 0x08008eb0
+origin = "proven"
+
+[[code]]
+addr = 0x08008eb0
+mode = "thumb"
+size = 32
+end = 0x08008ed0
+origin = "proven"
+
+[[code]]
+addr = 0x08008ed0
+mode = "thumb"
+size = 14
+end = 0x08008ede
+origin = "proven"
+
+[[code]]
+addr = 0x08008ede
+mode = "thumb"
+size = 6
+end = 0x08008ee4
+origin = "proven"
+
+[[code]]
+addr = 0x08008ee4
+mode = "thumb"
+size = 12
+end = 0x08008ef0
+origin = "proven"
+
+[[code]]
+addr = 0x08008ef0
+mode = "thumb"
+size = 16
+end = 0x08008f00
+origin = "proven"
+
+[[code]]
+addr = 0x08008f00
+mode = "thumb"
+size = 4
+end = 0x08008f04
+origin = "proven"
+
+[[code]]
+addr = 0x08008f04
+mode = "thumb"
+size = 20
+end = 0x08008f18
+origin = "proven"
+
+[[code]]
+addr = 0x08008f18
+mode = "thumb"
+size = 24
+end = 0x08008f30
+origin = "proven"
+
+[[code]]
+addr = 0x08008f30
+mode = "thumb"
+size = 4
+end = 0x08008f34
+origin = "proven"
+
+[[code]]
+addr = 0x08008f34
+mode = "thumb"
+size = 2
+end = 0x08008f36
+origin = "proven"
+
+[[code]]
+addr = 0x08008f36
+mode = "thumb"
+size = 2
+end = 0x08008f38
+origin = "proven"
+
+[[code]]
+addr = 0x08008f38
+mode = "thumb"
+size = 12
+end = 0x08008f44
+origin = "proven"
+
+[[code]]
+addr = 0x08008f44
+mode = "thumb"
+size = 10
+end = 0x08008f4e
+origin = "proven"
+
+[[code]]
+addr = 0x08008f4e
+mode = "thumb"
+size = 8
+end = 0x08008f56
+origin = "proven"
+
+[[code]]
+addr = 0x08008f56
+mode = "thumb"
+size = 2
+end = 0x08008f58
+origin = "proven"
+
+[[code]]
+addr = 0x08008f58
+mode = "thumb"
+size = 16
+end = 0x08008f68
+origin = "proven"
+
+[[code]]
+addr = 0x08008f68
+mode = "thumb"
+size = 2
+end = 0x08008f6a
+origin = "proven"
+
+[[code]]
+addr = 0x08008f6a
+mode = "thumb"
+size = 6
+end = 0x08008f70
+origin = "proven"
+
+[[code]]
+addr = 0x08008f70
+mode = "thumb"
+size = 6
+end = 0x08008f76
+origin = "proven"
+
+[[code]]
+addr = 0x08008f76
+mode = "thumb"
+size = 32
+end = 0x08008f96
+origin = "proven"
+
+[[code]]
+addr = 0x08008f96
+mode = "thumb"
+size = 12
+end = 0x08008fa2
+origin = "proven"
+
+[[code]]
+addr = 0x08008fa2
+mode = "thumb"
+size = 2
+end = 0x08008fa4
+origin = "proven"
+
+[[code]]
+addr = 0x08008fa4
+mode = "thumb"
+size = 2
+end = 0x08008fa6
+origin = "proven"
+
+[[code]]
+addr = 0x08008fa6
+mode = "thumb"
+size = 2
+end = 0x08008fa8
+origin = "proven"
+
+[[code]]
+addr = 0x08008fa8
+mode = "thumb"
+size = 6
+end = 0x08008fae
+origin = "proven"
+
+[[code]]
+addr = 0x08008fae
+mode = "thumb"
+size = 16
+end = 0x08008fbe
+origin = "proven"
+
+[[code]]
+addr = 0x08008fbe
+mode = "thumb"
+size = 12
+end = 0x08008fca
+origin = "proven"
+
+[[code]]
+addr = 0x08008fca
+mode = "thumb"
+size = 10
+end = 0x08008fd4
+origin = "proven"
+
+[[code]]
+addr = 0x08008fd4
+mode = "thumb"
+size = 14
+end = 0x08008fe2
+origin = "proven"
+
+[[code]]
+addr = 0x08008fe2
+mode = "thumb"
+size = 8
+end = 0x08008fea
+origin = "proven"
+
+[[code]]
+addr = 0x08008fea
+mode = "thumb"
+size = 12
+end = 0x08008ff6
+origin = "proven"
+
+[[code]]
+addr = 0x08008ff6
+mode = "thumb"
+size = 10
+end = 0x08009000
+origin = "table"
+
+[[code]]
+addr = 0x08009000
+mode = "thumb"
+size = 30
+end = 0x0800901e
+origin = "proven"
+
+[[code]]
+addr = 0x0800901e
+mode = "thumb"
+size = 44
+end = 0x0800904a
+origin = "proven"
+
+[[code]]
+addr = 0x0800904a
+mode = "thumb"
+size = 2
+end = 0x0800904c
+origin = "proven"
+
+[[code]]
+addr = 0x0800904c
+mode = "thumb"
+size = 6
+end = 0x08009052
+origin = "proven"
+
+[[code]]
+addr = 0x08009052
+mode = "thumb"
+size = 8
+end = 0x0800905a
+origin = "proven"
+
+[[code]]
+addr = 0x0800905a
+mode = "thumb"
+size = 10
+end = 0x08009064
+origin = "proven"
+
+[[code]]
+addr = 0x08009064
+mode = "thumb"
+size = 10
+end = 0x0800906e
+origin = "call"
+
+[[code]]
+addr = 0x0800906e
+mode = "thumb"
+size = 24
+end = 0x08009086
+origin = "proven"
+
+[[code]]
+addr = 0x08009086
+mode = "thumb"
+size = 32
+end = 0x080090a6
+origin = "proven"
+
+[[code]]
+addr = 0x080090a6
+mode = "thumb"
+size = 4
+end = 0x080090aa
+origin = "proven"
+
+[[code]]
+addr = 0x080090aa
+mode = "thumb"
+size = 4
+end = 0x080090ae
+origin = "proven"
+
+[[code]]
+addr = 0x080090ae
+mode = "thumb"
+size = 58
+end = 0x080090e8
+origin = "call"
+
+[[code]]
+addr = 0x080090e8
+mode = "thumb"
+size = 4
+end = 0x080090ec
+origin = "proven"
+
+[[code]]
+addr = 0x080090ec
+mode = "thumb"
+size = 6
+end = 0x080090f2
+origin = "table"
+
+[[code]]
+addr = 0x080090f2
+mode = "thumb"
+size = 4
+end = 0x080090f6
+origin = "proven"
+
+[[code]]
+addr = 0x080090f6
+mode = "thumb"
+size = 4
+end = 0x080090fa
+origin = "table"
+
+[[code]]
+addr = 0x08009144
+mode = "thumb"
+size = 40
+end = 0x0800916c
+origin = "proven"
+
+[[code]]
+addr = 0x0800916c
+mode = "thumb"
+size = 30
+end = 0x0800918a
+origin = "proven"
+
+[[code]]
+addr = 0x0800918a
+mode = "thumb"
+size = 12
+end = 0x08009196
+origin = "proven"
+
+[[code]]
+addr = 0x08009196
+mode = "thumb"
+size = 14
+end = 0x080091a4
+origin = "proven"
+
+[[code]]
+addr = 0x080091a4
+mode = "thumb"
+size = 36
+end = 0x080091c8
+origin = "proven"
+
+[[code]]
+addr = 0x080091c8
+mode = "thumb"
+size = 10
+end = 0x080091d2
+origin = "proven"
+
+[[code]]
+addr = 0x080091d2
+mode = "thumb"
+size = 8
+end = 0x080091da
+origin = "proven"
+
+[[code]]
+addr = 0x080091ee
+mode = "thumb"
+size = 12
+end = 0x080091fa
+origin = "table"
+
+[[code]]
+addr = 0x080091fa
+mode = "thumb"
+size = 170
+end = 0x080092a4
+origin = "table"
+
+[[code]]
+addr = 0x080092a4
+mode = "thumb"
+size = 6
+end = 0x080092aa
+origin = "call"
+
+[[code]]
+addr = 0x080092aa
+mode = "thumb"
+size = 6
+end = 0x080092b0
+origin = "proven"
+
+[[code]]
+addr = 0x080092b0
+mode = "thumb"
+size = 26
+end = 0x080092ca
+origin = "proven"
+
+[[code]]
+addr = 0x0800930a
+mode = "thumb"
+size = 30
+end = 0x08009328
+origin = "call"
+
+[[code]]
+addr = 0x08009328
+mode = "thumb"
+size = 20
+end = 0x0800933c
+origin = "call"
+
+[[code]]
+addr = 0x0800933c
+mode = "thumb"
+size = 14
+end = 0x0800934a
+origin = "proven"
+
+[[code]]
+addr = 0x0800934a
+mode = "thumb"
+size = 20
+end = 0x0800935e
+origin = "proven"
+
+[[code]]
+addr = 0x0800935e
+mode = "thumb"
+size = 8
+end = 0x08009366
+origin = "proven"
+
+[[code]]
+addr = 0x08009366
+mode = "thumb"
+size = 4
+end = 0x0800936a
+origin = "proven"
+
+[[code]]
+addr = 0x0800936a
+mode = "thumb"
+size = 10
+end = 0x08009374
+origin = "proven"
+
+[[code]]
+addr = 0x08009374
+mode = "thumb"
+size = 6
+end = 0x0800937a
+origin = "proven"
+
+[[code]]
+addr = 0x0800937a
+mode = "thumb"
+size = 16
+end = 0x0800938a
+origin = "proven"
+
+[[code]]
+addr = 0x0800938a
+mode = "thumb"
+size = 2
+end = 0x0800938c
+origin = "proven"
+
+[[code]]
+addr = 0x0800938c
+mode = "thumb"
+size = 30
+end = 0x080093aa
+origin = "proven"
+
+[[code]]
+addr = 0x080093aa
+mode = "thumb"
+size = 20
+end = 0x080093be
+origin = "proven"
+
+[[code]]
+addr = 0x080093be
+mode = "thumb"
+size = 26
+end = 0x080093d8
+origin = "proven"
+
+[[code]]
+addr = 0x080093d8
+mode = "thumb"
+size = 34
+end = 0x080093fa
+origin = "proven"
+
+[[code]]
+addr = 0x080093fa
+mode = "thumb"
+size = 4
+end = 0x080093fe
+origin = "proven"
+
+[[code]]
+addr = 0x080093fe
+mode = "thumb"
+size = 4
+end = 0x08009402
+origin = "proven"
+
+[[code]]
+addr = 0x08009402
+mode = "thumb"
+size = 22
+end = 0x08009418
+origin = "proven"
+
+[[code]]
+addr = 0x08009418
+mode = "thumb"
+size = 8
+end = 0x08009420
+origin = "proven"
+
+[[code]]
+addr = 0x08009420
+mode = "thumb"
+size = 36
+end = 0x08009444
+origin = "proven"
+
+[[code]]
+addr = 0x08009444
+mode = "thumb"
+size = 20
+end = 0x08009458
+origin = "proven"
+
+[[code]]
+addr = 0x08009458
+mode = "thumb"
+size = 6
+end = 0x0800945e
+origin = "proven"
+
+[[code]]
+addr = 0x0800945e
+mode = "thumb"
+size = 16
+end = 0x0800946e
+origin = "proven"
+
+[[code]]
+addr = 0x0800946e
+mode = "thumb"
+size = 24
+end = 0x08009486
+origin = "call"
+
+[[code]]
+addr = 0x08009486
+mode = "thumb"
+size = 18
+end = 0x08009498
+origin = "call"
+
+[[code]]
+addr = 0x08009498
+mode = "thumb"
+size = 30
+end = 0x080094b6
+origin = "proven"
+
+[[code]]
+addr = 0x080094b6
+mode = "thumb"
+size = 2
+end = 0x080094b8
+origin = "proven"
+
+[[code]]
+addr = 0x080094b8
+mode = "thumb"
+size = 24
+end = 0x080094d0
+origin = "call"
+
+[[code]]
+addr = 0x080094d0
+mode = "thumb"
+size = 4
+end = 0x080094d4
+origin = "proven"
+
+[[code]]
+addr = 0x080094d4
+mode = "thumb"
+size = 4
+end = 0x080094d8
+origin = "proven"
+
+[[code]]
+addr = 0x080094d8
+mode = "thumb"
+size = 12
+end = 0x080094e4
+origin = "proven"
+
+[[code]]
+addr = 0x080094e4
+mode = "thumb"
+size = 16
+end = 0x080094f4
+origin = "proven"
+
+[[code]]
+addr = 0x080094f4
+mode = "thumb"
+size = 4
+end = 0x080094f8
+origin = "proven"
+
+[[code]]
+addr = 0x080094f8
+mode = "thumb"
+size = 4
+end = 0x080094fc
+origin = "proven"
+
+[[code]]
+addr = 0x080094fc
+mode = "thumb"
+size = 4
+end = 0x08009500
+origin = "proven"
+
+[[code]]
+addr = 0x08009524
+mode = "thumb"
+size = 20
+end = 0x08009538
+origin = "call"
+
+[[code]]
+addr = 0x0800953a
+mode = "thumb"
+size = 18
+end = 0x0800954c
+origin = "proven"
+
+[[code]]
+addr = 0x0800954e
+mode = "thumb"
+size = 18
+end = 0x08009560
+origin = "proven"
+
+[[code]]
+addr = 0x08009562
+mode = "thumb"
+size = 18
+end = 0x08009574
+origin = "proven"
+
+[[code]]
+addr = 0x08009576
+mode = "thumb"
+size = 12
+end = 0x08009582
+origin = "proven"
+
+[[code]]
+addr = 0x08009584
+mode = "thumb"
+size = 2
+end = 0x08009586
+origin = "proven"
+
+[[code]]
+addr = 0x08009586
+mode = "thumb"
+size = 74
+end = 0x080095d0
+origin = "call"
+
+[[code]]
+addr = 0x080095d0
+mode = "thumb"
+size = 12
+end = 0x080095dc
+origin = "call"
+
+[[code]]
+addr = 0x080095dc
+mode = "thumb"
+size = 12
+end = 0x080095e8
+origin = "call"
+
+[[code]]
+addr = 0x080095fe
+mode = "thumb"
+size = 8
+end = 0x08009606
+origin = "call"
+
+[[code]]
+addr = 0x08009606
+mode = "thumb"
+size = 8
+end = 0x0800960e
+origin = "proven"
+
+[[code]]
+addr = 0x0800960e
+mode = "thumb"
+size = 24
+end = 0x08009626
+origin = "proven"
+
+[[code]]
+addr = 0x08009626
+mode = "thumb"
+size = 10
+end = 0x08009630
+origin = "call"
+
+[[code]]
+addr = 0x08009630
+mode = "thumb"
+size = 8
+end = 0x08009638
+origin = "proven"
+
+[[code]]
+addr = 0x08009638
+mode = "thumb"
+size = 24
+end = 0x08009650
+origin = "proven"
+
+[[code]]
+addr = 0x08009680
+mode = "thumb"
+size = 6
+end = 0x08009686
+origin = "call"
+
+[[code]]
+addr = 0x08009686
+mode = "thumb"
+size = 10
+end = 0x08009690
+origin = "proven"
+
+[[code]]
+addr = 0x08009690
+mode = "thumb"
+size = 28
+end = 0x080096ac
+origin = "proven"
+
+[[raw]]
+addr = 0x080096b4
+mode = "thumb"
+size = 24
+end = 0x080096cc
+origin = "pool"
+reason = "pool"
+
+[[code]]
+addr = 0x080096cc
+mode = "thumb"
+size = 18
+end = 0x080096de
+origin = "call"
+
+[[code]]
+addr = 0x080096de
+mode = "thumb"
+size = 102
+end = 0x08009744
+origin = "proven"
+
+[[code]]
+addr = 0x08009744
+mode = "thumb"
+size = 34
+end = 0x08009766
+origin = "call"
+
+[[code]]
+addr = 0x08009766
+mode = "thumb"
+size = 6
+end = 0x0800976c
+origin = "call"
+
+[[code]]
+addr = 0x0800976c
+mode = "thumb"
+size = 44
+end = 0x08009798
+origin = "proven"
+
+[[code]]
+addr = 0x08009798
+mode = "thumb"
+size = 48
+end = 0x080097c8
+origin = "call"
+
+[[code]]
+addr = 0x080097c8
+mode = "thumb"
+size = 48
+end = 0x080097f8
+origin = "call"
+
+[[code]]
+addr = 0x080097f8
+mode = "thumb"
+size = 48
+end = 0x08009828
+origin = "call"
+
+[[code]]
+addr = 0x08009828
+mode = "thumb"
+size = 72
+end = 0x08009870
+origin = "proven"
+
+[[code]]
+addr = 0x0800988c
+mode = "thumb"
+size = 14
+end = 0x0800989a
+origin = "call"
+
+[[code]]
+addr = 0x0800989a
+mode = "thumb"
+size = 24
+end = 0x080098b2
+origin = "proven"
+
+[[code]]
+addr = 0x080098b2
+mode = "thumb"
+size = 20
+end = 0x080098c6
+origin = "proven"
+
+[[code]]
+addr = 0x080098c6
+mode = "thumb"
+size = 24
+end = 0x080098de
+origin = "call"
+
+[[code]]
+addr = 0x080098de
+mode = "thumb"
+size = 26
+end = 0x080098f8
+origin = "call"
+
+[[code]]
+addr = 0x080098f8
+mode = "thumb"
+size = 66
+end = 0x0800993a
+origin = "call"
+
+[[code]]
+addr = 0x0800994c
+mode = "thumb"
+size = 30
+end = 0x0800996a
+origin = "call"
+
+[[raw]]
+addr = 0x0800996c
+mode = "thumb"
+size = 2
+end = 0x0800996e
+origin = "pool"
+reason = "pool"
+
+[[code]]
+addr = 0x0800996e
+mode = "thumb"
+size = 72
+end = 0x080099b6
+origin = "call"
+
+[[code]]
+addr = 0x080099b6
+mode = "thumb"
+size = 26
+end = 0x080099d0
+origin = "proven"
+
+[[code]]
+addr = 0x080099d0
+mode = "thumb"
+size = 12
+end = 0x080099dc
+origin = "proven"
+
+[[code]]
+addr = 0x080099dc
+mode = "thumb"
+size = 8
+end = 0x080099e4
+origin = "proven"
+
+[[code]]
+addr = 0x080099e4
+mode = "thumb"
+size = 8
+end = 0x080099ec
+origin = "proven"
+
+[[code]]
+addr = 0x08009a20
+mode = "thumb"
+size = 34
+end = 0x08009a42
+origin = "repeated"
+
+[[code]]
+addr = 0x08009a42
+mode = "thumb"
+size = 4
+end = 0x08009a46
+origin = "proven"
+
+[[code]]
+addr = 0x08009a46
+mode = "thumb"
+size = 36
+end = 0x08009a6a
+origin = "proven"
+
+[[code]]
+addr = 0x08009a6a
+mode = "thumb"
+size = 30
+end = 0x08009a88
+origin = "proven"
+
+[[code]]
+addr = 0x08009a88
+mode = "thumb"
+size = 26
+end = 0x08009aa2
+origin = "proven"
+
+[[code]]
+addr = 0x08009aa2
+mode = "thumb"
+size = 18
+end = 0x08009ab4
+origin = "table"
+
+[[code]]
+addr = 0x08009ab4
+mode = "thumb"
+size = 30
+end = 0x08009ad2
+origin = "table"
+
+[[code]]
+addr = 0x08009ad2
+mode = "thumb"
+size = 28
+end = 0x08009aee
+origin = "table"
+
+[[code]]
+addr = 0x08009aee
+mode = "thumb"
+size = 16
+end = 0x08009afe
+origin = "proven"
+
+[[code]]
+addr = 0x08009afe
+mode = "thumb"
+size = 28
+end = 0x08009b1a
+origin = "table"
+
+[[code]]
+addr = 0x08009b1a
+mode = "thumb"
+size = 16
+end = 0x08009b2a
+origin = "proven"
+
+[[code]]
+addr = 0x08009b2a
+mode = "thumb"
+size = 124
+end = 0x08009ba6
+origin = "table"
+
+[[raw]]
+addr = 0x08009ba6
+mode = "thumb"
+size = 30
+end = 0x08009bc4
+origin = "pool"
+reason = "pool"
+
+[[code]]
+addr = 0x08009bc4
+mode = "thumb"
+size = 112
+end = 0x08009c34
+origin = "table"
+
+[[raw]]
+addr = 0x08009c34
+mode = "thumb"
+size = 30
+end = 0x08009c52
+origin = "pool"
+reason = "pool"
+
+[[code]]
+addr = 0x08009c52
+mode = "thumb"
+size = 112
+end = 0x08009cc2
+origin = "table"
+
+[[code]]
+addr = 0x08009cc2
+mode = "thumb"
+size = 62
+end = 0x08009d00
+origin = "repeated"
+
+[[code]]
+addr = 0x08009d00
+mode = "thumb"
+size = 62
+end = 0x08009d3e
+origin = "table"
+
+[[code]]
+addr = 0x08009d3e
+mode = "thumb"
+size = 114
+end = 0x08009db0
+origin = "table"
+
+[[code]]
+addr = 0x08009db0
+mode = "thumb"
+size = 42
+end = 0x08009dda
+origin = "table"
+
+[[code]]
+addr = 0x08009dda
+mode = "thumb"
+size = 12
+end = 0x08009de6
+origin = "proven"
+
+[[code]]
+addr = 0x08009de6
+mode = "thumb"
+size = 14
+end = 0x08009df4
+origin = "proven"
+
+[[code]]
+addr = 0x08009df4
+mode = "thumb"
+size = 4
+end = 0x08009df8
+origin = "table"
+
+[[code]]
+addr = 0x08009df8
+mode = "thumb"
+size = 50
+end = 0x08009e2a
+origin = "table"
+
+[[code]]
+addr = 0x08009e7e
+mode = "thumb"
+size = 46
+end = 0x08009eac
+origin = "table"
+
+[[code]]
+addr = 0x08009eac
+mode = "thumb"
+size = 46
+end = 0x08009eda
+origin = "table"
+
+[[code]]
+addr = 0x08009eda
+mode = "thumb"
+size = 150
+end = 0x08009f70
+origin = "table"
+
+[[code]]
+addr = 0x08009f70
+mode = "thumb"
+size = 248
+end = 0x0800a068
+origin = "table"
+
+[[code]]
+addr = 0x0800a06c
+mode = "thumb"
+size = 36
+end = 0x0800a090
+origin = "table"
+
+[[code]]
+addr = 0x0800a092
+mode = "thumb"
+size = 36
+end = 0x0800a0b6
+origin = "table"
+
+[[code]]
+addr = 0x0800a0b6
+mode = "thumb"
+size = 42
+end = 0x0800a0e0
+origin = "table"
+
+[[code]]
+addr = 0x0800a0e4
+mode = "thumb"
+size = 20
+end = 0x0800a0f8
+origin = "table"
+
+[[code]]
+addr = 0x0800a0f8
+mode = "thumb"
+size = 22
+end = 0x0800a10e
+origin = "table"
+
+[[code]]
+addr = 0x0800a10e
+mode = "thumb"
+size = 18
+end = 0x0800a120
+origin = "table"
+
+[[code]]
+addr = 0x0800a120
+mode = "thumb"
+size = 62
+end = 0x0800a15e
+origin = "table"
+
+[[code]]
+addr = 0x0800a162
+mode = "thumb"
+size = 28
+end = 0x0800a17e
+origin = "table"
+
+[[code]]
+addr = 0x0800a182
+mode = "thumb"
+size = 108
+end = 0x0800a1ee
+origin = "table"
+
+[[code]]
+addr = 0x0800a1ee
+mode = "thumb"
+size = 12
+end = 0x0800a1fa
+origin = "table"
+
+[[code]]
+addr = 0x0800a1fa
+mode = "thumb"
+size = 56
+end = 0x0800a232
+origin = "table"
+
+[[code]]
+addr = 0x0800a28c
+mode = "thumb"
+size = 108
+end = 0x0800a2f8
+origin = "table"
+
+[[code]]
+addr = 0x0800a2f8
+mode = "thumb"
+size = 108
+end = 0x0800a364
+origin = "table"
+
+[[code]]
+addr = 0x0800a374
+mode = "thumb"
+size = 24
+end = 0x0800a38c
+origin = "call"
+
+[[code]]
+addr = 0x0800a3a6
+mode = "thumb"
+size = 34
+end = 0x0800a3c8
+origin = "call"
+
+[[code]]
+addr = 0x0800a3c8
+mode = "thumb"
+size = 18
+end = 0x0800a3da
+origin = "proven"
+
+[[code]]
+addr = 0x0800a3da
+mode = "thumb"
+size = 10
+end = 0x0800a3e4
+origin = "proven"
+
+[[code]]
+addr = 0x0800a3e4
+mode = "thumb"
+size = 2
+end = 0x0800a3e6
+origin = "proven"
+
+[[code]]
+addr = 0x0800a3e6
+mode = "thumb"
+size = 44
+end = 0x0800a412
+origin = "call"
+
+[[code]]
+addr = 0x0800a412
+mode = "thumb"
+size = 22
+end = 0x0800a428
+origin = "proven"
+
+[[code]]
+addr = 0x0800a428
+mode = "thumb"
+size = 4
+end = 0x0800a42c
+origin = "proven"
+
+[[code]]
+addr = 0x0800a42c
+mode = "thumb"
+size = 20
+end = 0x0800a440
+origin = "proven"
+
+[[code]]
+addr = 0x0800a440
+mode = "thumb"
+size = 44
+end = 0x0800a46c
+origin = "proven"
+
+[[code]]
+addr = 0x0800a46c
+mode = "thumb"
+size = 10
+end = 0x0800a476
+origin = "proven"
+
+[[code]]
+addr = 0x0800a476
+mode = "thumb"
+size = 8
+end = 0x0800a47e
+origin = "proven"
+
+[[code]]
+addr = 0x0800a47e
+mode = "thumb"
+size = 16
+end = 0x0800a48e
+origin = "proven"
+
+[[code]]
+addr = 0x0800a48e
+mode = "thumb"
+size = 14
+end = 0x0800a49c
+origin = "proven"
+
+[[code]]
+addr = 0x0800a49c
+mode = "thumb"
+size = 14
+end = 0x0800a4aa
+origin = "proven"
+
+[[code]]
+addr = 0x0800a4aa
+mode = "thumb"
+size = 24
+end = 0x0800a4c2
+origin = "proven"
+
+[[code]]
+addr = 0x0800a4c2
+mode = "thumb"
+size = 4
+end = 0x0800a4c6
+origin = "proven"
+
+[[code]]
+addr = 0x0800a4c6
+mode = "thumb"
+size = 24
+end = 0x0800a4de
+origin = "call"
+
+[[code]]
+addr = 0x0800a4de
+mode = "thumb"
+size = 24
+end = 0x0800a4f6
+origin = "proven"
+
+[[code]]
+addr = 0x0800a4f6
+mode = "thumb"
+size = 2
+end = 0x0800a4f8
+origin = "proven"
+
+[[code]]
+addr = 0x0800a4f8
+mode = "thumb"
+size = 24
+end = 0x0800a510
+origin = "proven"
+
+[[code]]
+addr = 0x0800a510
+mode = "thumb"
+size = 6
+end = 0x0800a516
+origin = "proven"
+
+[[code]]
+addr = 0x0800a516
+mode = "thumb"
+size = 6
+end = 0x0800a51c
+origin = "proven"
+
+[[code]]
+addr = 0x0800a51c
+mode = "thumb"
+size = 4
+end = 0x0800a520
+origin = "proven"
+
+[[code]]
+addr = 0x0800a520
+mode = "thumb"
+size = 16
+end = 0x0800a530
+origin = "proven"
+
+[[code]]
+addr = 0x0800a54e
+mode = "thumb"
+size = 18
+end = 0x0800a560
+origin = "call"
+
+[[code]]
+addr = 0x0800a560
+mode = "thumb"
+size = 12
+end = 0x0800a56c
+origin = "proven"
+
+[[code]]
+addr = 0x0800a56c
+mode = "thumb"
+size = 26
+end = 0x0800a586
+origin = "proven"
+
+[[code]]
+addr = 0x0800a586
+mode = "thumb"
+size = 2
+end = 0x0800a588
+origin = "proven"
+
+[[code]]
+addr = 0x0800a588
+mode = "thumb"
+size = 6
+end = 0x0800a58e
+origin = "proven"
+
+[[code]]
+addr = 0x0800a58e
+mode = "thumb"
+size = 30
+end = 0x0800a5ac
+origin = "proven"
+
+[[code]]
+addr = 0x0800a5ac
+mode = "thumb"
+size = 12
+end = 0x0800a5b8
+origin = "proven"
+
+[[code]]
+addr = 0x0800a5b8
+mode = "thumb"
+size = 8
+end = 0x0800a5c0
+origin = "call"
+
+[[code]]
+addr = 0x0800a5c0
+mode = "thumb"
+size = 14
+end = 0x0800a5ce
+origin = "call"
+
+[[code]]
+addr = 0x0800a5ce
+mode = "thumb"
+size = 40
+end = 0x0800a5f6
+origin = "proven"
+
+[[code]]
+addr = 0x0800a5f6
+mode = "thumb"
+size = 54
+end = 0x0800a62c
+origin = "call"
+
+[[code]]
+addr = 0x0800a62c
+mode = "thumb"
+size = 14
+end = 0x0800a63a
+origin = "call"
+
+[[code]]
+addr = 0x0800a63a
+mode = "thumb"
+size = 2
+end = 0x0800a63c
+origin = "proven"
+
+[[raw]]
+addr = 0x0800a664
+mode = "thumb"
+size = 60
+end = 0x0800a6a0
+origin = "call"
+reason = "data"
+
+[[code]]
+addr = 0x0800a6a0
+mode = "thumb"
+size = 16
+end = 0x0800a6b0
+origin = "proven"
+
+[[code]]
+addr = 0x0800a6b0
+mode = "thumb"
+size = 2
+end = 0x0800a6b2
+origin = "proven"
+
+[[code]]
+addr = 0x0800a6b2
+mode = "thumb"
+size = 12
+end = 0x0800a6be
+origin = "call"
+
+[[code]]
+addr = 0x0800a6be
+mode = "thumb"
+size = 4
+end = 0x0800a6c2
+origin = "proven"
+
+[[code]]
+addr = 0x0800a6c2
+mode = "thumb"
+size = 6
+end = 0x0800a6c8
+origin = "proven"
+
+[[code]]
+addr = 0x0800a6c8
+mode = "thumb"
+size = 6
+end = 0x0800a6ce
+origin = "proven"
+
+[[code]]
+addr = 0x0800a6ce
+mode = "thumb"
+size = 16
+end = 0x0800a6de
+origin = "proven"
+
+[[code]]
+addr = 0x0800a6de
+mode = "thumb"
+size = 8
+end = 0x0800a6e6
+origin = "proven"
+
+[[code]]
+addr = 0x0800a6f4
+mode = "thumb"
+size = 32
+end = 0x0800a714
+origin = "call"
+
+[[code]]
+addr = 0x0800a714
+mode = "thumb"
+size = 16
+end = 0x0800a724
+origin = "call"
+
+[[code]]
+addr = 0x0800a724
+mode = "thumb"
+size = 18
+end = 0x0800a736
+origin = "call"
+
+[[code]]
+addr = 0x0800a736
+mode = "thumb"
+size = 4
+end = 0x0800a73a
+origin = "proven"
+
+[[code]]
+addr = 0x0800a748
+mode = "thumb"
+size = 68
+end = 0x0800a78c
+origin = "call"
+
+[[code]]
+addr = 0x0800a78c
+mode = "thumb"
+size = 14
+end = 0x0800a79a
+origin = "proven"
+
+[[code]]
+addr = 0x0800a79a
+mode = "thumb"
+size = 8
+end = 0x0800a7a2
+origin = "proven"
+
+[[code]]
+addr = 0x0800a7a2
+mode = "thumb"
+size = 12
+end = 0x0800a7ae
+origin = "proven"
+
+[[code]]
+addr = 0x0800a7ae
+mode = "thumb"
+size = 4
+end = 0x0800a7b2
+origin = "proven"
+
+[[code]]
+addr = 0x0800a7b2
+mode = "thumb"
+size = 30
+end = 0x0800a7d0
+origin = "proven"
+
+[[code]]
+addr = 0x0800a7d0
+mode = "thumb"
+size = 14
+end = 0x0800a7de
+origin = "proven"
+
+[[code]]
+addr = 0x0800a7de
+mode = "thumb"
+size = 40
+end = 0x0800a806
+origin = "proven"
+
+[[code]]
+addr = 0x0800a806
+mode = "thumb"
+size = 2
+end = 0x0800a808
+origin = "proven"
+
+[[code]]
+addr = 0x0800a808
+mode = "thumb"
+size = 2
+end = 0x0800a80a
+origin = "proven"
+
+[[code]]
+addr = 0x0800a80a
+mode = "thumb"
+size = 4
+end = 0x0800a80e
+origin = "proven"
+
+[[code]]
+addr = 0x0800a80e
+mode = "thumb"
+size = 58
+end = 0x0800a848
+origin = "call"
+
+[[code]]
+addr = 0x0800a848
+mode = "thumb"
+size = 2
+end = 0x0800a84a
+origin = "proven"
+
+[[code]]
+addr = 0x0800a84a
+mode = "thumb"
+size = 12
+end = 0x0800a856
+origin = "proven"
+
+[[code]]
+addr = 0x0800a86c
+mode = "thumb"
+size = 32
+end = 0x0800a88c
+origin = "table"
+
+[[code]]
+addr = 0x0800a88c
+mode = "thumb"
+size = 22
+end = 0x0800a8a2
+origin = "proven"
+
+[[code]]
+addr = 0x0800a8a2
+mode = "thumb"
+size = 12
+end = 0x0800a8ae
+origin = "proven"
+
+[[code]]
+addr = 0x0800a8ea
+mode = "thumb"
+size = 2
+end = 0x0800a8ec
+origin = "proven"
+
+[[code]]
+addr = 0x0800a8ec
+mode = "thumb"
+size = 30
+end = 0x0800a90a
+origin = "proven"
+
+[[code]]
+addr = 0x0800a90a
+mode = "thumb"
+size = 10
+end = 0x0800a914
+origin = "proven"
+
+[[code]]
+addr = 0x0800a944
+mode = "thumb"
+size = 30
+end = 0x0800a962
+origin = "proven"
+
+[[code]]
+addr = 0x0800a962
+mode = "thumb"
+size = 10
+end = 0x0800a96c
+origin = "proven"
+
+[[code]]
+addr = 0x0800a9a2
+mode = "thumb"
+size = 18
+end = 0x0800a9b4
+origin = "call"
+
+[[code]]
+addr = 0x0800a9b4
+mode = "thumb"
+size = 24
+end = 0x0800a9cc
+origin = "proven"
+
+[[code]]
+addr = 0x0800a9cc
+mode = "thumb"
+size = 18
+end = 0x0800a9de
+origin = "call"
+
+[[code]]
+addr = 0x0800a9de
+mode = "thumb"
+size = 24
+end = 0x0800a9f6
+origin = "proven"
+
+[[code]]
+addr = 0x0800a9f6
+mode = "thumb"
+size = 4
+end = 0x0800a9fa
+origin = "call"
+
+[[code]]
+addr = 0x0800a9fa
+mode = "thumb"
+size = 32
+end = 0x0800aa1a
+origin = "table"
+
+[[code]]
+addr = 0x0800aa1a
+mode = "thumb"
+size = 180
+end = 0x0800aace
+origin = "proven"
+
+[[code]]
+addr = 0x0800aace
+mode = "thumb"
+size = 28
+end = 0x0800aaea
+origin = "proven"
+
+[[code]]
+addr = 0x0800aaea
+mode = "thumb"
+size = 22
+end = 0x0800ab00
+origin = "proven"
+
+[[code]]
+addr = 0x0800ab1a
+mode = "thumb"
+size = 36
+end = 0x0800ab3e
+origin = "call"
+
+[[code]]
+addr = 0x0800ab3e
+mode = "thumb"
+size = 34
+end = 0x0800ab60
+origin = "table"
+
+[[code]]
+addr = 0x0800ab60
+mode = "thumb"
+size = 4
+end = 0x0800ab64
+origin = "proven"
+
+[[code]]
+addr = 0x0800abcc
+mode = "thumb"
+size = 16
+end = 0x0800abdc
+origin = "proven"
+
+[[code]]
+addr = 0x0800abdc
+mode = "thumb"
+size = 20
+end = 0x0800abf0
+origin = "proven"
+
+[[code]]
+addr = 0x0800abf0
+mode = "thumb"
+size = 6
+end = 0x0800abf6
+origin = "proven"
+
+[[code]]
+addr = 0x0800abf6
+mode = "thumb"
+size = 68
+end = 0x0800ac3a
+origin = "proven"
+
+[[code]]
+addr = 0x0800ac3a
+mode = "thumb"
+size = 2
+end = 0x0800ac3c
+origin = "proven"
+
+[[code]]
+addr = 0x0800ac3c
+mode = "thumb"
+size = 14
+end = 0x0800ac4a
+origin = "proven"
+
+[[code]]
+addr = 0x0800ac4a
+mode = "thumb"
+size = 50
+end = 0x0800ac7c
+origin = "proven"
+
+[[code]]
+addr = 0x0800ac7c
+mode = "thumb"
+size = 16
+end = 0x0800ac8c
+origin = "proven"
+
+[[code]]
+addr = 0x0800ac8c
+mode = "thumb"
+size = 14
+end = 0x0800ac9a
+origin = "proven"
+
+[[code]]
+addr = 0x0800ac9a
+mode = "thumb"
+size = 16
+end = 0x0800acaa
+origin = "proven"
+
+[[code]]
+addr = 0x0800acaa
+mode = "thumb"
+size = 8
+end = 0x0800acb2
+origin = "proven"
+
+[[code]]
+addr = 0x0800acca
+mode = "thumb"
+size = 8
+end = 0x0800acd2
+origin = "call"
+
+[[code]]
+addr = 0x0800acd2
+mode = "thumb"
+size = 30
+end = 0x0800acf0
+origin = "proven"
+
+[[code]]
+addr = 0x0800acf0
+mode = "thumb"
+size = 4
+end = 0x0800acf4
+origin = "proven"
+
+[[code]]
+addr = 0x0800acf4
+mode = "thumb"
+size = 10
+end = 0x0800acfe
+origin = "proven"
+
+[[code]]
+addr = 0x0800acfe
+mode = "thumb"
+size = 14
+end = 0x0800ad0c
+origin = "call"
+
+[[code]]
+addr = 0x0800ad0c
+mode = "thumb"
+size = 36
+end = 0x0800ad30
+origin = "proven"
+
+[[code]]
+addr = 0x0800ad30
+mode = "thumb"
+size = 10
+end = 0x0800ad3a
+origin = "proven"
+
+[[code]]
+addr = 0x0800ad7c
+mode = "thumb"
+size = 10
+end = 0x0800ad86
+origin = "call"
+
+[[code]]
+addr = 0x0800ad86
+mode = "thumb"
+size = 42
+end = 0x0800adb0
+origin = "proven"
+
+[[code]]
+addr = 0x0800add4
+mode = "thumb"
+size = 60
+end = 0x0800ae10
+origin = "table"
+
+[[code]]
+addr = 0x0800ae10
+mode = "thumb"
+size = 182
+end = 0x0800aec6
+origin = "repeated"
+
+[[code]]
+addr = 0x0800aec6
+mode = "thumb"
+size = 28
+end = 0x0800aee2
+origin = "call"
+
+[[code]]
+addr = 0x0800aef8
+mode = "thumb"
+size = 2
+end = 0x0800aefa
+origin = "repeated"
+
+[[code]]
+addr = 0x0800aefa
+mode = "thumb"
+size = 2
+end = 0x0800aefc
+origin = "repeated"
+
+[[code]]
+addr = 0x0800aefc
+mode = "thumb"
+size = 112
+end = 0x0800af6c
+origin = "table"
+
+[[code]]
+addr = 0x0800af6c
+mode = "thumb"
+size = 6
+end = 0x0800af72
+origin = "proven"
+
+[[code]]
+addr = 0x0800af72
+mode = "thumb"
+size = 4
+end = 0x0800af76
+origin = "proven"
+
+[[code]]
+addr = 0x0800af80
+mode = "thumb"
+size = 158
+end = 0x0800b01e
+origin = "repeated"
+
+[[code]]
+addr = 0x0800b01e
+mode = "thumb"
+size = 220
+end = 0x0800b0fa
+origin = "repeated"
+
+[[code]]
+addr = 0x0800b110
+mode = "thumb"
+size = 126
+end = 0x0800b18e
+origin = "table"
+
+[[code]]
+addr = 0x0800b18e
+mode = "thumb"
+size = 106
+end = 0x0800b1f8
+origin = "call"
+
+[[code]]
+addr = 0x0800b1f8
+mode = "thumb"
+size = 50
+end = 0x0800b22a
+origin = "table"
+
+[[code]]
+addr = 0x0800b22a
+mode = "thumb"
+size = 4
+end = 0x0800b22e
+origin = "proven"
+
+[[code]]
+addr = 0x0800b22e
+mode = "thumb"
+size = 6
+end = 0x0800b234
+origin = "proven"
+
+[[code]]
+addr = 0x0800b234
+mode = "thumb"
+size = 22
+end = 0x0800b24a
+origin = "table"
+
+[[code]]
+addr = 0x0800b2de
+mode = "thumb"
+size = 26
+end = 0x0800b2f8
+origin = "call"
+
+[[code]]
+addr = 0x0800b2f8
+mode = "thumb"
+size = 2
+end = 0x0800b2fa
+origin = "proven"
+
+[[code]]
+addr = 0x0800b2fa
+mode = "thumb"
+size = 22
+end = 0x0800b310
+origin = "table"
+
+[[code]]
+addr = 0x0800b310
+mode = "thumb"
+size = 6
+end = 0x0800b316
+origin = "proven"
+
+[[code]]
+addr = 0x0800b3dc
+mode = "thumb"
+size = 32
+end = 0x0800b3fc
+origin = "call"
+
+[[code]]
+addr = 0x0800b3fc
+mode = "thumb"
+size = 58
+end = 0x0800b436
+origin = "call"
+
+[[code]]
+addr = 0x0800b436
+mode = "thumb"
+size = 82
+end = 0x0800b488
+origin = "call"
+
+[[code]]
+addr = 0x0800b488
+mode = "thumb"
+size = 6
+end = 0x0800b48e
+origin = "proven"
+
+[[code]]
+addr = 0x0800b48e
+mode = "thumb"
+size = 4
+end = 0x0800b492
+origin = "proven"
+
+[[code]]
+addr = 0x0800b492
+mode = "thumb"
+size = 28
+end = 0x0800b4ae
+origin = "proven"
+
+[[code]]
+addr = 0x0800b4ae
+mode = "thumb"
+size = 22
+end = 0x0800b4c4
+origin = "repeated"
+
+[[code]]
+addr = 0x0800b4c4
+mode = "thumb"
+size = 6
+end = 0x0800b4ca
+origin = "table"
+
+[[code]]
+addr = 0x0800b4ca
+mode = "thumb"
+size = 26
+end = 0x0800b4e4
+origin = "table"
+
+[[code]]
+addr = 0x0800b4ec
+mode = "thumb"
+size = 14
+end = 0x0800b4fa
+origin = "call"
+
+[[code]]
+addr = 0x0800b4fa
+mode = "thumb"
+size = 90
+end = 0x0800b554
+origin = "table"
+
+[[code]]
+addr = 0x0800b554
+mode = "thumb"
+size = 78
+end = 0x0800b5a2
+origin = "table"
+
+[[code]]
+addr = 0x0800b5a2
+mode = "thumb"
+size = 138
+end = 0x0800b62c
+origin = "table"
+
+[[code]]
+addr = 0x0800b644
+mode = "thumb"
+size = 24
+end = 0x0800b65c
+origin = "table"
+
+[[code]]
+addr = 0x0800b66e
+mode = "thumb"
+size = 36
+end = 0x0800b692
+origin = "table"
+
+[[code]]
+addr = 0x0800b692
+mode = "thumb"
+size = 68
+end = 0x0800b6d6
+origin = "table"
+
+[[code]]
+addr = 0x0800b6d6
+mode = "thumb"
+size = 36
+end = 0x0800b6fa
+origin = "table"
+
+[[code]]
+addr = 0x0800b716
+mode = "thumb"
+size = 66
+end = 0x0800b758
+origin = "table"
+
+[[code]]
+addr = 0x0800b778
+mode = "thumb"
+size = 130
+end = 0x0800b7fa
+origin = "table"
+
+[[code]]
+addr = 0x0800b7fa
+mode = "thumb"
+size = 536
+end = 0x0800ba12
+origin = "table"
+
+[[code]]
+addr = 0x0800bcd8
+mode = "thumb"
+size = 182
+end = 0x0800bd8e
+origin = "table"
+
+[[code]]
+addr = 0x0800bd8e
+mode = "thumb"
+size = 38
+end = 0x0800bdb4
+origin = "table"
+
+[[code]]
+addr = 0x0800bdc0
+mode = "thumb"
+size = 22
+end = 0x0800bdd6
+origin = "table"
+
+[[code]]
+addr = 0x0800be1c
+mode = "thumb"
+size = 22
+end = 0x0800be32
+origin = "repeated"
+
+[[code]]
+addr = 0x0800be32
+mode = "thumb"
+size = 12
+end = 0x0800be3e
+origin = "call"
+
+[[code]]
+addr = 0x0800be3e
+mode = "thumb"
+size = 12
+end = 0x0800be4a
+origin = "repeated"
+
+[[code]]
+addr = 0x0800be64
+mode = "thumb"
+size = 68
+end = 0x0800bea8
+origin = "repeated"
+
+[[code]]
+addr = 0x0800bea8
+mode = "thumb"
+size = 14
+end = 0x0800beb6
+origin = "call"
+
+[[code]]
+addr = 0x0800beb6
+mode = "thumb"
+size = 2
+end = 0x0800beb8
+origin = "proven"
+
+[[code]]
+addr = 0x0800beb8
+mode = "thumb"
+size = 50
+end = 0x0800beea
+origin = "call"
+
+[[code]]
+addr = 0x0800beea
+mode = "thumb"
+size = 2
+end = 0x0800beec
+origin = "proven"
+
+[[code]]
+addr = 0x0800beec
+mode = "thumb"
+size = 14
+end = 0x0800befa
+origin = "call"
+
+[[code]]
+addr = 0x0800befa
+mode = "thumb"
+size = 30
+end = 0x0800bf18
+origin = "table"
+
+[[code]]
+addr = 0x0800bf18
+mode = "thumb"
+size = 2
+end = 0x0800bf1a
+origin = "proven"
+
+[[code]]
+addr = 0x0800bf28
+mode = "thumb"
+size = 8
+end = 0x0800bf30
+origin = "table"
+
+[[code]]
+addr = 0x0800bf30
+mode = "thumb"
+size = 30
+end = 0x0800bf4e
+origin = "table"
+
+[[code]]
+addr = 0x0800bf4e
+mode = "thumb"
+size = 194
+end = 0x0800c010
+origin = "table"
+
+[[code]]
+addr = 0x0800c010
+mode = "thumb"
+size = 48
+end = 0x0800c040
+origin = "call"
+
+[[code]]
+addr = 0x0800c040
+mode = "thumb"
+size = 14
+end = 0x0800c04e
+origin = "proven"
+
+[[code]]
+addr = 0x0800c0fa
+mode = "thumb"
+size = 112
+end = 0x0800c16a
+origin = "table"
+
+[[raw]]
+addr = 0x0800c184
+mode = "thumb"
+size = 4
+end = 0x0800c188
+origin = "pool"
+reason = "pool"
+
+[[code]]
+addr = 0x0800c188
+mode = "thumb"
+size = 64
+end = 0x0800c1c8
+origin = "call"
+
+[[code]]
+addr = 0x0800c1c8
+mode = "thumb"
+size = 2
+end = 0x0800c1ca
+origin = "proven"
+
+[[code]]
+addr = 0x0800c1ca
+mode = "thumb"
+size = 22
+end = 0x0800c1e0
+origin = "proven"
+
+[[code]]
+addr = 0x0800c1e0
+mode = "thumb"
+size = 24
+end = 0x0800c1f8
+origin = "proven"
+
+[[code]]
+addr = 0x0800c1f8
+mode = "thumb"
+size = 16
+end = 0x0800c208
+origin = "proven"
+
+[[code]]
+addr = 0x0800c208
+mode = "thumb"
+size = 2
+end = 0x0800c20a
+origin = "proven"
+
+[[code]]
+addr = 0x0800c266
+mode = "thumb"
+size = 16
+end = 0x0800c276
+origin = "call"
+
+[[code]]
+addr = 0x0800c276
+mode = "thumb"
+size = 52
+end = 0x0800c2aa
+origin = "proven"
+
+[[code]]
+addr = 0x0800c2aa
+mode = "thumb"
+size = 6
+end = 0x0800c2b0
+origin = "proven"
+
+[[code]]
+addr = 0x0800c2b0
+mode = "thumb"
+size = 2
+end = 0x0800c2b2
+origin = "proven"
+
+[[code]]
+addr = 0x0800c42e
+mode = "thumb"
+size = 40
+end = 0x0800c456
+origin = "call"
+
+[[code]]
+addr = 0x0800c456
+mode = "thumb"
+size = 20
+end = 0x0800c46a
+origin = "proven"
+
+[[code]]
+addr = 0x0800c46a
+mode = "thumb"
+size = 8
+end = 0x0800c472
+origin = "proven"
+
+[[code]]
+addr = 0x0800c472
+mode = "thumb"
+size = 22
+end = 0x0800c488
+origin = "proven"
+
+[[code]]
+addr = 0x0800c488
+mode = "thumb"
+size = 20
+end = 0x0800c49c
+origin = "proven"
+
+[[code]]
+addr = 0x0800c4c0
+mode = "thumb"
+size = 32
+end = 0x0800c4e0
+origin = "call"
+
+[[code]]
+addr = 0x0800c4e0
+mode = "thumb"
+size = 10
+end = 0x0800c4ea
+origin = "proven"
+
+[[code]]
+addr = 0x0800c4ea
+mode = "thumb"
+size = 16
+end = 0x0800c4fa
+origin = "proven"
+
+[[code]]
+addr = 0x0800c4fa
+mode = "thumb"
+size = 32
+end = 0x0800c51a
+origin = "table"
+
+[[code]]
+addr = 0x0800c51a
+mode = "thumb"
+size = 18
+end = 0x0800c52c
+origin = "proven"
+
+[[code]]
+addr = 0x0800c52c
+mode = "thumb"
+size = 162
+end = 0x0800c5ce
+origin = "proven"
+
+[[code]]
+addr = 0x0800c5ce
+mode = "thumb"
+size = 14
+end = 0x0800c5dc
+origin = "table"
+
+[[code]]
+addr = 0x0800c5dc
+mode = "thumb"
+size = 2
+end = 0x0800c5de
+origin = "table"
+
+[[code]]
+addr = 0x0800c5de
+mode = "thumb"
+size = 28
+end = 0x0800c5fa
+origin = "table"
+
+[[code]]
+addr = 0x0800c5fa
+mode = "thumb"
+size = 506
+end = 0x0800c7f4
+origin = "table"
+
+[[code]]
+addr = 0x0800c7f4
+mode = "thumb"
+size = 6
+end = 0x0800c7fa
+origin = "table"
+
+[[code]]
+addr = 0x0800c7fa
+mode = "thumb"
+size = 156
+end = 0x0800c896
+origin = "table"
+
+[[code]]
+addr = 0x0800c984
+mode = "thumb"
+size = 18
+end = 0x0800c996
+origin = "table"
+
+[[code]]
+addr = 0x0800c996
+mode = "thumb"
+size = 2
+end = 0x0800c998
+origin = "table"
+
+[[code]]
+addr = 0x0800c998
+mode = "thumb"
+size = 8
+end = 0x0800c9a0
+origin = "table"
+
+[[code]]
+addr = 0x0800c9a0
+mode = "thumb"
+size = 20
+end = 0x0800c9b4
+origin = "table"
+
+[[code]]
+addr = 0x0800c9b4
+mode = "thumb"
+size = 38
+end = 0x0800c9da
+origin = "table"
+
+[[code]]
+addr = 0x0800c9da
+mode = "thumb"
+size = 2
+end = 0x0800c9dc
+origin = "table"
+
+[[code]]
+addr = 0x0800c9dc
+mode = "thumb"
+size = 2
+end = 0x0800c9de
+origin = "table"
+
+[[code]]
+addr = 0x0800c9e0
+mode = "thumb"
+size = 2
+end = 0x0800c9e2
+origin = "table"
+
+[[code]]
+addr = 0x0800c9e2
+mode = "thumb"
+size = 52
+end = 0x0800ca16
+origin = "table"
+
+[[code]]
+addr = 0x0800ca16
+mode = "thumb"
+size = 18
+end = 0x0800ca28
+origin = "table"
+
+[[code]]
+addr = 0x0800ca28
+mode = "thumb"
+size = 18
+end = 0x0800ca3a
+origin = "table"
+
+[[code]]
+addr = 0x0800ca68
+mode = "thumb"
+size = 12
+end = 0x0800ca74
+origin = "table"
+
+[[code]]
+addr = 0x0800ca74
+mode = "thumb"
+size = 76
+end = 0x0800cac0
+origin = "repeated"
+
+[[code]]
+addr = 0x0800cac8
+mode = "thumb"
+size = 42
+end = 0x0800caf2
+origin = "table"
+
+[[code]]
+addr = 0x0800caf2
+mode = "thumb"
+size = 4
+end = 0x0800caf6
+origin = "table"
+
+[[code]]
+addr = 0x0800caf6
+mode = "thumb"
+size = 36
+end = 0x0800cb1a
+origin = "table"
+
+[[code]]
+addr = 0x0800cb24
+mode = "thumb"
+size = 116
+end = 0x0800cb98
+origin = "repeated"
+
+[[code]]
+addr = 0x0800cbb4
+mode = "thumb"
+size = 38
+end = 0x0800cbda
+origin = "table"
+
+[[code]]
+addr = 0x0800cbda
+mode = "thumb"
+size = 28
+end = 0x0800cbf6
+origin = "table"
+
+[[code]]
+addr = 0x0800cc02
+mode = "thumb"
+size = 78
+end = 0x0800cc50
+origin = "repeated"
+
+[[code]]
+addr = 0x0800cc60
+mode = "thumb"
+size = 18
+end = 0x0800cc72
+origin = "repeated"
+
+[[code]]
+addr = 0x0800cc74
+mode = "thumb"
+size = 22
+end = 0x0800cc8a
+origin = "repeated"
+
+[[code]]
+addr = 0x0800cd28
+mode = "thumb"
+size = 26
+end = 0x0800cd42
+origin = "repeated"
+
+[[code]]
+addr = 0x0800cdae
+mode = "thumb"
+size = 50
+end = 0x0800cde0
+origin = "repeated"
+
+[[code]]
+addr = 0x0800cdf4
+mode = "thumb"
+size = 6
+end = 0x0800cdfa
+origin = "table"
+
+[[code]]
+addr = 0x0800cdfa
+mode = "thumb"
+size = 124
+end = 0x0800ce76
+origin = "table"
+
+[[code]]
+addr = 0x0800cf92
+mode = "thumb"
+size = 36
+end = 0x0800cfb6
+origin = "table"
+
+[[code]]
+addr = 0x0800cfb6
+mode = "thumb"
+size = 28
+end = 0x0800cfd2
+origin = "table"
+
+[[code]]
+addr = 0x0800cfd2
+mode = "thumb"
+size = 28
+end = 0x0800cfee
+origin = "table"
+
+[[code]]
+addr = 0x0800cfee
+mode = "thumb"
+size = 18
+end = 0x0800d000
+origin = "call"
+
+[[code]]
+addr = 0x0800d000
+mode = "thumb"
+size = 10
+end = 0x0800d00a
+origin = "proven"
+
+[[code]]
+addr = 0x0800d00a
+mode = "thumb"
+size = 14
+end = 0x0800d018
+origin = "proven"
+
+[[code]]
+addr = 0x0800d018
+mode = "thumb"
+size = 2
+end = 0x0800d01a
+origin = "proven"
+
+[[code]]
+addr = 0x0800d03c
+mode = "thumb"
+size = 224
+end = 0x0800d11c
+origin = "table"
+
+[[code]]
+addr = 0x0800d11c
+mode = "thumb"
+size = 128
+end = 0x0800d19c
+origin = "table"
+
+[[code]]
+addr = 0x0800d1a0
+mode = "thumb"
+size = 46
+end = 0x0800d1ce
+origin = "call"
+
+[[code]]
+addr = 0x0800d1ce
+mode = "thumb"
+size = 24
+end = 0x0800d1e6
+origin = "table"
+
+[[code]]
+addr = 0x0800d1e6
+mode = "thumb"
+size = 36
+end = 0x0800d20a
+origin = "repeated"
+
+[[code]]
+addr = 0x0800d20a
+mode = "thumb"
+size = 52
+end = 0x0800d23e
+origin = "table"
+
+[[code]]
+addr = 0x0800d26c
+mode = "thumb"
+size = 10
+end = 0x0800d276
+origin = "repeated"
+
+[[code]]
+addr = 0x0800d278
+mode = "thumb"
+size = 40
+end = 0x0800d2a0
+origin = "call"
+
+[[code]]
+addr = 0x0800d2a0
+mode = "thumb"
+size = 24
+end = 0x0800d2b8
+origin = "proven"
+
+[[code]]
+addr = 0x0800d2b8
+mode = "thumb"
+size = 34
+end = 0x0800d2da
+origin = "proven"
+
+[[code]]
+addr = 0x0800d2da
+mode = "thumb"
+size = 78
+end = 0x0800d328
+origin = "proven"
+
+[[code]]
+addr = 0x0800d328
+mode = "thumb"
+size = 40
+end = 0x0800d350
+origin = "proven"
+
+[[code]]
+addr = 0x0800d350
+mode = "thumb"
+size = 22
+end = 0x0800d366
+origin = "proven"
+
+[[code]]
+addr = 0x0800d366
+mode = "thumb"
+size = 18
+end = 0x0800d378
+origin = "proven"
+
+[[code]]
+addr = 0x0800d378
+mode = "thumb"
+size = 2
+end = 0x0800d37a
+origin = "proven"
+
+[[code]]
+addr = 0x0800d37a
+mode = "thumb"
+size = 58
+end = 0x0800d3b4
+origin = "proven"
+
+[[code]]
+addr = 0x0800d3b4
+mode = "thumb"
+size = 4
+end = 0x0800d3b8
+origin = "proven"
+
+[[code]]
+addr = 0x0800d466
+mode = "thumb"
+size = 148
+end = 0x0800d4fa
+origin = "table"
+
+[[code]]
+addr = 0x0800d4fa
+mode = "thumb"
+size = 236
+end = 0x0800d5e6
+origin = "table"
+
+[[code]]
+addr = 0x0800d5e6
+mode = "thumb"
+size = 122
+end = 0x0800d660
+origin = "table"
+
+[[code]]
+addr = 0x0800d6fa
+mode = "thumb"
+size = 512
+end = 0x0800d8fa
+origin = "table"
+
+[[code]]
+addr = 0x0800d8fa
+mode = "thumb"
+size = 108
+end = 0x0800d966
+origin = "table"
+
+[[code]]
+addr = 0x0800d9c4
+mode = "thumb"
+size = 158
+end = 0x0800da62
+origin = "repeated"
+
+[[code]]
+addr = 0x0800daa2
+mode = "thumb"
+size = 20
+end = 0x0800dab6
+origin = "table"
+
+[[code]]
+addr = 0x0800dabc
+mode = "thumb"
+size = 32
+end = 0x0800dadc
+origin = "table"
+
+[[code]]
+addr = 0x0800dade
+mode = "thumb"
+size = 38
+end = 0x0800db04
+origin = "table"
+
+[[code]]
+addr = 0x0800db08
+mode = "thumb"
+size = 150
+end = 0x0800db9e
+origin = "table"
+
+[[code]]
+addr = 0x0800dbc0
+mode = "thumb"
+size = 12
+end = 0x0800dbcc
+origin = "table"
+
+[[code]]
+addr = 0x0800dbcc
+mode = "thumb"
+size = 16
+end = 0x0800dbdc
+origin = "table"
+
+[[code]]
+addr = 0x0800dbdc
+mode = "thumb"
+size = 12
+end = 0x0800dbe8
+origin = "table"
+
+[[code]]
+addr = 0x0800dbe8
+mode = "thumb"
+size = 16
+end = 0x0800dbf8
+origin = "table"
+
+[[code]]
+addr = 0x0800dbf8
+mode = "thumb"
+size = 14
+end = 0x0800dc06
+origin = "call"
+
+[[code]]
+addr = 0x0800dc0c
+mode = "thumb"
+size = 50
+end = 0x0800dc3e
+origin = "repeated"
+
+[[code]]
+addr = 0x0800dc48
+mode = "thumb"
+size = 58
+end = 0x0800dc82
+origin = "table"
+
+[[code]]
+addr = 0x0800dc8a
+mode = "thumb"
+size = 40
+end = 0x0800dcb2
+origin = "table"
+
+[[code]]
+addr = 0x0800dcb8
+mode = "thumb"
+size = 22
+end = 0x0800dcce
+origin = "table"
+
+[[code]]
+addr = 0x0800dcd4
+mode = "thumb"
+size = 24
+end = 0x0800dcec
+origin = "table"
+
+[[code]]
+addr = 0x0800df14
+mode = "thumb"
+size = 22
+end = 0x0800df2a
+origin = "table"
+
+[[code]]
+addr = 0x0800e064
+mode = "thumb"
+size = 14
+end = 0x0800e072
+origin = "table"
+
+[[code]]
+addr = 0x0800e078
+mode = "thumb"
+size = 20
+end = 0x0800e08c
+origin = "table"
+
+[[code]]
+addr = 0x0800e090
+mode = "thumb"
+size = 18
+end = 0x0800e0a2
+origin = "call"
+
+[[code]]
+addr = 0x0800e0ac
+mode = "thumb"
+size = 12
+end = 0x0800e0b8
+origin = "proven"
+
+[[code]]
+addr = 0x0800e0c0
+mode = "thumb"
+size = 8
+end = 0x0800e0c8
+origin = "proven"
+
+[[code]]
+addr = 0x0800e0c8
+mode = "thumb"
+size = 4
+end = 0x0800e0cc
+origin = "proven"
+
+[[code]]
+addr = 0x0800e0f8
+mode = "thumb"
+size = 34
+end = 0x0800e11a
+origin = "call"
+
+[[code]]
+addr = 0x0800e12c
+mode = "thumb"
+size = 2
+end = 0x0800e12e
+origin = "proven"
+
+[[code]]
+addr = 0x0800e12e
+mode = "thumb"
+size = 2
+end = 0x0800e130
+origin = "proven"
+
+[[code]]
+addr = 0x0800e1fc
+mode = "thumb"
+size = 76
+end = 0x0800e248
+origin = "proven"
+
+[[code]]
+addr = 0x0800e248
+mode = "thumb"
+size = 8
+end = 0x0800e250
+origin = "proven"
+
+[[code]]
+addr = 0x0800e250
+mode = "thumb"
+size = 10
+end = 0x0800e25a
+origin = "proven"
+
+[[code]]
+addr = 0x0800e27c
+mode = "thumb"
+size = 24
+end = 0x0800e294
+origin = "proven"
+
+[[code]]
+addr = 0x0800e29c
+mode = "thumb"
+size = 22
+end = 0x0800e2b2
+origin = "proven"
+
+[[code]]
+addr = 0x0800e2b2
+mode = "thumb"
+size = 20
+end = 0x0800e2c6
+origin = "proven"
+
+[[code]]
+addr = 0x0800e2c6
+mode = "thumb"
+size = 46
+end = 0x0800e2f4
+origin = "proven"
+
+[[code]]
+addr = 0x0800e2f4
+mode = "thumb"
+size = 4
+end = 0x0800e2f8
+origin = "proven"
+
+[[code]]
+addr = 0x0800e2f8
+mode = "thumb"
+size = 38
+end = 0x0800e31e
+origin = "proven"
+
+[[code]]
+addr = 0x0800e31e
+mode = "thumb"
+size = 8
+end = 0x0800e326
+origin = "proven"
+
+[[code]]
+addr = 0x0800e4a0
+mode = "thumb"
+size = 2
+end = 0x0800e4a2
+origin = "proven"
+
+[[code]]
+addr = 0x0800e4a2
+mode = "thumb"
+size = 2
+end = 0x0800e4a4
+origin = "proven"
+
+[[code]]
+addr = 0x0800e4a4
+mode = "thumb"
+size = 2
+end = 0x0800e4a6
+origin = "proven"
+
+[[code]]
+addr = 0x0800e4a6
+mode = "thumb"
+size = 2
+end = 0x0800e4a8
+origin = "proven"
+
+[[code]]
+addr = 0x0800e4a8
+mode = "thumb"
+size = 2
+end = 0x0800e4aa
+origin = "proven"
+
+[[code]]
+addr = 0x0800e4aa
+mode = "thumb"
+size = 2
+end = 0x0800e4ac
+origin = "proven"
+
+[[code]]
+addr = 0x0800e4b0
+mode = "thumb"
+size = 14
+end = 0x0800e4be
+origin = "proven"
+
+[[code]]
+addr = 0x0800e4be
+mode = "thumb"
+size = 14
+end = 0x0800e4cc
+origin = "proven"
+
+[[code]]
+addr = 0x0800e4cc
+mode = "thumb"
+size = 6
+end = 0x0800e4d2
+origin = "proven"
+
+[[code]]
+addr = 0x0800e4dc
+mode = "thumb"
+size = 12
+end = 0x0800e4e8
+origin = "call"
+
+[[code]]
+addr = 0x0800e4f8
+mode = "thumb"
+size = 2
+end = 0x0800e4fa
+origin = "proven"
+
+[[code]]
+addr = 0x0800e568
+mode = "thumb"
+size = 2
+end = 0x0800e56a
+origin = "proven"
+
+[[code]]
+addr = 0x0800e640
+mode = "thumb"
+size = 2
+end = 0x0800e642
+origin = "proven"
+
+[[code]]
+addr = 0x0800e704
+mode = "thumb"
+size = 2
+end = 0x0800e706
+origin = "proven"
+
+[[code]]
+addr = 0x0800e748
+mode = "thumb"
+size = 2
+end = 0x0800e74a
+origin = "proven"
+
+[[raw]]
+addr = 0x0800e778
+mode = "thumb"
+size = 10
+end = 0x0800e782
+origin = "call"
+reason = "data"
+
+[[code]]
+addr = 0x0800e782
+mode = "thumb"
+size = 24
+end = 0x0800e79a
+origin = "proven"
+
+[[code]]
+addr = 0x0800e79a
+mode = "thumb"
+size = 8
+end = 0x0800e7a2
+origin = "proven"
+
+[[code]]
+addr = 0x0800e7c4
+mode = "thumb"
+size = 2
+end = 0x0800e7c6
+origin = "proven"
+
+[[code]]
+addr = 0x0800e7d8
+mode = "thumb"
+size = 30
+end = 0x0800e7f6
+origin = "call"
+
+[[code]]
+addr = 0x0800e7f6
+mode = "thumb"
+size = 8
+end = 0x0800e7fe
+origin = "proven"
+
+[[code]]
+addr = 0x0800e7fe
+mode = "thumb"
+size = 4
+end = 0x0800e802
+origin = "proven"
+
+[[code]]
+addr = 0x0800e86a
+mode = "thumb"
+size = 22
+end = 0x0800e880
+origin = "call"
+
+[[code]]
+addr = 0x0800e8f2
+mode = "thumb"
+size = 12
+end = 0x0800e8fe
+origin = "call"
+
+[[code]]
+addr = 0x0800e8fe
+mode = "thumb"
+size = 14
+end = 0x0800e90c
+origin = "proven"
+
+[[code]]
+addr = 0x0800e90c
+mode = "thumb"
+size = 6
+end = 0x0800e912
+origin = "proven"
+
+[[code]]
+addr = 0x0800e912
+mode = "thumb"
+size = 8
+end = 0x0800e91a
+origin = "proven"
+
+[[code]]
+addr = 0x0800e91a
+mode = "thumb"
+size = 34
+end = 0x0800e93c
+origin = "proven"
+
+[[code]]
+addr = 0x0800e93c
+mode = "thumb"
+size = 4
+end = 0x0800e940
+origin = "proven"
+
+[[code]]
+addr = 0x0800e940
+mode = "thumb"
+size = 4
+end = 0x0800e944
+origin = "proven"
+
+[[code]]
+addr = 0x0800e944
+mode = "thumb"
+size = 8
+end = 0x0800e94c
+origin = "proven"
+
+[[code]]
+addr = 0x0800e94c
+mode = "thumb"
+size = 14
+end = 0x0800e95a
+origin = "proven"
+
+[[code]]
+addr = 0x0800e95c
+mode = "thumb"
+size = 8
+end = 0x0800e964
+origin = "call"
+
+[[code]]
+addr = 0x0800e964
+mode = "thumb"
+size = 4
+end = 0x0800e968
+origin = "proven"
+
+[[code]]
+addr = 0x0800e968
+mode = "thumb"
+size = 8
+end = 0x0800e970
+origin = "proven"
+
+[[code]]
+addr = 0x0800e970
+mode = "thumb"
+size = 16
+end = 0x0800e980
+origin = "proven"
+
+[[code]]
+addr = 0x0800e980
+mode = "thumb"
+size = 12
+end = 0x0800e98c
+origin = "proven"
+
+[[code]]
+addr = 0x0800e98c
+mode = "thumb"
+size = 2
+end = 0x0800e98e
+origin = "proven"
+
+[[code]]
+addr = 0x0800eac8
+mode = "thumb"
+size = 10
+end = 0x0800ead2
+origin = "call"
+
+[[code]]
+addr = 0x0800ead2
+mode = "thumb"
+size = 4
+end = 0x0800ead6
+origin = "proven"
+
+[[code]]
+addr = 0x0800ead6
+mode = "thumb"
+size = 8
+end = 0x0800eade
+origin = "proven"
+
+[[code]]
+addr = 0x0800eade
+mode = "thumb"
+size = 18
+end = 0x0800eaf0
+origin = "proven"
+
+[[code]]
+addr = 0x0800eaf0
+mode = "thumb"
+size = 2
+end = 0x0800eaf2
+origin = "proven"
+
+[[code]]
+addr = 0x0800eaf2
+mode = "thumb"
+size = 18
+end = 0x0800eb04
+origin = "proven"
+
+[[code]]
+addr = 0x0800eb04
+mode = "thumb"
+size = 4
+end = 0x0800eb08
+origin = "proven"
+
+[[code]]
+addr = 0x0800eb08
+mode = "thumb"
+size = 4
+end = 0x0800eb0c
+origin = "proven"
+
+[[raw]]
+addr = 0x0800f358
+mode = "thumb"
+size = 16
+end = 0x0800f368
+origin = "call"
+reason = "data"
+
+[[code]]
+addr = 0x0800f36c
+mode = "thumb"
+size = 48
+end = 0x0800f39c
+origin = "call"
+
+[[code]]
+addr = 0x0800f3c4
+mode = "thumb"
+size = 32
+end = 0x0800f3e4
+origin = "call"
+
+[[code]]
+addr = 0x0800f3e4
+mode = "thumb"
+size = 6
+end = 0x0800f3ea
+origin = "call"
+
+[[code]]
+addr = 0x0800f3f0
+mode = "thumb"
+size = 20
+end = 0x0800f404
+origin = "call"
+
+[[code]]
+addr = 0x0800f404
+mode = "thumb"
+size = 26
+end = 0x0800f41e
+origin = "call"
+
+[[code]]
+addr = 0x0800f420
+mode = "thumb"
+size = 46
+end = 0x0800f44e
+origin = "call"
+
+[[code]]
+addr = 0x0800f450
+mode = "thumb"
+size = 38
+end = 0x0800f476
+origin = "call"
+
+[[code]]
+addr = 0x0800f478
+mode = "thumb"
+size = 98
+end = 0x0800f4da
+origin = "call"
+
+[[code]]
+addr = 0x0800f4dc
+mode = "thumb"
+size = 98
+end = 0x0800f53e
+origin = "call"
+
+[[code]]
+addr = 0x0800f540
+mode = "thumb"
+size = 46
+end = 0x0800f56e
+origin = "call"
+
+[[code]]
+addr = 0x0800f570
+mode = "thumb"
+size = 10
+end = 0x0800f57a
+origin = "call"
+
+[[code]]
+addr = 0x0800f57a
+mode = "thumb"
+size = 10
+end = 0x0800f584
+origin = "proven"
+
+[[code]]
+addr = 0x0800f584
+mode = "thumb"
+size = 4
+end = 0x0800f588
+origin = "proven"
+
+[[code]]
+addr = 0x0800f588
+mode = "thumb"
+size = 82
+end = 0x0800f5da
+origin = "call"
+
+[[code]]
+addr = 0x0800f5da
+mode = "thumb"
+size = 32
+end = 0x0800f5fa
+origin = "proven"
+
+[[code]]
+addr = 0x0800f5fa
+mode = "thumb"
+size = 12
+end = 0x0800f606
+origin = "table"
+
+[[code]]
+addr = 0x0800f606
+mode = "thumb"
+size = 26
+end = 0x0800f620
+origin = "proven"
+
+[[code]]
+addr = 0x0800f620
+mode = "thumb"
+size = 4
+end = 0x0800f624
+origin = "proven"
+
+[[code]]
+addr = 0x0800f628
+mode = "thumb"
+size = 42
+end = 0x0800f652
+origin = "call"
+
+[[code]]
+addr = 0x0800f652
+mode = "thumb"
+size = 72
+end = 0x0800f69a
+origin = "proven"
+
+[[code]]
+addr = 0x0800f69a
+mode = "thumb"
+size = 4
+end = 0x0800f69e
+origin = "proven"
+
+[[code]]
+addr = 0x0800f6a0
+mode = "thumb"
+size = 30
+end = 0x0800f6be
+origin = "call"
+
+[[code]]
+addr = 0x0800f6be
+mode = "thumb"
+size = 58
+end = 0x0800f6f8
+origin = "proven"
+
+[[code]]
+addr = 0x0800f6f8
+mode = "thumb"
+size = 18
+end = 0x0800f70a
+origin = "proven"
+
+[[code]]
+addr = 0x0800f70a
+mode = "thumb"
+size = 18
+end = 0x0800f71c
+origin = "proven"
+
+[[code]]
+addr = 0x0800f71c
+mode = "thumb"
+size = 18
+end = 0x0800f72e
+origin = "proven"
+
+[[code]]
+addr = 0x0800f72e
+mode = "thumb"
+size = 58
+end = 0x0800f768
+origin = "proven"
+
+[[code]]
+addr = 0x0800f768
+mode = "thumb"
+size = 4
+end = 0x0800f76c
+origin = "proven"
+
+[[code]]
+addr = 0x0800f774
+mode = "thumb"
+size = 94
+end = 0x0800f7d2
+origin = "call"
+
+[[code]]
+addr = 0x0800f7d2
+mode = "thumb"
+size = 4
+end = 0x0800f7d6
+origin = "proven"
+
+[[code]]
+addr = 0x0800f7d6
+mode = "thumb"
+size = 18
+end = 0x0800f7e8
+origin = "proven"
+
+[[code]]
+addr = 0x0800f7e8
+mode = "thumb"
+size = 2
+end = 0x0800f7ea
+origin = "proven"
+
+[[code]]
+addr = 0x0800f7ea
+mode = "thumb"
+size = 12
+end = 0x0800f7f6
+origin = "proven"
+
+[[code]]
+addr = 0x0800f7f6
+mode = "thumb"
+size = 14
+end = 0x0800f804
+origin = "table"
+
+[[code]]
+addr = 0x0800f804
+mode = "thumb"
+size = 4
+end = 0x0800f808
+origin = "proven"
+
+[[code]]
+addr = 0x0800f808
+mode = "thumb"
+size = 64
+end = 0x0800f848
+origin = "proven"
+
+[[code]]
+addr = 0x0800f848
+mode = "thumb"
+size = 40
+end = 0x0800f870
+origin = "proven"
+
+[[code]]
+addr = 0x0800f870
+mode = "thumb"
+size = 14
+end = 0x0800f87e
+origin = "proven"
+
+[[code]]
+addr = 0x0800f87e
+mode = "thumb"
+size = 2
+end = 0x0800f880
+origin = "proven"
+
+[[code]]
+addr = 0x0800f880
+mode = "thumb"
+size = 28
+end = 0x0800f89c
+origin = "proven"
+
+[[code]]
+addr = 0x0800f89c
+mode = "thumb"
+size = 68
+end = 0x0800f8e0
+origin = "proven"
+
+[[code]]
+addr = 0x0800f8e0
+mode = "thumb"
+size = 4
+end = 0x0800f8e4
+origin = "proven"
+
+[[code]]
+addr = 0x0800f8e4
+mode = "thumb"
+size = 2
+end = 0x0800f8e6
+origin = "proven"
+
+[[code]]
+addr = 0x0800f8e6
+mode = "thumb"
+size = 8
+end = 0x0800f8ee
+origin = "proven"
+
+[[code]]
+addr = 0x0800f8ee
+mode = "thumb"
+size = 10
+end = 0x0800f8f8
+origin = "table"
+
+[[code]]
+addr = 0x0800f8f8
+mode = "thumb"
+size = 2
+end = 0x0800f8fa
+origin = "proven"
+
+[[code]]
+addr = 0x0800f8fa
+mode = "thumb"
+size = 26
+end = 0x0800f914
+origin = "proven"
+
+[[code]]
+addr = 0x0800f914
+mode = "thumb"
+size = 60
+end = 0x0800f950
+origin = "proven"
+
+[[code]]
+addr = 0x0800f950
+mode = "thumb"
+size = 10
+end = 0x0800f95a
+origin = "proven"
+
+[[code]]
+addr = 0x0800f95a
+mode = "thumb"
+size = 28
+end = 0x0800f976
+origin = "proven"
+
+[[code]]
+addr = 0x0800f976
+mode = "thumb"
+size = 44
+end = 0x0800f9a2
+origin = "proven"
+
+[[code]]
+addr = 0x0800f9a2
+mode = "thumb"
+size = 4
+end = 0x0800f9a6
+origin = "proven"
+
+[[code]]
+addr = 0x0800f9ac
+mode = "thumb"
+size = 58
+end = 0x0800f9e6
+origin = "call"
+
+[[code]]
+addr = 0x0800f9e6
+mode = "thumb"
+size = 10
+end = 0x0800f9f0
+origin = "proven"
+
+[[code]]
+addr = 0x0800f9f0
+mode = "thumb"
+size = 24
+end = 0x0800fa08
+origin = "table"
+
+[[code]]
+addr = 0x0800fa08
+mode = "thumb"
+size = 66
+end = 0x0800fa4a
+origin = "table"
+
+[[code]]
+addr = 0x0800fa4a
+mode = "thumb"
+size = 76
+end = 0x0800fa96
+origin = "proven"
+
+[[code]]
+addr = 0x0800fa96
+mode = "thumb"
+size = 8
+end = 0x0800fa9e
+origin = "proven"
+
+[[code]]
+addr = 0x0800fa9e
+mode = "thumb"
+size = 2
+end = 0x0800faa0
+origin = "proven"
+
+[[code]]
+addr = 0x0800faa0
+mode = "thumb"
+size = 66
+end = 0x0800fae2
+origin = "proven"
+
+[[code]]
+addr = 0x0800fae2
+mode = "thumb"
+size = 16
+end = 0x0800faf2
+origin = "proven"
+
+[[code]]
+addr = 0x0800faf2
+mode = "thumb"
+size = 66
+end = 0x0800fb34
+origin = "table"
+
+[[code]]
+addr = 0x0800fb34
+mode = "thumb"
+size = 4
+end = 0x0800fb38
+origin = "proven"
+
+[[code]]
+addr = 0x0800fb38
+mode = "thumb"
+size = 80
+end = 0x0800fb88
+origin = "proven"
+
+[[code]]
+addr = 0x0800fb88
+mode = "thumb"
+size = 84
+end = 0x0800fbdc
+origin = "proven"
+
+[[code]]
+addr = 0x0800fbdc
+mode = "thumb"
+size = 28
+end = 0x0800fbf8
+origin = "proven"
+
+[[code]]
+addr = 0x0800fbf8
+mode = "thumb"
+size = 44
+end = 0x0800fc24
+origin = "table"
+
+[[code]]
+addr = 0x0800fc24
+mode = "thumb"
+size = 78
+end = 0x0800fc72
+origin = "proven"
+
+[[code]]
+addr = 0x0800fc72
+mode = "thumb"
+size = 2
+end = 0x0800fc74
+origin = "proven"
+
+[[code]]
+addr = 0x0800fc74
+mode = "thumb"
+size = 2
+end = 0x0800fc76
+origin = "proven"
+
+[[code]]
+addr = 0x0800fc76
+mode = "thumb"
+size = 86
+end = 0x0800fccc
+origin = "proven"
+
+[[code]]
+addr = 0x0800fccc
+mode = "thumb"
+size = 76
+end = 0x0800fd18
+origin = "proven"
+
+[[code]]
+addr = 0x0800fd18
+mode = "thumb"
+size = 72
+end = 0x0800fd60
+origin = "proven"
+
+[[code]]
+addr = 0x0800fd60
+mode = "thumb"
+size = 78
+end = 0x0800fdae
+origin = "proven"
+
+[[code]]
+addr = 0x0800fdae
+mode = "thumb"
+size = 2
+end = 0x0800fdb0
+origin = "proven"
+
+[[code]]
+addr = 0x0800fdb0
+mode = "thumb"
+size = 86
+end = 0x0800fe06
+origin = "proven"
+
+[[code]]
+addr = 0x0800fe0c
+mode = "thumb"
+size = 12
+end = 0x0800fe18
+origin = "call"
+
+[[code]]
+addr = 0x0800fe18
+mode = "thumb"
+size = 24
+end = 0x0800fe30
+origin = "proven"
+
+[[code]]
+addr = 0x0800fe30
+mode = "thumb"
+size = 4
+end = 0x0800fe34
+origin = "proven"
+
+[[code]]
+addr = 0x0800fe34
+mode = "thumb"
+size = 6
+end = 0x0800fe3a
+origin = "proven"
+
+[[code]]
+addr = 0x0800fe3a
+mode = "thumb"
+size = 4
+end = 0x0800fe3e
+origin = "proven"
+
+[[raw]]
+addr = 0x086cfe88
+mode = "thumb"
+size = 34
+end = 0x086cfeaa
+origin = "table"
+reason = "data"
