@@ -7,6 +7,7 @@ All notable changes to this tree are recorded here. The format follows
 
 ### Added
 
+- `docs/banner.png`, shown centred at the top of the README.
 - The repository layout, `extract.cmd`, `rebuild.cmd` and `scatter.ld` for the retail image.
 - The retail identity gate, the byte accounting and the citation tests in `tools/gate/gate.py`.
 - The startup block at `0x080000c0` transcribed in `asm/crt0.s`, its equates, and one INCBIN slice
