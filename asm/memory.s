@@ -1,0 +1,6 @@
+Sp_Irq			EQU	0x03007FA0
+Sp_System		EQU	0x03007F00
+Irq_Vector		EQU	0x03007FFC
+Irq_Handler		EQU	0x08000138
+Thumb_Entry		EQU	0x08000275
+Zeroed_Halfword		EQU	0x03000004

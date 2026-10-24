@@ -1,0 +1,2 @@
+ram=0
+hardware=0

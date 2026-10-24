@@ -1,0 +1,172 @@
+from __future__ import annotations
+
+import os
+import struct
+import subprocess
+import sys
+
+import pytest
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.dirname(HERE))
+sys.path.insert(0, HERE)
+
+import jcalg1
+
+
+class Writer:
+
+    def __init__(self):
+        self._bits = []
+
+    def put(self, value, width):
+        for shift in range(width - 1, -1, -1):
+            self._bits.append((value >> shift) & 1)
+
+    def gamma(self, value):
+        for shift in range(value.bit_length() - 2, -1, -1):
+            self.put((value >> shift) & 1, 1)
+            self.put(0 if shift == 0 else 1, 1)
+
+    def finish(self):
+        bits = self._bits + [0] * ((-len(self._bits)) % 32)
+        out = bytearray()
+        for start in range(0, len(bits), 32):
+            word = 0
+            for bit in bits[start:start + 32]:
+                word = (word << 1) | bit
+            out += struct.pack("<I", word)
+        return bytes(out)
+
+
+def container_at(body, declared):
+    return struct.pack("<II", jcalg1.PACKED_KIND, declared) + body
+
+
+def raw_run(blocks):
+    writer = Writer()
+    writer.put(0b001, 3)
+    writer.put(0, 4)
+    writer.put(1, 1)
+    for index, block in enumerate(blocks):
+        for value in block:
+            writer.put(value, 8)
+        writer.put(1 if index + 1 < len(blocks) else 0, 1)
+    writer.put(0, 12)
+    return writer.finish()
+
+
+def test_a_truncated_stream_is_refused():
+    block = bytes(range(256))
+    one = container_at(raw_run([block]), len(block))
+    assert jcalg1.decompress(one, 8, len(one)) == (block, len(one) - 8)
+    assert jcalg1.decompress(one, 8, 8 + 4) is None
+    assert jcalg1.probe(one, 8, 8 + 4)["reason"] == jcalg1.LIMIT
+
+
+def test_a_stream_whose_end_code_is_past_the_limit_is_refused():
+    block = bytes(reversed(range(256)))
+    one = container_at(raw_run([block]), len(block))
+    consumed = jcalg1.decompress(one, 8, len(one))[1]
+    assert jcalg1.probe(one, 8, 8 + consumed)["ok"]
+    refusal = jcalg1.probe(one, 8, 8 + consumed - 4)
+    assert refusal["ok"] is False
+    assert refusal["reason"] == jcalg1.LIMIT
+
+
+def test_a_raw_run_is_read_in_256_byte_blocks():
+    first = bytes(range(256))
+    second = bytes(reversed(range(256)))
+    one = container_at(raw_run([first]), len(first))
+    assert jcalg1.decompress(one, 8, len(one)) == (first, len(one) - 8)
+    two = container_at(raw_run([first, second]), len(first) + len(second))
+    assert jcalg1.decompress(two, 8, len(two))[0] == first + second
+
+
+def test_a_back_reference_outside_the_output_is_refused():
+    writer = Writer()
+    writer.put(0, 1)
+    writer.put(1, 1)
+    writer.put(1, 1)
+    writer.put(0, 1)
+    writer.put(1, 8)
+    image = container_at(writer.finish(), 256)
+    refusal = jcalg1.probe(image, 8, len(image))
+    assert refusal["ok"] is False
+    assert refusal["reason"] == jcalg1.DISTANCE
+
+
+def test_the_initial_literal_width_is_the_callers_one_bit():
+    writer = Writer()
+    writer.put(1, 1)
+    writer.put(1, 1)
+    writer.put(0, 12)
+    image = container_at(writer.finish(), 1)
+    assert jcalg1.decompress(image, 8, len(image)) == (b"\x01", len(image) - 8)
+
+
+def test_a_missing_compressor_is_built_through_build_cmd(monkeypatch, tmp_path):
+    tool = str(tmp_path / "compress.exe")
+    monkeypatch.setattr(jcalg1, "COMPRESS", tool)
+    calls = []
+
+    def fake_run(command, **kwargs):
+        calls.append(list(command))
+        if command[0] == "cmd.exe":
+            with open(tool, "wb") as handle:
+                handle.write(b"")
+        else:
+            with open(command[1], "rb") as handle:
+                payload = handle.read()
+            with open(command[2], "wb") as handle:
+                handle.write(struct.pack("<II", jcalg1.PACKED_KIND, len(payload)) + payload)
+        return subprocess.CompletedProcess(command, 0)
+
+    monkeypatch.setattr(jcalg1.subprocess, "run", fake_run)
+    blob = jcalg1.encode(b"abcd")
+    assert calls[0] == ["cmd.exe", "/c", jcalg1.BUILD]
+    assert calls[1][0] == tool
+    assert blob == struct.pack("<II", jcalg1.PACKED_KIND, 4) + b"abcd"
+
+
+def test_a_build_that_produces_no_compressor_names_build_cmd(monkeypatch, tmp_path):
+    monkeypatch.setattr(jcalg1, "COMPRESS", str(tmp_path / "compress.exe"))
+    monkeypatch.setattr(jcalg1.subprocess, "run",
+                        lambda command, **kwargs: subprocess.CompletedProcess(command, 1))
+    with pytest.raises(ValueError, match="build.cmd"):
+        jcalg1.encode(b"abcd")
+
+
+def test_a_build_that_fails_after_writing_the_compressor_names_build_cmd(monkeypatch, tmp_path):
+    tool = str(tmp_path / "compress.exe")
+    monkeypatch.setattr(jcalg1, "COMPRESS", tool)
+
+    def fake_run(command, **kwargs):
+        if command[0] == "cmd.exe":
+            with open(tool, "wb") as handle:
+                handle.write(b"")
+            return subprocess.CompletedProcess(command, 1)
+        with open(command[1], "rb") as handle:
+            payload = handle.read()
+        with open(command[2], "wb") as handle:
+            handle.write(struct.pack("<II", jcalg1.PACKED_KIND, len(payload)) + payload)
+        return subprocess.CompletedProcess(command, 0)
+
+    monkeypatch.setattr(jcalg1.subprocess, "run", fake_run)
+    with pytest.raises(ValueError, match="build.cmd"):
+        jcalg1.encode(b"abcd")
+
+
+def test_an_output_explosion_is_refused_not_allocated():
+    for count in (1 << 22, 1 << 24):
+        writer = Writer()
+        writer.put(1, 1)
+        writer.put(0, 1)
+        writer.put(0, 1)
+        writer.put(1, 1)
+        writer.gamma(2)
+        writer.gamma(count)
+        image = container_at(writer.finish(), 1)
+        refusal = jcalg1.probe(image, 8, len(image))
+        assert refusal["ok"] is False
+        assert refusal["reason"] == jcalg1.OUTPUT

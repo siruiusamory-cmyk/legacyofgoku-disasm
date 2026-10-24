@@ -1,0 +1,2 @@
+CPSR_Irq	EQU	0x12
+CPSR_System	EQU	0x1F
