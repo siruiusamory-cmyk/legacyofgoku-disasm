@@ -25,3 +25,7 @@ All notable changes to this tree are recorded here. The format follows
   banner, the demo GIF and the social preview until each exists, and a progress figure and start
   count the lint compares with the gate and the census. `INSTALL.md` names the test runner its
   `check.cmd` step needs.
+- The remainder's decision in `tools/split/census.py`: every byte outside a closed bound carries
+  one class and its reason, each channel that claims those bytes is measured on the proven code and
+  against a pair-permuted null at a 5 % bar, and a body walk that reaches the 0x400 B cap now ends
+  at its measured stop instead.

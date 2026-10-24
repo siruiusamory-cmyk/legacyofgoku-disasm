@@ -52,8 +52,27 @@ The walk marks 46766 B of instructions: 25088 B proven, 21678 B filtered, 0 B ta
 | literal pool | 2976 | 0.0355 % |
 | unclassified | 8338866 | 99.4070 % |
 
-## Code-shaped remainder
+## The remainder's split
 
-8343502 B outside every closed bound: 1227830 B padding, 5540964 B decodable runs of 8 or more Thumb halfwords, 1574708 B neither (275 extents).
+Every byte outside a closed bound carries one reason below; the classes partition the remainder.
 
-The same decodable-run rule over the same bytes of a pair-permuted image gives 5572576 B, 100.5705 % of the 5540964 B class, so the class is a chance shape.
+| class | bytes | share |
+| --- | --- | --- |
+| residual: no naming entry reaches the byte | 1576286 | 18.8924 % |
+| padding: a run of eight or more equal bytes | 1227830 | 14.7160 % |
+| data: a run of address-taken words | 4552 | 0.0546 % |
+| data: a literal load reads the word | 3004 | 0.0360 % |
+| code by a closing entry | 0 | 0.0000 % |
+| residual: a decodable run at its null | 5529515 | 66.2733 % |
+| residual: closing run below its null bar | 2315 | 0.0277 % |
+
+45106 B proven + 1227830 B padding + 7556 B data + 0 B code + 7108116 B residual = 8388608 B, the image size.
+
+## The channels that claim the remainder
+
+A channel is accepted only when the same rule over the same bytes of a pair-permuted image covers under 5.0 % of the bytes it claims.
+
+| channel | hit rate on the proven code | null | verdict |
+| --- | --- | --- | --- |
+| a decodable run of 8 or more Thumb halfwords | 31150/45106 B = 69.0595 % | 5572576 B = 100.5705 % of the 5540964 B class | refused |
+| a named word whose linear walk of at most 512 instructions reaches a return | 866/1520 starts = 56.9737 % | 2586 B of the 2315 B it claims = 111.7063 % | refused |

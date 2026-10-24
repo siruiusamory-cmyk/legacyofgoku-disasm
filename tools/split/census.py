@@ -37,6 +37,16 @@ CHANNEL_ROUNDS = 8
 RUN = 8
 PAD = 8
 BODY_CAP = 0x400
+CLOSING_BAR = 5.0
+CLOSING_STEPS = 512
+SPLIT_CLASSES = ("residual: no naming entry reaches the byte",
+                 "padding: a run of eight or more equal bytes",
+                 "data: a run of address-taken words",
+                 "data: a literal load reads the word",
+                 "code by a closing entry",
+                 "residual: a decodable run at its null",
+                 "residual: closing run below its null bar")
+SPLIT_NONE, SPLIT_PAD, SPLIT_TABLE, SPLIT_POOL, SPLIT_CODE, SPLIT_SHAPED, SPLIT_BELOW = range(7)
 CHANNELS = ("vector", "copy", "call", "pool", "table", "repeated")
 CHANNEL_PRIORITY = ("vector", "copy", "call", "pool", "table", "repeated")
 COPY_REGISTER = 0x040000D4
@@ -54,6 +64,8 @@ _UNDEFINED = bytes(
 _SIZE = bytes(0 if half >= 0xF800 or _UNDEFINED[half] else 4 if half >= 0xF000 else 2
               for half in range(0x10000))
 _VIEWS = {}
+_PERMUTED = {}
+_CLOSURES = {}
 
 
 def views_of(rom):
@@ -152,6 +164,8 @@ def literal_target(rom, addr):
 
 
 def mark(classes, modes, addr, size, value, mode):
+    if classes is None:
+        return
     offset = addr - ROM_BASE
     strength = STRENGTH[value]
     for index in range(offset, offset + size):
@@ -398,7 +412,7 @@ def closure(rom, entry):
     returned = False
     extent = entry
     steps = 0
-    while steps < STEP_LIMIT:
+    while steps < CLOSING_STEPS:
         steps += 1
         if thumb_length(rom, position) is None:
             return "invalid", extent
@@ -419,6 +433,71 @@ def closure(rom, entry):
     if returned:
         return "return", extent
     return "no-return", extent
+
+
+def closing(rom, address):
+    key = (id(rom), address)
+    found = _CLOSURES.get(key)
+    if found is None:
+        found = closure(rom, address)
+        _CLOSURES[key] = found
+    return found
+
+
+def closing_spans(rom, starts):
+    taken, _words = thumb_entries(rom)
+    out = []
+    for address in sorted(taken - set(starts)):
+        why, extent = closing(rom, address)
+        if why == "return" and extent > address:
+            out.append((address - ROM_BASE, extent - ROM_BASE))
+    return union(out)
+
+
+def closing_hits(rom, starts):
+    hits = sum(1 for address in starts if closing(rom, address)[0] == "return")
+    return hits, len(starts)
+
+
+def closing_null(rom, ranges):
+    perm = permuted(rom)
+    taken, _words = thumb_entries(perm)
+    spans = []
+    for address in sorted(taken):
+        why, extent = closing(perm, address)
+        if why == "return" and extent > address:
+            spans.append((address - ROM_BASE, extent - ROM_BASE))
+    return overlap(union(spans), ranges)
+
+
+def overlap(spans, ranges):
+    total = 0
+    for begin, end in spans:
+        for range_begin, range_end in ranges:
+            low = max(begin, range_begin)
+            high = min(end, range_end)
+            if low < high:
+                total += high - low
+    return total
+
+
+def subtract(intervals, holes):
+    out = []
+    for begin, end in intervals:
+        position = begin
+        for hole_begin, hole_end in holes:
+            if hole_end <= position or hole_begin >= end:
+                continue
+            if hole_begin > position:
+                out.append((position, hole_begin))
+            position = max(position, hole_end)
+        if position < end:
+            out.append((position, end))
+    return out
+
+
+def under_bar(counted, claimed):
+    return 100.0 * counted / max(claimed, 1) < CLOSING_BAR
 
 
 def named_words(rom):
@@ -562,6 +641,16 @@ def class_runs(classes, value):
     return out
 
 
+def permuted(rom):
+    found = _PERMUTED.get(id(rom))
+    if found is not None and found[0] is rom:
+        return found[1]
+    out = permute(rom)
+    _PERMUTED.clear()
+    _PERMUTED[id(rom)] = (rom, out)
+    return out
+
+
 def permute(rom):
     out = bytearray(rom)
     for base in range(0, len(out), BLOCK):
@@ -666,7 +755,8 @@ def census(rom, channels=CHANNELS):
     return {"classes": classes, "modes": modes, "spans": spans, "pools": pools,
             "proven_entries": proven_entries, "calls": calls, "accepted": accepted,
             "order": order, "taken": taken, "taken_words": taken_words, "walks": walks,
-            "channels": channels, "runs": len(runs), "copies": copies}
+            "channels": channels, "runs": len(runs), "copies": copies,
+            "run_sites": [(site, site + 4) for run in runs for site, _value in run]}
 
 
 def thumb_effects(rom, addr):
@@ -753,6 +843,7 @@ def body(rom, start, mode, limit):
     seen = set()
     returned = False
     extent = start
+    open_path = False
     todo = [start]
     steps = 0
     while todo and steps < STEP_LIMIT:
@@ -761,7 +852,7 @@ def body(rom, start, mode, limit):
             steps += 1
             found = effects(rom, position, mode)
             if found["size"] == 0:
-                return seen, extent, returned
+                return seen, extent, returned, True
             seen.add(position)
             extent = max(extent, position + found["size"])
             if found["returned"]:
@@ -772,7 +863,9 @@ def body(rom, start, mode, limit):
             if found["ended"]:
                 break
             position += found["size"]
-    return seen, extent, returned
+        else:
+            open_path = True
+    return seen, extent, returned, (not open_path) and steps < STEP_LIMIT
 
 
 def leading(rom, address, mode, count=8):
@@ -836,7 +929,14 @@ def ends_of(rom, starts, modes, pools):
         edges = [edge for edge in (following, pool) if edge is not None]
         edge = min(edges) if edges else None
         limit = min(edge, address + BODY_CAP) if edge is not None else address + BODY_CAP
-        seen, extent, returned = body(rom, address, mode, limit)
+        seen, extent, returned, stopped = body(rom, address, mode, limit)
+        if not stopped:
+            wide = edge if edge is not None else ROM_BASE + len(rom)
+            if wide > limit:
+                wide_seen, wide_extent, wide_returned, wide_stopped = body(rom, address, mode,
+                                                                           wide)
+                if wide_stopped:
+                    seen, extent, returned = wide_seen, wide_extent, wide_returned
         bodies[address] = seen
         if not seen or extent <= address:
             out[address] = (None, "no-body")
@@ -895,8 +995,8 @@ def census_result(rom, channels=CHANNELS):
             "modes": modes}
 
 
-def shaped_in(rom, ranges):
-    total = 0
+def shaped_runs(rom, ranges):
+    out = []
     for begin, end in ranges:
         position = begin
         while position < end:
@@ -904,9 +1004,13 @@ def shaped_in(rom, ranges):
             while run < end and thumb_length(rom, ROM_BASE + run) is not None:
                 run += 2
             if run - position >= 2 * RUN:
-                total += run - position
+                out.append((position, run))
             position = max(run, position + 2)
-    return total
+    return union(out)
+
+
+def shaped_in(rom, ranges):
+    return sum(end - begin for begin, end in shaped_runs(rom, ranges))
 
 
 def padding_in(rom, ranges):
@@ -956,13 +1060,58 @@ def remainder(rom, result):
             while position < end and not padded[position]:
                 position += 1
             clean.append((start, position))
-    shaped = shaped_in(rom, clean)
+    shaped = shaped_runs(rom, clean)
+    total = len(rom)
+    world = bytearray(total)
+    for begin, end in shaped:
+        world[begin:end] = bytes([SPLIT_SHAPED]) * (end - begin)
+    for begin, end in pads:
+        world[begin:end] = bytes([SPLIT_PAD]) * (end - begin)
+    measured = result["measured"]
+    for begin, end in measured["run_sites"]:
+        for index in range(begin, min(end, total)):
+            world[index] = SPLIT_TABLE
+    for pool in measured["pools"]:
+        if has_word(rom, pool):
+            for index in range(pool - ROM_BASE, pool - ROM_BASE + 4):
+                world[index] = SPLIT_POOL
+    holes = union(list(pads) + list(measured["run_sites"])
+                  + [(pool - ROM_BASE, pool - ROM_BASE + 4) for pool in measured["pools"]
+                     if has_word(rom, pool)])
+    mask_spans = subtract(leftover, holes)
+    mask = bytearray(total)
+    for begin, end in mask_spans:
+        mask[begin:end] = b"\x01" * (end - begin)
+    claimed_spans = closing_spans(rom, result["starts"])
+    claimed = overlap(claimed_spans, mask_spans)
+    counted = closing_null(rom, mask_spans)
+    accepted = under_bar(counted, claimed)
+    moved = SPLIT_CODE if accepted else SPLIT_BELOW
+    for begin, end in claimed_spans:
+        for index in range(max(begin, 0), end):
+            if mask[index]:
+                world[index] = moved
+    counts = [0] * len(SPLIT_CLASSES)
+    for begin, end in leftover:
+        for code in range(len(SPLIT_CLASSES)):
+            counts[code] += world[begin:end].count(code)
+    remainder_bytes = sum(end - begin for begin, end in leftover)
+    if sum(counts) != remainder_bytes:
+        raise SystemExit("the remainder's classes do not partition the remainder")
+    shaped_bytes = sum(end - begin for begin, end in shaped)
     pad_bytes = sum(end - begin for begin, end in pads)
-    leftover_bytes = sum(end - begin for begin, end in leftover)
-    null = shaped_in(permute(rom), clean)
-    return {"leftover": leftover, "bytes": leftover_bytes, "padding": pad_bytes,
-            "shaped": shaped, "unshaped": leftover_bytes - pad_bytes - shaped,
-            "null_shaped": null, "null_share": 100.0 * null / max(shaped, 1)}
+    null = shaped_in(permuted(rom), clean)
+    closed_extents = [(address - ROM_BASE, end - ROM_BASE)
+                      for address, (end, _reason) in result["ends"].items() if end]
+    proven = sum(end - begin for begin, end in closed_extents)
+    hits, starts_seen = closing_hits(rom, result["starts"])
+    return {"leftover": leftover, "bytes": remainder_bytes, "padding": pad_bytes,
+            "shaped": shaped_bytes, "unshaped": remainder_bytes - pad_bytes - shaped_bytes,
+            "null_shaped": null, "null_share": 100.0 * null / max(shaped_bytes, 1),
+            "split": [(name, counts[code]) for code, name in enumerate(SPLIT_CLASSES)],
+            "closing": (counted, claimed, accepted),
+            "closing_hits": (hits, starts_seen),
+            "shaped_hits": (shaped_in(rom, closed_extents), proven)}
 
 
 def union(intervals):
@@ -1109,19 +1258,47 @@ def doc_text(result, remainder_result):
                  "unclassified"):
         lines.append("| %s | %d | %.4f %% |"
                      % (name, class_bytes[name], 100.0 * class_bytes[name] / total))
-    lines += ["", "## Code-shaped remainder", "",
-              "%d B outside every closed bound: %d B padding, %d B decodable runs of %d or more "
-              "Thumb halfwords, %d B neither (%d extents)."
-              % (remainder_result["bytes"], remainder_result["padding"],
-                 remainder_result["shaped"], RUN, remainder_result["unshaped"],
-                 len(remainder_result["leftover"])), "",
-              "The same decodable-run rule over the same bytes of a pair-permuted image gives "
-              "%d B, %.4f %% of the %d B class, so the class is %s."
-              % (remainder_result["null_shaped"], remainder_result["null_share"],
-                 remainder_result["shaped"],
-                 "a chance shape" if remainder_result["null_share"] >= 100.0
-                 else "above its null"), ""]
+    split = split_of(remainder_result["split"])
+    hits, starts_seen = remainder_result["closing_hits"]
+    counted, claimed, accepted = remainder_result["closing"]
+    shaped_hits, proven_bytes = remainder_result["shaped_hits"]
+    lines += ["", "## The remainder's split", "",
+              "Every byte outside a closed bound carries one reason below; the classes "
+              "partition the remainder.", "",
+              "| class | bytes | share |", "| --- | --- | --- |"]
+    for name, size in remainder_result["split"]:
+        lines.append("| %s | %d | %.4f %% |"
+                     % (name, size, 100.0 * size / max(remainder_result["bytes"], 1)))
+    lines += ["",
+              "%d B proven + %d B padding + %d B data + %d B code + %d B residual = %d B, "
+              "the image size."
+              % (proven_bytes, split["padding"], split["data"], split["code"],
+                 split["residual"], proven_bytes + remainder_result["bytes"]), "",
+              "## The channels that claim the remainder", "",
+              "A channel is accepted only when the same rule over the same bytes of a "
+              "pair-permuted image covers under %.1f %% of the bytes it claims." % CLOSING_BAR,
+              "",
+              "| channel | hit rate on the proven code | null | verdict |",
+              "| --- | --- | --- | --- |",
+              "| a decodable run of %d or more Thumb halfwords | %d/%d B = %.4f %% "
+              "| %d B = %.4f %% of the %d B class | refused |"
+              % (RUN, shaped_hits, proven_bytes,
+                 100.0 * shaped_hits / max(proven_bytes, 1), remainder_result["null_shaped"],
+                 remainder_result["null_share"], remainder_result["shaped"]),
+              "| a named word whose linear walk of at most %d instructions reaches a return "
+              "| %d/%d starts = %.4f %% "
+              "| %d B of the %d B it claims = %.4f %% | %s |"
+              % (CLOSING_STEPS, hits, starts_seen,
+                 100.0 * hits / max(starts_seen, 1), counted, claimed,
+                 100.0 * counted / max(claimed, 1), "accepted" if accepted else "refused")]
     return "\n".join(lines)
+
+
+def split_of(rows):
+    out = {"padding": 0, "data": 0, "code": 0, "residual": 0}
+    for name, size in rows:
+        out[name.split(":")[0].split(" ")[0]] += size
+    return out
 
 
 def class_spans(measured, value):
@@ -1165,6 +1342,21 @@ def main(argv=None):
           % (result["proven_bytes"], table["bytes"], table["padding"], table["shaped"],
              table["unshaped"]))
     print("shaped_null=%d B %.4f %% of the class" % (table["null_shaped"], table["null_share"]))
+    split = split_of(table["split"])
+    if result["proven_bytes"] + table["bytes"] != len(rom):
+        raise SystemExit("the split and the proven bounds do not cover the image")
+    print("image proven=%d + padding=%d + data=%d + code=%d + residual=%d = %d of %d"
+          % (result["proven_bytes"], split["padding"], split["data"], split["code"],
+             split["residual"], result["proven_bytes"] + table["bytes"], len(rom)))
+    counted, claimed, accepted = table["closing"]
+    hits, starts_seen = table["closing_hits"]
+    print("closing hits=%d/%d starts=%.4f %% claimed=%d B null=%d B=%.4f %% bar=%.1f %% %s"
+          % (hits, starts_seen, 100.0 * hits / max(starts_seen, 1), claimed, counted,
+             100.0 * counted / max(claimed, 1), CLOSING_BAR,
+             "accepted" if accepted else "refused"))
+    shaped_hits, proven_bytes = table["shaped_hits"]
+    print("shaped hits=%d/%d B=%.4f %%" % (shaped_hits, proven_bytes,
+                                           100.0 * shaped_hits / max(proven_bytes, 1)))
     body = text(rows_out)
     page = doc_text(result, table)
     if arguments.write:

@@ -94,6 +94,35 @@ def test_every_tracked_row_carries_its_end_and_its_channel():
     assert "vector" in channels and "table" in channels
 
 
+def test_a_body_that_runs_past_the_cap_closes_at_its_measured_end():
+    image = bytearray(0x1000)
+    put(image, 0x08000080, [0x46C0] * 0x3C0, 2)
+    put(image, 0x08000800, [0x4770], 2)
+    starts = {0x08000080: census.MODE_THUMB}
+    ends, _bodies = census.ends_of(bytes(image), starts, starts, set())
+    assert ends[0x08000080] == (0x08000802, "-")
+
+
+def test_closure_reads_a_run_without_a_class_array():
+    image = bytearray(0x100)
+    put(image, 0x08000020, [0x2000, 0x4770], 2)
+    assert census.closure(bytes(image), 0x08000020) == ("return", 0x08000024)
+
+
+def test_a_channel_at_or_above_its_bar_is_refused():
+    assert census.under_bar(4, 100) is True
+    assert census.under_bar(5, 100) is False
+    assert census.under_bar(1, 20) is False
+
+
+def test_the_remainder_classes_partition_a_crafted_image():
+    image = crafted()
+    result = census.census_result(image)
+    table = census.remainder(image, result)
+    assert sum(size for _name, size in table["split"]) == table["bytes"]
+    assert result["proven_bytes"] + table["bytes"] == len(image)
+
+
 def test_the_tracked_evidence_is_what_the_retail_image_gives():
     path = os.path.join(ROOT, "baserom.gba")
     if not os.path.exists(path):
@@ -103,7 +132,12 @@ def test_the_tracked_evidence_is_what_the_retail_image_gives():
     result = census.census_result(rom)
     open_bounds = [address for address in result["ends"] if not result["ends"][address][0]]
     assert open_bounds == []
+    table = census.remainder(rom, result)
+    assert sum(size for _name, size in table["split"]) == table["bytes"]
+    split = census.split_of(table["split"])
+    assert (result["proven_bytes"] + split["padding"] + split["data"] + split["code"]
+            + split["residual"]) == len(rom)
     for path, payload in ((census.EVIDENCE, census.text(census.rows(result))),
-                          (census.DOC, census.doc_text(result, census.remainder(rom, result)))):
+                          (census.DOC, census.doc_text(result, table))):
         assert os.path.exists(path)
         assert open(path, encoding="utf-8").read() == payload
