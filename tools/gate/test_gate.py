@@ -263,6 +263,7 @@ CLOSED_ROWS = "\n".join([
     "0x08000110,start,pool,thumb,0x08000114,pool,-,a pool word",
     "0x08000118,start,table,thumb,0x0800011c,next-start,-,a pointer run",
     "0x08000120,start,repeated,thumb,0x08000124,no-return,-,a repeated word",
+    "0x08000128,start,runtime,thumb,0x0800012c,-,-,a recorded entry",
 ]) + "\n"
 
 

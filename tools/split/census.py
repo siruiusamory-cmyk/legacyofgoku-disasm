@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import os
 import struct
 import sys
@@ -12,6 +13,7 @@ ROOT = os.path.dirname(os.path.dirname(HERE))
 ROM = os.path.join(ROOT, "baserom.gba")
 EVIDENCE = os.path.join(ROOT, "tools", "code", "CENSUS_EVIDENCE.csv")
 DOC = os.path.join(ROOT, "docs", "CODE_SPLIT.md")
+RUNTIME = os.path.join(ROOT, "tools", "code", "RUNTIME_LABELS.csv")
 VECTOR = 0x08000000
 CRT0 = 0x080000C0
 IMAGE_START = 0x08000138
@@ -48,7 +50,7 @@ SPLIT_CLASSES = ("residual: no naming entry reaches the byte",
                  "residual: closing run below its null bar")
 SPLIT_NONE, SPLIT_PAD, SPLIT_TABLE, SPLIT_POOL, SPLIT_CODE, SPLIT_SHAPED, SPLIT_BELOW = range(7)
 CHANNELS = ("vector", "copy", "call", "pool", "table", "repeated")
-CHANNEL_PRIORITY = ("vector", "copy", "call", "pool", "table", "repeated")
+CHANNEL_PRIORITY = ("vector", "copy", "call", "pool", "table", "repeated", "runtime")
 COPY_REGISTER = 0x040000D4
 COPY_DEST = (0x03000000, 0x03008000)
 COPY_SOURCE_CAP = 0x1000
@@ -977,27 +979,45 @@ def fragments_of(accepted, ends, bodies):
     return out
 
 
-def interior_seeds(rom, starts, modes, ends, bodies):
-    spans = {}
+def instruction_spans(rom, modes, bodies):
+    spans = []
     for start, seen in bodies.items():
         mode = modes[start]
         for at in seen:
             size = effects(rom, at, mode)["size"]
             if size:
-                spans.setdefault(mode, []).append((at, at + size))
+                spans.append((mode, at, at + size))
+    return spans
+
+
+def interior_seeds(rom, starts, modes, ends, bodies):
+    spans = instruction_spans(rom, modes, bodies)
     refused = set()
     for address in starts:
         if ends[address][0] is None:
             continue
-        for mode, found in spans.items():
-            if mode != modes[address] and any(begin < address < stop
-                                              for begin, stop in found):
-                refused.add(address)
-                break
+        if any(mode != modes[address] and begin < address < stop
+               for mode, begin, stop in spans):
+            refused.add(address)
+            break
     return refused
 
 
-def census_result(rom, channels=CHANNELS):
+def runtime_labels(path=RUNTIME):
+    out = []
+    if not os.path.exists(path):
+        return out
+    for row in csv.DictReader(open(path, encoding="ascii")):
+        if row["region"] != "rom" or row["mode"] not in MODE_NAMES.values():
+            raise SystemExit("%s: the label at %s carries region %s and mode %s, and only a rom "
+                             "label in a decoded mode is measured against this image"
+                             % (path, row["address"], row["region"], row["mode"]))
+        out.append((int(row["address"], 16),
+                    MODE_THUMB if row["mode"] == "thumb" else MODE_ARM))
+    return out
+
+
+def census_result(rom, channels=CHANNELS, labels=()):
     measured = census(rom, channels)
     classes = measured["classes"]
     starts = {}
@@ -1015,12 +1035,29 @@ def census_result(rom, channels=CHANNELS):
                 if starts[address]["limbs"] == ["proven"]:
                     starts[address]["limbs"] = ["copy"]
     modes = {address: item["mode"] for address, item in starts.items()}
+    recorded = tuple(labels)
+    labelled = {address for address, _mode in recorded}
+    refused_labels = []
+    ends, bodies = ends_of(rom, starts, modes, measured["pools"])
+    spans = instruction_spans(rom, modes, bodies)
+    for address, mode in recorded:
+        if address in starts:
+            continue
+        if any(begin < address < stop for _mode, begin, stop in spans):
+            refused_labels.append(address)
+            continue
+        starts[address] = {"mode": mode, "limbs": ["runtime"]}
+        modes[address] = mode
     while True:
         ends, bodies = ends_of(rom, starts, modes, measured["pools"])
         refused = interior_seeds(rom, starts, modes, ends, bodies)
+        refused |= {address for address in starts
+                    if address in labelled and ends[address][0] is None}
         if not refused:
             break
         for address in refused:
+            if address in labelled:
+                refused_labels.append(address)
             del starts[address]
             del modes[address]
     flags = {address: flag_of(rom, address, modes[address]) for address in starts}
@@ -1035,7 +1072,9 @@ def census_result(rom, channels=CHANNELS):
     proven_bytes = sum(end - address for address, (end, _reason) in ends.items() if end)
     return {"measured": measured, "classes": classes, "starts": starts, "ends": ends,
             "flags": flags, "fragments": fragments, "proven_bytes": proven_bytes,
-            "modes": modes}
+            "modes": modes, "labels": labelled, "refused_labels": sorted(set(refused_labels)),
+            "runtime": sorted(address for address, item in starts.items()
+                              if item["limbs"] == ["runtime"])}
 
 
 def shaped_runs(rom, ranges):
@@ -1288,8 +1327,11 @@ def doc_text(result, remainder_result):
               "list, which no assembler emits and no ARMv4T core executes as code.", ""]
     lines += ["", "A `no-return` end is where the walk stopped at a halfword the CPU cannot "
               "execute before it met a return, so it is a measured stop and not a return. "
-              "Runtime-only entries: none, because this title carries no runtime capture, so no "
-              "row here is credited by one.", "",
+              "Runtime-only entries: %d, the dispatch entries a bounded run recorded in "
+              "`tools/code/RUNTIME_LABELS.csv`, each admitted only where the walk also decodes it "
+              "from an instruction boundary and closes it; a recorded entry that is already a "
+              "static start adds no row, and a recorded entry that falls inside an instruction is "
+              "refused instead of credited." % len(result["runtime"]), "",
               "## Instruction bytes", "",
               "The walk marks %d B of instructions: %d B proven, %d B filtered, %d B table-held. "
               "The closed bounds hold %d B, which is less because a bound stops at the next "
@@ -1365,7 +1407,7 @@ def main(argv=None):
         print("the census needs the retail image at %s" % arguments.rom)
         return 1
     rom = open(arguments.rom, "rb").read()
-    result = census_result(rom)
+    result = census_result(rom, labels=runtime_labels())
     table = remainder(rom, result)
     rows_out = rows(result)
     ends = result["ends"]
@@ -1387,6 +1429,12 @@ def main(argv=None):
     print("flagged " + " ".join("%s=%d" % (flag, len([1 for address in result["flags"]
                                                      if flag in result["flags"][address]]))
                                 for flag in FLAGS))
+    print("runtime labels=%d admitted=%d refused=%d"
+          % (len(result["labels"]), len(result["runtime"]), len(result["refused_labels"])))
+    if result["refused_labels"]:
+        print("CENSUS FAIL: the runtime label at 0x%08x is not an instruction boundary that "
+              "closes into a row" % result["refused_labels"][0])
+        return 1
     print("proven=%d B remainder=%d B padding=%d shaped=%d unshaped=%d"
           % (result["proven_bytes"], table["bytes"], table["padding"], table["shaped"],
              table["unshaped"]))

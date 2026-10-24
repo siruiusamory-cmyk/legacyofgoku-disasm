@@ -116,6 +116,14 @@ def test_the_tracked_export_is_the_export_this_tree_derives():
     assert export_inputs.check() is None
 
 
+def test_the_tracked_export_carries_the_recorded_starts_as_runtime_rows():
+    found = export_inputs.found_rows(open(export_inputs.OUT, encoding="ascii", newline="").read())
+    runtime = [record for record in found if record["origin"] == "runtime"]
+    assert len(runtime) == 126
+    assert all(record["section"] == "code" and record["mode"] == "thumb"
+               for record in runtime)
+
+
 def doctored(text, name):
     if name == "missing":
         start = text.index("[[code]]\naddr = 0x08000204")

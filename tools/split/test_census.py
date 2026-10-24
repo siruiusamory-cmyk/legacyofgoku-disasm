@@ -161,6 +161,24 @@ def test_the_handler_rows_the_image_gives():
     assert "data" not in result["flags"][0x08000138]
 
 
+def test_a_recorded_start_that_does_not_close_into_a_row_is_refused():
+    image = bytearray(crafted())
+    put(image, BODY, [0xF000, 0xF800, 0xBD00, 0xBD00], 2)
+    labels = [(BODY, census.MODE_THUMB), (BODY + 2, census.MODE_THUMB)]
+    result = census.census_result(bytes(image), labels=labels)
+    assert result["refused_labels"] == [BODY + 2]
+    assert BODY + 2 not in result["starts"]
+
+
+def test_a_recorded_start_whose_walk_closes_is_admitted():
+    image = bytearray(crafted())
+    put(image, BODY, [0xF000, 0xF800, 0xBD00, 0xBD00], 2)
+    result = census.census_result(bytes(image), labels=[(BODY + 4, census.MODE_THUMB)])
+    assert result["refused_labels"] == []
+    assert result["starts"][BODY + 4]["limbs"] == ["runtime"]
+    assert result["runtime"] == [BODY + 4]
+
+
 def test_a_body_with_an_empty_register_list_is_flagged_data():
     image = bytearray(crafted())
     put(image, CALLER, [0xB500, 0xD000, 0xCD00, 0x4770], 2)
@@ -179,7 +197,9 @@ def test_the_tracked_evidence_is_what_the_retail_image_gives():
         pytest.skip("%s is absent, so this ROM-gated test cannot run" % path)
     rom = open(path, "rb").read()
     assert len(rom) == census.ROM_SIZE
-    result = census.census_result(rom)
+    result = census.census_result(rom, labels=census.runtime_labels())
+    assert result["refused_labels"] == []
+    assert len(result["runtime"]) == 126 == len(result["labels"])
     open_bounds = [address for address in result["ends"] if not result["ends"][address][0]]
     assert open_bounds == []
     table = census.remainder(rom, result)
@@ -191,3 +211,26 @@ def test_the_tracked_evidence_is_what_the_retail_image_gives():
                           (census.DOC, census.doc_text(result, table))):
         assert os.path.exists(path)
         assert open(path, encoding="utf-8").read() == payload
+
+
+def test_a_doctored_label_inside_an_instruction_is_refused_by_the_tracked_image():
+    path = os.path.join(ROOT, "baserom.gba")
+    if not os.path.exists(path):
+        pytest.skip("%s is absent, so this ROM-gated test cannot run" % path)
+    rom = open(path, "rb").read()
+    doctored = census.runtime_labels() + [(0x08000146, census.MODE_THUMB)]
+    result = census.census_result(rom, labels=doctored)
+    assert result["refused_labels"] == [0x08000146]
+    assert 0x08000146 not in result["starts"]
+    assert len(result["runtime"]) == 126
+
+
+def test_a_doctored_label_inside_a_thumb_instruction_is_refused_by_the_tracked_image():
+    path = os.path.join(ROOT, "baserom.gba")
+    if not os.path.exists(path):
+        pytest.skip("%s is absent, so this ROM-gated test cannot run" % path)
+    rom = open(path, "rb").read()
+    doctored = census.runtime_labels() + [(0x080003F4, census.MODE_THUMB)]
+    result = census.census_result(rom, labels=doctored)
+    assert result["refused_labels"] == [0x080003F4]
+    assert 0x080003F4 not in result["starts"]

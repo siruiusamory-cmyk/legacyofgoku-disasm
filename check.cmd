@@ -24,4 +24,6 @@ python -m pytest -q tools\code\test_emit_code.py
 if errorlevel 1 exit /b 1
 python -m pytest -q tools\recomp\test_export_inputs.py
 if errorlevel 1 exit /b 1
+python -m pytest -q tools\recomp\test_runtime_labels.py
+if errorlevel 1 exit /b 1
 echo check done

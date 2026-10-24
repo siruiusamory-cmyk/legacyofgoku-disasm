@@ -41,3 +41,9 @@ All notable changes to this tree are recorded here. The format follows
   mode and channel, the rows the emitter leaves raw with their reason, the image identity and the
   code copy the startup makes to IWRAM. `export_inputs.py --check` re-derives it, and the gate
   refuses a missing, duplicated or open row.
+- A tracked runtime channel: `tools/code/RUNTIME_LABELS.csv` carries the 126 dispatch entries a
+  bounded no-input run recorded, each admitted as a census start only where the walk also decodes it
+  from an instruction boundary and closes it, and refused when it falls inside an instruction. The
+  census and the recompiler input carry the rows as `runtime`, the page counts them, and
+  `tools/recomp/runtime_labels.py --check` re-measures every label against the evidence table
+  beside a null of the same labels displaced by one halfword.
