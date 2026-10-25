@@ -36,6 +36,9 @@ echo message_rows_exit=%ERRORLEVEL%
 echo === pointer generator ===
 python tools\research\pointer_rows.py --write
 echo pointer_rows_exit=%ERRORLEVEL%
+echo === text generator ===
+python tools\research\text_rows.py --write
+echo text_rows_exit=%ERRORLEVEL%
 echo === incbin slices ===
 call tools\incbin.bat baserom.gba 0x0 0xc0
 echo incbin_header_exit=%ERRORLEVEL%

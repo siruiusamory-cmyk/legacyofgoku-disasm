@@ -211,3 +211,27 @@ All notable changes to this tree are recorded here. The format follows
   run, the loss of one target label (that run and no other leaves the list), a `DCD` naming the
   wrong label, a `DCD` outside every run, and an image whose sha1 differs. 1,308 B build from source
   instead of the raw slices.
+- The generator for the text tables, in `tools/research/text_rows.py`, over three families. The text
+  probe leaves 16,317 B in 804 runs raw once the credits, dialogue, message and pointer families are
+  emitted: eight or more printable bytes closed by `0x00`, painted on the bytes no earlier class
+  claimed. A run is re-encodable only where its own table bounds it, so the generator takes the three
+  tables whose rows tile into one pool: 109 rows at `0x080109f0` pooling at `0x08010ba4`, 17 rows at
+  `0x08010ec4` pooling at `0x08010f08`, and the 24-word table at `0x081c6224` pooling at `0x081c6284`,
+  where one pointer repeats and names the same string twice. The third table's bound is a reader: the
+  code loads its base at `0x08001830` (`ldr r3,[pc,#0x17c]`), scales the index by eight
+  (`lsls r1,r1,#3` at `0x08001832`), adds the two (`add r3,r1,r3` at `0x08001834`) and reads the word
+  it selects (`ldr r3,[r3,r1]` at `0x08001844`). The other two have a structural bound instead: the
+  table ends where its first pointer begins, every pointer is the next tiling position, and the pool
+  ends on `0x08010ec2` and `0x08010f82`, where the next table begins. The three families are 1,697 B
+  in total, 150 rows and 149 distinct strings, and they re-encode byte for byte. Nothing read from
+  the image is tracked: the bounds, the reader instructions and the row counts are the committed
+  part, and the generator reads the rows and the strings out of the builder's image at build time,
+  refuses an image whose digest, tiling or round trip differs, and writes the three families to
+  `build/text/`, which `asm/remainder.s` incbins in place of the raw slices. `--check` re-derives the
+  runs and the slices, and `tools/research/test_text_rows.py` pins the reader's stride, the round trip
+  of every family, the tiling of every pointer, a family boundary moved by one byte either way, one
+  changed string byte, a row that leaves its family, a moved base literal and an image whose sha1
+  differs. 1,697 B build from source instead of the raw slices, 335 B of them text-probe bytes in 35
+  runs; the other 15,982 B of the probe stay raw in 769 runs because no table and no reader bounds
+  them, and the largest single run, 339 B at `0x0815ae64`, stays raw for the reason recorded with the
+  message generator.

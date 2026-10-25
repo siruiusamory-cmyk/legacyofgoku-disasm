@@ -2415,7 +2415,11 @@
 	DCD	|loc_0800AEFA|+1
 	DCD	|loc_080035CC|+1
 	DCD	|loc_080035E4|+1
-	INCBIN	baserom.gba_0x109d0_0x11480.extracted
+	INCBIN	baserom.gba_0x109d0_0x109f0.extracted
+	INCBIN	..\build\text\stream_0x109f0_0x10ec2.bin
+	INCBIN	baserom.gba_0x10ec2_0x10ec4.extracted
+	INCBIN	..\build\text\stream_0x10ec4_0x10f82.bin
+	INCBIN	baserom.gba_0x10f82_0x11480.extracted
 	DCD	|loc_08005108|+1
 	DCD	|loc_0800AEF8|+1
 	DCD	|loc_0800AEFA|+1
@@ -2620,7 +2624,9 @@
 	INCBIN	..\build\bios\stream_0x1b3520_0x1b86b4.bin
 	INCBIN	baserom.gba_0x1b86b4_0x1bdc1c.extracted
 	INCBIN	..\build\bios\stream_0x1bdc1c_0x1c06df.bin
-	INCBIN	baserom.gba_0x1c06df_0x1ca1e8.extracted
+	INCBIN	baserom.gba_0x1c06df_0x1c6224.extracted
+	INCBIN	..\build\text\stream_0x1c6224_0x1c6335.bin
+	INCBIN	baserom.gba_0x1c6335_0x1ca1e8.extracted
 	INCBIN	..\build\f1\stream_0x1ca1e8_0x334d67.bin
 	INCBIN	baserom.gba_0x334d67_0x3372c8.extracted
 	INCBIN	..\build\f1\stream_0x3372c8_0x4dd59f.bin
