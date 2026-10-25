@@ -47,3 +47,22 @@ All notable changes to this tree are recorded here. The format follows
   census and the recompiler input carry the rows as `runtime`, the page counts them, and
   `tools/recomp/runtime_labels.py --check` re-measures every label against the evidence table
   beside a null of the same labels displaced by one halfword.
+- The stream population of the custom row decompressor in `tools/research/f1_population.py`: the
+  header at `0x08337248` names 269 objects and its list at `0x083372c8` walks to `0x084dd59e`,
+  1,729,239 B, every record's entries tiling its size; 268 of them are row streams that decode
+  under the code's grammar to 21,424 rows and 1,654,598 written bytes, and the same walk over three
+  permutations of the block finds no record. The tool also measures that the retail token plan is
+  not a function of the decoded content: 576 of the block's 81,024 distinct pixel regions carry two
+  or more token plans, so no encoder can rebuild the block's bytes from a decoded asset alone.
+  `tools/research/test_f1_population.py` pins the census, the null, two refusals and the ambiguity
+  count. No byte of this block is registered as source.
+- The generator for the three lists the custom row decompressor serves, in
+  `tools/compress/f1_streams.py`: each record is decoded into rows and token plans through the same
+  grammar and re-encoded, and the run is emitted only where the re-encoding equals the retail bytes.
+  The three lists hold 532 records over 3,557,038 B; 529 records over 3,533,142 B re-encode byte for
+  byte and become source, and the first record of each list carries one type 4 and one type 15 entry
+  whose payloads have another grammar, so those 23,896 B stay raw by address with the reason.
+  `--check` re-derives the token list, the generated runs and the slices around them, and
+  `tools/compress/test_f1_streams.py` pins the three populations, the address list, the one refusal
+  per list, the round trip and the permuted-region null. `asm/remainder.s` now carries the three
+  runs and the four retail slices between them.

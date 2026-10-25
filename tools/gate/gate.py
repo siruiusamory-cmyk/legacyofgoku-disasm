@@ -29,6 +29,7 @@ CENSUS = os.path.join(ROOT, "tools", "code", "CENSUS_EVIDENCE.csv")
 CENSUS_CHANNELS = ("vector", "copy", "call", "pool", "table", "repeated", "runtime")
 CENSUS_REASONS = ("-", "next-start", "pool", "no-return")
 SLICE = re.compile(r"baserom\.gba_0x([0-9a-fA-F]+)_0x([0-9a-fA-F]+)\.extracted")
+GENERATED = re.compile(r"stream_0x([0-9a-f]+)_0x([0-9a-f]+)\.bin")
 INCBIN = re.compile(r"INCBIN\s+(\S+\.extracted)")
 STEP_EXIT = re.compile(r"(\w+)_exit=(\d+)")
 
@@ -73,6 +74,16 @@ def incbin_ranges(root=None):
     for path in asm_files(root):
         text = open(path, errors="replace").read()
         for match in SLICE.finditer(text):
+            start, end = int(match.group(1), 16), int(match.group(2), 16)
+            out.append((start, end - start))
+    return sorted(out)
+
+
+def generated_ranges(root=None):
+    out = []
+    for path in asm_files(root):
+        text = open(path, errors="replace").read()
+        for match in GENERATED.finditer(text):
             start, end = int(match.group(1), 16), int(match.group(2), 16)
             out.append((start, end - start))
     return sorted(out)
@@ -359,6 +370,7 @@ def main():
     ok = ok and not problems
     source = ROM_SIZE - sum(length for _start, length in union_ranges(ranges + identity))
     print("incbin slices=%d total=%d" % (len(ranges), raw))
+    print("generated=%d" % sum(length for _start, length in generated_ranges()))
     print("identity copies=%d (%.4f %%)" % (copies_total, 100.0 * copies_total / ROM_SIZE))
     print("raw-data=%d (%.4f %%)" % (raw, 100.0 * raw / ROM_SIZE))
     print("source=%d of %d (%.4f %%)" % (source, ROM_SIZE, 100.0 * source / ROM_SIZE))

@@ -50,7 +50,8 @@ def test_the_source_count_is_the_slices_and_the_rest():
     assert raw + gate.source_bytes() == gate.ROM_SIZE
     rows = gate.emit_code.census_rows()
     emitted = sum(row["end"] - row["address"] for row in gate.emit_code.code_rows(rows))
-    assert gate.source_bytes() == 0x78 + emitted
+    generated = sum(length for _start, length in gate.generated_ranges())
+    assert gate.source_bytes() == 0x78 + emitted + generated
 
 
 def test_a_double_counted_interval_is_refused_instead_of_passing_as_arithmetic():

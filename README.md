@@ -44,11 +44,14 @@ does not measure how much of the code has been turned into C.
 
 ## Progress
 
-0.5420 % of the ROM (45,466 of 8,388,608 bytes) builds from tracked source: the startup block at
-`0x080000c0` in [asm/crt0.s](asm/crt0.s) and every census code row, disassembled into `build/code/`
-by [tools/code/emit_code.py](tools/code/emit_code.py). The rest is INCBIN slices of the retail
-image. `python tools\gate\gate.py` prints the split, and the code and data classes it derives are
-the page [docs/CODE_SPLIT.md](docs/CODE_SPLIT.md), which `tools/split/census.py --check` re-derives.
+42.6603 % of the ROM (3,578,608 of 8,388,608 bytes) builds from tracked source: the startup block
+at `0x080000c0` in [asm/crt0.s](asm/crt0.s), every census code row, disassembled into `build/code/`
+by [tools/code/emit_code.py](tools/code/emit_code.py), and three lists of the custom decompressor's
+streams, decoded into rows and token plans and re-encoded by
+[tools/compress/f1_streams.py](tools/compress/f1_streams.py). The rest is INCBIN slices of the
+retail image. `python tools\gate\gate.py` prints the split, and the code and data classes it derives
+are the page [docs/CODE_SPLIT.md](docs/CODE_SPLIT.md), which `tools/split/census.py --check`
+re-derives.
 
 ## Building
 

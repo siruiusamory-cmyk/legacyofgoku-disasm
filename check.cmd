@@ -16,6 +16,8 @@ python -m pytest -q tools\extract\test_slice_rom.py
 if errorlevel 1 exit /b 1
 python -m pytest -q tools\compress\test_jcalg1.py
 if errorlevel 1 exit /b 1
+python -m pytest -q tools\compress\test_f1_streams.py
+if errorlevel 1 exit /b 1
 python -m pytest -q tools\research\test_startup_writes.py
 if errorlevel 1 exit /b 1
 python -m pytest -q tools\split\test_census.py

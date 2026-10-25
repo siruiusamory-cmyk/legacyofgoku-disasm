@@ -10,6 +10,7 @@ Start here, then follow the one page that answers your question.
 | Which counts may a commit not raise? | [READABILITY.md](READABILITY.md) |
 | Which bytes are the startup block, and what does it install? | [STARTUP.md](STARTUP.md) |
 | Which bytes are code, where does each start end, and what is still unclassified? | [CODE_SPLIT.md](CODE_SPLIT.md) |
+| What counts as source, and what is the finish line? | [DEFINITION_OF_DONE.md](DEFINITION_OF_DONE.md) |
 
 ## What this tree claims
 
@@ -22,8 +23,10 @@ interrupt vector `0x03007ffc` with `0x08000138` and tail-calls the Thumb entry `
 interrupt enable and disable helpers follow the startup's literal pool.
 
 From `0x08000138` to the end of the image, every start the census proves is code is emitted as Thumb
-or ARM assembly by [../tools/code/emit_code.py](../tools/code/emit_code.py), and every other byte is
-an INCBIN slice that the gate prints as `raw-data`. No function in it is named and no function
+or ARM assembly by [../tools/code/emit_code.py](../tools/code/emit_code.py), the three stream lists
+the custom decompressor serves are decoded into rows and token plans and re-encoded by
+[../tools/compress/f1_streams.py](../tools/compress/f1_streams.py), and every other byte is an
+INCBIN slice that the gate prints as `raw-data`. No function in it is named and no function
 boundary is claimed. The census's code rows must all be emitted and must all carry a mode: the gate
 prints `EXPORT PASS uncovered=0 modeless=0` and refuses anything else.
 

@@ -12,6 +12,9 @@ if not exist build mkdir build
 echo === code generator ===
 python tools\code\emit_code.py --write
 echo code_generate_exit=%ERRORLEVEL%
+echo === stream generator ===
+python tools\compress\f1_streams.py --write
+echo stream_generate_exit=%ERRORLEVEL%
 echo === incbin slices ===
 call tools\incbin.bat baserom.gba 0x0 0xc0
 echo incbin_header_exit=%ERRORLEVEL%

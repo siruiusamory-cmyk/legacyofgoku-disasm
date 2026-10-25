@@ -1,0 +1,169 @@
+from __future__ import annotations
+
+import os
+import sys
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.dirname(HERE))
+sys.path.insert(0, HERE)
+sys.path.insert(0, os.path.join(ROOT, "tools"))
+sys.path.insert(0, os.path.join(ROOT, "tools", "research"))
+
+import f1_population
+import f1_streams
+import testkit
+
+DIGEST = "3ba9919e26704b0f5fdc2bfabc7f7a0404c71413761d38abcd94224c3bd4b1b9"
+LISTS = (
+    {"header": 0x081CA168, "start": 0x081CA1E8, "end": 0x08334D67, "records": 214,
+     "bytes": 1485695, "rebuilt": 1476425, "left": ((0x081CA1E8, 9270),)},
+    {"header": 0x08337248, "start": 0x083372C8, "end": 0x084DD59F, "records": 269,
+     "bytes": 1729239, "rebuilt": 1723454, "left": ((0x083372C8, 5785),)},
+    {"header": 0x084E4F44, "start": 0x084E4FC4, "end": 0x0853881C, "records": 49,
+     "bytes": 342104, "rebuilt": 333263, "left": ((0x084E4FC4, 8841),)},
+)
+REBUILT = 529
+ADDRESSES = {
+    0x081CA168: (
+        0x081CA1E8, 0x081CC61E, 0x081CDFD2, 0x081CFC09, 0x081D1469, 0x081D2F20, 0x081D4C92, 0x081D67E5,
+        0x081D83AA, 0x081D9E12, 0x081DBA75, 0x081DD66D, 0x081DF364, 0x081E108C, 0x081E2841, 0x081E43FD,
+        0x081E6015, 0x081E7ADE, 0x081E9A10, 0x081EB3C7, 0x081ECF66, 0x081EEAFD, 0x081F05AB, 0x081F1EC9,
+        0x081F38BA, 0x081F544C, 0x081F6FB1, 0x081F8B4E, 0x081FAA12, 0x081FC582, 0x081FE06C, 0x081FFD9A,
+        0x0820177C, 0x08203329, 0x08204C3F, 0x082066CE, 0x082084D8, 0x08209E6C, 0x0820B87C, 0x0820CF67,
+        0x0820F213, 0x08211264, 0x082132D5, 0x0821534E, 0x0821717A, 0x08218EEC, 0x0821AC31, 0x0821CA67,
+        0x0821E845, 0x08220600, 0x0822236A, 0x0822415E, 0x08226061, 0x08227F0D, 0x08229D33, 0x0822BAB4,
+        0x0822D8E5, 0x0822F74D, 0x082314A2, 0x082331DB, 0x08235091, 0x08236E52, 0x08238C16, 0x0823AA2F,
+        0x0823C733, 0x0823E464, 0x08240295, 0x082423D1, 0x08244480, 0x082463D8, 0x08248437, 0x0824A54D,
+        0x0824C627, 0x0824E716, 0x082505E3, 0x082523A5, 0x082541E9, 0x08255FE9, 0x08257E26, 0x08259C76,
+        0x0825BA41, 0x0825D965, 0x0825F8A7, 0x082617AD, 0x08263661, 0x0826583C, 0x08267B52, 0x08269E18,
+        0x0826C034, 0x0826E2EC, 0x082705C5, 0x08272864, 0x08274B25, 0x08276DC9, 0x08278FD1, 0x0827B1E7,
+        0x0827D485, 0x0827F675, 0x082817EE, 0x08283873, 0x08284E31, 0x082864CF, 0x08287B48, 0x08289475,
+        0x0828ABA0, 0x0828C23C, 0x0828D8EA, 0x0828EF85, 0x08290688, 0x08292718, 0x082947DD, 0x08296BF8,
+        0x08298D09, 0x0829AEB8, 0x0829D0E9, 0x0829F404, 0x082A13E7, 0x082A2B27, 0x082A4F75, 0x082A739E,
+        0x082A95DE, 0x082AB8CA, 0x082ADB4E, 0x082AFCAE, 0x082B1AC2, 0x082B3C95, 0x082B5D99, 0x082B6DDF,
+        0x082B7A97, 0x082B9E1E, 0x082BBF8B, 0x082BE337, 0x082C066E, 0x082C1A90, 0x082C3C49, 0x082C5F78,
+        0x082C82E2, 0x082CA505, 0x082CBA2B, 0x082CDCAC, 0x082CFE62, 0x082D21E1, 0x082D4614, 0x082D62CB,
+        0x082D8755, 0x082DA9EA, 0x082DCC06, 0x082DED55, 0x082E0B28, 0x082E2D27, 0x082E4EC2, 0x082E6F83,
+        0x082E9053, 0x082EAFAF, 0x082ED29B, 0x082EF348, 0x082F143D, 0x082F355B, 0x082F53D9, 0x082F75E9,
+        0x082F7743, 0x082F8DF8, 0x082F9B82, 0x082FA7E5, 0x082FB5BB, 0x082FC2F1, 0x082FCFB7, 0x082FDDAD,
+        0x082FEA59, 0x082FFF1B, 0x083012E3, 0x08302000, 0x08302D18, 0x08303A0B, 0x08304672, 0x083055D1,
+        0x0830667C, 0x08307808, 0x083087F2, 0x0830996A, 0x0830AAF0, 0x0830BBAE, 0x0830CDB3, 0x0830DFC0,
+        0x0830F27F, 0x08310667, 0x0831191E, 0x08312C50, 0x08313E1D, 0x08315254, 0x08316659, 0x08317A26,
+        0x08318938, 0x08319459, 0x08319B33, 0x0831ADCA, 0x0831BCBB, 0x0831D209, 0x0831E2A6, 0x0831F783,
+        0x08320D1D, 0x08321BD1, 0x08322A54, 0x08323BE1, 0x08324E1F, 0x083262E9, 0x08327D72, 0x08329074,
+        0x0832ACCC, 0x0832CA8F, 0x0832E59C, 0x08330245, 0x08331ED3, 0x083337C2,
+    ),
+    0x08337248: (
+        0x083372C8, 0x08338961, 0x0833A0E9, 0x0833BF7B, 0x0833E048, 0x0834022D, 0x08342560, 0x08344322,
+        0x08346152, 0x083482EB, 0x0834A103, 0x0834C2A4, 0x0834E03D, 0x0835014F, 0x08351C4B, 0x08353A75,
+        0x08355C08, 0x08357DE8, 0x08359EF0, 0x0835C14D, 0x0835E0F4, 0x0835FF4F, 0x08361DE1, 0x08363D2A,
+        0x08365C38, 0x08367AD1, 0x083699E4, 0x0836B94B, 0x0836D82B, 0x0836F740, 0x08371656, 0x08373586,
+        0x083754F4, 0x0837782F, 0x083794AC, 0x0837B0AD, 0x0837CD5D, 0x0837EB58, 0x0838096A, 0x0838255E,
+        0x08384514, 0x08385F5A, 0x08387970, 0x0838943A, 0x0838AF75, 0x0838C98F, 0x0838E3A2, 0x0838FD61,
+        0x08391830, 0x083939FD, 0x08394D6B, 0x083950F8, 0x08396DA3, 0x08398221, 0x08399669, 0x08399E32,
+        0x0839AA39, 0x0839B697, 0x0839C4DB, 0x0839CFC2, 0x0839D579, 0x0839E0EA, 0x0839EADA, 0x0839EFB6,
+        0x0839F6EB, 0x0839FCF9, 0x083A010A, 0x083A03F5, 0x083A1EE4, 0x083A313F, 0x083A454B, 0x083A6094,
+        0x083A7926, 0x083A990F, 0x083AB647, 0x083AD310, 0x083AED93, 0x083B04B0, 0x083B15F6, 0x083B27B2,
+        0x083B3426, 0x083B491C, 0x083B54C9, 0x083B5AA5, 0x083B6EB0, 0x083B80CE, 0x083B93B3, 0x083BB278,
+        0x083BD12B, 0x083BEFF0, 0x083C0ED8, 0x083C2E2A, 0x083C4E93, 0x083C6F67, 0x083C909C, 0x083CB2AA,
+        0x083CD540, 0x083CF76B, 0x083D1969, 0x083D3AEA, 0x083D5C20, 0x083D7C92, 0x083D9C86, 0x083DBB1D,
+        0x083DD4AE, 0x083DF4BA, 0x083E071B, 0x083E19DF, 0x083E2D6C, 0x083E41D8, 0x083E5771, 0x083E749E,
+        0x083E8700, 0x083E9965, 0x083EA2DB, 0x083EAF40, 0x083EB79C, 0x083EBE0E, 0x083EC50F, 0x083ECB00,
+        0x083EEA4F, 0x083EF8DB, 0x083F04D1, 0x083F143F, 0x083F2380, 0x083F34A1, 0x083F49F0, 0x083F5F9F,
+        0x083F75E9, 0x083F8C3D, 0x083F9ED8, 0x083FB40C, 0x083FCF0B, 0x083FDADA, 0x083FDC34, 0x083FFC0E,
+        0x08401827, 0x0840374C, 0x0840535C, 0x08406FB2, 0x0840927D, 0x0840B00A, 0x0840CB01, 0x0840EF59,
+        0x084113DA, 0x08413854, 0x08415C81, 0x08417D9B, 0x08419FE3, 0x0841C3D2, 0x0841E5C9, 0x08420816,
+        0x084229A3, 0x08424B58, 0x08426F86, 0x08428DA7, 0x0842A144, 0x0842B893, 0x0842CF9B, 0x0842E469,
+        0x0842F981, 0x08430EF6, 0x08432996, 0x0843401B, 0x0843585C, 0x0843731C, 0x08438F2F, 0x0843AB0D,
+        0x0843C75E, 0x0843E51D, 0x084403C3, 0x08442123, 0x08443E51, 0x08445AFA, 0x08447853, 0x0844943D,
+        0x0844AF1B, 0x0844C7DD, 0x0844E048, 0x0844FB0B, 0x08451B57, 0x084534F6, 0x08454BD8, 0x08456114,
+        0x0845777C, 0x08458EB0, 0x0845A61D, 0x0845BCF9, 0x0845D3F2, 0x0845ECE2, 0x084604A4, 0x08461BF4,
+        0x08463378, 0x084648B1, 0x0846600D, 0x084678A8, 0x08468FBD, 0x0846A6A2, 0x0846BB6F, 0x0846D997,
+        0x0846F313, 0x0847005B, 0x08470D9E, 0x08471BE9, 0x08472A1F, 0x084738AA, 0x08474686, 0x0847565A,
+        0x08476815, 0x08477C12, 0x084791DD, 0x0847ABD0, 0x0847C956, 0x0847E40A, 0x0847FC98, 0x0848144E,
+        0x08483305, 0x08484E00, 0x084865BD, 0x08487AC0, 0x08489708, 0x0848ACC4, 0x0848BED4, 0x0848D0D1,
+        0x0848E29D, 0x0848F476, 0x084902BE, 0x08490EF3, 0x08492282, 0x08493948, 0x08494CE0, 0x08495E0A,
+        0x08496F2E, 0x08497E74, 0x08498F75, 0x08499F49, 0x0849C1C6, 0x0849E37F, 0x084A0613, 0x084A2A68,
+        0x084A4D1A, 0x084A6F6F, 0x084A919C, 0x084AB363, 0x084AD7FF, 0x084AFBE8, 0x084B1D5D, 0x084B3AB4,
+        0x084B581D, 0x084B7490, 0x084B92E6, 0x084BB012, 0x084BCE27, 0x084BEB72, 0x084C0981, 0x084C270E,
+        0x084C44A2, 0x084C61D9, 0x084C80EC, 0x084C9EE3, 0x084CBC99, 0x084CD9DB, 0x084CF7CE, 0x084D13D8,
+        0x084D3171, 0x084D4E76, 0x084D6CAF, 0x084D90E9, 0x084DB3C3,
+    ),
+    0x084E4F44: (
+        0x084E4FC4, 0x084E724D, 0x084E8452, 0x084E9ACC, 0x084EB818, 0x084ED8AB, 0x084EF969, 0x084F1BDD,
+        0x084F3EC2, 0x084F6197, 0x084F8413, 0x084FA60F, 0x084FC771, 0x084FE853, 0x0850094F, 0x08502982,
+        0x08504937, 0x0850669D, 0x085085AF, 0x0850A3DD, 0x0850C117, 0x0850E125, 0x085100CA, 0x0851205D,
+        0x08513F63, 0x08515CD7, 0x085174B4, 0x08518705, 0x085197E3, 0x0851A9BB, 0x0851BA3E, 0x0851CB86,
+        0x0851DEDE, 0x0851EFD3, 0x0852134E, 0x085230E9, 0x08524FC1, 0x08526BC9, 0x08528A3A, 0x0852A818,
+        0x0852C825, 0x0852EB38, 0x0853058B, 0x08531923, 0x08532BC1, 0x08533E56, 0x08534FD6, 0x08536232,
+        0x0853751F,
+    ),
+}
+
+
+def image():
+    return testkit.rom_bytes(f1_streams.ROM, DIGEST, 0x800000)
+
+
+def test_the_three_populations_are_the_header_count_and_their_addresses():
+    measured = f1_streams.census(image())
+    assert [row["header"] for row in measured] == [pinned["header"] for pinned in LISTS]
+    for row, pinned in zip(measured, LISTS):
+        found = row["walk"]
+        assert (found["count"], found["bytes"]) == (pinned["records"], pinned["bytes"])
+        assert (found["start"], found["end"]) == (pinned["start"], pinned["end"])
+        assert tuple(start for start, _size in found["records"]) == ADDRESSES[pinned["header"]]
+        assert (sum(size for _start, size, _blob in row["rebuilt"])
+                + sum(size for _start, size, _reason in row["left"])) == pinned["bytes"]
+        assert sum(size for _start, size, _blob in row["rebuilt"]) == pinned["rebuilt"]
+        assert tuple((start, size) for start, size, _reason in row["left"]) == pinned["left"]
+
+
+def test_a_record_that_does_not_round_trip_is_named_with_its_reason():
+    measured = f1_streams.census(image())
+    reasons = [reason for row in measured for _start, _size, reason in row["left"]]
+    assert len(reasons) == 3
+    assert all("is not a row stream" in reason for reason in reasons)
+
+
+def test_every_rebuilt_record_is_the_image_bytes():
+    rom = image()
+    rebuilt = 0
+    for row in f1_streams.census(rom):
+        for start, size, blob in row["rebuilt"]:
+            assert blob == rom[start - f1_streams.ROM_BASE:start - f1_streams.ROM_BASE + size]
+            rebuilt += 1
+    assert rebuilt == REBUILT
+
+
+def test_the_refused_record_carries_the_other_two_types():
+    rom = image()
+    for pinned in LISTS:
+        found = f1_population.walk(rom, pinned["header"])
+        start, size = found["records"][0]
+        kinds = [kind for _at, _entry, kind in f1_population.entries(rom, start, size)]
+        assert kinds == [4, 15]
+        assert (start, size) == pinned["left"][0]
+
+
+def test_the_same_walk_over_a_permuted_region_finds_no_record():
+    rom = image()
+    for pinned in LISTS:
+        found = f1_population.walk(rom, pinned["header"])
+        assert f1_population.null(rom, found) == {"reversed": 0, "halfword": 0, "rotated": 0}
+
+
+def test_the_tracked_token_list_is_what_the_image_derives():
+    testkit.rom_bytes(f1_streams.ROM, DIGEST, 0x800000)
+    assert f1_streams.main(["--check"]) == 0
+
+
+if __name__ == "__main__":
+    if os.path.exists(f1_streams.ROM):
+        test_the_three_populations_are_the_header_count_and_their_addresses()
+        test_a_record_that_does_not_round_trip_is_named_with_its_reason()
+        test_every_rebuilt_record_is_the_image_bytes()
+        test_the_refused_record_carries_the_other_two_types()
+        test_the_same_walk_over_a_permuted_region_finds_no_record()
+        test_the_tracked_token_list_is_what_the_image_derives()
+        print("PASS test_f1_streams")
