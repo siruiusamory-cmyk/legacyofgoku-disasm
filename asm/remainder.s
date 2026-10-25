@@ -2616,13 +2616,37 @@
 	DCD	|loc_08005FE2|+1
 	DCD	|loc_0800DCB8|+1
 	DCD	|loc_0800DCB8|+1
-	INCBIN	baserom.gba_0x166be8_0x19ac74.extracted
+	INCBIN	baserom.gba_0x166be8_0x166c38.extracted
+	INCBIN	..\build\bios\stream_0x166c38_0x16da80.bin
+	INCBIN	baserom.gba_0x16da80_0x16dc80.extracted
+	INCBIN	..\build\bios\stream_0x16dc80_0x17350c.bin
+	INCBIN	baserom.gba_0x17350c_0x17370c.extracted
+	INCBIN	..\build\bios\stream_0x17370c_0x1799d0.bin
+	INCBIN	baserom.gba_0x1799d0_0x17ed7c.extracted
+	INCBIN	..\build\bios\stream_0x17ed7c_0x1846c4.bin
+	INCBIN	baserom.gba_0x1846c4_0x1848c4.extracted
+	INCBIN	..\build\bios\stream_0x1848c4_0x18a1a8.bin
+	INCBIN	baserom.gba_0x18a1a8_0x18b328.extracted
+	INCBIN	..\build\bios\stream_0x18b328_0x190730.bin
+	INCBIN	baserom.gba_0x190730_0x190930.extracted
+	INCBIN	..\build\bios\stream_0x190930_0x195024.bin
+	INCBIN	baserom.gba_0x195024_0x195224.extracted
+	INCBIN	..\build\bios\stream_0x195224_0x19aa74.bin
+	INCBIN	baserom.gba_0x19aa74_0x19ac74.extracted
 	INCBIN	..\build\bios\stream_0x19ac74_0x19badc.bin
 	INCBIN	baserom.gba_0x19badc_0x19bce8.extracted
 	INCBIN	..\build\bios\stream_0x19bce8_0x1a0e4c.bin
-	INCBIN	baserom.gba_0x1a0e4c_0x1b3520.extracted
+	INCBIN	baserom.gba_0x1a0e4c_0x1a104c.extracted
+	INCBIN	..\build\bios\stream_0x1a104c_0x1a506c.bin
+	INCBIN	baserom.gba_0x1a506c_0x1a526c.extracted
+	INCBIN	..\build\bios\stream_0x1a526c_0x1a9970.bin
+	INCBIN	baserom.gba_0x1a9970_0x1a9b70.extracted
+	INCBIN	..\build\bios\stream_0x1a9b70_0x1af088.bin
+	INCBIN	baserom.gba_0x1af088_0x1b3520.extracted
 	INCBIN	..\build\bios\stream_0x1b3520_0x1b86b4.bin
-	INCBIN	baserom.gba_0x1b86b4_0x1bdc1c.extracted
+	INCBIN	baserom.gba_0x1b86b4_0x1b88b4.extracted
+	INCBIN	..\build\bios\stream_0x1b88b4_0x1bda1c.bin
+	INCBIN	baserom.gba_0x1bda1c_0x1bdc1c.extracted
 	INCBIN	..\build\bios\stream_0x1bdc1c_0x1c06df.bin
 	INCBIN	baserom.gba_0x1c06df_0x1c6224.extracted
 	INCBIN	..\build\text\stream_0x1c6224_0x1c6335.bin
@@ -2634,11 +2658,115 @@
 	INCBIN	..\build\bios\stream_0x4dede4_0x4e4d20.bin
 	INCBIN	baserom.gba_0x4e4d20_0x4e4fc4.extracted
 	INCBIN	..\build\f1\stream_0x4e4fc4_0x53881c.bin
-	INCBIN	baserom.gba_0x53881c_0x53e34c.extracted
+	INCBIN	baserom.gba_0x53881c_0x53b3e0.extracted
+	INCBIN	..\build\bios\stream_0x53b3e0_0x53b54c.bin
+	INCBIN	baserom.gba_0x53b54c_0x53b578.extracted
+	INCBIN	..\build\bios\stream_0x53b578_0x53b6c4.bin
+	INCBIN	baserom.gba_0x53b6c4_0x53b6f0.extracted
+	INCBIN	..\build\bios\stream_0x53b6f0_0x53b874.bin
+	INCBIN	baserom.gba_0x53b874_0x53b8a0.extracted
+	INCBIN	..\build\bios\stream_0x53b8a0_0x53ba20.bin
+	INCBIN	baserom.gba_0x53ba20_0x53bbc4.extracted
+	INCBIN	..\build\bios\stream_0x53bbc4_0x53bd6c.bin
+	INCBIN	baserom.gba_0x53bd6c_0x53bd98.extracted
+	INCBIN	..\build\bios\stream_0x53bd98_0x53bf1c.bin
+	INCBIN	baserom.gba_0x53bf1c_0x53bf48.extracted
+	INCBIN	..\build\bios\stream_0x53bf48_0x53c0b0.bin
+	INCBIN	baserom.gba_0x53c0b0_0x53c0dc.extracted
+	INCBIN	..\build\bios\stream_0x53c0dc_0x53c264.bin
+	INCBIN	baserom.gba_0x53c264_0x53c474.extracted
+	INCBIN	..\build\bios\stream_0x53c474_0x53c5e4.bin
+	INCBIN	baserom.gba_0x53c5e4_0x53c798.extracted
+	INCBIN	..\build\bios\stream_0x53c798_0x53c900.bin
+	INCBIN	baserom.gba_0x53c900_0x53caa4.extracted
+	INCBIN	..\build\bios\stream_0x53caa4_0x53cc30.bin
+	INCBIN	baserom.gba_0x53cc30_0x53cc5c.extracted
+	INCBIN	..\build\bios\stream_0x53cc5c_0x53cde8.bin
+	INCBIN	baserom.gba_0x53cde8_0x53ce14.extracted
+	INCBIN	..\build\bios\stream_0x53ce14_0x53cfc0.bin
+	INCBIN	baserom.gba_0x53cfc0_0x53cfec.extracted
+	INCBIN	..\build\bios\stream_0x53cfec_0x53d178.bin
+	INCBIN	baserom.gba_0x53d178_0x53d304.extracted
+	INCBIN	..\build\bios\stream_0x53d304_0x53d474.bin
+	INCBIN	baserom.gba_0x53d474_0x53d4a0.extracted
+	INCBIN	..\build\bios\stream_0x53d4a0_0x53d63c.bin
+	INCBIN	baserom.gba_0x53d63c_0x53d668.extracted
+	INCBIN	..\build\bios\stream_0x53d668_0x53d804.bin
+	INCBIN	baserom.gba_0x53d804_0x53d830.extracted
+	INCBIN	..\build\bios\stream_0x53d830_0x53d9c4.bin
+	INCBIN	baserom.gba_0x53d9c4_0x53d9f0.extracted
+	INCBIN	..\build\bios\stream_0x53d9f0_0x53db88.bin
+	INCBIN	baserom.gba_0x53db88_0x53dbb4.extracted
+	INCBIN	..\build\bios\stream_0x53dbb4_0x53dd58.bin
+	INCBIN	baserom.gba_0x53dd58_0x53dd84.extracted
+	INCBIN	..\build\bios\stream_0x53dd84_0x53deec.bin
+	INCBIN	baserom.gba_0x53deec_0x53e34c.extracted
 	INCBIN	..\build\bios\stream_0x53e34c_0x53e4e8.bin
-	INCBIN	baserom.gba_0x53e4e8_0x541db8.extracted
+	INCBIN	baserom.gba_0x53e4e8_0x53e514.extracted
+	INCBIN	..\build\bios\stream_0x53e514_0x53e66c.bin
+	INCBIN	baserom.gba_0x53e66c_0x53ea04.extracted
+	INCBIN	..\build\bios\stream_0x53ea04_0x53ebb0.bin
+	INCBIN	baserom.gba_0x53ebb0_0x53ebdc.extracted
+	INCBIN	..\build\bios\stream_0x53ebdc_0x53ed80.bin
+	INCBIN	baserom.gba_0x53ed80_0x53edac.extracted
+	INCBIN	..\build\bios\stream_0x53edac_0x53ef28.bin
+	INCBIN	baserom.gba_0x53ef28_0x53ef54.extracted
+	INCBIN	..\build\bios\stream_0x53ef54_0x53f0fc.bin
+	INCBIN	baserom.gba_0x53f0fc_0x53f128.extracted
+	INCBIN	..\build\bios\stream_0x53f128_0x53f298.bin
+	INCBIN	baserom.gba_0x53f298_0x53f2c4.extracted
+	INCBIN	..\build\bios\stream_0x53f2c4_0x53f460.bin
+	INCBIN	baserom.gba_0x53f460_0x53f48c.extracted
+	INCBIN	..\build\bios\stream_0x53f48c_0x53f63c.bin
+	INCBIN	baserom.gba_0x53f63c_0x53f668.extracted
+	INCBIN	..\build\bios\stream_0x53f668_0x53f818.bin
+	INCBIN	baserom.gba_0x53f818_0x53f844.extracted
+	INCBIN	..\build\bios\stream_0x53f844_0x53f9d4.bin
+	INCBIN	baserom.gba_0x53f9d4_0x53fa00.extracted
+	INCBIN	..\build\bios\stream_0x53fa00_0x53fb74.bin
+	INCBIN	baserom.gba_0x53fb74_0x53fba0.extracted
+	INCBIN	..\build\bios\stream_0x53fba0_0x53fd44.bin
+	INCBIN	baserom.gba_0x53fd44_0x53fd70.extracted
+	INCBIN	..\build\bios\stream_0x53fd70_0x53fef4.bin
+	INCBIN	baserom.gba_0x53fef4_0x53ff2c.extracted
+	INCBIN	..\build\bios\stream_0x53ff2c_0x5400d4.bin
+	INCBIN	baserom.gba_0x5400d4_0x5400f4.extracted
+	INCBIN	..\build\bios\stream_0x5400f4_0x540294.bin
+	INCBIN	baserom.gba_0x540294_0x5402c0.extracted
+	INCBIN	..\build\bios\stream_0x5402c0_0x54044c.bin
+	INCBIN	baserom.gba_0x54044c_0x540478.extracted
+	INCBIN	..\build\bios\stream_0x540478_0x54062c.bin
+	INCBIN	baserom.gba_0x54062c_0x540808.extracted
+	INCBIN	..\build\bios\stream_0x540808_0x54097c.bin
+	INCBIN	baserom.gba_0x54097c_0x5409a8.extracted
+	INCBIN	..\build\bios\stream_0x5409a8_0x540b2c.bin
+	INCBIN	baserom.gba_0x540b2c_0x540b58.extracted
+	INCBIN	..\build\bios\stream_0x540b58_0x540cbc.bin
+	INCBIN	baserom.gba_0x540cbc_0x540ce8.extracted
+	INCBIN	..\build\bios\stream_0x540ce8_0x540e88.bin
+	INCBIN	baserom.gba_0x540e88_0x540eb4.extracted
+	INCBIN	..\build\bios\stream_0x540eb4_0x541060.bin
+	INCBIN	baserom.gba_0x541060_0x54108c.extracted
+	INCBIN	..\build\bios\stream_0x54108c_0x541210.bin
+	INCBIN	baserom.gba_0x541210_0x54123c.extracted
+	INCBIN	..\build\bios\stream_0x54123c_0x5413f0.bin
+	INCBIN	baserom.gba_0x5413f0_0x54141c.extracted
+	INCBIN	..\build\bios\stream_0x54141c_0x5415bc.bin
+	INCBIN	baserom.gba_0x5415bc_0x541c20.extracted
+	INCBIN	..\build\bios\stream_0x541c20_0x541d8c.bin
+	INCBIN	baserom.gba_0x541d8c_0x541db8.extracted
 	INCBIN	..\build\bios\stream_0x541db8_0x541f38.bin
-	INCBIN	baserom.gba_0x541f38_0x54298c.extracted
+	INCBIN	baserom.gba_0x541f38_0x541f64.extracted
+	INCBIN	..\build\bios\stream_0x541f64_0x5420fc.bin
+	INCBIN	baserom.gba_0x5420fc_0x5422e0.extracted
+	INCBIN	..\build\bios\stream_0x5422e0_0x542474.bin
+	INCBIN	baserom.gba_0x542474_0x5424a0.extracted
+	INCBIN	..\build\bios\stream_0x5424a0_0x542614.bin
+	INCBIN	baserom.gba_0x542614_0x542640.extracted
+	INCBIN	..\build\bios\stream_0x542640_0x5427ac.bin
+	INCBIN	baserom.gba_0x5427ac_0x5427d8.extracted
+	INCBIN	..\build\bios\stream_0x5427d8_0x54296c.bin
+	INCBIN	baserom.gba_0x54296c_0x54298c.extracted
 	DCD	|loc_0800AEFA|+1
 	DCD	|loc_080026DE|+1
 	DCD	|loc_0800AEFA|+1
@@ -2744,6 +2872,94 @@
 	INCBIN	baserom.gba_0x5c3868_0x5c3888.extracted
 	INCBIN	..\build\bios\stream_0x5c3888_0x5c4a0c.bin
 	INCBIN	..\build\bios\stream_0x5c4a0c_0x5ca0f0.bin
-	INCBIN	baserom.gba_0x5ca0f0_0x6b6094.extracted
+	INCBIN	..\build\bios\stream_0x5ca0f0_0x5cc630.bin
+	INCBIN	..\build\bios\stream_0x5cc630_0x5d07d4.bin
+	INCBIN	..\build\bios\stream_0x5d07d4_0x5d4bf4.bin
+	INCBIN	..\build\bios\stream_0x5d4bf4_0x5d70f0.bin
+	INCBIN	..\build\bios\stream_0x5d70f0_0x5d9f64.bin
+	INCBIN	..\build\bios\stream_0x5d9f64_0x5dc70c.bin
+	INCBIN	..\build\bios\stream_0x5dc70c_0x5dec84.bin
+	INCBIN	..\build\bios\stream_0x5dec84_0x5e2974.bin
+	INCBIN	..\build\bios\stream_0x5e2974_0x5e5958.bin
+	INCBIN	..\build\bios\stream_0x5e5958_0x5e7f70.bin
+	INCBIN	..\build\bios\stream_0x5e7f70_0x5eb13c.bin
+	INCBIN	..\build\bios\stream_0x5eb13c_0x5ebcbc.bin
+	INCBIN	..\build\bios\stream_0x5ebcbc_0x5ef84c.bin
+	INCBIN	..\build\bios\stream_0x5ef84c_0x5f0f44.bin
+	INCBIN	..\build\bios\stream_0x5f0f44_0x5f2ce0.bin
+	INCBIN	..\build\bios\stream_0x5f2ce0_0x5f635c.bin
+	INCBIN	..\build\bios\stream_0x5f635c_0x5f7d00.bin
+	INCBIN	..\build\bios\stream_0x5f7d00_0x5f8fa0.bin
+	INCBIN	..\build\bios\stream_0x5f8fa0_0x5fd220.bin
+	INCBIN	..\build\bios\stream_0x5fd220_0x5fea30.bin
+	INCBIN	..\build\bios\stream_0x5fea30_0x6024d0.bin
+	INCBIN	baserom.gba_0x6024d0_0x603fc8.extracted
+	INCBIN	..\build\bios\stream_0x603fc8_0x605bf0.bin
+	INCBIN	..\build\bios\stream_0x605bf0_0x609d00.bin
+	INCBIN	..\build\bios\stream_0x609d00_0x60dec4.bin
+	INCBIN	..\build\bios\stream_0x60dec4_0x611804.bin
+	INCBIN	..\build\bios\stream_0x611804_0x61356c.bin
+	INCBIN	..\build\bios\stream_0x61356c_0x615ce0.bin
+	INCBIN	..\build\bios\stream_0x615ce0_0x618220.bin
+	INCBIN	baserom.gba_0x618220_0x618de4.extracted
+	INCBIN	..\build\bios\stream_0x618de4_0x61ac5c.bin
+	INCBIN	..\build\bios\stream_0x61ac5c_0x61e9f0.bin
+	INCBIN	..\build\bios\stream_0x61e9f0_0x620a20.bin
+	INCBIN	..\build\bios\stream_0x620a20_0x626f94.bin
+	INCBIN	..\build\bios\stream_0x626f94_0x62914c.bin
+	INCBIN	..\build\bios\stream_0x62914c_0x62e17c.bin
+	INCBIN	..\build\bios\stream_0x62e17c_0x632778.bin
+	INCBIN	..\build\bios\stream_0x632778_0x634810.bin
+	INCBIN	..\build\bios\stream_0x634810_0x634e98.bin
+	INCBIN	..\build\bios\stream_0x634e98_0x636990.bin
+	INCBIN	..\build\bios\stream_0x636990_0x63a4e0.bin
+	INCBIN	..\build\bios\stream_0x63a4e0_0x63c174.bin
+	INCBIN	..\build\bios\stream_0x63c174_0x6402a8.bin
+	INCBIN	..\build\bios\stream_0x6402a8_0x640d58.bin
+	INCBIN	baserom.gba_0x640d58_0x643510.extracted
+	INCBIN	..\build\bios\stream_0x643510_0x644090.bin
+	INCBIN	..\build\bios\stream_0x644090_0x647e78.bin
+	INCBIN	..\build\bios\stream_0x647e78_0x6488b8.bin
+	INCBIN	..\build\bios\stream_0x6488b8_0x64c980.bin
+	INCBIN	..\build\bios\stream_0x64c980_0x64d3b0.bin
+	INCBIN	..\build\bios\stream_0x64d3b0_0x651af4.bin
+	INCBIN	..\build\bios\stream_0x651af4_0x652530.bin
+	INCBIN	..\build\bios\stream_0x652530_0x6555d8.bin
+	INCBIN	..\build\bios\stream_0x6555d8_0x656190.bin
+	INCBIN	..\build\bios\stream_0x656190_0x6596fc.bin
+	INCBIN	..\build\bios\stream_0x6596fc_0x65a240.bin
+	INCBIN	..\build\bios\stream_0x65a240_0x65dc54.bin
+	INCBIN	..\build\bios\stream_0x65dc54_0x65e5cc.bin
+	INCBIN	..\build\bios\stream_0x65e5cc_0x662f88.bin
+	INCBIN	..\build\bios\stream_0x662f88_0x663828.bin
+	INCBIN	..\build\bios\stream_0x663828_0x6681fc.bin
+	INCBIN	..\build\bios\stream_0x6681fc_0x668a38.bin
+	INCBIN	..\build\bios\stream_0x668a38_0x66ce00.bin
+	INCBIN	..\build\bios\stream_0x66ce00_0x66d430.bin
+	INCBIN	..\build\bios\stream_0x66d430_0x670b70.bin
+	INCBIN	..\build\bios\stream_0x670b70_0x671ae8.bin
+	INCBIN	..\build\bios\stream_0x671ae8_0x675da0.bin
+	INCBIN	..\build\bios\stream_0x675da0_0x676be4.bin
+	INCBIN	..\build\bios\stream_0x676be4_0x67a808.bin
+	INCBIN	..\build\bios\stream_0x67a808_0x67b2c4.bin
+	INCBIN	..\build\bios\stream_0x67b2c4_0x67f4b0.bin
+	INCBIN	..\build\bios\stream_0x67f4b0_0x67fb9c.bin
+	INCBIN	..\build\bios\stream_0x67fb9c_0x68390c.bin
+	INCBIN	..\build\bios\stream_0x68390c_0x684890.bin
+	INCBIN	..\build\bios\stream_0x684890_0x6880c8.bin
+	INCBIN	..\build\bios\stream_0x6880c8_0x6890e4.bin
+	INCBIN	..\build\bios\stream_0x6890e4_0x68cb64.bin
+	INCBIN	..\build\bios\stream_0x68cb64_0x68d6f8.bin
+	INCBIN	..\build\bios\stream_0x68d6f8_0x691824.bin
+	INCBIN	baserom.gba_0x691824_0x693080.extracted
+	INCBIN	..\build\bios\stream_0x693080_0x697cb0.bin
+	INCBIN	..\build\bios\stream_0x697cb0_0x69a14c.bin
+	INCBIN	baserom.gba_0x69a14c_0x69e49c.extracted
+	INCBIN	..\build\bios\stream_0x69e49c_0x69fd10.bin
+	INCBIN	..\build\bios\stream_0x69fd10_0x6a21ac.bin
+	INCBIN	..\build\bios\stream_0x6a21ac_0x6a38a4.bin
+	INCBIN	baserom.gba_0x6a38a4_0x6a7a2c.extracted
+	INCBIN	..\build\bios\stream_0x6a7a2c_0x6ab734.bin
+	INCBIN	baserom.gba_0x6ab734_0x6b6094.extracted
 	INCBIN	..\build\actors\stream_0x6b6094_0x6b6a78.bin
 	INCBIN	baserom.gba_0x6b6a78_0x800000.extracted

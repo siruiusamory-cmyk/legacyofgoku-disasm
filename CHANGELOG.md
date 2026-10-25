@@ -235,3 +235,24 @@ All notable changes to this tree are recorded here. The format follows
   runs; the other 15,982 B of the probe stay raw in 769 runs because no table and no reader bounds
   them, and the largest single run, 339 B at `0x0815ae64`, stays raw for the reason recorded with the
   message generator.
+- The generator for every further BIOS Huffman stream that re-encodes byte for byte, in
+  `tools/compress/bios_streams.py`: the sweep covers every four-byte-aligned offset of the raw
+  slices plus each slice's first 64 B, tries 23,366 header candidates, decodes 268 of them and
+  accepts 149 whose decode and re-encode are the image's bytes - 146 Huffman and three run-length.
+  The Huffman streams join the stream population, which is now 157 rows, and `asm/remainder.s`
+  carries the 146 new generated runs, so 1,144,744 B build from source instead of raw slices. The
+  reader is the decompression dispatcher at `0x08009524`: flags bit 4 selects the Huffman branch
+  `SWI 0x13` at `0x08009536`, the source is the `+4` word of a twelve-byte record or the `+0` word of
+  the wrapper's record, and the record at `0x085c2204`, named by the literal load at `0x08004d82`,
+  carries a `+4` of `0x0817370c` whose 25,284 stored bytes the generator re-encodes exactly and whose
+  `+0` of `0x081799d0` is that stream's end. What the sweep refuses stays raw and is counted: eleven
+  Huffman trees that share a node, so no symbol has one code (the first at `0x08000c36`), and 119
+  candidates that decode but whose re-encode differs, the largest at `0x08640d58`, first difference
+  at `+516`. Inside the noise-like family the emitted runs leave 141,821 B that no byte-exact stream
+  reaches, alongside the 544 B of art tables that two literal loads name at `0x08011ba8` and
+  `0x08011da8`; the three run-length streams (`0x0853c290`, `0x0853e81c`, `0x085418c8`, 1,319 B)
+  stay raw because this tree encodes no run-length stream. `--check` re-derives the runs, the slices
+  and every stream's round trip, and `tools/compress/test_bios_streams.py` pins the 157-row
+  population with both lengths of every stream, the single word that names each start, the
+  descriptor ends that agree with the decoder's own stop, that no two rows share a byte, a permuted
+  LZ77 body, a permuted tree and the shared-node refusal.
