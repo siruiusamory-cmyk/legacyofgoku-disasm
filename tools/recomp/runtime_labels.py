@@ -81,9 +81,9 @@ def admitted_by_the_census(labels, path=LABELS):
     result = census.census_result(
         rom, labels=[(address, census.MODE_THUMB if mode == "thumb" else census.MODE_ARM)
                      for _region, address, mode in union])
-    runtime = set(result["runtime"])
-    return ([label for label in labels if label[1] in runtime],
-            [label for label in labels if label[1] not in runtime])
+    placed = set(result["starts"])
+    return ([label for label in labels if label[1] in placed],
+            [label for label in labels if label[1] not in placed])
 
 
 def displaced(labels):

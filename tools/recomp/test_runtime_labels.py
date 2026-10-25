@@ -28,8 +28,8 @@ def doctored(tmp_path, extra="rom,0x%08x,thumb\n" % MID):
 def test_the_tracked_labels_are_unique_rom_rows_in_address_order():
     labels = runtime_labels.read()
     rows = runtime_labels.run_of()
-    assert len(rows) == 2
-    assert len(labels) == sum(int(row["entries"]) for row in rows) == 282
+    assert len(rows) == 6
+    assert len(labels) == sum(int(row["entries"]) for row in rows) == 493
     assert set(region for region, _address, _mode in labels) == {"rom"}
     assert set(mode for _region, _address, mode in labels) <= {"thumb", "arm"}
     assert set(mode for _region, _address, mode in labels) == {"thumb", "arm"}
@@ -40,7 +40,7 @@ def test_the_tracked_labels_are_unique_rom_rows_in_address_order():
 
 def test_the_two_runs_are_the_attract_record_and_the_gameplay_traversal():
     rows = runtime_labels.run_of()
-    assert [row["route"] for row in rows] == ["no-input", "fight-traversal"]
+    assert [row["route"] for row in rows] == ["no-input", "fight-traversal", "attract", "boot-newgame-field-menu", "fight-traversal", "fight-fuzz"]
     assert rows[0]["frames"] == "10800" and rows[0]["entries"] == rows[0]["rom"] == "126"
     assert rows[1]["frames"] == "1630" and rows[1]["entries"] == rows[1]["rom"] == "156"
     assert rows[1]["iwram"] == rows[0]["iwram"] == "0"
@@ -49,7 +49,7 @@ def test_the_two_runs_are_the_attract_record_and_the_gameplay_traversal():
 def test_the_tracked_labels_are_the_boundary_admitted_ones_beside_their_null():
     figures, problem = runtime_labels.measure()
     assert problem is None
-    assert figures["rows"] == figures["admitted"] == 282
+    assert figures["rows"] == figures["admitted"] == 493
     assert figures["null_refused"] == figures["null_samples"] > 0
 
 
@@ -72,7 +72,7 @@ def test_a_run_that_records_a_different_count_is_refused(tmp_path):
     text = open(runtime_labels.RUNS, encoding="ascii", newline="").read()
     path.write_text(text.replace(",126,126,0,", ",127,127,0,"), encoding="ascii", newline="")
     _figures, problem = runtime_labels.measure(runs=str(path))
-    assert problem and "283 entries" in problem and "282" in problem
+    assert problem and "494 entries" in problem and "493" in problem
 
 
 def test_the_run_counts_are_read_as_the_sum_of_their_rows(tmp_path):
@@ -80,7 +80,7 @@ def test_the_run_counts_are_read_as_the_sum_of_their_rows(tmp_path):
     text = open(runtime_labels.RUNS, encoding="ascii", newline="").read()
     path.write_text(text.replace(",156,156,0,", ",157,157,0,"), encoding="ascii", newline="")
     _figures, problem = runtime_labels.measure(runs=str(path))
-    assert problem and "283 entries" in problem
+    assert problem and "494 entries" in problem
 
 
 def test_a_run_whose_count_is_not_a_number_is_refused(tmp_path):

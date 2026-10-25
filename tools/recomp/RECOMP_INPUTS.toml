@@ -1,11 +1,11 @@
 [counts]
-functions = 1772
-code_bytes = 47118
+functions = 1985
+code_bytes = 48854
 entries = 0
 jump_tables = 0
 code_copies = 1
-raw_rows = 28
-rows = 1800
+raw_rows = 25
+rows = 2010
 
 [identity]
 sha1 = "a3c8c76742f11fc6a3f6e3fcca20992458cac0b5"
@@ -100,6 +100,20 @@ end = 0x080003fa
 origin = "table"
 
 [[code]]
+addr = 0x08000424
+mode = "thumb"
+size = 10
+end = 0x0800042e
+origin = "runtime"
+
+[[code]]
+addr = 0x0800042e
+mode = "thumb"
+size = 4
+end = 0x08000432
+origin = "runtime"
+
+[[code]]
 addr = 0x08000432
 mode = "thumb"
 size = 42
@@ -114,11 +128,102 @@ end = 0x0800051a
 origin = "table"
 
 [[code]]
+addr = 0x0800051a
+mode = "thumb"
+size = 6
+end = 0x08000520
+origin = "runtime"
+
+[[code]]
 addr = 0x08000520
 mode = "thumb"
 size = 52
 end = 0x08000554
 origin = "table"
+
+[[code]]
+addr = 0x08000554
+mode = "thumb"
+size = 14
+end = 0x08000562
+origin = "runtime"
+
+[[code]]
+addr = 0x08000562
+mode = "thumb"
+size = 14
+end = 0x08000570
+origin = "runtime"
+
+[[code]]
+addr = 0x08000570
+mode = "thumb"
+size = 6
+end = 0x08000576
+origin = "runtime"
+
+[[code]]
+addr = 0x08000576
+mode = "thumb"
+size = 40
+end = 0x0800059e
+origin = "runtime"
+
+[[code]]
+addr = 0x0800059e
+mode = "thumb"
+size = 10
+end = 0x080005a8
+origin = "runtime"
+
+[[code]]
+addr = 0x080005a8
+mode = "thumb"
+size = 28
+end = 0x080005c4
+origin = "runtime"
+
+[[code]]
+addr = 0x080005c4
+mode = "thumb"
+size = 6
+end = 0x080005ca
+origin = "runtime"
+
+[[code]]
+addr = 0x080005ca
+mode = "thumb"
+size = 6
+end = 0x080005d0
+origin = "runtime"
+
+[[code]]
+addr = 0x080005d0
+mode = "thumb"
+size = 10
+end = 0x080005da
+origin = "runtime"
+
+[[code]]
+addr = 0x080005da
+mode = "thumb"
+size = 2
+end = 0x080005dc
+origin = "runtime"
+
+[[code]]
+addr = 0x080005fa
+mode = "thumb"
+size = 18
+end = 0x0800060c
+origin = "runtime"
+
+[[code]]
+addr = 0x0800060c
+mode = "thumb"
+size = 4
+end = 0x08000610
+origin = "runtime"
 
 [[code]]
 addr = 0x08000732
@@ -725,11 +830,81 @@ end = 0x08000f9e
 origin = "call"
 
 [[code]]
+addr = 0x08000fa4
+mode = "thumb"
+size = 8
+end = 0x08000fac
+origin = "runtime"
+
+[[code]]
+addr = 0x08000fac
+mode = "thumb"
+size = 28
+end = 0x08000fc8
+origin = "runtime"
+
+[[code]]
+addr = 0x08000fc8
+mode = "thumb"
+size = 10
+end = 0x08000fd2
+origin = "runtime"
+
+[[code]]
+addr = 0x08000fd2
+mode = "thumb"
+size = 6
+end = 0x08000fd8
+origin = "runtime"
+
+[[code]]
+addr = 0x08000fd8
+mode = "thumb"
+size = 16
+end = 0x08000fe8
+origin = "runtime"
+
+[[code]]
+addr = 0x08000fe8
+mode = "thumb"
+size = 4
+end = 0x08000fec
+origin = "runtime"
+
+[[code]]
 addr = 0x08000fec
 mode = "thumb"
 size = 28
 end = 0x08001008
 origin = "table"
+
+[[code]]
+addr = 0x08001008
+mode = "thumb"
+size = 12
+end = 0x08001014
+origin = "runtime"
+
+[[code]]
+addr = 0x08001014
+mode = "thumb"
+size = 12
+end = 0x08001020
+origin = "runtime"
+
+[[code]]
+addr = 0x08001020
+mode = "thumb"
+size = 10
+end = 0x0800102a
+origin = "runtime"
+
+[[code]]
+addr = 0x0800102a
+mode = "thumb"
+size = 4
+end = 0x0800102e
+origin = "runtime"
 
 [[code]]
 addr = 0x08001040
@@ -843,6 +1018,20 @@ mode = "thumb"
 size = 14
 end = 0x08001208
 origin = "repeated"
+
+[[code]]
+addr = 0x08001208
+mode = "thumb"
+size = 6
+end = 0x0800120e
+origin = "runtime"
+
+[[code]]
+addr = 0x0800120e
+mode = "thumb"
+size = 2
+end = 0x08001210
+origin = "runtime"
 
 [[code]]
 addr = 0x08001210
@@ -1097,6 +1286,48 @@ end = 0x080014ce
 origin = "table"
 
 [[code]]
+addr = 0x080014ce
+mode = "thumb"
+size = 6
+end = 0x080014d4
+origin = "runtime"
+
+[[code]]
+addr = 0x080014d4
+mode = "thumb"
+size = 6
+end = 0x080014da
+origin = "runtime"
+
+[[code]]
+addr = 0x080014da
+mode = "thumb"
+size = 2
+end = 0x080014dc
+origin = "runtime"
+
+[[code]]
+addr = 0x080014dc
+mode = "thumb"
+size = 6
+end = 0x080014e2
+origin = "runtime"
+
+[[code]]
+addr = 0x080014e2
+mode = "thumb"
+size = 6
+end = 0x080014e8
+origin = "runtime"
+
+[[code]]
+addr = 0x080014e8
+mode = "thumb"
+size = 2
+end = 0x080014ea
+origin = "runtime"
+
+[[code]]
 addr = 0x080014f8
 mode = "thumb"
 size = 2
@@ -1320,13 +1551,33 @@ size = 36
 end = 0x08001730
 origin = "table"
 
-[[raw]]
+[[code]]
 addr = 0x08001730
 mode = "thumb"
-size = 26
-end = 0x0800174a
+size = 16
+end = 0x08001740
 origin = "table"
-reason = "data"
+
+[[code]]
+addr = 0x08001740
+mode = "thumb"
+size = 2
+end = 0x08001742
+origin = "runtime"
+
+[[code]]
+addr = 0x08001742
+mode = "thumb"
+size = 4
+end = 0x08001746
+origin = "runtime"
+
+[[code]]
+addr = 0x08001746
+mode = "thumb"
+size = 4
+end = 0x0800174a
+origin = "runtime"
 
 [[code]]
 addr = 0x0800174a
@@ -1357,6 +1608,69 @@ end = 0x080017b6
 origin = "proven"
 
 [[code]]
+addr = 0x080017b6
+mode = "thumb"
+size = 10
+end = 0x080017c0
+origin = "runtime"
+
+[[code]]
+addr = 0x080017c0
+mode = "thumb"
+size = 6
+end = 0x080017c6
+origin = "runtime"
+
+[[code]]
+addr = 0x080017c6
+mode = "thumb"
+size = 6
+end = 0x080017cc
+origin = "runtime"
+
+[[code]]
+addr = 0x080017cc
+mode = "thumb"
+size = 8
+end = 0x080017d4
+origin = "runtime"
+
+[[code]]
+addr = 0x080017d4
+mode = "thumb"
+size = 6
+end = 0x080017da
+origin = "runtime"
+
+[[code]]
+addr = 0x080017da
+mode = "thumb"
+size = 10
+end = 0x080017e4
+origin = "runtime"
+
+[[code]]
+addr = 0x080017e4
+mode = "thumb"
+size = 2
+end = 0x080017e6
+origin = "runtime"
+
+[[code]]
+addr = 0x080017e6
+mode = "thumb"
+size = 12
+end = 0x080017f2
+origin = "runtime"
+
+[[code]]
+addr = 0x080017f2
+mode = "thumb"
+size = 4
+end = 0x080017f6
+origin = "runtime"
+
+[[code]]
 addr = 0x080017f6
 mode = "thumb"
 size = 2
@@ -1376,6 +1690,13 @@ mode = "thumb"
 size = 122
 end = 0x08001874
 origin = "table"
+
+[[code]]
+addr = 0x08001874
+mode = "thumb"
+size = 2
+end = 0x08001876
+origin = "runtime"
 
 [[code]]
 addr = 0x08001876
@@ -1420,6 +1741,146 @@ end = 0x08001970
 origin = "table"
 
 [[code]]
+addr = 0x080019d8
+mode = "thumb"
+size = 8
+end = 0x080019e0
+origin = "runtime"
+
+[[code]]
+addr = 0x080019e0
+mode = "thumb"
+size = 6
+end = 0x080019e6
+origin = "runtime"
+
+[[code]]
+addr = 0x080019e6
+mode = "thumb"
+size = 6
+end = 0x080019ec
+origin = "runtime"
+
+[[code]]
+addr = 0x080019ec
+mode = "thumb"
+size = 8
+end = 0x080019f4
+origin = "runtime"
+
+[[code]]
+addr = 0x080019f4
+mode = "thumb"
+size = 6
+end = 0x080019fa
+origin = "runtime"
+
+[[code]]
+addr = 0x080019fa
+mode = "thumb"
+size = 8
+end = 0x08001a02
+origin = "runtime"
+
+[[code]]
+addr = 0x08001a02
+mode = "thumb"
+size = 2
+end = 0x08001a04
+origin = "runtime"
+
+[[code]]
+addr = 0x08001a04
+mode = "thumb"
+size = 8
+end = 0x08001a0c
+origin = "runtime"
+
+[[code]]
+addr = 0x08001a0c
+mode = "thumb"
+size = 4
+end = 0x08001a10
+origin = "runtime"
+
+[[code]]
+addr = 0x08001a10
+mode = "thumb"
+size = 10
+end = 0x08001a1a
+origin = "runtime"
+
+[[code]]
+addr = 0x08001a1a
+mode = "thumb"
+size = 8
+end = 0x08001a22
+origin = "runtime"
+
+[[code]]
+addr = 0x08001a22
+mode = "thumb"
+size = 8
+end = 0x08001a2a
+origin = "runtime"
+
+[[code]]
+addr = 0x08001a2a
+mode = "thumb"
+size = 24
+end = 0x08001a42
+origin = "runtime"
+
+[[code]]
+addr = 0x08001a42
+mode = "thumb"
+size = 4
+end = 0x08001a46
+origin = "runtime"
+
+[[code]]
+addr = 0x08001a46
+mode = "thumb"
+size = 8
+end = 0x08001a4e
+origin = "runtime"
+
+[[code]]
+addr = 0x08001a4e
+mode = "thumb"
+size = 2
+end = 0x08001a50
+origin = "runtime"
+
+[[code]]
+addr = 0x08001a50
+mode = "thumb"
+size = 16
+end = 0x08001a60
+origin = "runtime"
+
+[[code]]
+addr = 0x08001a60
+mode = "thumb"
+size = 6
+end = 0x08001a66
+origin = "runtime"
+
+[[code]]
+addr = 0x08001a66
+mode = "thumb"
+size = 4
+end = 0x08001a6a
+origin = "runtime"
+
+[[code]]
+addr = 0x08001a6a
+mode = "thumb"
+size = 4
+end = 0x08001a6e
+origin = "runtime"
+
+[[code]]
 addr = 0x08001afa
 mode = "thumb"
 size = 42
@@ -1427,11 +1888,102 @@ end = 0x08001b24
 origin = "repeated"
 
 [[code]]
+addr = 0x08001ca8
+mode = "thumb"
+size = 12
+end = 0x08001cb4
+origin = "runtime"
+
+[[code]]
+addr = 0x08001cb4
+mode = "thumb"
+size = 6
+end = 0x08001cba
+origin = "runtime"
+
+[[code]]
+addr = 0x08001cba
+mode = "thumb"
+size = 6
+end = 0x08001cc0
+origin = "runtime"
+
+[[code]]
+addr = 0x08001cc0
+mode = "thumb"
+size = 8
+end = 0x08001cc8
+origin = "runtime"
+
+[[code]]
+addr = 0x08001cc8
+mode = "thumb"
+size = 6
+end = 0x08001cce
+origin = "runtime"
+
+[[code]]
+addr = 0x08001cce
+mode = "thumb"
+size = 44
+end = 0x08001cfa
+origin = "runtime"
+
+[[code]]
 addr = 0x08001cfa
 mode = "thumb"
 size = 88
 end = 0x08001d52
 origin = "table"
+
+[[code]]
+addr = 0x08001d52
+mode = "thumb"
+size = 20
+end = 0x08001d66
+origin = "runtime"
+
+[[code]]
+addr = 0x08001d66
+mode = "thumb"
+size = 8
+end = 0x08001d6e
+origin = "runtime"
+
+[[code]]
+addr = 0x08001d6e
+mode = "thumb"
+size = 4
+end = 0x08001d72
+origin = "runtime"
+
+[[code]]
+addr = 0x08001d72
+mode = "thumb"
+size = 14
+end = 0x08001d80
+origin = "runtime"
+
+[[code]]
+addr = 0x08001d80
+mode = "thumb"
+size = 6
+end = 0x08001d86
+origin = "runtime"
+
+[[code]]
+addr = 0x08001d86
+mode = "thumb"
+size = 22
+end = 0x08001d9c
+origin = "runtime"
+
+[[code]]
+addr = 0x08001d9c
+mode = "thumb"
+size = 4
+end = 0x08001da0
+origin = "runtime"
 
 [[code]]
 addr = 0x08001df6
@@ -2442,6 +2994,20 @@ end = 0x08002a7a
 origin = "table"
 
 [[code]]
+addr = 0x08002a7a
+mode = "thumb"
+size = 8
+end = 0x08002a82
+origin = "runtime"
+
+[[code]]
+addr = 0x08002a82
+mode = "thumb"
+size = 6
+end = 0x08002a88
+origin = "runtime"
+
+[[code]]
 addr = 0x08002a88
 mode = "thumb"
 size = 218
@@ -3223,6 +3789,111 @@ end = 0x08003b74
 origin = "table"
 
 [[code]]
+addr = 0x08003b74
+mode = "thumb"
+size = 12
+end = 0x08003b80
+origin = "runtime"
+
+[[code]]
+addr = 0x08003b80
+mode = "thumb"
+size = 6
+end = 0x08003b86
+origin = "runtime"
+
+[[code]]
+addr = 0x08003b86
+mode = "thumb"
+size = 6
+end = 0x08003b8c
+origin = "runtime"
+
+[[code]]
+addr = 0x08003b8c
+mode = "thumb"
+size = 8
+end = 0x08003b94
+origin = "runtime"
+
+[[code]]
+addr = 0x08003b94
+mode = "thumb"
+size = 6
+end = 0x08003b9a
+origin = "runtime"
+
+[[code]]
+addr = 0x08003b9a
+mode = "thumb"
+size = 8
+end = 0x08003ba2
+origin = "runtime"
+
+[[code]]
+addr = 0x08003ba2
+mode = "thumb"
+size = 2
+end = 0x08003ba4
+origin = "runtime"
+
+[[code]]
+addr = 0x08003ba4
+mode = "thumb"
+size = 8
+end = 0x08003bac
+origin = "runtime"
+
+[[code]]
+addr = 0x08003bac
+mode = "thumb"
+size = 4
+end = 0x08003bb0
+origin = "runtime"
+
+[[code]]
+addr = 0x08003bb0
+mode = "thumb"
+size = 10
+end = 0x08003bba
+origin = "runtime"
+
+[[code]]
+addr = 0x08003bba
+mode = "thumb"
+size = 14
+end = 0x08003bc8
+origin = "runtime"
+
+[[code]]
+addr = 0x08003bc8
+mode = "thumb"
+size = 4
+end = 0x08003bcc
+origin = "runtime"
+
+[[code]]
+addr = 0x08003bcc
+mode = "thumb"
+size = 6
+end = 0x08003bd2
+origin = "runtime"
+
+[[code]]
+addr = 0x08003bd2
+mode = "thumb"
+size = 2
+end = 0x08003bd4
+origin = "runtime"
+
+[[code]]
+addr = 0x08003bd4
+mode = "thumb"
+size = 2
+end = 0x08003bd6
+origin = "runtime"
+
+[[code]]
 addr = 0x08003bd6
 mode = "thumb"
 size = 28
@@ -3235,6 +3906,125 @@ mode = "thumb"
 size = 12
 end = 0x08003bfe
 origin = "table"
+
+[[code]]
+addr = 0x08003bfe
+mode = "thumb"
+size = 14
+end = 0x08003c0c
+origin = "runtime"
+
+[[code]]
+addr = 0x08003c0c
+mode = "thumb"
+size = 16
+end = 0x08003c1c
+origin = "runtime"
+
+[[code]]
+addr = 0x08003c1c
+mode = "thumb"
+size = 6
+end = 0x08003c22
+origin = "runtime"
+
+[[code]]
+addr = 0x08003c22
+mode = "thumb"
+size = 58
+end = 0x08003c5c
+origin = "runtime"
+
+[[code]]
+addr = 0x08003c5c
+mode = "thumb"
+size = 18
+end = 0x08003c6e
+origin = "runtime"
+
+[[code]]
+addr = 0x08003c6e
+mode = "thumb"
+size = 4
+end = 0x08003c72
+origin = "runtime"
+
+[[code]]
+addr = 0x08003c72
+mode = "thumb"
+size = 6
+end = 0x08003c78
+origin = "runtime"
+
+[[code]]
+addr = 0x08003c78
+mode = "thumb"
+size = 2
+end = 0x08003c7a
+origin = "runtime"
+
+[[code]]
+addr = 0x08003c7a
+mode = "thumb"
+size = 22
+end = 0x08003c90
+origin = "runtime"
+
+[[code]]
+addr = 0x08003c90
+mode = "thumb"
+size = 2
+end = 0x08003c92
+origin = "runtime"
+
+[[code]]
+addr = 0x08003c92
+mode = "thumb"
+size = 22
+end = 0x08003ca8
+origin = "runtime"
+
+[[code]]
+addr = 0x08003ca8
+mode = "thumb"
+size = 2
+end = 0x08003caa
+origin = "runtime"
+
+[[code]]
+addr = 0x08003caa
+mode = "thumb"
+size = 32
+end = 0x08003cca
+origin = "runtime"
+
+[[code]]
+addr = 0x08003cca
+mode = "thumb"
+size = 26
+end = 0x08003ce4
+origin = "runtime"
+
+[[code]]
+addr = 0x08003ce4
+mode = "thumb"
+size = 6
+end = 0x08003cea
+origin = "runtime"
+
+[[code]]
+addr = 0x08003cea
+mode = "thumb"
+size = 2
+end = 0x08003cec
+origin = "runtime"
+
+[[code]]
+addr = 0x08003cec
+mode = "thumb"
+size = 14
+end = 0x08003cfa
+origin = "runtime"
 
 [[code]]
 addr = 0x08003cfa
@@ -4197,6 +4987,13 @@ end = 0x08004a1c
 origin = "table"
 
 [[code]]
+addr = 0x08004a1c
+mode = "thumb"
+size = 2
+end = 0x08004a1e
+origin = "runtime"
+
+[[code]]
 addr = 0x08004a1e
 mode = "thumb"
 size = 78
@@ -4272,6 +5069,13 @@ mode = "thumb"
 size = 32
 end = 0x08004c30
 origin = "table"
+
+[[code]]
+addr = 0x08004c30
+mode = "thumb"
+size = 2
+end = 0x08004c32
+origin = "runtime"
 
 [[code]]
 addr = 0x08004c32
@@ -4392,13 +5196,12 @@ size = 2
 end = 0x08004d58
 origin = "proven"
 
-[[raw]]
+[[code]]
 addr = 0x08004d5c
 mode = "thumb"
 size = 46
 end = 0x08004d8a
 origin = "runtime"
-reason = "data"
 
 [[code]]
 addr = 0x08004d8a
@@ -4469,6 +5272,62 @@ mode = "thumb"
 size = 18
 end = 0x08004e4e
 origin = "table"
+
+[[code]]
+addr = 0x08004e4e
+mode = "thumb"
+size = 8
+end = 0x08004e56
+origin = "runtime"
+
+[[code]]
+addr = 0x08004e56
+mode = "thumb"
+size = 8
+end = 0x08004e5e
+origin = "runtime"
+
+[[code]]
+addr = 0x08004e5e
+mode = "thumb"
+size = 24
+end = 0x08004e76
+origin = "runtime"
+
+[[code]]
+addr = 0x08004e76
+mode = "thumb"
+size = 8
+end = 0x08004e7e
+origin = "runtime"
+
+[[code]]
+addr = 0x08004e7e
+mode = "thumb"
+size = 2
+end = 0x08004e80
+origin = "runtime"
+
+[[code]]
+addr = 0x08004e80
+mode = "thumb"
+size = 12
+end = 0x08004e8c
+origin = "runtime"
+
+[[code]]
+addr = 0x08004e8c
+mode = "thumb"
+size = 10
+end = 0x08004e96
+origin = "runtime"
+
+[[code]]
+addr = 0x08004e96
+mode = "thumb"
+size = 2
+end = 0x08004e98
+origin = "runtime"
 
 [[code]]
 addr = 0x08004e98
@@ -4953,6 +5812,13 @@ mode = "thumb"
 size = 36
 end = 0x080055c4
 origin = "table"
+
+[[code]]
+addr = 0x080055c4
+mode = "thumb"
+size = 2
+end = 0x080055c6
+origin = "runtime"
 
 [[code]]
 addr = 0x080055c6
@@ -5558,6 +6424,13 @@ end = 0x08005fe0
 origin = "table"
 
 [[code]]
+addr = 0x08005fe0
+mode = "thumb"
+size = 2
+end = 0x08005fe2
+origin = "runtime"
+
+[[code]]
 addr = 0x08005fe2
 mode = "thumb"
 size = 50
@@ -5906,6 +6779,13 @@ mode = "thumb"
 size = 32
 end = 0x080064c8
 origin = "table"
+
+[[code]]
+addr = 0x080064c8
+mode = "thumb"
+size = 2
+end = 0x080064ca
+origin = "runtime"
 
 [[code]]
 addr = 0x080064ca
@@ -7426,13 +8306,12 @@ size = 40
 end = 0x08008016
 origin = "proven"
 
-[[raw]]
+[[code]]
 addr = 0x08008016
 mode = "thumb"
 size = 50
 end = 0x08008048
 origin = "runtime"
-reason = "data"
 
 [[code]]
 addr = 0x08008048
@@ -11441,6 +12320,13 @@ end = 0x0800dadc
 origin = "table"
 
 [[code]]
+addr = 0x0800dadc
+mode = "thumb"
+size = 2
+end = 0x0800dade
+origin = "runtime"
+
+[[code]]
 addr = 0x0800dade
 mode = "thumb"
 size = 38
@@ -11523,6 +12409,566 @@ mode = "thumb"
 size = 24
 end = 0x0800dcec
 origin = "table"
+
+[[code]]
+addr = 0x0800dcf0
+mode = "thumb"
+size = 12
+end = 0x0800dcfc
+origin = "runtime"
+
+[[code]]
+addr = 0x0800dcfc
+mode = "thumb"
+size = 16
+end = 0x0800dd0c
+origin = "runtime"
+
+[[code]]
+addr = 0x0800dd0c
+mode = "thumb"
+size = 16
+end = 0x0800dd1c
+origin = "runtime"
+
+[[code]]
+addr = 0x0800dd1c
+mode = "thumb"
+size = 20
+end = 0x0800dd30
+origin = "runtime"
+
+[[code]]
+addr = 0x0800dd30
+mode = "thumb"
+size = 14
+end = 0x0800dd3e
+origin = "runtime"
+
+[[code]]
+addr = 0x0800dd3e
+mode = "thumb"
+size = 40
+end = 0x0800dd66
+origin = "runtime"
+
+[[code]]
+addr = 0x0800dd66
+mode = "thumb"
+size = 6
+end = 0x0800dd6c
+origin = "runtime"
+
+[[code]]
+addr = 0x0800dd6c
+mode = "thumb"
+size = 6
+end = 0x0800dd72
+origin = "runtime"
+
+[[code]]
+addr = 0x0800dd72
+mode = "thumb"
+size = 32
+end = 0x0800dd92
+origin = "runtime"
+
+[[code]]
+addr = 0x0800dd92
+mode = "thumb"
+size = 4
+end = 0x0800dd96
+origin = "runtime"
+
+[[code]]
+addr = 0x0800dd96
+mode = "thumb"
+size = 18
+end = 0x0800dda8
+origin = "runtime"
+
+[[code]]
+addr = 0x0800dda8
+mode = "thumb"
+size = 26
+end = 0x0800ddc2
+origin = "runtime"
+
+[[code]]
+addr = 0x0800ddc2
+mode = "thumb"
+size = 2
+end = 0x0800ddc4
+origin = "runtime"
+
+[[code]]
+addr = 0x0800ddc4
+mode = "thumb"
+size = 20
+end = 0x0800ddd8
+origin = "runtime"
+
+[[code]]
+addr = 0x0800ddd8
+mode = "thumb"
+size = 8
+end = 0x0800dde0
+origin = "runtime"
+
+[[code]]
+addr = 0x0800dde0
+mode = "thumb"
+size = 8
+end = 0x0800dde8
+origin = "runtime"
+
+[[code]]
+addr = 0x0800dde8
+mode = "thumb"
+size = 2
+end = 0x0800ddea
+origin = "runtime"
+
+[[code]]
+addr = 0x0800ddea
+mode = "thumb"
+size = 2
+end = 0x0800ddec
+origin = "runtime"
+
+[[code]]
+addr = 0x0800ddec
+mode = "thumb"
+size = 2
+end = 0x0800ddee
+origin = "runtime"
+
+[[code]]
+addr = 0x0800ddee
+mode = "thumb"
+size = 2
+end = 0x0800ddf0
+origin = "runtime"
+
+[[code]]
+addr = 0x0800ddf0
+mode = "thumb"
+size = 2
+end = 0x0800ddf2
+origin = "runtime"
+
+[[code]]
+addr = 0x0800ddf2
+mode = "thumb"
+size = 2
+end = 0x0800ddf4
+origin = "runtime"
+
+[[code]]
+addr = 0x0800ddf4
+mode = "thumb"
+size = 2
+end = 0x0800ddf6
+origin = "runtime"
+
+[[code]]
+addr = 0x0800ddf6
+mode = "thumb"
+size = 2
+end = 0x0800ddf8
+origin = "runtime"
+
+[[code]]
+addr = 0x0800ddf8
+mode = "thumb"
+size = 2
+end = 0x0800ddfa
+origin = "runtime"
+
+[[code]]
+addr = 0x0800ddfa
+mode = "thumb"
+size = 4
+end = 0x0800ddfe
+origin = "runtime"
+
+[[code]]
+addr = 0x0800ddfe
+mode = "thumb"
+size = 2
+end = 0x0800de00
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de00
+mode = "thumb"
+size = 2
+end = 0x0800de02
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de02
+mode = "thumb"
+size = 2
+end = 0x0800de04
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de04
+mode = "thumb"
+size = 2
+end = 0x0800de06
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de06
+mode = "thumb"
+size = 2
+end = 0x0800de08
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de08
+mode = "thumb"
+size = 2
+end = 0x0800de0a
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de0a
+mode = "thumb"
+size = 2
+end = 0x0800de0c
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de0c
+mode = "thumb"
+size = 2
+end = 0x0800de0e
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de0e
+mode = "thumb"
+size = 2
+end = 0x0800de10
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de10
+mode = "thumb"
+size = 2
+end = 0x0800de12
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de12
+mode = "thumb"
+size = 2
+end = 0x0800de14
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de14
+mode = "thumb"
+size = 2
+end = 0x0800de16
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de16
+mode = "thumb"
+size = 2
+end = 0x0800de18
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de18
+mode = "thumb"
+size = 2
+end = 0x0800de1a
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de1a
+mode = "thumb"
+size = 2
+end = 0x0800de1c
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de1c
+mode = "thumb"
+size = 2
+end = 0x0800de1e
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de1e
+mode = "thumb"
+size = 2
+end = 0x0800de20
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de20
+mode = "thumb"
+size = 2
+end = 0x0800de22
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de22
+mode = "thumb"
+size = 2
+end = 0x0800de24
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de24
+mode = "thumb"
+size = 2
+end = 0x0800de26
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de26
+mode = "thumb"
+size = 2
+end = 0x0800de28
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de28
+mode = "thumb"
+size = 2
+end = 0x0800de2a
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de2a
+mode = "thumb"
+size = 2
+end = 0x0800de2c
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de2c
+mode = "thumb"
+size = 2
+end = 0x0800de2e
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de2e
+mode = "thumb"
+size = 2
+end = 0x0800de30
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de30
+mode = "thumb"
+size = 2
+end = 0x0800de32
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de32
+mode = "thumb"
+size = 2
+end = 0x0800de34
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de34
+mode = "thumb"
+size = 2
+end = 0x0800de36
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de36
+mode = "thumb"
+size = 2
+end = 0x0800de38
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de38
+mode = "thumb"
+size = 2
+end = 0x0800de3a
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de3a
+mode = "thumb"
+size = 2
+end = 0x0800de3c
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de3c
+mode = "thumb"
+size = 2
+end = 0x0800de3e
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de3e
+mode = "thumb"
+size = 2
+end = 0x0800de40
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de40
+mode = "thumb"
+size = 2
+end = 0x0800de42
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de42
+mode = "thumb"
+size = 2
+end = 0x0800de44
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de44
+mode = "thumb"
+size = 2
+end = 0x0800de46
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de46
+mode = "thumb"
+size = 2
+end = 0x0800de48
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de48
+mode = "thumb"
+size = 2
+end = 0x0800de4a
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de4a
+mode = "thumb"
+size = 2
+end = 0x0800de4c
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de4c
+mode = "thumb"
+size = 2
+end = 0x0800de4e
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de52
+mode = "thumb"
+size = 2
+end = 0x0800de54
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de54
+mode = "thumb"
+size = 2
+end = 0x0800de56
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de56
+mode = "thumb"
+size = 2
+end = 0x0800de58
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de58
+mode = "thumb"
+size = 2
+end = 0x0800de5a
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de5a
+mode = "thumb"
+size = 2
+end = 0x0800de5c
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de5c
+mode = "thumb"
+size = 2
+end = 0x0800de5e
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de5e
+mode = "thumb"
+size = 2
+end = 0x0800de60
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de60
+mode = "thumb"
+size = 2
+end = 0x0800de62
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de62
+mode = "thumb"
+size = 6
+end = 0x0800de68
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de68
+mode = "thumb"
+size = 4
+end = 0x0800de6c
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de6c
+mode = "thumb"
+size = 8
+end = 0x0800de74
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de74
+mode = "thumb"
+size = 8
+end = 0x0800de7c
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de7c
+mode = "thumb"
+size = 4
+end = 0x0800de80
+origin = "runtime"
+
+[[code]]
+addr = 0x0800de80
+mode = "thumb"
+size = 2
+end = 0x0800de82
+origin = "runtime"
 
 [[code]]
 addr = 0x0800df14
@@ -11812,6 +13258,20 @@ end = 0x0800e706
 origin = "proven"
 
 [[code]]
+addr = 0x0800e708
+mode = "arm"
+size = 36
+end = 0x0800e72c
+origin = "runtime"
+
+[[code]]
+addr = 0x0800e72c
+mode = "arm"
+size = 28
+end = 0x0800e748
+origin = "runtime"
+
+[[code]]
 addr = 0x0800e748
 mode = "thumb"
 size = 2
@@ -12071,6 +13531,13 @@ mode = "thumb"
 size = 48
 end = 0x0800f39c
 origin = "call"
+
+[[code]]
+addr = 0x0800f3b4
+mode = "thumb"
+size = 2
+end = 0x0800f3b6
+origin = "runtime"
 
 [[code]]
 addr = 0x0800f3bc

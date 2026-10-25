@@ -1062,8 +1062,10 @@ def census_result(rom, channels=CHANNELS, labels=()):
             del modes[address]
     flags = {address: flag_of(rom, address, modes[address]) for address in starts}
     for address in starts:
-        if ("data" in flags[address] and "copy" in starts[address]["limbs"]
-                and own_frame_save(rom, address, modes[address])):
+        if "data" in flags[address] and (
+                ("copy" in starts[address]["limbs"]
+                 and own_frame_save(rom, address, modes[address]))
+                or address in labelled):
             flags[address].remove("data")
         if modes[address] == MODE_THUMB and any(empty_list(rom, at)
                                                for at in bodies.get(address, ())):
@@ -1323,8 +1325,9 @@ def doc_text(result, remainder_result):
         lines.append("| %s | %d |" % (flag, flagged.get(flag, 0)))
     lines += ["", "A `data` start is one whose first instructions are a data prefix before its "
               "own prologue, unless a copy names its first byte and its save is the routine's "
-              "own frame save; or one whose body carries a Thumb halfword with an empty register "
-              "list, which no assembler emits and no ARMv4T core executes as code.", ""]
+              "own frame save, or a bounded run entered it as a dispatch entry; or one whose body "
+              "carries a Thumb halfword with an empty register list, which no assembler emits and "
+              "no ARMv4T core executes as code.", ""]
     lines += ["", "A `no-return` end is where the walk stopped at a halfword the CPU cannot "
               "execute before it met a return, so it is a measured stop and not a return. "
               "Runtime-only entries: %d, the dispatch entries a bounded run recorded in "

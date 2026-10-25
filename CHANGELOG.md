@@ -47,16 +47,21 @@ All notable changes to this tree are recorded here. The format follows
   census and the recompiler input carry the rows as `runtime`, the page counts them, and
   `tools/recomp/runtime_labels.py --check` re-measures every label against the evidence table
   beside a null of the same labels displaced by one halfword.
-- The same channel fed from gameplay: a 1,630-frame run from a mid-fight savestate and a
-  recorded traversal (d-pad in four directions, A taps, the menu opened, navigated and closed)
-  recorded 158 dispatch entries outside every recompiler row. 156 of them the census admits - 147
-  thumb, 9 arm, 1,868 B - so `RUNTIME_LABELS.csv` now carries 282 rows, the evidence table 1,800
-  starts, `RECOMP_INPUTS.toml` 1,800 rows and 45.7398 % of the image builds from source.
-  `runtime_labels.py --import FILE --admit --write` keeps only the labels the census places, prints
-  the refused ones, and unions them with the tracked rows; `RUNTIME_LABELS_RUNS.csv` records one
-  provenance row per run and `--check` sums them against the file. Two recorded entries are the
-  second halfword of a 4-byte Thumb `BL` and are refused; two more the census flags as data stay
-  raw rows.
+- The same channel fed from four routes: a 10,800-frame no-input attract run, a 13,782-frame boot
+  run (title, new game, the opening cards, the first field with a walk in four directions, the pause
+  menu opened and closed through Exit), a 3,701-frame mid-fight traversal from a savestate, and a
+  6,089-frame seeded fuzz from the same savestate. The three gameplay runs recorded 495 distinct
+  dispatch entries; 210 of them were not yet tracked and the census admits them, so
+  `RUNTIME_LABELS.csv` carries 492 rows, the evidence table 2,010 starts, `RECOMP_INPUTS.toml`
+  2,010 rows and 45.7603 % of the image builds from source. Three recorded entries are refused
+  because the walk finds them inside an instruction rather than on a boundary.
+  `RUNTIME_LABELS_RUNS.csv` carries one provenance row per run; its `entries` column counts the
+  labels that run added, so the rows sum to the file.
+- A start a bounded run entered is not flagged `data`: the flag is a shape test on the leading
+  instructions and a dispatch entry measures the same question directly, so `0x08004d5c` and
+  `0x08008016` - both Thumb code whose own frame save follows a three-instruction setup - are
+  emitted as code rows of 46 B and 50 B instead of staying raw. A crafted-start test covers the
+  rule, and the image's own census is asserted to carry no `data` flag on a recorded start.
 - The stream population of the custom row decompressor in `tools/research/f1_population.py`: the
   header at `0x08337248` names 269 objects and its list at `0x083372c8` walks to `0x084dd59e`,
   1,729,239 B, every record's entries tiling its size; 268 of them are row streams that decode

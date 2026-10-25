@@ -1,3 +1,7 @@
 run,frames,hash,entries,rom,iwram,route
 1,10800,72735680cdc95271,126,126,0,no-input
 2,1630,00ca9f046faebb23,156,156,0,fight-traversal
+3,10800,1914da7a29bfd025,0,0,0,attract
+4,13782,df6efc3e4c5c07bf,111,111,0,boot-newgame-field-menu
+5,3701,3fd4c6b7c8662e8c,2,2,0,fight-traversal
+6,6089,129e590009918b75,98,98,0,fight-fuzz

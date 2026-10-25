@@ -151,6 +151,16 @@ def test_a_copy_seeded_frame_save_is_not_a_data_prefix():
     assert "data" not in census.census_result(bytes(image))["flags"][COPY]
 
 
+def test_a_recorded_start_with_a_late_frame_save_is_not_flagged_data():
+    image = bytearray(crafted())
+    put(image, 0x08000180, [0x2001, 0x2102, 0xB508, 0xBD08], 2)
+    assert census.closest(bytes(image), 0x08000180, census.MODE_THUMB) == 0x08000184
+    assert "data" in census.flag_of(bytes(image), 0x08000180, census.MODE_THUMB)
+    result = census.census_result(bytes(image), labels=[(0x08000180, census.MODE_THUMB)])
+    assert result["starts"][0x08000180]["limbs"] == ["runtime"]
+    assert "data" not in result["flags"][0x08000180]
+
+
 def test_the_handler_rows_the_image_gives():
     path = os.path.join(ROOT, "baserom.gba")
     if not os.path.exists(path):
@@ -199,7 +209,8 @@ def test_the_tracked_evidence_is_what_the_retail_image_gives():
     assert len(rom) == census.ROM_SIZE
     result = census.census_result(rom, labels=census.runtime_labels())
     assert result["refused_labels"] == []
-    assert len(result["runtime"]) == 282 == len(result["labels"])
+    assert len(result["runtime"]) == 492 == len(result["labels"]) - 1
+    assert [address for address in result["runtime"] if "data" in result["flags"][address]] == []
     open_bounds = [address for address in result["ends"] if not result["ends"][address][0]]
     assert open_bounds == []
     table = census.remainder(rom, result)
@@ -222,7 +233,7 @@ def test_a_doctored_label_inside_an_instruction_is_refused_by_the_tracked_image(
     result = census.census_result(rom, labels=doctored)
     assert result["refused_labels"] == [0x08000146]
     assert 0x08000146 not in result["starts"]
-    assert len(result["runtime"]) == 282 == len(result["labels"]) - 1
+    assert len(result["runtime"]) == 492 == len(result["labels"]) - 2
 
 
 def test_a_doctored_label_inside_a_thumb_instruction_is_refused_by_the_tracked_image():
