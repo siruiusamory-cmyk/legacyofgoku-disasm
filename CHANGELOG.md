@@ -59,10 +59,18 @@ All notable changes to this tree are recorded here. The format follows
 - The generator for the three lists the custom row decompressor serves, in
   `tools/compress/f1_streams.py`: each record is decoded into rows and token plans through the same
   grammar and re-encoded, and the run is emitted only where the re-encoding equals the retail bytes.
-  The three lists hold 532 records over 3,557,038 B; 529 records over 3,533,142 B re-encode byte for
-  byte and become source, and the first record of each list carries one type 4 and one type 15 entry
-  whose payloads have another grammar, so those 23,896 B stay raw by address with the reason.
+  The three lists hold 532 records over 3,557,038 B and every record re-encodes byte for byte, so all
+  3,557,038 B are source. A type 12 entry is a row stream; a type 4 entry is a palette stream (u16
+  group count, then per group a slot gap, a run count whose 0 reads as 256, and three bytes per
+  entry) and a type 15 entry is an image stream (per row a run count, then per run a signed length:
+  negative copies that many literal bytes, positive repeats one byte that many times), decoded the
+  way the entry-type switch at `0x08004698` dispatches them.
   `--check` re-derives the token list, the generated runs and the slices around them, and
-  `tools/compress/test_f1_streams.py` pins the three populations, the address list, the one refusal
-  per list, the round trip and the permuted-region null. `asm/remainder.s` now carries the three
-  runs and the four retail slices between them.
+  `tools/compress/test_f1_streams.py` pins the three populations, the address list, the two other
+  grammars on each first record, the round trip and the permuted-region null. `asm/remainder.s` now
+  carries the six runs and the three retail slices between them.
+- The generator for the one LZ77 stream the BIOS decoder is handed from the image, in
+  `tools/compress/bios_streams.py`: the stream at `0x081bdc1c` decodes to 11,656 B and a greedy
+  18-byte-window encoder re-encodes the 10,947 stored bytes exactly, so those 10,947 B are source.
+  `tools/compress/test_bios_streams.py` pins the stream, its two lengths, the word that names it,
+  the round trip and a permuted-body null.

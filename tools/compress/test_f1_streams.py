@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+import struct
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -16,13 +17,15 @@ import testkit
 DIGEST = "3ba9919e26704b0f5fdc2bfabc7f7a0404c71413761d38abcd94224c3bd4b1b9"
 LISTS = (
     {"header": 0x081CA168, "start": 0x081CA1E8, "end": 0x08334D67, "records": 214,
-     "bytes": 1485695, "rebuilt": 1476425, "left": ((0x081CA1E8, 9270),)},
+     "bytes": 1485695, "rebuilt": 1485695},
     {"header": 0x08337248, "start": 0x083372C8, "end": 0x084DD59F, "records": 269,
-     "bytes": 1729239, "rebuilt": 1723454, "left": ((0x083372C8, 5785),)},
+     "bytes": 1729239, "rebuilt": 1729239},
     {"header": 0x084E4F44, "start": 0x084E4FC4, "end": 0x0853881C, "records": 49,
-     "bytes": 342104, "rebuilt": 333263, "left": ((0x084E4FC4, 8841),)},
+     "bytes": 342104, "rebuilt": 342104},
 )
-REBUILT = 529
+REBUILT = 532
+DESCRIPTOR = 0x0800CF93
+TAGS = (0xAF11, 0xB011)
 ADDRESSES = {
     0x081CA168: (
         0x081CA1E8, 0x081CC61E, 0x081CDFD2, 0x081CFC09, 0x081D1469, 0x081D2F20, 0x081D4C92, 0x081D67E5,
@@ -113,17 +116,21 @@ def test_the_three_populations_are_the_header_count_and_their_addresses():
         assert (found["count"], found["bytes"]) == (pinned["records"], pinned["bytes"])
         assert (found["start"], found["end"]) == (pinned["start"], pinned["end"])
         assert tuple(start for start, _size in found["records"]) == ADDRESSES[pinned["header"]]
-        assert (sum(size for _start, size, _blob in row["rebuilt"])
-                + sum(size for _start, size, _reason in row["left"])) == pinned["bytes"]
         assert sum(size for _start, size, _blob in row["rebuilt"]) == pinned["rebuilt"]
-        assert tuple((start, size) for start, size, _reason in row["left"]) == pinned["left"]
+        assert row["left"] == []
 
 
-def test_a_record_that_does_not_round_trip_is_named_with_its_reason():
-    measured = f1_streams.census(image())
-    reasons = [reason for row in measured for _start, _size, reason in row["left"]]
-    assert len(reasons) == 3
-    assert all("is not a row stream" in reason for reason in reasons)
+def test_the_first_record_of_each_list_rebuilds_through_the_other_two_grammars():
+    rom = image()
+    for pinned in LISTS:
+        found = f1_population.walk(rom, pinned["header"])
+        start, size = found["records"][0]
+        kinds = [kind for _at, _entry, kind in f1_population.entries(rom, start, size)]
+        assert kinds == [4, 15]
+        blob, reason = f1_streams.record(rom, start, size,
+                                        f1_population.half(rom, pinned["header"] + 0xA))
+        assert reason is None
+        assert blob == rom[start - f1_streams.ROM_BASE:start - f1_streams.ROM_BASE + size]
 
 
 def test_every_rebuilt_record_is_the_image_bytes():
@@ -136,21 +143,31 @@ def test_every_rebuilt_record_is_the_image_bytes():
     assert rebuilt == REBUILT
 
 
-def test_the_refused_record_carries_the_other_two_types():
-    rom = image()
-    for pinned in LISTS:
-        found = f1_population.walk(rom, pinned["header"])
-        start, size = found["records"][0]
-        kinds = [kind for _at, _entry, kind in f1_population.entries(rom, start, size)]
-        assert kinds == [4, 15]
-        assert (start, size) == pinned["left"][0]
-
-
 def test_the_same_walk_over_a_permuted_region_finds_no_record():
     rom = image()
     for pinned in LISTS:
         found = f1_population.walk(rom, pinned["header"])
         assert f1_population.null(rom, found) == {"reversed": 0, "halfword": 0, "rotated": 0}
+
+
+def test_the_three_headers_are_the_images_whole_population():
+    rom = image()
+    rows = []
+    for offset in range(0, len(rom) - 12, 4):
+        if struct.unpack_from("<I", rom, offset)[0] != DESCRIPTOR:
+            continue
+        assert struct.unpack_from("<I", rom, offset + 8)[0] == 0
+        rows.append((0x08000000 + offset, struct.unpack_from("<I", rom, offset + 4)[0]))
+    assert rows == [(0x081CA144, 0x081CA168), (0x08337218, 0x08337248),
+                    (0x084E4F20, 0x084E4F44)]
+    headers = []
+    for offset in range(0, len(rom) - 0x100, 2):
+        if struct.unpack_from("<H", rom, offset + 4)[0] not in TAGS:
+            continue
+        found = f1_population.walk(rom, 0x08000000 + offset)
+        if found["records"] and len(found["records"]) == found["count"]:
+            headers.append(0x08000000 + offset)
+    assert headers == [0x081CA168, 0x08337248, 0x084E4F44]
 
 
 def test_the_tracked_token_list_is_what_the_image_derives():
@@ -161,9 +178,9 @@ def test_the_tracked_token_list_is_what_the_image_derives():
 if __name__ == "__main__":
     if os.path.exists(f1_streams.ROM):
         test_the_three_populations_are_the_header_count_and_their_addresses()
-        test_a_record_that_does_not_round_trip_is_named_with_its_reason()
+        test_the_first_record_of_each_list_rebuilds_through_the_other_two_grammars()
         test_every_rebuilt_record_is_the_image_bytes()
-        test_the_refused_record_carries_the_other_two_types()
         test_the_same_walk_over_a_permuted_region_finds_no_record()
+        test_the_three_headers_are_the_images_whole_population()
         test_the_tracked_token_list_is_what_the_image_derives()
         print("PASS test_f1_streams")

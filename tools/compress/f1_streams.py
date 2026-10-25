@@ -19,6 +19,8 @@ HEADERS = (0x081CA168, 0x08337248, 0x084E4F44)
 RECORD_HEADER = f1_population.RECORD_HEADER
 ENTRY_HEADER = f1_population.ENTRY_HEADER
 ROW_STREAM = f1_population.ROW_STREAM
+PALETTE = 4
+IMAGE = 15
 LIST_TAG = f1_population.LIST_TAG
 REPEAT_UNIT = f1_population.REPEAT_UNIT
 SLICE = re.compile(r"baserom\.gba_0x([0-9a-f]+)_0x([0-9a-f]+)\.extracted")
@@ -52,18 +54,82 @@ def encode(rom, body):
     return bytes(out)
 
 
-def record(rom, start, size):
+def palette_tokens(rom, body):
+    out = []
+    cursor = body + 2
+    for _group in range(f1_population.half(rom, body)):
+        gap, count = f1_population.byte(rom, cursor), f1_population.byte(rom, cursor + 1)
+        cursor += 2
+        entries = count or REPEAT_UNIT
+        out.append((gap, count, rom[cursor - ROM_BASE:cursor - ROM_BASE + 3 * entries]))
+        cursor += 3 * entries
+    return out, cursor - body
+
+
+def palette_encode(tokens):
+    out = bytearray(struct.pack("<H", len(tokens)))
+    for gap, count, entries in tokens:
+        out += bytes((gap, count)) + entries
+    return bytes(out)
+
+
+def image_tokens(rom, body, rows):
+    out = []
+    cursor = body
+    for _row in range(rows):
+        runs = f1_population.byte(rom, cursor)
+        cursor += 1
+        spans = []
+        for _run in range(runs):
+            length = struct.unpack_from("<b", rom, cursor - ROM_BASE)[0]
+            cursor += 1
+            if length < 0:
+                spans.append((length, rom[cursor - ROM_BASE:cursor - ROM_BASE - length]))
+                cursor += -length
+            elif length > 0:
+                spans.append((length, rom[cursor - ROM_BASE:cursor - ROM_BASE + 1]))
+                cursor += 1
+            else:
+                spans.append((0, b""))
+        out.append(spans)
+    return out, cursor - body
+
+
+def image_encode(tokens):
+    out = bytearray()
+    for spans in tokens:
+        out.append(len(spans))
+        for length, data in spans:
+            out.append(length & 0xFF)
+            out += data
+    return bytes(out)
+
+
+def record(rom, start, size, rows):
     rebuilt = bytearray(struct.pack("<IHH", size, LIST_TAG,
                                     f1_population.half(rom, start + 6)) + b"\0" * 8)
     for at, entry_size, kind in f1_population.entries(rom, start, size):
-        if kind != ROW_STREAM:
-            return None, "type %d at 0x%08X is not a row stream" % (kind, at)
         body = at + ENTRY_HEADER
-        stream = f1_population.decode(rom, body)
-        if stream["consumed"] != entry_size - ENTRY_HEADER:
-            return None, ("the stream at 0x%08X consumes %d of %d"
-                          % (body, stream["consumed"], entry_size - ENTRY_HEADER))
-        encoded = encode(rom, body)
+        if kind == ROW_STREAM:
+            stream = f1_population.decode(rom, body)
+            if stream["consumed"] != entry_size - ENTRY_HEADER:
+                return None, ("the stream at 0x%08X consumes %d of %d"
+                              % (body, stream["consumed"], entry_size - ENTRY_HEADER))
+            encoded = encode(rom, body)
+        elif kind == PALETTE:
+            tokens, consumed = palette_tokens(rom, body)
+            if consumed != entry_size - ENTRY_HEADER:
+                return None, ("the palette at 0x%08X consumes %d of %d"
+                              % (body, consumed, entry_size - ENTRY_HEADER))
+            encoded = palette_encode(tokens)
+        elif kind == IMAGE:
+            tokens, consumed = image_tokens(rom, body, rows)
+            if consumed != entry_size - ENTRY_HEADER:
+                return None, ("the image at 0x%08X consumes %d of %d"
+                              % (body, consumed, entry_size - ENTRY_HEADER))
+            encoded = image_encode(tokens)
+        else:
+            return None, "type %d at 0x%08X is not a row stream" % (kind, at)
         if encoded != rom[body - ROM_BASE:at - ROM_BASE + entry_size]:
             return None, "the stream at 0x%08X is not re-encoded byte for byte" % body
         rebuilt += struct.pack("<IH", entry_size, kind) + encoded
@@ -80,9 +146,10 @@ def census(rom):
             raise ValueError("the list at 0x%08X stops after %d of %d records"
                              % (header, len(found["records"]), found["count"]))
         rebuilt, left = [], []
+        rows = f1_population.half(rom, header + 0xA)
         for start, size in found["records"]:
             try:
-                blob, reason = record(rom, start, size)
+                blob, reason = record(rom, start, size, rows)
             except ValueError as problem:
                 blob, reason = None, str(problem)
             if blob is None:

@@ -15,7 +15,8 @@ Every tool the build and the checks run, and what runs it.
 | `tools/incbin.bat` | `rebuild.cmd` | writes a slice if it is absent, then stops |
 | `tools/compress/build.cmd` | `rebuild.cmd`, `tools/compress/jcalg1.py` | builds `compress.exe` from `tools/compress/jcalg1/` with CMake and the Visual C++ toolset |
 | `tools/compress/jcalg1.py` | nothing yet | the JCALG1 body grammar, and the encoder call that builds the compressor on first use |
-| `tools/compress/f1_streams.py` | `rebuild.cmd`, a person | walks the three stream lists the custom decompressor serves from its header count, decodes every row stream into rows and token plans, re-encodes it, refuses a record that is not a row stream, and rewrites `asm/remainder.s` so each list is a generated run; `--check` re-derives them |
+| `tools/compress/f1_streams.py` | `rebuild.cmd`, a person | walks the three stream lists the custom decompressor serves from its header count, decodes every entry by its type - a row stream, a palette stream or an image stream - re-encodes it, refuses a record that does not round trip, and rewrites `asm/remainder.s` so each list is a generated run; `--check` re-derives them |
+| `tools/compress/bios_streams.py` | `rebuild.cmd`, a person | decodes the LZ77 stream the BIOS decoder is handed from the image, re-encodes it with a greedy 18-byte-window encoder, and rewrites `asm/remainder.s` so the round-tripping stream is a generated run; `--check` re-derives it |
 | `tools/research/startup_writes.py` | a person | walks the startup path and prints every DMA kick, software interrupt and IWRAM or EWRAM block store with its source, destination and length |
 | `tools/research/f1_population.py` | a person, `tools/research/test_f1_population.py` | walks the custom decompressor's stream list from its header count, decodes every row stream under the code's grammar, counts the entries by type, and runs the permuted-region null and the token-plan ambiguity census |
 | `tools/testkit.py` | every ROM-gated test | the ROM presence skip and the digest assert |
@@ -25,7 +26,8 @@ never tracked.
 
 The tests sit beside what they test: `tools/gate/test_gate.py`, `tools/lint/test_lint.py`,
 `tools/extract/test_slice_rom.py`, `tools/compress/test_jcalg1.py`,
-`tools/compress/test_f1_streams.py`, `tools/research/test_startup_writes.py`,
+`tools/compress/test_f1_streams.py`,
+`tools/compress/test_bios_streams.py`, `tools/research/test_startup_writes.py`,
 `tools/research/test_f1_population.py`, `tools/split/test_census.py`,
 `tools/code/test_emit_code.py`, `tools/recomp/test_export_inputs.py`,
 `tools/recomp/test_runtime_labels.py` and `tools/test_check_links.py`.
