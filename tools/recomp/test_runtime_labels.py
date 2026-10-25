@@ -25,20 +25,31 @@ def doctored(tmp_path, extra="rom,0x%08x,thumb\n" % MID):
     return str(path)
 
 
-def test_the_tracked_labels_are_126_rom_rows_in_address_order():
+def test_the_tracked_labels_are_unique_rom_rows_in_address_order():
     labels = runtime_labels.read()
-    assert len(labels) == 126
+    rows = runtime_labels.run_of()
+    assert len(rows) == 2
+    assert len(labels) == sum(int(row["entries"]) for row in rows) == 282
     assert set(region for region, _address, _mode in labels) == {"rom"}
-    assert set(mode for _region, _address, mode in labels) == {"thumb"}
+    assert set(mode for _region, _address, mode in labels) <= {"thumb", "arm"}
+    assert set(mode for _region, _address, mode in labels) == {"thumb", "arm"}
     addresses = [address for _region, address, _mode in labels]
     assert addresses == sorted(addresses)
     assert len(set(addresses)) == len(addresses)
 
 
+def test_the_two_runs_are_the_attract_record_and_the_gameplay_traversal():
+    rows = runtime_labels.run_of()
+    assert [row["route"] for row in rows] == ["no-input", "fight-traversal"]
+    assert rows[0]["frames"] == "10800" and rows[0]["entries"] == rows[0]["rom"] == "126"
+    assert rows[1]["frames"] == "1630" and rows[1]["entries"] == rows[1]["rom"] == "156"
+    assert rows[1]["iwram"] == rows[0]["iwram"] == "0"
+
+
 def test_the_tracked_labels_are_the_boundary_admitted_ones_beside_their_null():
     figures, problem = runtime_labels.measure()
     assert problem is None
-    assert figures["rows"] == figures["admitted"] == 126
+    assert figures["rows"] == figures["admitted"] == 282
     assert figures["null_refused"] == figures["null_samples"] > 0
 
 
@@ -61,7 +72,48 @@ def test_a_run_that_records_a_different_count_is_refused(tmp_path):
     text = open(runtime_labels.RUNS, encoding="ascii", newline="").read()
     path.write_text(text.replace(",126,126,0,", ",127,127,0,"), encoding="ascii", newline="")
     _figures, problem = runtime_labels.measure(runs=str(path))
-    assert problem and "127" in problem
+    assert problem and "283 entries" in problem and "282" in problem
+
+
+def test_the_run_counts_are_read_as_the_sum_of_their_rows(tmp_path):
+    path = tmp_path / "RUNTIME_LABELS_RUNS.csv"
+    text = open(runtime_labels.RUNS, encoding="ascii", newline="").read()
+    path.write_text(text.replace(",156,156,0,", ",157,157,0,"), encoding="ascii", newline="")
+    _figures, problem = runtime_labels.measure(runs=str(path))
+    assert problem and "283 entries" in problem
+
+
+def test_a_run_whose_count_is_not_a_number_is_refused(tmp_path):
+    path = tmp_path / "RUNTIME_LABELS_RUNS.csv"
+    text = open(runtime_labels.RUNS, encoding="ascii", newline="").read()
+    path.write_text(text.replace(",1630,", ",many,"), encoding="ascii", newline="")
+    _figures, problem = runtime_labels.measure(runs=str(path))
+    assert problem and "'many'" in problem
+
+
+def test_the_import_unions_into_the_tracked_rows(tmp_path):
+    tracked = runtime_labels.read()
+    path = tmp_path / "RUNTIME_LABELS.csv"
+    path.write_text("region,address,mode\nrom,0x%08x,thumb\n" % tracked[0][1],
+                    encoding="ascii", newline="")
+    labels = [(region, address, mode) for region, address, mode in tracked[:3]]
+    out = runtime_labels.merged(str(path), labels)
+    assert len(out) == 3
+    assert out == sorted(set(tracked[:3]), key=lambda row: (row[1], row[0]))
+
+
+def test_a_label_that_is_not_a_row_boundary_is_not_admitted(tmp_path):
+    rom = os.path.join(ROOT, "baserom.gba")
+    if not os.path.exists(rom):
+        pytest.skip("%s is absent, so the census cannot measure an admission" % rom)
+    tracked = runtime_labels.read()
+    path = tmp_path / "RUNTIME_LABELS.csv"
+    path.write_text("region,address,mode\n" + "".join(
+        "%s,0x%08x,%s\n" % row for row in tracked), encoding="ascii", newline="")
+    labels = [("rom", 0x08000146, "thumb"), ("rom", tracked[0][1], "thumb")]
+    kept, refused = runtime_labels.admitted_by_the_census(labels, str(path))
+    assert [row[1] for row in kept] == [tracked[0][1]]
+    assert [row[1] for row in refused] == [0x08000146]
 
 
 def test_the_accumulator_is_read_as_region_address_mode(tmp_path):

@@ -47,6 +47,16 @@ All notable changes to this tree are recorded here. The format follows
   census and the recompiler input carry the rows as `runtime`, the page counts them, and
   `tools/recomp/runtime_labels.py --check` re-measures every label against the evidence table
   beside a null of the same labels displaced by one halfword.
+- The same channel fed from gameplay: a 1,630-frame run from a mid-fight savestate and a
+  recorded traversal (d-pad in four directions, A taps, the menu opened, navigated and closed)
+  recorded 158 dispatch entries outside every recompiler row. 156 of them the census admits - 147
+  thumb, 9 arm, 1,868 B - so `RUNTIME_LABELS.csv` now carries 282 rows, the evidence table 1,800
+  starts, `RECOMP_INPUTS.toml` 1,800 rows and 45.7398 % of the image builds from source.
+  `runtime_labels.py --import FILE --admit --write` keeps only the labels the census places, prints
+  the refused ones, and unions them with the tracked rows; `RUNTIME_LABELS_RUNS.csv` records one
+  provenance row per run and `--check` sums them against the file. Two recorded entries are the
+  second halfword of a 4-byte Thumb `BL` and are refused; two more the census flags as data stay
+  raw rows.
 - The stream population of the custom row decompressor in `tools/research/f1_population.py`: the
   header at `0x08337248` names 269 objects and its list at `0x083372c8` walks to `0x084dd59e`,
   1,729,239 B, every record's entries tiling its size; 268 of them are row streams that decode

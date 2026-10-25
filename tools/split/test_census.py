@@ -199,7 +199,7 @@ def test_the_tracked_evidence_is_what_the_retail_image_gives():
     assert len(rom) == census.ROM_SIZE
     result = census.census_result(rom, labels=census.runtime_labels())
     assert result["refused_labels"] == []
-    assert len(result["runtime"]) == 126 == len(result["labels"])
+    assert len(result["runtime"]) == 282 == len(result["labels"])
     open_bounds = [address for address in result["ends"] if not result["ends"][address][0]]
     assert open_bounds == []
     table = census.remainder(rom, result)
@@ -222,7 +222,7 @@ def test_a_doctored_label_inside_an_instruction_is_refused_by_the_tracked_image(
     result = census.census_result(rom, labels=doctored)
     assert result["refused_labels"] == [0x08000146]
     assert 0x08000146 not in result["starts"]
-    assert len(result["runtime"]) == 126
+    assert len(result["runtime"]) == 282 == len(result["labels"]) - 1
 
 
 def test_a_doctored_label_inside_a_thumb_instruction_is_refused_by_the_tracked_image():

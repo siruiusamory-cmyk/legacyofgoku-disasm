@@ -70,6 +70,22 @@ def refused_text(addresses):
         % addresses[0]
 
 
+def merged(path, labels):
+    existing = read(path) if os.path.exists(path) else []
+    return sorted(set(existing) | set(labels), key=lambda row: (row[1], row[0]))
+
+
+def admitted_by_the_census(labels, path=LABELS):
+    union = merged(path, labels)
+    rom = open(ROM, "rb").read()
+    result = census.census_result(
+        rom, labels=[(address, census.MODE_THUMB if mode == "thumb" else census.MODE_ARM)
+                     for _region, address, mode in union])
+    runtime = set(result["runtime"])
+    return ([label for label in labels if label[1] in runtime],
+            [label for label in labels if label[1] not in runtime])
+
+
 def displaced(labels):
     known = {address for _region, address, _mode in labels}
     return [(region, address + 2, mode) for region, address, mode in labels
@@ -77,20 +93,24 @@ def displaced(labels):
 
 
 def run_problem(rows, labels, path=RUNS):
-    if len(rows) != 1:
-        return "%s carries %d run(s), and one recorded run is expected" % (path, len(rows))
-    row = rows[0]
-    for name in ("frames", "entries", "rom", "iwram"):
-        if not row[name].isdigit():
-            return "%s: %s is %r, not a count" % (path, name, row[name])
-    if len(row["hash"]) != 16 or any(character not in "0123456789abcdef" for character in row["hash"]):
-        return "%s: the frame hash %r is not sixteen hex digits" % (path, row["hash"])
+    if not rows:
+        return "%s carries no run, so the labels carry no provenance" % path
+    total = {"entries": 0, "rom": 0, "iwram": 0}
+    for row in rows:
+        for name in ("frames", "entries", "rom", "iwram"):
+            if not row[name].isdigit():
+                return "%s: %s is %r, not a count" % (path, name, row[name])
+            if name in total:
+                total[name] += int(row[name])
+        if len(row["hash"]) != 16 or any(character not in "0123456789abcdef"
+                                         for character in row["hash"]):
+            return "%s: the frame hash %r is not sixteen hex digits" % (path, row["hash"])
     rom = len([1 for region, _address, _mode in labels if region == "rom"])
     iwram = len(labels) - rom
-    if (int(row["entries"]), int(row["rom"]), int(row["iwram"])) != (len(labels), rom, iwram):
-        return ("%s: the run records %s entries (%s rom, %s iwram) and the labels carry %d (%d "
-                "rom, %d iwram)" % (path, row["entries"], row["rom"], row["iwram"], len(labels),
-                                    rom, iwram))
+    if (total["entries"], total["rom"], total["iwram"]) != (len(labels), rom, iwram):
+        return ("%s: the runs record %d entries (%d rom, %d iwram) and the labels carry %d (%d "
+                "rom, %d iwram)" % (path, total["entries"], total["rom"], total["iwram"],
+                                    len(labels), rom, iwram))
     return None
 
 
@@ -107,7 +127,8 @@ def measure(path=LABELS, runs=RUNS, evidence=census.EVIDENCE):
     found, refused = admitted(labels, rows)
     if refused:
         return None, refused_text(refused)
-    nulls = displaced(labels)
+    starts = set(row["address"] for row in rows if row["kind"] == "start")
+    nulls = [row for row in displaced(labels) if row[1] not in starts]
     _found, null_refused = admitted(nulls, rows)
     if not nulls:
         return None, "the labels carry no address that a one-halfword displacement moves"
@@ -155,6 +176,7 @@ def image_problem(digest):
 def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument("--import", dest="source")
+    parser.add_argument("--admit", action="store_true")
     parser.add_argument("--write", action="store_true")
     parser.add_argument("--check", action="store_true")
     parser.add_argument("--labels", default=LABELS)
@@ -169,6 +191,11 @@ def main(argv=None):
         if problem:
             print("LABELS FAIL %s" % problem)
             return 1
+        if arguments.admit:
+            labels, refused = admitted_by_the_census(labels, arguments.labels)
+            print("admit kept=%d refused=%s"
+                  % (len(labels), " ".join("0x%08x" % row[1] for row in refused) or "none"))
+        labels = merged(arguments.labels, labels)
         text = HEADER + "\n" + "".join("%s,0x%08x,%s\n" % row for row in labels)
         if not arguments.write:
             print("LABELS PASS rows=%d, and --write would record them" % len(labels))

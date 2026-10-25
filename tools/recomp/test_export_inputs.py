@@ -119,9 +119,13 @@ def test_the_tracked_export_is_the_export_this_tree_derives():
 def test_the_tracked_export_carries_the_recorded_starts_as_runtime_rows():
     found = export_inputs.found_rows(open(export_inputs.OUT, encoding="ascii", newline="").read())
     runtime = [record for record in found if record["origin"] == "runtime"]
-    assert len(runtime) == 126
-    assert all(record["section"] == "code" and record["mode"] == "thumb"
-               for record in runtime)
+    assert len(runtime) == 282
+    code = [record for record in runtime if record["section"] == "code"]
+    raw = [record for record in runtime if record["section"] == "raw"]
+    assert len(code) == 280 and len(raw) == 2
+    assert set(record["mode"] for record in code) == {"thumb", "arm"}
+    assert all(record["reason"] == "data" for record in raw)
+    assert sorted(record["addr"] for record in raw) == [0x08004D5C, 0x08008016]
 
 
 def doctored(text, name):

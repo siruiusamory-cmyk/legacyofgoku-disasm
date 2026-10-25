@@ -88,9 +88,16 @@ address,kind,channel,mode,end,reason,flags,evidence
 0x08000d6a,start,table,thumb,0x08000da2,no-return,-,a run of address-taken words names it
 0x08000da2,start,table,thumb,0x08000dce,-,-,a run of address-taken words names it
 0x08000e7a,start,call,thumb,0x08000ea8,-,-,the walk reached it
+0x08000ebc,start,runtime,thumb,0x08000ed6,no-return,-,a run of address-taken words names it
+0x08000ed6,start,runtime,thumb,0x08000efa,no-return,-,a run of address-taken words names it
 0x08000efa,start,table,thumb,0x08000f2e,no-return,-,a run of address-taken words names it
 0x08000f2e,start,table,thumb,0x08000f30,no-return,-,a run of address-taken words names it
 0x08000f30,start,table,thumb,0x08000f58,-,-,a run of address-taken words names it
+0x08000f58,start,runtime,thumb,0x08000f6a,no-return,-,a run of address-taken words names it
+0x08000f6a,start,runtime,thumb,0x08000f6c,-,-,a run of address-taken words names it
+0x08000f6c,start,runtime,thumb,0x08000f7a,no-return,-,a run of address-taken words names it
+0x08000f7a,start,runtime,thumb,0x08000f84,no-return,-,a run of address-taken words names it
+0x08000f84,start,runtime,thumb,0x08000f88,-,-,a run of address-taken words names it
 0x08000f8c,start,call,thumb,0x08000f9e,-,-,the walk reached it
 0x08000fec,start,table,thumb,0x08001008,-,-,a run of address-taken words names it
 0x08001040,start,table,thumb,0x0800104c,-,-,a run of address-taken words names it
@@ -109,19 +116,72 @@ address,kind,channel,mode,end,reason,flags,evidence
 0x0800114c,start,proven,thumb,0x08001174,-,-,a run of address-taken words names it
 0x08001174,start,call,thumb,0x080011fa,no-return,-,the walk reached it
 0x080011fa,start,repeated,thumb,0x08001208,-,-,a pointer word repeated four or more times names it
+0x08001210,start,runtime,thumb,0x08001212,-,-,a run of address-taken words names it
+0x08001212,start,runtime,thumb,0x08001218,no-return,-,a run of address-taken words names it
+0x08001218,start,runtime,thumb,0x0800121c,no-return,-,a run of address-taken words names it
+0x0800121c,start,runtime,thumb,0x08001224,no-return,-,a run of address-taken words names it
+0x08001224,start,runtime,thumb,0x08001234,no-return,-,a run of address-taken words names it
+0x08001234,start,runtime,thumb,0x0800123c,no-return,-,a run of address-taken words names it
+0x0800123c,start,runtime,thumb,0x08001242,no-return,-,a run of address-taken words names it
+0x08001242,start,runtime,thumb,0x08001248,no-return,-,a run of address-taken words names it
+0x08001248,start,runtime,thumb,0x0800124a,no-return,-,a run of address-taken words names it
+0x0800124a,start,runtime,thumb,0x0800124c,-,-,a run of address-taken words names it
+0x0800124c,start,runtime,thumb,0x08001252,no-return,-,a run of address-taken words names it
 0x08001252,start,table,thumb,0x08001266,-,-,a run of address-taken words names it
+0x080012ec,start,runtime,thumb,0x080012f2,no-return,-,a run of address-taken words names it
 0x080012f2,start,table,thumb,0x080012f8,no-return,-,a run of address-taken words names it
 0x080012f8,start,table,thumb,0x080012fa,no-return,-,a run of address-taken words names it
 0x080012fa,start,table,thumb,0x08001390,-,-,a run of address-taken words names it
+0x08001390,start,runtime,thumb,0x0800139c,no-return,-,a run of address-taken words names it
+0x0800139c,start,runtime,thumb,0x080013a4,no-return,-,a run of address-taken words names it
+0x080013a4,start,runtime,thumb,0x080013ae,no-return,-,a run of address-taken words names it
+0x080013ae,start,runtime,thumb,0x080013bc,no-return,-,a run of address-taken words names it
+0x080013bc,start,runtime,thumb,0x080013c6,no-return,-,a run of address-taken words names it
+0x080013c6,start,runtime,thumb,0x080013da,no-return,-,a run of address-taken words names it
+0x080013da,start,runtime,thumb,0x080013dc,no-return,-,a run of address-taken words names it
+0x080013dc,start,runtime,thumb,0x080013e6,no-return,-,a run of address-taken words names it
+0x080013e6,start,runtime,thumb,0x080013f0,no-return,-,a run of address-taken words names it
+0x080013f0,start,runtime,thumb,0x080013f6,no-return,-,a run of address-taken words names it
 0x080013f6,start,table,thumb,0x080013f8,no-return,-,a run of address-taken words names it
 0x080013f8,start,table,thumb,0x080013fa,no-return,-,a run of address-taken words names it
 0x080013fa,start,repeated,thumb,0x0800146a,-,-,a pointer word repeated four or more times names it
+0x0800146a,start,runtime,thumb,0x08001476,no-return,-,a run of address-taken words names it
+0x08001476,start,runtime,thumb,0x0800148a,no-return,-,a run of address-taken words names it
+0x0800148a,start,runtime,thumb,0x0800149a,no-return,-,a run of address-taken words names it
+0x0800149a,start,runtime,thumb,0x0800149e,no-return,-,a run of address-taken words names it
+0x0800149e,start,runtime,thumb,0x080014a0,no-return,-,a run of address-taken words names it
+0x080014a0,start,runtime,thumb,0x080014a2,no-return,-,a run of address-taken words names it
 0x080014a2,start,table,thumb,0x080014ce,no-return,-,a run of address-taken words names it
 0x080014f8,start,table,thumb,0x080014fa,no-return,-,a run of address-taken words names it
 0x080014fa,start,repeated,thumb,0x0800151c,-,-,a pointer word repeated four or more times names it
+0x0800151c,start,runtime,thumb,0x08001526,no-return,-,a run of address-taken words names it
+0x08001526,start,runtime,thumb,0x0800152c,no-return,-,a run of address-taken words names it
+0x0800152c,start,runtime,thumb,0x08001536,no-return,-,a run of address-taken words names it
+0x08001536,start,runtime,thumb,0x08001540,no-return,-,a run of address-taken words names it
+0x08001540,start,runtime,thumb,0x0800154a,no-return,-,a run of address-taken words names it
+0x0800154a,start,runtime,thumb,0x08001550,no-return,-,a run of address-taken words names it
+0x08001550,start,runtime,thumb,0x0800155a,no-return,-,a run of address-taken words names it
+0x0800155a,start,runtime,thumb,0x0800155c,-,-,a run of address-taken words names it
 0x080015d2,start,table,thumb,0x080015f0,no-return,-,a run of address-taken words names it
 0x080015f8,start,table,thumb,0x080015fa,no-return,-,a run of address-taken words names it
 0x080015fa,start,table,thumb,0x0800162a,-,-,a run of address-taken words names it
+0x0800162a,start,runtime,thumb,0x08001634,no-return,-,a run of address-taken words names it
+0x08001634,start,runtime,thumb,0x08001638,no-return,-,a run of address-taken words names it
+0x08001638,start,runtime,thumb,0x0800163e,no-return,-,a run of address-taken words names it
+0x0800163e,start,runtime,thumb,0x08001642,no-return,-,a run of address-taken words names it
+0x08001642,start,runtime,thumb,0x0800165e,no-return,-,a run of address-taken words names it
+0x0800165e,start,runtime,thumb,0x08001660,no-return,-,a run of address-taken words names it
+0x08001660,start,runtime,thumb,0x08001682,no-return,-,a run of address-taken words names it
+0x08001682,start,runtime,thumb,0x08001688,no-return,-,a run of address-taken words names it
+0x08001688,start,runtime,thumb,0x0800168e,no-return,-,a run of address-taken words names it
+0x0800168e,start,runtime,thumb,0x08001690,-,-,a run of address-taken words names it
+0x08001690,start,runtime,thumb,0x080016a0,no-return,-,a run of address-taken words names it
+0x080016a0,start,runtime,thumb,0x080016a2,no-return,-,a run of address-taken words names it
+0x080016a2,start,runtime,thumb,0x080016a8,no-return,-,a run of address-taken words names it
+0x080016a8,start,runtime,thumb,0x080016ac,no-return,-,a run of address-taken words names it
+0x080016ac,start,runtime,thumb,0x080016be,no-return,-,a run of address-taken words names it
+0x080016be,start,runtime,thumb,0x080016d6,no-return,-,a run of address-taken words names it
+0x080016d6,start,runtime,thumb,0x080016da,-,-,a run of address-taken words names it
 0x08001708,start,repeated,thumb,0x0800170c,-,-,a pointer word repeated four or more times names it
 0x0800170c,start,table,thumb,0x08001730,-,-,a run of address-taken words names it
 0x08001730,start,table,thumb,0x0800174a,-,data,a run of address-taken words names it
@@ -190,6 +250,11 @@ address,kind,channel,mode,end,reason,flags,evidence
 0x08002280,start,proven,thumb,0x0800229c,no-return,-,a run of address-taken words names it
 0x0800229c,start,proven,thumb,0x080022a0,-,-,a run of address-taken words names it
 0x080022a0,start,proven,thumb,0x080022a4,no-return,-,a run of address-taken words names it
+0x080022ba,start,runtime,thumb,0x080022c0,no-return,-,a run of address-taken words names it
+0x080022c0,start,runtime,thumb,0x080022c4,no-return,-,a run of address-taken words names it
+0x080022c4,start,runtime,thumb,0x080022c6,no-return,-,a run of address-taken words names it
+0x080022c6,start,runtime,thumb,0x080022cc,no-return,-,a run of address-taken words names it
+0x080022cc,start,runtime,thumb,0x080022ce,-,-,a run of address-taken words names it
 0x08002300,start,call,thumb,0x08002328,-,-,the walk reached it
 0x08002328,start,call,thumb,0x0800236e,-,-,the walk reached it
 0x0800236e,start,call,thumb,0x08002396,-,-,the walk reached it
@@ -233,6 +298,7 @@ address,kind,channel,mode,end,reason,flags,evidence
 0x080026e2,start,table,thumb,0x080026f2,-,-,a run of address-taken words names it
 0x080026f2,start,table,thumb,0x080026f6,-,-,a run of address-taken words names it
 0x080026f6,start,table,thumb,0x080026f8,-,-,a run of address-taken words names it
+0x080026f8,start,runtime,thumb,0x080026fa,no-return,-,a run of address-taken words names it
 0x080026fa,start,table,thumb,0x08002716,-,-,a run of address-taken words names it
 0x08002716,start,call,thumb,0x08002720,no-return,-,the walk reached it
 0x08002720,start,proven,thumb,0x08002766,no-return,-,a run of address-taken words names it
@@ -338,6 +404,10 @@ address,kind,channel,mode,end,reason,flags,evidence
 0x0800329a,start,proven,thumb,0x080032a2,-,-,a run of address-taken words names it
 0x080032a2,start,call,thumb,0x080032b6,no-return,-,the walk reached it
 0x080032b6,start,proven,thumb,0x080032b8,-,-,a run of address-taken words names it
+0x080032b8,start,runtime,thumb,0x080032be,no-return,-,a run of address-taken words names it
+0x080032be,start,runtime,thumb,0x080032c0,-,-,a run of address-taken words names it
+0x080032c0,start,runtime,thumb,0x080032c6,no-return,-,a run of address-taken words names it
+0x080032c6,start,runtime,thumb,0x080032c8,-,-,a run of address-taken words names it
 0x080032f2,start,table,thumb,0x080032f4,no-return,-,a run of address-taken words names it
 0x080032f4,start,table,thumb,0x080032f6,no-return,-,a run of address-taken words names it
 0x080032f6,start,table,thumb,0x080032f8,no-return,-,a run of address-taken words names it
@@ -388,6 +458,7 @@ address,kind,channel,mode,end,reason,flags,evidence
 0x08003bd6,start,table,thumb,0x08003bf2,no-return,-,a run of address-taken words names it
 0x08003bf2,start,table,thumb,0x08003bfe,-,-,a run of address-taken words names it
 0x08003cfa,start,table,thumb,0x08003d64,-,-,a run of address-taken words names it
+0x08003d90,start,runtime,thumb,0x08003d94,-,-,a run of address-taken words names it
 0x08003d94,start,table,thumb,0x08003dbe,-,-,a run of address-taken words names it
 0x08003dbe,start,table,thumb,0x08003dfa,no-return,-,a run of address-taken words names it
 0x08003dfa,start,repeated,thumb,0x08003e02,-,-,a pointer word repeated four or more times names it
@@ -551,6 +622,16 @@ address,kind,channel,mode,end,reason,flags,evidence
 0x08004d34,start,call,thumb,0x08004d40,no-return,-,the walk reached it
 0x08004d40,start,proven,thumb,0x08004d56,no-return,-,a run of address-taken words names it
 0x08004d56,start,proven,thumb,0x08004d58,-,-,a run of address-taken words names it
+0x08004d5c,start,runtime,thumb,0x08004d8a,no-return,data,a run of address-taken words names it
+0x08004d8a,start,runtime,thumb,0x08004daa,no-return,-,a run of address-taken words names it
+0x08004daa,start,runtime,thumb,0x08004dac,-,-,a run of address-taken words names it
+0x08004dac,start,runtime,thumb,0x08004dbe,-,-,a run of address-taken words names it
+0x08004dbe,start,runtime,thumb,0x08004dc6,-,-,a run of address-taken words names it
+0x08004dc6,start,runtime,thumb,0x08004dd4,no-return,-,a run of address-taken words names it
+0x08004dd4,start,runtime,thumb,0x08004de8,no-return,-,a run of address-taken words names it
+0x08004de8,start,runtime,thumb,0x08004dea,no-return,-,a run of address-taken words names it
+0x08004dea,start,runtime,thumb,0x08004e06,no-return,-,a run of address-taken words names it
+0x08004e06,start,runtime,thumb,0x08004e0a,-,-,a run of address-taken words names it
 0x08004e3c,start,table,thumb,0x08004e4e,-,-,a run of address-taken words names it
 0x08004e98,start,call,thumb,0x08004ed0,-,-,the walk reached it
 0x08004ef4,start,call,thumb,0x08004f2c,no-return,-,the walk reached it
@@ -564,6 +645,8 @@ address,kind,channel,mode,end,reason,flags,evidence
 0x08004f9a,start,proven,thumb,0x08004fb0,no-return,-,a run of address-taken words names it
 0x08004fb0,start,proven,thumb,0x08004fce,no-return,-,a run of address-taken words names it
 0x08004fce,start,proven,thumb,0x08004fd0,-,-,a run of address-taken words names it
+0x08004fd0,start,runtime,thumb,0x08004fd6,no-return,-,a run of address-taken words names it
+0x08004fd6,start,runtime,thumb,0x08004fd8,-,-,a run of address-taken words names it
 0x08004ffa,start,table,thumb,0x0800503a,no-return,-,a run of address-taken words names it
 0x0800503a,start,proven,thumb,0x0800503c,no-return,-,a run of address-taken words names it
 0x0800503c,start,proven,thumb,0x0800503e,-,-,a run of address-taken words names it
@@ -646,6 +729,26 @@ address,kind,channel,mode,end,reason,flags,evidence
 0x08005a94,start,call,thumb,0x08005ae4,-,-,the walk reached it
 0x08005ae4,start,call,thumb,0x08005afa,no-return,-,the walk reached it
 0x08005afa,start,table,thumb,0x08005b16,-,-,a run of address-taken words names it
+0x08005b38,start,runtime,thumb,0x08005b46,no-return,-,a run of address-taken words names it
+0x08005b46,start,runtime,thumb,0x08005b68,no-return,-,a run of address-taken words names it
+0x08005b68,start,runtime,thumb,0x08005b6a,no-return,-,a run of address-taken words names it
+0x08005b6a,start,runtime,thumb,0x08005b6e,no-return,-,a run of address-taken words names it
+0x08005b6e,start,runtime,thumb,0x08005b72,no-return,-,a run of address-taken words names it
+0x08005b72,start,runtime,thumb,0x08005b76,no-return,-,a run of address-taken words names it
+0x08005b76,start,runtime,thumb,0x08005b78,no-return,-,a run of address-taken words names it
+0x08005b78,start,runtime,thumb,0x08005b7c,no-return,-,a run of address-taken words names it
+0x08005b7c,start,runtime,thumb,0x08005b80,no-return,-,a run of address-taken words names it
+0x08005b80,start,runtime,thumb,0x08005b82,no-return,-,a run of address-taken words names it
+0x08005b82,start,runtime,thumb,0x08005b84,no-return,-,a run of address-taken words names it
+0x08005b84,start,runtime,thumb,0x08005b86,no-return,-,a run of address-taken words names it
+0x08005b86,start,runtime,thumb,0x08005b88,no-return,-,a run of address-taken words names it
+0x08005b88,start,runtime,thumb,0x08005b8c,no-return,-,a run of address-taken words names it
+0x08005b8c,start,runtime,thumb,0x08005b8e,no-return,-,a run of address-taken words names it
+0x08005b8e,start,runtime,thumb,0x08005b90,no-return,-,a run of address-taken words names it
+0x08005b90,start,runtime,thumb,0x08005b94,no-return,-,a run of address-taken words names it
+0x08005b94,start,runtime,thumb,0x08005ba2,no-return,-,a run of address-taken words names it
+0x08005ba2,start,runtime,thumb,0x08005ba4,-,-,a run of address-taken words names it
+0x08005bb4,start,runtime,thumb,0x08005bbc,-,-,a run of address-taken words names it
 0x08005bbc,start,call,thumb,0x08005be2,-,-,the walk reached it
 0x08005be2,start,call,thumb,0x08005bf0,-,-,the walk reached it
 0x08005bf0,start,call,thumb,0x08005bfe,-,-,the walk reached it
@@ -655,6 +758,8 @@ address,kind,channel,mode,end,reason,flags,evidence
 0x08005c40,start,proven,thumb,0x08005c44,no-return,-,a run of address-taken words names it
 0x08005c44,start,proven,thumb,0x08005c52,no-return,-,a run of address-taken words names it
 0x08005c52,start,proven,thumb,0x08005c5c,-,-,a run of address-taken words names it
+0x08005c62,start,runtime,thumb,0x08005c74,-,-,a run of address-taken words names it
+0x08005c74,start,runtime,thumb,0x08005c7a,-,-,a run of address-taken words names it
 0x08005c7a,start,call,thumb,0x08005c88,-,-,the walk reached it
 0x08005ca8,start,call,thumb,0x08005cd6,-,-,the walk reached it
 0x08005cd6,start,call,thumb,0x08005ce6,-,-,the walk reached it
@@ -678,6 +783,7 @@ address,kind,channel,mode,end,reason,flags,evidence
 0x08005ec2,start,proven,thumb,0x08005ee4,no-return,-,a run of address-taken words names it
 0x08005ee4,start,proven,thumb,0x08005ee8,-,-,a run of address-taken words names it
 0x08005ee8,start,proven,thumb,0x08005f14,no-return,-,a run of address-taken words names it
+0x08005f2c,start,runtime,thumb,0x08005f58,-,-,a run of address-taken words names it
 0x08005f58,start,call,thumb,0x08005f74,no-return,-,the walk reached it
 0x08005f74,start,proven,thumb,0x08005f90,no-return,-,a run of address-taken words names it
 0x08005f90,start,proven,thumb,0x08005f9a,-,-,a run of address-taken words names it
@@ -694,6 +800,19 @@ address,kind,channel,mode,end,reason,flags,evidence
 0x080060e2,start,proven,thumb,0x080060e6,-,-,a run of address-taken words names it
 0x080060e6,start,call,thumb,0x0800610e,no-return,-,the walk reached it
 0x0800610e,start,proven,thumb,0x08006118,-,-,a run of address-taken words names it
+0x08006118,start,runtime,thumb,0x0800611a,no-return,-,a run of address-taken words names it
+0x0800611a,start,runtime,thumb,0x08006122,no-return,-,a run of address-taken words names it
+0x08006122,start,runtime,thumb,0x0800612c,no-return,-,a run of address-taken words names it
+0x0800612c,start,runtime,thumb,0x08006132,no-return,-,a run of address-taken words names it
+0x08006132,start,runtime,thumb,0x08006142,no-return,-,a run of address-taken words names it
+0x08006142,start,runtime,thumb,0x0800614a,no-return,-,a run of address-taken words names it
+0x0800614a,start,runtime,thumb,0x0800614e,no-return,-,a run of address-taken words names it
+0x0800614e,start,runtime,thumb,0x08006158,no-return,-,a run of address-taken words names it
+0x08006158,start,runtime,thumb,0x0800615a,no-return,-,a run of address-taken words names it
+0x0800615a,start,runtime,thumb,0x0800615e,no-return,-,a run of address-taken words names it
+0x0800615e,start,runtime,thumb,0x08006192,no-return,-,a run of address-taken words names it
+0x08006192,start,runtime,thumb,0x08006194,no-return,-,a run of address-taken words names it
+0x08006194,start,runtime,thumb,0x080061a0,-,-,a run of address-taken words names it
 0x080061b0,start,repeated,thumb,0x080061d0,-,-,a pointer word repeated four or more times names it
 0x080061d0,start,repeated,thumb,0x080061e6,-,-,a pointer word repeated four or more times names it
 0x080061ec,start,table,thumb,0x0800620a,-,-,a run of address-taken words names it
@@ -726,6 +845,8 @@ address,kind,channel,mode,end,reason,flags,evidence
 0x0800658c,start,table,thumb,0x0800660a,-,-,a run of address-taken words names it
 0x0800660a,start,table,thumb,0x080066fa,-,-,a run of address-taken words names it
 0x080066fa,start,table,thumb,0x08006734,no-return,-,a run of address-taken words names it
+0x08006798,start,runtime,thumb,0x080067a0,no-return,-,a run of address-taken words names it
+0x080067a0,start,runtime,thumb,0x080067a6,-,-,a run of address-taken words names it
 0x080067a6,start,table,thumb,0x080067e4,-,-,a run of address-taken words names it
 0x080067e8,start,table,thumb,0x080067f4,-,-,a run of address-taken words names it
 0x080067f4,start,table,thumb,0x0800689a,-,-,a run of address-taken words names it
@@ -934,6 +1055,14 @@ address,kind,channel,mode,end,reason,flags,evidence
 0x08007fd6,start,proven,thumb,0x08007fd8,-,-,a run of address-taken words names it
 0x08007fd8,start,proven,thumb,0x08007fee,no-return,-,a run of address-taken words names it
 0x08007fee,start,proven,thumb,0x08008016,no-return,-,a run of address-taken words names it
+0x08008016,start,runtime,thumb,0x08008048,no-return,data,a run of address-taken words names it
+0x08008048,start,runtime,thumb,0x0800805a,-,-,a run of address-taken words names it
+0x0800805a,start,runtime,thumb,0x08008066,no-return,-,a run of address-taken words names it
+0x08008066,start,runtime,thumb,0x08008078,no-return,-,a run of address-taken words names it
+0x08008078,start,runtime,thumb,0x080080a0,no-return,-,a run of address-taken words names it
+0x080080a0,start,runtime,thumb,0x080080b2,no-return,-,a run of address-taken words names it
+0x080080b2,start,runtime,thumb,0x080080f6,no-return,-,a run of address-taken words names it
+0x080080f6,start,runtime,thumb,0x080080f8,no-return,-,a run of address-taken words names it
 0x080080f8,start,table,thumb,0x080080fa,no-return,-,a run of address-taken words names it
 0x080080fa,start,table,thumb,0x080081fa,no-return,-,a run of address-taken words names it
 0x080081fa,start,table,thumb,0x080082f8,no-return,-,a run of address-taken words names it
@@ -1309,6 +1438,8 @@ address,kind,channel,mode,end,reason,flags,evidence
 0x0800acfe,start,call,thumb,0x0800ad0c,no-return,-,the walk reached it
 0x0800ad0c,start,proven,thumb,0x0800ad30,-,-,a run of address-taken words names it
 0x0800ad30,start,proven,thumb,0x0800ad3a,-,-,a run of address-taken words names it
+0x0800ad54,start,runtime,thumb,0x0800ad68,no-return,-,a run of address-taken words names it
+0x0800ad68,start,runtime,thumb,0x0800ad7c,-,-,a run of address-taken words names it
 0x0800ad7c,start,call,thumb,0x0800ad86,no-return,-,the walk reached it
 0x0800ad86,start,proven,thumb,0x0800adb0,-,-,a run of address-taken words names it
 0x0800add4,start,table,thumb,0x0800ae10,-,-,a run of address-taken words names it
@@ -1473,11 +1604,26 @@ address,kind,channel,mode,end,reason,flags,evidence
 0x0800d378,start,proven,thumb,0x0800d37a,no-return,-,a run of address-taken words names it
 0x0800d37a,start,proven,thumb,0x0800d3b4,no-return,-,a run of address-taken words names it
 0x0800d3b4,start,proven,thumb,0x0800d3b8,-,-,a run of address-taken words names it
+0x0800d3b8,start,runtime,thumb,0x0800d3bc,no-return,-,a run of address-taken words names it
+0x0800d3bc,start,runtime,thumb,0x0800d3be,no-return,-,a run of address-taken words names it
+0x0800d3be,start,runtime,thumb,0x0800d3da,no-return,-,a run of address-taken words names it
+0x0800d3da,start,runtime,thumb,0x0800d3de,no-return,-,a run of address-taken words names it
+0x0800d3de,start,runtime,thumb,0x0800d3e0,no-return,-,a run of address-taken words names it
+0x0800d3e0,start,runtime,thumb,0x0800d3fa,no-return,-,a run of address-taken words names it
+0x0800d3fa,start,runtime,thumb,0x0800d410,no-return,-,a run of address-taken words names it
+0x0800d410,start,runtime,thumb,0x0800d41e,no-return,-,a run of address-taken words names it
+0x0800d41e,start,runtime,thumb,0x0800d434,no-return,-,a run of address-taken words names it
+0x0800d434,start,runtime,thumb,0x0800d466,no-return,-,a run of address-taken words names it
 0x0800d466,start,table,thumb,0x0800d4fa,no-return,-,a run of address-taken words names it
 0x0800d4fa,start,table,thumb,0x0800d5e6,no-return,-,a run of address-taken words names it
 0x0800d5e6,start,table,thumb,0x0800d660,no-return,-,a run of address-taken words names it
 0x0800d6fa,start,table,thumb,0x0800d8fa,no-return,-,a run of address-taken words names it
 0x0800d8fa,start,table,thumb,0x0800d966,-,-,a run of address-taken words names it
+0x0800d966,start,runtime,thumb,0x0800d96a,no-return,-,a run of address-taken words names it
+0x0800d96a,start,runtime,thumb,0x0800d97c,no-return,-,a run of address-taken words names it
+0x0800d97c,start,runtime,thumb,0x0800d97e,-,-,a run of address-taken words names it
+0x0800d97e,start,runtime,thumb,0x0800d984,no-return,-,a run of address-taken words names it
+0x0800d984,start,runtime,thumb,0x0800d986,-,-,a run of address-taken words names it
 0x0800d9c4,start,repeated,thumb,0x0800da62,-,-,a pointer word repeated four or more times names it
 0x0800daa2,start,table,thumb,0x0800dab6,-,-,a run of address-taken words names it
 0x0800dabc,start,table,thumb,0x0800dadc,-,-,a run of address-taken words names it
@@ -1525,9 +1671,18 @@ address,kind,channel,mode,end,reason,flags,evidence
 0x0800e4dc,start,call,thumb,0x0800e4e8,no-return,-,the walk reached it
 0x0800e4f8,start,proven,thumb,0x0800e4fa,no-return,-,a run of address-taken words names it
 0x0800e568,start,proven,thumb,0x0800e56a,no-return,-,a run of address-taken words names it
+0x0800e56c,start,runtime,arm,0x0800e580,no-return,-,a run of address-taken words names it
+0x0800e580,start,runtime,arm,0x0800e5c8,no-return,-,a run of address-taken words names it
+0x0800e5c8,start,runtime,arm,0x0800e5cc,no-return,-,a run of address-taken words names it
+0x0800e5cc,start,runtime,arm,0x0800e5fc,no-return,-,a run of address-taken words names it
+0x0800e5fc,start,runtime,arm,0x0800e608,no-return,-,a run of address-taken words names it
+0x0800e608,start,runtime,arm,0x0800e624,no-return,-,a run of address-taken words names it
+0x0800e624,start,runtime,arm,0x0800e640,-,-,a run of address-taken words names it
 0x0800e640,start,proven,thumb,0x0800e642,no-return,-,a run of address-taken words names it
 0x0800e704,start,proven,thumb,0x0800e706,no-return,-,a run of address-taken words names it
 0x0800e748,start,proven,thumb,0x0800e74a,no-return,-,a run of address-taken words names it
+0x0800e74c,start,runtime,arm,0x0800e770,no-return,-,a run of address-taken words names it
+0x0800e770,start,runtime,arm,0x0800e778,-,-,a run of address-taken words names it
 0x0800e778,start,call,thumb,0x0800e782,no-return,data,the walk reached it
 0x0800e782,start,proven,thumb,0x0800e79a,no-return,-,a run of address-taken words names it
 0x0800e79a,start,proven,thumb,0x0800e7a2,no-return,-,a run of address-taken words names it
@@ -1559,6 +1714,7 @@ address,kind,channel,mode,end,reason,flags,evidence
 0x0800eaf2,start,proven,thumb,0x0800eb04,no-return,-,a run of address-taken words names it
 0x0800eb04,start,proven,thumb,0x0800eb08,-,-,a run of address-taken words names it
 0x0800eb08,start,proven,thumb,0x0800eb0c,no-return,-,a run of address-taken words names it
+0x0800f330,start,runtime,thumb,0x0800f332,-,-,a run of address-taken words names it
 0x0800f358,start,call,thumb,0x0800f368,-,data,the walk reached it
 0x0800f36c,start,call,thumb,0x0800f39c,-,-,the walk reached it
 0x0800f3bc,start,runtime,thumb,0x0800f3be,-,-,a run of address-taken words names it
