@@ -42,7 +42,7 @@ HUFFMAN = (
     0x0861E9F0, 0x08620A20, 0x08626F94, 0x0862914C,
     0x0862E17C, 0x08632778, 0x08634810, 0x08634E98,
     0x08636990, 0x0863A4E0, 0x0863C174, 0x086402A8,
-    0x08643510, 0x08644090, 0x08647E78, 0x086488B8,
+    0x08640D58, 0x08643510, 0x08644090, 0x08647E78, 0x086488B8,
     0x0864C980, 0x0864D3B0, 0x08651AF4, 0x08652530,
     0x086555D8, 0x08656190, 0x086596FC, 0x0865A240,
     0x0865DC54, 0x0865E5CC, 0x08662F88, 0x08663828,
@@ -51,7 +51,7 @@ HUFFMAN = (
     0x0867A808, 0x0867B2C4, 0x0867F4B0, 0x0867FB9C,
     0x0868390C, 0x08684890, 0x086880C8, 0x086890E4,
     0x0868CB64, 0x0868D6F8, 0x08693080, 0x08697CB0,
-    0x0869E49C, 0x0869FD10, 0x086A21AC, 0x086A7A2C,
+    0x0869E49C, 0x0869FD10, 0x086A21AC, 0x086A38A4, 0x086A7A2C,
 )
 REFUSED = (0x0818A3A8,)
 DESCRIPTOR_STRIDE = 12
@@ -163,8 +163,11 @@ def huffman_codes(rom, start):
             child = (node & ~1) + ((byte & 0x3F) + 1) * 2 + bit
             parents[child] = parents.get(child, 0) + 1
             if byte << bit & 0x80:
-                table.setdefault(rom[child] & (0xFF if kind == 8 else 0xF),
-                                 (path << 1 | bit, depth + 1))
+                symbol = rom[child] & (0xFF if kind == 8 else 0xF)
+                code = (path << 1 | bit, depth + 1)
+                seen = table.get(symbol)
+                if seen is None or (code[1], code[0]) < (seen[1], seen[0]):
+                    table[symbol] = code
             else:
                 stack.append((child, path << 1 | bit, depth + 1))
     if any(count > 1 for count in parents.values()):

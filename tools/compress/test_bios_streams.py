@@ -131,6 +131,7 @@ POPULATION = (
     (0x0863A4E0, 7316, 7588),
     (0x0863C174, 16692, 17928),
     (0x086402A8, 2736, 3120),
+    (0x08640D58, 10168, 13480),
     (0x08643510, 2944, 3124),
     (0x08644090, 15848, 16836),
     (0x08647E78, 2624, 2804),
@@ -170,6 +171,7 @@ POPULATION = (
     (0x0869E49C, 6260, 6744),
     (0x0869FD10, 9372, 10120),
     (0x086A21AC, 5880, 6200),
+    (0x086A38A4, 10168, 13480),
     (0x086A7A2C, 15624, 19320),
 )
 REFUSED = 0x0818A3A8
@@ -270,6 +272,12 @@ def test_a_tree_that_shares_a_node_is_refused_instead_of_coding_twice():
     raise AssertionError("a tree with a shared node re-encoded")
 
 
+def test_a_symbol_the_tree_gives_two_codes_gets_the_shorter_one():
+    rom = image()
+    table = bios_streams.huffman_codes(rom, 0x08640D58)
+    assert table[0x00] == (0b01, 2), table[0x00]
+
+
 def test_the_tracked_token_list_is_what_the_image_derives():
     testkit.rom_bytes(bios_streams.ROM, DIGEST, 0x800000)
     assert bios_streams.main(["--check"]) == 0
@@ -285,5 +293,6 @@ if __name__ == "__main__":
         test_a_permuted_lz77_body_is_refused()
         test_a_permuted_huffman_tree_is_refused()
         test_a_tree_that_shares_a_node_is_refused_instead_of_coding_twice()
+        test_a_symbol_the_tree_gives_two_codes_gets_the_shorter_one()
         test_the_tracked_token_list_is_what_the_image_derives()
         print("PASS test_bios_streams")

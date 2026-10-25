@@ -2916,7 +2916,7 @@
 	INCBIN	..\build\bios\stream_0x63a4e0_0x63c174.bin
 	INCBIN	..\build\bios\stream_0x63c174_0x6402a8.bin
 	INCBIN	..\build\bios\stream_0x6402a8_0x640d58.bin
-	INCBIN	baserom.gba_0x640d58_0x643510.extracted
+	INCBIN	..\build\bios\stream_0x640d58_0x643510.bin
 	INCBIN	..\build\bios\stream_0x643510_0x644090.bin
 	INCBIN	..\build\bios\stream_0x644090_0x647e78.bin
 	INCBIN	..\build\bios\stream_0x647e78_0x6488b8.bin
@@ -2958,7 +2958,8 @@
 	INCBIN	..\build\bios\stream_0x69e49c_0x69fd10.bin
 	INCBIN	..\build\bios\stream_0x69fd10_0x6a21ac.bin
 	INCBIN	..\build\bios\stream_0x6a21ac_0x6a38a4.bin
-	INCBIN	baserom.gba_0x6a38a4_0x6a7a2c.extracted
+	INCBIN	..\build\bios\stream_0x6a38a4_0x6a605c.bin
+	INCBIN	baserom.gba_0x6a605c_0x6a7a2c.extracted
 	INCBIN	..\build\bios\stream_0x6a7a2c_0x6ab734.bin
 	INCBIN	baserom.gba_0x6ab734_0x6b6094.extracted
 	INCBIN	..\build\actors\stream_0x6b6094_0x6b6a78.bin

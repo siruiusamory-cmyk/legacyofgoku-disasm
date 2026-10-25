@@ -256,3 +256,15 @@ All notable changes to this tree are recorded here. The format follows
   population with both lengths of every stream, the single word that names each start, the
   descriptor ends that agree with the decoder's own stop, that no two rows share a byte, a permuted
   LZ77 body, a permuted tree and the shared-node refusal.
+- The two BIOS Huffman streams whose tree gives one symbol two codes, in
+  `tools/compress/bios_streams.py`: the tree at `0x08640d58` reaches symbol `0x00` both at `01` (two
+  bits) and at a fifteen-bit code, and the image's stream uses the short one throughout, so the code
+  table now keeps the shorter of a symbol's codes instead of the first one the walk reaches. Both
+  streams at `0x08640d58` and `0x086a38a4`, 10,168 stored bytes each and 13,480 decoded bytes each,
+  now re-encode to the image's bytes and join the population, which is 159 rows - one LZ77 and 158
+  Huffman - so 20,336 B build from source instead of raw slices and the runs leave 121,485 B of the
+  family that no byte-exact stream reaches. What stays raw stays measured: ten Huffman candidates
+  whose re-encode still differs, because seven of them carry symbols past the header's decoded size
+  in their last word, and the trees at `0x0815bcd4` and `0x085650a9` reach one symbol through several
+  codes that the image's stream uses inconsistently, so no code table reproduces them;
+  `tools/compress/test_bios_streams.py` pins the 159-row population and the shorter-code rule.
