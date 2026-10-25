@@ -13,8 +13,10 @@ import pytest
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
+sys.path.insert(0, os.path.join(os.path.dirname(HERE), "research"))
 
 import gate
+import pointer_rows
 
 
 def in_scratch(call):
@@ -41,6 +43,12 @@ def require_cmd():
         pytest.skip("cmd.exe is absent, so the build step cannot run")
 
 
+def pointer_bytes():
+    text = open(pointer_rows.ASM, encoding="utf-8", newline="").read()
+    items = pointer_rows.tokens(text, pointer_rows.code_bounds())
+    return sum(size for kind, _position, size, _line in items if kind == "dcd")
+
+
 def test_the_source_count_is_the_slices_and_the_rest():
     ranges = gate.incbin_ranges()
     raw = sum(length for _start, length in ranges)
@@ -51,7 +59,8 @@ def test_the_source_count_is_the_slices_and_the_rest():
     rows = gate.emit_code.census_rows()
     emitted = sum(row["end"] - row["address"] for row in gate.emit_code.code_rows(rows))
     generated = sum(length for _start, length in gate.generated_ranges())
-    assert gate.source_bytes() == 0x78 + emitted + generated
+    assert pointer_bytes() > 0
+    assert gate.source_bytes() == 0x78 + emitted + generated + pointer_bytes()
 
 
 def test_a_double_counted_interval_is_refused_instead_of_passing_as_arithmetic():

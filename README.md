@@ -44,7 +44,7 @@ does not measure how much of the code has been turned into C.
 
 ## Progress
 
-46.3081 % of the ROM (3,884,609 of 8,388,608 bytes) builds from tracked source: the startup block
+46.3237 % of the ROM (3,885,917 of 8,388,608 bytes) builds from tracked source: the startup block
 at `0x080000c0` in [asm/crt0.s](asm/crt0.s), every census code row, disassembled into `build/code/`
 by [tools/code/emit_code.py](tools/code/emit_code.py), all 532 records of the three lists the
 custom decompressor serves, decoded into rows, token plans, a palette and an image stream and
@@ -61,7 +61,10 @@ the layout their reader's offsets give and re-encoded by
 `0x0815bf28` with the node chains and text pools its pointers name, re-encoded by
 [tools/research/dialogue_rows.py](tools/research/dialogue_rows.py), and the six messages the code
 names one by one at `0x085c2de2` with the 31-row message-id table and its 14-string pool at
-`0x085c2fb8`, re-encoded by [tools/research/message_rows.py](tools/research/message_rows.py). The
+`0x085c2fb8`, re-encoded by [tools/research/message_rows.py](tools/research/message_rows.py), and
+the 14 runs of four or more image-addressed words whose every word names a label the code files
+already carry, emitted as `DCD` lines naming that label by
+[tools/research/pointer_rows.py](tools/research/pointer_rows.py). The
 rest is INCBIN
 slices of the retail image. `python tools\gate\gate.py` prints the split, and the code and data classes it derives
 are the page [docs/CODE_SPLIT.md](docs/CODE_SPLIT.md), which `tools/split/census.py --check`

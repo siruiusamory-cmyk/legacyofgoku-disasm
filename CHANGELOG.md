@@ -194,3 +194,20 @@ All notable changes to this tree are recorded here. The format follows
   `0x0815ae64` stays raw because no instruction cites it: its pointer word at `0x0815ae60` is named
   by one word at `0x0815b03c` inside a six-entry array, and that array's `{count, base}` pair at
   `0x0815a820` is named by no word and by no literal site.
+- The pointer generator in `tools/research/pointer_rows.py`. The class it measures is the probe's
+  own: four or more consecutive four-byte-aligned words that each name the image, taken over the
+  slices the earlier classes - code-region residue, fill and text - leave raw. On this image it is
+  317 runs and 21,152 B. Fourteen of those runs (1,308 B, the largest `0x08166734` at 308 B) have
+  every word naming a label the code files already define, so those bytes are `DCD` lines naming the
+  label and its Thumb bit instead of an INCBIN slice; the other 303 runs (19,844 B, the largest
+  `0x086b2ca0` at 1,448 B) name data no label names, so they stay raw and are listed. Nothing is
+  tracked but the rule and the generator: it reads `asm/remainder.s` as a token list with a position
+  for every line - a slice's position must equal its own name, a label's position its own address,
+  and the file must cover the whole image - probes the rule over the raw and the emitted intervals so
+  a second run derives the same list, leaves a run raw the moment one of its targets has no label,
+  refuses a `DCD` whose label and offset do not re-derive the word at its position, and `--check`
+  re-derives the list, the gap slices and every emitted word.
+  `tools/research/test_pointer_rows.py` pins the class totals, the emitted count, the largest raw
+  run, the loss of one target label (that run and no other leaves the list), a `DCD` naming the
+  wrong label, a `DCD` outside every run, and an image whose sha1 differs. 1,308 B build from source
+  instead of the raw slices.
