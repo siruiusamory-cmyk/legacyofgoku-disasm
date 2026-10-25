@@ -24,6 +24,9 @@ echo script_generate_exit=%ERRORLEVEL%
 echo === actor row generator ===
 python tools\research\actor_rows.py --write
 echo actor_rows_exit=%ERRORLEVEL%
+echo === credits generator ===
+python tools\research\credits_rows.py --write
+echo credits_rows_exit=%ERRORLEVEL%
 echo === incbin slices ===
 call tools\incbin.bat baserom.gba 0x0 0xc0
 echo incbin_header_exit=%ERRORLEVEL%

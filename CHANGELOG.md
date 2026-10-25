@@ -130,3 +130,20 @@ All notable changes to this tree are recorded here. The format follows
   a null because each row carries its own index, a doctored HP word (exactly one row disagrees), and
   the refusals of a name pointer outside the pool, a moved base literal and an image whose sha1
   differs.
+- The generator for the credits text table, in `tools/research/credits_rows.py`: the credits
+  renderer at `0x08001cfa` stops at a line index of `0x8e` (`cmp r0,#0x8e` at `0x08001d28`), scales
+  it by four (`lsls r0,#2` at `0x08001d2e`), skips the eight-byte header (`adds r1,#8` at
+  `0x08001d30`) and reads the text pointer (`ldr r1,[r1,r0]` at `0x08001d32`) from the table
+  `0x08010094` (literal at `0x08001e68`) before the writer at `0x08009064` walks it as a
+  `0x00`-terminated string. The header is four halfwords, the table is 142 four-byte pointers, and
+  the text pool from `0x080102d4` holds 79 distinct strings that tile exactly to `0x0801082b`, so
+  the family is 1,943 B. Nothing read from the image is tracked: the header layout, the bounds and
+  the instructions that cite them are the committed part, and the generator reads the halfwords,
+  the pointer order and the strings out of the builder's image at build time, refuses an image
+  whose bounds, digest or round trip differ, and writes the family to `build/credits/`, which
+  `asm/remainder.s` incbins in place of the raw slice. `--check` re-derives the run and the slices,
+  and `tools/research/test_credits_rows.py` pins the bounds, the round trip, every pointer as the
+  pool position of the text it names, the first-use pool walk, a row list moved by one text (no
+  row passes), a rotation of the row values, a doctored text (exactly one row disagrees), and the
+  refusals of a text pointer or a row pointer outside the pool, a moved base literal and an image
+  whose sha1 differs.

@@ -2326,7 +2326,9 @@
 	INCLUDE	..\build\code\code_0800fe30.s
 	INCLUDE	..\build\code\code_0800fe34.s
 	INCLUDE	..\build\code\code_0800fe3a.s
-	INCBIN	baserom.gba_0xfe3e_0x15b2fc.extracted
+	INCBIN	baserom.gba_0xfe3e_0x10094.extracted
+	INCBIN	..\build\credits\stream_0x10094_0x1082b.bin
+	INCBIN	baserom.gba_0x1082b_0x15b2fc.extracted
 	INCBIN	..\build\bios\stream_0x15b2fc_0x15b928.bin
 	INCBIN	baserom.gba_0x15b928_0x19ac74.extracted
 	INCBIN	..\build\bios\stream_0x19ac74_0x19badc.bin
