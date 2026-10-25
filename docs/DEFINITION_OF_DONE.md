@@ -18,11 +18,11 @@ One target for every change: the full image, as `python tools\gate\gate.py` meas
 ## Current gate output
 
 ```
-generated=3834651
+generated=3835635
 identity copies=0 (0.0000 %)
-raw-data=4504983 (53.7036 %)
-source=3883625 of 8388608 (46.2964 %)
-accounted=8388608 of 8388608 (100.0000 %) raw 4504983 + identity 0 + source 3883625
+raw-data=4503999 (53.6919 %)
+source=3884609 of 8388608 (46.3081 %)
+accounted=8388608 of 8388608 (100.0000 %) raw 4503999 + identity 0 + source 3884609
 ```
 
 README.md carries the same figures; the README-numbers check in `tools/lint/lints.py` reads

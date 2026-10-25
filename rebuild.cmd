@@ -30,6 +30,9 @@ echo credits_rows_exit=%ERRORLEVEL%
 echo === dialogue generator ===
 python tools\research\dialogue_rows.py --write
 echo dialogue_rows_exit=%ERRORLEVEL%
+echo === message generator ===
+python tools\research\message_rows.py --write
+echo message_rows_exit=%ERRORLEVEL%
 echo === incbin slices ===
 call tools\incbin.bat baserom.gba 0x0 0xc0
 echo incbin_header_exit=%ERRORLEVEL%

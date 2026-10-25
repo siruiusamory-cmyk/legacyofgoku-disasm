@@ -2388,7 +2388,11 @@
 	INCBIN	..\build\script\stream_0x55d2a8_0x55e6d0.bin
 	INCBIN	baserom.gba_0x55e6d0_0x55e732.extracted
 	INCBIN	..\build\script\stream_0x55e732_0x5618a9.bin
-	INCBIN	baserom.gba_0x5618a9_0x5c31f8.extracted
+	INCBIN	baserom.gba_0x5618a9_0x5c2de2.extracted
+	INCBIN	..\build\messages\stream_0x5c2de2_0x5c2f86.bin
+	INCBIN	baserom.gba_0x5c2f86_0x5c2fb8.extracted
+	INCBIN	..\build\messages\stream_0x5c2fb8_0x5c31ec.bin
+	INCBIN	baserom.gba_0x5c31ec_0x5c31f8.extracted
 	INCBIN	..\build\bios\stream_0x5c31f8_0x5c3868.bin
 	INCBIN	baserom.gba_0x5c3868_0x5c3888.extracted
 	INCBIN	..\build\bios\stream_0x5c3888_0x5c4a0c.bin

@@ -169,3 +169,28 @@ All notable changes to this tree are recorded here. The format follows
   values, a doctored text (exactly one record disagrees), and the refusals of a node pointer that is
   not a pool position, a table word that names no record, a moved base literal and an image whose
   sha1 differs.
+- The generator for the message text, in `tools/research/message_rows.py`, over two families. The
+  first is six messages from `0x085c2de2` to `0x085c2f86`, each named by its own pc-relative load
+  (`0x08004abe`, `0x08004b20`, `0x08000fc0`, `0x08005bc8`, `0x0800d0c0`, `0x0800d0ba`), so the
+  bounds are the literal each of those instructions resolves to, and the six tile the span with no
+  gap. The second is the message-id table at `0x085c2fb8`: the code loads that base
+  (`ldr r1,[pc,#0x1c]` at `0x08004a8a`, `ldr r1,[pc,#0x88]` at `0x0800d1d4`, `ldr r1,[pc,#0x64]`
+  at `0x0800d1f8`), scales an id byte by four (`lsls r0,r0,#2` at `0x08004a8c`,
+  `lsls r0,r1,#2` at `0x0800d1d2` and `0x0800d1f6`) and reads the row (`ldr r1,[r1,r0]` at
+  `0x08004a8e`, `0x0800d1d6`, `0x0800d1fa`). The table is 31 ascending rows that name 14 distinct
+  strings in one pool, the pool's last string ends on `0x085c31ec` - the data base four literal
+  sites resolve to (`0x080010ea`, `0x08001182`, `0x08004e5e`, `0x080051e8`) - and the whole family
+  is 564 B, re-encoded byte for byte. Nothing read from the image is tracked: the bounds and the
+  instructions that cite them are the committed part, and the generator reads the messages, the
+  rows and the pool out of the builder's image at build time, refuses an image whose bounds, digest
+  or round trip differ, and writes both families to `build/messages/`, which `asm/remainder.s`
+  incbins in place of the raw slice. `--check` re-derives the runs and the slices, and
+  `tools/research/test_message_rows.py` pins the bounds of both families, the tiling of the six
+  messages, the pool's first and last positions, the round trip, a moved message literal, a message
+  without its terminator, a row that names no string, rows that do not ascend, a swap of two
+  equal-length messages (exactly two disagree), a doctored message (exactly one disagrees), and the
+  refusal of an image whose sha1 differs. 984 B build from source instead of the raw slice, and the
+  text probe's remainder falls from 17,400 B in 840 runs to 16,552 B in 820 runs; the 339 B at
+  `0x0815ae64` stays raw because no instruction cites it: its pointer word at `0x0815ae60` is named
+  by one word at `0x0815b03c` inside a six-entry array, and that array's `{count, base}` pair at
+  `0x0815a820` is named by no word and by no literal site.
