@@ -139,6 +139,8 @@ The gate, the source checks, the link check, the slice writer and the build scri
 [2genkidev/buusfury](https://github.com/2genkidev/buusfury) disassembly. Third-party code and
 credits are listed in [NOTICE](NOTICE). Changes are listed in [CHANGELOG.md](CHANGELOG.md).
 
+The project is listed on [recomp.fyi](https://recomp.fyi) from [.recomp.json](.recomp.json).
+
 No ROM, BIOS or extracted game data is included. You need your own legally obtained copy of the
 game. Not affiliated with the rights holders of the game.
 

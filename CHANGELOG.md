@@ -7,6 +7,7 @@ All notable changes to this tree are recorded here. The format follows
 
 ### Added
 
+- `.recomp.json`, the project entry the recompilation directory reads, with the retail game's sha1.
 - `docs/banner.png`, shown centred at the top of the README.
 - The repository layout, `extract.cmd`, `rebuild.cmd` and `scatter.ld` for the retail image.
 - The retail identity gate, the byte accounting and the citation tests in `tools/gate/gate.py`.
