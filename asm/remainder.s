@@ -1967,12 +1967,31 @@
 	INCLUDE	..\build\code\code_0800fe30.s
 	INCLUDE	..\build\code\code_0800fe34.s
 	INCLUDE	..\build\code\code_0800fe3a.s
-	INCBIN	baserom.gba_0xfe3e_0x1bdc1c.extracted
+	INCBIN	baserom.gba_0xfe3e_0x15b2fc.extracted
+	INCBIN	..\build\bios\stream_0x15b2fc_0x15b928.bin
+	INCBIN	baserom.gba_0x15b928_0x19ac74.extracted
+	INCBIN	..\build\bios\stream_0x19ac74_0x19badc.bin
+	INCBIN	baserom.gba_0x19badc_0x19bce8.extracted
+	INCBIN	..\build\bios\stream_0x19bce8_0x1a0e4c.bin
+	INCBIN	baserom.gba_0x1a0e4c_0x1b3520.extracted
+	INCBIN	..\build\bios\stream_0x1b3520_0x1b86b4.bin
+	INCBIN	baserom.gba_0x1b86b4_0x1bdc1c.extracted
 	INCBIN	..\build\bios\stream_0x1bdc1c_0x1c06df.bin
 	INCBIN	baserom.gba_0x1c06df_0x1ca1e8.extracted
 	INCBIN	..\build\f1\stream_0x1ca1e8_0x334d67.bin
 	INCBIN	baserom.gba_0x334d67_0x3372c8.extracted
 	INCBIN	..\build\f1\stream_0x3372c8_0x4dd59f.bin
-	INCBIN	baserom.gba_0x4dd59f_0x4e4fc4.extracted
+	INCBIN	baserom.gba_0x4dd59f_0x4dede4.extracted
+	INCBIN	..\build\bios\stream_0x4dede4_0x4e4d20.bin
+	INCBIN	baserom.gba_0x4e4d20_0x4e4fc4.extracted
 	INCBIN	..\build\f1\stream_0x4e4fc4_0x53881c.bin
-	INCBIN	baserom.gba_0x53881c_0x800000.extracted
+	INCBIN	baserom.gba_0x53881c_0x53e34c.extracted
+	INCBIN	..\build\bios\stream_0x53e34c_0x53e4e8.bin
+	INCBIN	baserom.gba_0x53e4e8_0x541db8.extracted
+	INCBIN	..\build\bios\stream_0x541db8_0x541f38.bin
+	INCBIN	baserom.gba_0x541f38_0x5c31f8.extracted
+	INCBIN	..\build\bios\stream_0x5c31f8_0x5c3868.bin
+	INCBIN	baserom.gba_0x5c3868_0x5c3888.extracted
+	INCBIN	..\build\bios\stream_0x5c3888_0x5c4a0c.bin
+	INCBIN	..\build\bios\stream_0x5c4a0c_0x5ca0f0.bin
+	INCBIN	baserom.gba_0x5ca0f0_0x800000.extracted

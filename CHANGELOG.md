@@ -74,3 +74,15 @@ All notable changes to this tree are recorded here. The format follows
   18-byte-window encoder re-encodes the 10,947 stored bytes exactly, so those 10,947 B are source.
   `tools/compress/test_bios_streams.py` pins the stream, its two lengths, the word that names it,
   the round trip and a permuted-body null.
+- The Huffman tree grammar the BIOS decoder at `0x00001014` implements, and the ten image streams it
+  reads of the eleven the code hands to SWI `0x13`: byte 0 is `0x24` (four-bit units) or `0x28`
+  (eight-bit), bytes 1-3 the decoded size, byte 4 one less than the tree's leaf count, then the
+  compacted tree - one byte per node, bits 7 and 6 the "this child is a leaf" flags for bit 0 and bit
+  1, bits 0-5 the distance in node pairs to the child pair, and a leaf byte carrying the symbol - and
+  then the bitstream as little-endian words consumed from bit 31 down. The ten streams decode to
+  116,732 B and re-encode to their 100,540 stored bytes exactly, so those 100,540 B are source. The
+  eleventh stream, at `0x0818a3a8`, is refused: its tree shares twenty nodes, so a symbol has more
+  than one code and no encoder can rebuild its bitstream from the decoded bytes.
+  `tools/compress/test_bios_streams.py` pins the eleven-row population, the naming word of each
+  stream, the nine descriptor ends that agree with the decoder's own stop, a permuted LZ77 body, a
+  permuted tree and the shared-node refusal.
