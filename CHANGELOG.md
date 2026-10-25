@@ -147,3 +147,25 @@ All notable changes to this tree are recorded here. The format follows
   row passes), a rotation of the row values, a doctored text (exactly one row disagrees), and the
   refusals of a text pointer or a row pointer outside the pool, a moved base literal and an image
   whose sha1 differs.
+- The generator for the 80-record dialogue table, in `tools/research/dialogue_rows.py`: the reader
+  at `0x080051d0` loads the table base `0x0815bf28` (`ldr r2,[pc,#0x1ec]` at `0x080051d2`) and scales
+  the row index by four (`lsls r1,r0,#2` at `0x080051d4`), then indexes the record's node chain by
+  eight times the object's state byte (`lsls r0,#3` at `0x08005208`, `add r4,r0,r1` at `0x0800520a`),
+  advances the state from the node's second byte (`ldrb r0,[r4,#1]` at `0x0800520c`), tests the
+  node's first byte for the `0xff` that ends a conversation (`ldrb r0,[r4,#0]`/`cmp r0,#0xff` at
+  `0x08005212`/`0x08005214`) and hands the node's `+4` word to the dialogue setter (`ldr r1,[r4,#4]`
+  at `0x080052b2`). The setter stores it and the reveal ends the page on the `0x00` at its first byte
+  (`ldr r0,[r4,#0x14]`/`ldrb r0,[r0]`/`cmp r0,#0` at `0x08009350`/`0x08009358`/`0x0800935a`). The
+  table names 80 records, each record is a run of eight-byte nodes followed by a pool of
+  `0x00`-terminated strings, every node's `+4` word is a pool position, and the records tile from
+  `0x0815c068` to `0x08166731`: 80 records, 988 nodes, 789 strings, 43,017 B, re-encoded byte for
+  byte. Nothing read from the image is tracked: the bounds and the instructions that cite them are
+  the committed part, and the generator reads the table, the node chains and the strings out of the
+  builder's image at build time, refuses an image whose bounds, digest or round trip differ, and
+  writes the family to `build/dialogue/`, which `asm/remainder.s` incbins in place of the raw slice.
+  `--check` re-derives the run and the slices, and `tools/research/test_dialogue_rows.py` pins the
+  bounds, the round trip, the tiling of every record to the next, every step index and every text
+  pointer as a pool position, a table advanced one record (no row passes), a rotation of the row
+  values, a doctored text (exactly one record disagrees), and the refusals of a node pointer that is
+  not a pool position, a table word that names no record, a moved base literal and an image whose
+  sha1 differs.

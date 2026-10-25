@@ -2330,7 +2330,9 @@
 	INCBIN	..\build\credits\stream_0x10094_0x1082b.bin
 	INCBIN	baserom.gba_0x1082b_0x15b2fc.extracted
 	INCBIN	..\build\bios\stream_0x15b2fc_0x15b928.bin
-	INCBIN	baserom.gba_0x15b928_0x19ac74.extracted
+	INCBIN	baserom.gba_0x15b928_0x15bf28.extracted
+	INCBIN	..\build\dialogue\stream_0x15bf28_0x166731.bin
+	INCBIN	baserom.gba_0x166731_0x19ac74.extracted
 	INCBIN	..\build\bios\stream_0x19ac74_0x19badc.bin
 	INCBIN	baserom.gba_0x19badc_0x19bce8.extracted
 	INCBIN	..\build\bios\stream_0x19bce8_0x1a0e4c.bin
