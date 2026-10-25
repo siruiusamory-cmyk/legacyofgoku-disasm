@@ -86,3 +86,15 @@ All notable changes to this tree are recorded here. The format follows
   `tools/compress/test_bios_streams.py` pins the eleven-row population, the naming word of each
   stream, the nine descriptor ends that agree with the decoder's own stop, a permuted LZ77 body, a
   permuted tree and the shared-node refusal.
+- The generator for the script records the interpreter at `0x0800a3e6` runs, in
+  `tools/scripts/script_streams.py`: the table at `0x08591f3c` holds twelve-byte descriptors, the map
+  loader at `0x08002038` addresses a row with the byte at `[record+0]`, and a row carries a word
+  table of record starts and a `0xff`-terminated selector table. A record is one frame-count byte and
+  that many `0x00`-terminated opcode segments, and an opcode's operand count is its flag byte: read
+  from the stream when the opcode's high nibble is zero, inherited from the same slot when it is one,
+  and taken from the image's own table at `0x08142386` above that. The 282 records over 118,634 B
+  decode to 17,332 segments and 50,087 opcodes and re-encode byte for byte, so those bytes are source,
+  and `asm/remainder.s` carries their eighteen generated runs. The rows are the tracked tables
+  `tools/scripts/SCRIPT_RECORDS.csv` and `tools/scripts/SCRIPT_OPS.csv`; `--check` re-derives both,
+  and `tools/scripts/test_script_streams.py` pins the population, every row's tiling, the flag bytes,
+  a table whose slots are permuted (no record passes) and a doctored operand.

@@ -18,6 +18,9 @@ echo stream_generate_exit=%ERRORLEVEL%
 echo === bios stream generator ===
 python tools\compress\bios_streams.py --write
 echo bios_generate_exit=%ERRORLEVEL%
+echo === script stream generator ===
+python tools\scripts\script_streams.py --write
+echo script_generate_exit=%ERRORLEVEL%
 echo === incbin slices ===
 call tools\incbin.bat baserom.gba 0x0 0xc0
 echo incbin_header_exit=%ERRORLEVEL%

@@ -44,13 +44,15 @@ does not measure how much of the code has been turned into C.
 
 ## Progress
 
-44.2742 % of the ROM (3,713,991 of 8,388,608 bytes) builds from tracked source: the startup block
+45.6885 % of the ROM (3,832,625 of 8,388,608 bytes) builds from tracked source: the startup block
 at `0x080000c0` in [asm/crt0.s](asm/crt0.s), every census code row, disassembled into `build/code/`
 by [tools/code/emit_code.py](tools/code/emit_code.py), all 532 records of the three lists the
 custom decompressor serves, decoded into rows, token plans, a palette and an image stream and
-re-encoded by [tools/compress/f1_streams.py](tools/compress/f1_streams.py), and the eleven BIOS
+re-encoded by [tools/compress/f1_streams.py](tools/compress/f1_streams.py), the eleven BIOS
 codec streams the image names - one LZ77 and ten Huffman - decoded and re-encoded by
-[tools/compress/bios_streams.py](tools/compress/bios_streams.py). The rest is INCBIN
+[tools/compress/bios_streams.py](tools/compress/bios_streams.py), and the 282 script records the
+interpreter at `0x0800a3e6` runs, decoded to 50,087 opcodes and re-encoded by
+[tools/scripts/script_streams.py](tools/scripts/script_streams.py). The rest is INCBIN
 slices of the retail image. `python tools\gate\gate.py` prints the split, and the code and data classes it derives
 are the page [docs/CODE_SPLIT.md](docs/CODE_SPLIT.md), which `tools/split/census.py --check`
 re-derives.

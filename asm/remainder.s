@@ -1989,7 +1989,43 @@
 	INCBIN	..\build\bios\stream_0x53e34c_0x53e4e8.bin
 	INCBIN	baserom.gba_0x53e4e8_0x541db8.extracted
 	INCBIN	..\build\bios\stream_0x541db8_0x541f38.bin
-	INCBIN	baserom.gba_0x541f38_0x5c31f8.extracted
+	INCBIN	baserom.gba_0x541f38_0x5443df.extracted
+	INCBIN	..\build\script\stream_0x5443df_0x545f97.bin
+	INCBIN	baserom.gba_0x545f97_0x545fdb.extracted
+	INCBIN	..\build\script\stream_0x545fdb_0x546445.bin
+	INCBIN	baserom.gba_0x546445_0x54645a.extracted
+	INCBIN	..\build\script\stream_0x54645a_0x547149.bin
+	INCBIN	baserom.gba_0x547149_0x54717f.extracted
+	INCBIN	..\build\script\stream_0x54717f_0x547f99.bin
+	INCBIN	baserom.gba_0x547f99_0x547fe0.extracted
+	INCBIN	..\build\script\stream_0x547fe0_0x5492ab.bin
+	INCBIN	baserom.gba_0x5492ab_0x5492e6.extracted
+	INCBIN	..\build\script\stream_0x5492e6_0x54b4f7.bin
+	INCBIN	baserom.gba_0x54b4f7_0x54b55d.extracted
+	INCBIN	..\build\script\stream_0x54b55d_0x54d398.bin
+	INCBIN	baserom.gba_0x54d398_0x54d3fd.extracted
+	INCBIN	..\build\script\stream_0x54d3fd_0x54f3b5.bin
+	INCBIN	baserom.gba_0x54f3b5_0x54f404.extracted
+	INCBIN	..\build\script\stream_0x54f404_0x54f8e0.bin
+	INCBIN	baserom.gba_0x54f8e0_0x54f8ff.extracted
+	INCBIN	..\build\script\stream_0x54f8ff_0x551a12.bin
+	INCBIN	baserom.gba_0x551a12_0x551a76.extracted
+	INCBIN	..\build\script\stream_0x551a76_0x55387c.bin
+	INCBIN	baserom.gba_0x55387c_0x5538df.extracted
+	INCBIN	..\build\script\stream_0x5538df_0x554f6d.bin
+	INCBIN	baserom.gba_0x554f6d_0x554fc1.extracted
+	INCBIN	..\build\script\stream_0x554fc1_0x5575bf.bin
+	INCBIN	baserom.gba_0x5575bf_0x557628.extracted
+	INCBIN	..\build\script\stream_0x557628_0x55a32c.bin
+	INCBIN	baserom.gba_0x55a32c_0x55a396.extracted
+	INCBIN	..\build\script\stream_0x55a396_0x55c4de.bin
+	INCBIN	baserom.gba_0x55c4de_0x55c536.extracted
+	INCBIN	..\build\script\stream_0x55c536_0x55d23a.bin
+	INCBIN	baserom.gba_0x55d23a_0x55d2a8.extracted
+	INCBIN	..\build\script\stream_0x55d2a8_0x55e6d0.bin
+	INCBIN	baserom.gba_0x55e6d0_0x55e732.extracted
+	INCBIN	..\build\script\stream_0x55e732_0x5618a9.bin
+	INCBIN	baserom.gba_0x5618a9_0x5c31f8.extracted
 	INCBIN	..\build\bios\stream_0x5c31f8_0x5c3868.bin
 	INCBIN	baserom.gba_0x5c3868_0x5c3888.extracted
 	INCBIN	..\build\bios\stream_0x5c3888_0x5c4a0c.bin
