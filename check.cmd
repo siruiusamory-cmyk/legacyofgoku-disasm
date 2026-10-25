@@ -30,4 +30,6 @@ python -m pytest -q tools\recomp\test_runtime_labels.py
 if errorlevel 1 exit /b 1
 python -m pytest -q tools\scripts\test_script_streams.py
 if errorlevel 1 exit /b 1
+python -m pytest -q tools\research\test_actor_rows.py
+if errorlevel 1 exit /b 1
 echo check done

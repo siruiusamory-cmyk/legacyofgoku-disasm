@@ -2030,4 +2030,6 @@
 	INCBIN	baserom.gba_0x5c3868_0x5c3888.extracted
 	INCBIN	..\build\bios\stream_0x5c3888_0x5c4a0c.bin
 	INCBIN	..\build\bios\stream_0x5c4a0c_0x5ca0f0.bin
-	INCBIN	baserom.gba_0x5ca0f0_0x800000.extracted
+	INCBIN	baserom.gba_0x5ca0f0_0x6b6094.extracted
+	INCBIN	..\build\actors\stream_0x6b6094_0x6b6a78.bin
+	INCBIN	baserom.gba_0x6b6a78_0x800000.extracted

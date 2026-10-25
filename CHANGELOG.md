@@ -98,3 +98,20 @@ All notable changes to this tree are recorded here. The format follows
   `tools/scripts/SCRIPT_RECORDS.csv` and `tools/scripts/SCRIPT_OPS.csv`; `--check` re-derives both,
   and `tools/scripts/test_script_streams.py` pins the population, every row's tiling, the flag bytes,
   a table whose slots are permuted (no record passes) and a doctored operand.
+- The generator for the actor stat table, in `tools/research/actor_rows.py`: the spawn initialiser at
+  `0x08006d90` refuses an index above `0x22` (`cmp r2,#0x22` at `0x08006da0`), scales it by `0x40`
+  (`lsls r2,#6` at `0x08006e6a`) and adds the base `0x086b6094` (literal at `0x08007188`), so the
+  table is 35 rows of 64 bytes. A row carries its index at `+0`, a name pointer at `+4`, a class
+  halfword at `+8`, a counter word at `+0xc`, four halfwords from `+0x10`, eleven signed halfwords
+  from `+0x18`, and the EP, HP and damage words at `+0x34`, `+0x38` and `+0x3c`. The next structure
+  the code names begins at `0x086b6a78` (loaded at `0x0800481c`), which bounds the family at 2,532 B
+  with the name pool the `+4` fields point at. Nothing read from the image is tracked: the layout,
+  the bounds and the instructions that cite them are the committed part, and the generator reads the
+  rows and the pool out of the builder's image at build time, refuses an image whose bounds, digest
+  or round trip differ, and writes the family to `build/actors/`, which `asm/remainder.s` incbins in
+  place of the raw slice. `--check` re-derives the run and the slices, and
+  `tools/research/test_actor_rows.py` pins the bounds, the round trip, the first-use rule for every
+  name pointer, the pool walk, a table advanced by one row (no row passes), the rotation that is not
+  a null because each row carries its own index, a doctored HP word (exactly one row disagrees), and
+  the refusals of a name pointer outside the pool, a moved base literal and an image whose sha1
+  differs.

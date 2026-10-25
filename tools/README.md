@@ -20,6 +20,7 @@ Every tool the build and the checks run, and what runs it.
 | `tools/research/startup_writes.py` | a person | walks the startup path and prints every DMA kick, software interrupt and IWRAM or EWRAM block store with its source, destination and length |
 | `tools/scripts/script_streams.py` | `rebuild.cmd`, a person | walks the twelve-byte script descriptors at `0x08591f3c` the interpreter at `0x0800a3e6` runs, decodes every opcode record to its frame count of `0x00`-terminated segments, re-encodes it, refuses a record that does not round trip, and rewrites `asm/remainder.s` so each row's records are a generated run; `--check` re-derives the two tables and the rows |
 | `tools/research/f1_population.py` | a person, `tools/research/test_f1_population.py` | walks the custom decompressor's stream list from its header count, decodes every row stream under the code's grammar, counts the entries by type, and runs the permuted-region null and the token-plan ambiguity census |
+| `tools/research/actor_rows.py` | `rebuild.cmd`, a person | decodes the 35 actor stat rows the spawn initialiser at `0x08006d90` indexes at stride `0x40` under the bound `cmp r2,#0x22`, re-encodes each row and the name pool their `+4` fields point at, refuses an image whose bounds, digest or round trip differs, and rewrites `asm/remainder.s` so the family is a generated run; no row value and no name is tracked, only the layout and the bounds; `--check` re-derives the run and the slices |
 | `tools/testkit.py` | every ROM-gated test | the ROM presence skip and the digest assert |
 
 `tools/compress/compress.exe` and every `baserom.gba_*.extracted` slice are build products and are
@@ -30,6 +31,6 @@ The tests sit beside what they test: `tools/gate/test_gate.py`, `tools/lint/test
 `tools/compress/test_f1_streams.py`,
 `tools/compress/test_bios_streams.py`, `tools/research/test_startup_writes.py`,
 `tools/research/test_f1_population.py`, `tools/scripts/test_script_streams.py`,
-`tools/split/test_census.py`,
+`tools/research/test_actor_rows.py`, `tools/split/test_census.py`,
 `tools/code/test_emit_code.py`, `tools/recomp/test_export_inputs.py`,
 `tools/recomp/test_runtime_labels.py` and `tools/test_check_links.py`.
