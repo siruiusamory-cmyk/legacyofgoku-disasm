@@ -15,6 +15,19 @@ import testkit
 DIGEST = "3ba9919e26704b0f5fdc2bfabc7f7a0404c71413761d38abcd94224c3bd4b1b9"
 POPULATION = (
     (0x081BDC1C, 10947, 11656),
+    (0x0853BA4C, 330, 512),
+    (0x0853C610, 345, 512),
+    (0x0853C92C, 329, 512),
+    (0x0853D1A4, 307, 512),
+    (0x0853DF18, 352, 512),
+    (0x0853E0A4, 296, 512),
+    (0x0853E1F8, 296, 512),
+    (0x0853E698, 344, 512),
+    (0x08540658, 386, 512),
+    (0x085415E8, 351, 512),
+    (0x08541774, 295, 512),
+    (0x08541AB0, 322, 512),
+    (0x08542128, 394, 512),
     (0x0815B2FC, 1580, 1736),
     (0x08166C38, 28232, 29056),
     (0x0816DC80, 22668, 23544),
@@ -226,9 +239,9 @@ def test_a_stream_that_states_its_end_ends_where_the_decoder_stops():
         offset = sites(rom, row["start"])[0]
         end = int.from_bytes(rom[offset - 4:offset], "little")
         if 0 < end - row["start"] <= 0x8000:
-            assert 0 <= end - row["start"] - (row["stop"] - row["start"]) <= 1
+            assert 0 <= end - row["start"] - (row["stop"] - row["start"]) <= 3
             agreed += 1
-    assert agreed == 73
+    assert agreed == 86
 
 
 def test_no_two_rows_share_a_byte():
@@ -252,7 +265,7 @@ def test_a_permuted_lz77_body_is_refused():
 
 def test_a_permuted_huffman_tree_is_refused():
     rom = bytearray(image())
-    start = POPULATION[1][0] - bios_streams.ROM_BASE
+    start = 0x0815B2FC - bios_streams.ROM_BASE
     rom[start + 6] ^= 0x02
     try:
         bios_streams.measured(bytes(rom))
@@ -278,6 +291,17 @@ def test_a_symbol_the_tree_gives_two_codes_gets_the_shorter_one():
     assert table[0x00] == (0b01, 2), table[0x00]
 
 
+def test_a_match_does_not_start_at_the_previous_byte():
+    rom = image()
+    again = bios_streams.lz77_encode(bytes(9))
+    assert again[4] == 0x20, again.hex()
+    for start in (0x08542128, 0x08540658):
+        body, _stored = bios_streams.lz77_decode(rom, start)
+        again = bios_streams.lz77_encode(body)
+        offset = start - bios_streams.ROM_BASE
+        assert again == rom[offset:offset + len(again)]
+
+
 def test_the_tracked_token_list_is_what_the_image_derives():
     testkit.rom_bytes(bios_streams.ROM, DIGEST, 0x800000)
     assert bios_streams.main(["--check"]) == 0
@@ -294,5 +318,6 @@ if __name__ == "__main__":
         test_a_permuted_huffman_tree_is_refused()
         test_a_tree_that_shares_a_node_is_refused_instead_of_coding_twice()
         test_a_symbol_the_tree_gives_two_codes_gets_the_shorter_one()
+        test_a_match_does_not_start_at_the_previous_byte()
         test_the_tracked_token_list_is_what_the_image_derives()
         print("PASS test_bios_streams")

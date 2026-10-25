@@ -268,3 +268,19 @@ All notable changes to this tree are recorded here. The format follows
   in their last word, and the trees at `0x0815bcd4` and `0x085650a9` reach one symbol through several
   codes that the image's stream uses inconsistently, so no code table reproduces them;
   `tools/compress/test_bios_streams.py` pins the 159-row population and the shorter-code rule.
+- The thirteen BIOS LZ77 streams a match at the previous byte had kept raw, in
+  `tools/compress/bios_streams.py`: none of the fourteen LZ77 streams the image carries has a match
+  at distance 1 - 0 of 1,414 matches - so the encoder's search now starts at distance 2, and the
+  thirteen 512-byte streams at `0x0853ba4c`, `0x0853c610`, `0x0853c92c`, `0x0853d1a4`, `0x0853df18`,
+  `0x0853e0a4`, `0x0853e1f8`, `0x0853e698`, `0x08540658`, `0x085415e8`, `0x08541774`, `0x08541ab0`
+  and `0x08542128` re-encode to the image's own bytes, 4,347 stored bytes for 6,656 decoded. The
+  population is 172 rows - fourteen LZ77 and 158 Huffman - so 4,347 B build from source instead of
+  raw slices and the runs leave 121,043 B of the family that no byte-exact stream reaches. What
+  stays raw stays measured: 43 LZ77 candidates and 42 run-length candidates are 1-byte streams whose
+  header sits inside a uniform word table or a zero field, so the round trip reproduces them for
+  free and proves nothing about them, and nine further run-length candidates split their repeats and
+  literals by a rule the decoded body does not carry - the stream at `0x08039034` stores a run of
+  119 equal bytes as repeats of 59 and 60, and the stream at `0x080bf538` stores a run of 1,944 as
+  alternating repeats of 122 and 121 - so no run-length encoder that sees only the body's bytes
+  chooses them. `tools/compress/test_bios_streams.py` pins the 172-row population, the distance rule
+  and the descriptor ends the decoder agrees with.

@@ -11,7 +11,12 @@ ROM = os.path.join(ROOT, "baserom.gba")
 ASM = os.path.join(ROOT, "asm", "remainder.s")
 OUT = os.path.join(ROOT, "build", "bios")
 ROM_BASE = 0x08000000
-STREAMS = (0x081BDC1C,)
+STREAMS = (
+    0x081BDC1C,
+    0x0853BA4C, 0x0853C610, 0x0853C92C, 0x0853D1A4, 0x0853DF18,
+    0x0853E0A4, 0x0853E1F8, 0x0853E698, 0x08540658, 0x085415E8,
+    0x08541774, 0x08541AB0, 0x08542128,
+)
 HUFFMAN = (
     0x0815B2FC, 0x08166C38, 0x0816DC80, 0x0817370C,
     0x0817ED7C, 0x081848C4, 0x0818B328, 0x08190930,
@@ -93,7 +98,7 @@ def lz77_encode(body):
             if at >= len(body):
                 break
             length, distance = 0, 0
-            for back in range(1, min(at, 4096) + 1):
+            for back in range(2, min(at, 4096) + 1):
                 run = 0
                 while (run < 18 and at + run < len(body)
                        and body[at + run] == body[at - back + run]):

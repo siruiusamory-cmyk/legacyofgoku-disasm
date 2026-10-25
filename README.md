@@ -44,12 +44,12 @@ does not measure how much of the code has been turned into C.
 
 ## Progress
 
-60.2328 % of the ROM (5,052,694 of 8,388,608 bytes) builds from tracked source: the startup block
+60.2846 % of the ROM (5,057,041 of 8,388,608 bytes) builds from tracked source: the startup block
 at `0x080000c0` in [asm/crt0.s](asm/crt0.s), every census code row, disassembled into `build/code/`
 by [tools/code/emit_code.py](tools/code/emit_code.py), all 532 records of the three lists the
 custom decompressor serves, decoded into rows, token plans, a palette and an image stream and
-re-encoded by [tools/compress/f1_streams.py](tools/compress/f1_streams.py), the 159 BIOS
-codec streams the image names - one LZ77 and 158 Huffman - decoded and re-encoded by
+re-encoded by [tools/compress/f1_streams.py](tools/compress/f1_streams.py), the 172 BIOS
+codec streams the image names - fourteen LZ77 and 158 Huffman - decoded and re-encoded by
 [tools/compress/bios_streams.py](tools/compress/bios_streams.py), the 282 script records the
 interpreter at `0x0800a3e6` runs, decoded to 50,087 opcodes and re-encoded by
 [tools/scripts/script_streams.py](tools/scripts/script_streams.py), and the 35 actor stat rows at
@@ -69,7 +69,7 @@ rows tile into their own string pools - 109 rows at `0x080109f0`, 17 rows at `0x
 24-word table at `0x081c6224` that the reader at `0x08001830` scales by eight - re-encoded by
 [tools/research/text_rows.py](tools/research/text_rows.py). The
 rest is INCBIN
-slices of the retail image. Inside the noise-like family the generated runs leave 121,485 B that no
+slices of the retail image. Inside the noise-like family the generated runs leave 121,043 B that no
 byte-exact stream reaches - among them three streams whose Huffman tree shares a node, refused at
 `+356` and `+516` - and the 544 B of art tables that two literal loads name at `0x08011ba8` and
 `0x08011da8`; both stay raw, as do three run-length streams of 1,319 B whose codec this tree does not
