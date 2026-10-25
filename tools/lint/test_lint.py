@@ -67,11 +67,35 @@ def test_a_readme_number_the_gate_does_not_print_is_a_finding():
     assert found and "not the gate's 120" in found[0][1], found
 
 
+def test_a_readme_carrying_the_share_with_and_without_fill_is_clean():
+    text = ("72.1966 % with fill and 60.2846 % without, 6,056,196 of 8,388,608 bytes from "
+            "python tools\\gate\\gate.py\n")
+    assert lints.readme_numbers_findings(text, 6056196, 8388608, "72.1966", "60.2846") == []
+    found = lints.readme_numbers_findings(text.replace("60.2846", "60.2845"),
+                                          6056196, 8388608, "72.1966", "60.2846")
+    assert found and "60.2846" in found[0][1], found
+
+
 def test_a_readme_code_start_count_the_census_does_not_carry_is_a_finding():
     text = "![Code starts](https://img.shields.io/badge/code%20starts-1520-blueviolet.svg)\n"
     assert lints.readme_starts_findings(text, 1520) == []
     found = lints.readme_starts_findings(text.replace("1520", "1521"), 1520)
     assert found and "not the census's 1520" in found[0][1], found
+
+
+def test_the_generated_remainder_listing_may_exceed_the_tracked_file_size_limit(
+        tmp_path, monkeypatch):
+    directory = os.path.join(str(tmp_path), "asm")
+    os.makedirs(directory)
+    for name in ("remainder.s", "pasted.s"):
+        with open(os.path.join(directory, name), "wb") as handle:
+            handle.write(b"x" * (1024 * 1024 + 1))
+    monkeypatch.setattr(lints, "ROOT", str(tmp_path))
+    monkeypatch.setattr(lints, "tracked_files",
+                        lambda: ["asm/remainder.s", "asm/pasted.s"])
+    found = lints.tracked_rom_findings()
+    assert [detail for name, detail in found] == [
+        "asm/pasted.s: 1048577 tracked bytes outside assets/"]
 
 
 def test_a_bare_interpreter_call_is_a_finding():

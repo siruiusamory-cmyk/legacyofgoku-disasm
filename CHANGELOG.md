@@ -284,3 +284,13 @@ All notable changes to this tree are recorded here. The format follows
   alternating repeats of 122 and 121 - so no run-length encoder that sees only the body's bytes
   chooses them. `tools/compress/test_bios_streams.py` pins the 172-row population, the distance rule
   and the descriptor ends the decoder agrees with.
+- The 7,385 uniform runs the image carries as padding, in `tools/code/fill_runs.py`: a maximal run of
+  one byte value, `0x00` or `0xFF` and 32 B or longer, that sits inside a raw slice is now emitted as
+  the assembler's own fill directive - `SPACE` for a zero run, and a `WHILE`/`DCB 0xFF` block for a
+  `0xFF` run, because this assembler takes `SPACE` with no fill value - and the bytes either side of
+  it stay INCBIN slices. 623,726 B of zero runs and 375,429 B of `0xFF` runs, 999,155 B in all, stop
+  being raw without a ROM byte being tracked: the run's own bytes state its extent, and the image is
+  unchanged (`DIGEST MATCH`), so the source share rises from 60.2846 % to 72.1955 % and
+  `python tools\gate\gate.py` prints both figures with the fill bytes it counted.
+  `tools/code/test_fill_runs.py` pins the 32 B floor, the two directive forms and the split's
+  idempotence, and the gate refuses a qualifying run that is still inside a slice.

@@ -13,6 +13,7 @@ sys.path.insert(0, os.path.join(ROOT, "tools", "lint"))
 sys.path.insert(0, os.path.join(ROOT, "tools", "code"))
 
 import emit_code
+import fill_runs
 import lints
 
 IMAGE_NAME = "ROM_START"
@@ -91,6 +92,23 @@ def generated_ranges(root=None):
 
 def identity_ranges():
     return []
+
+
+def fill_bytes(root=None):
+    root = ROOT if root is None else root
+    path = os.path.join(root, "asm", "remainder.s")
+    try:
+        return fill_runs.carried(open(path, encoding="utf-8", errors="replace").read())
+    except OSError:
+        return 0
+
+
+def fill_leftovers(retail, root=None):
+    found = []
+    for start, length in incbin_ranges(root):
+        for offset, run, value in fill_runs.runs(retail[start:start + length]):
+            found.append((start + offset, run, value))
+    return found
 
 
 def union_ranges(ranges):
@@ -380,6 +398,16 @@ def main():
     if problem:
         print("GATE FAIL: %s" % problem)
         ok = False
+    fill = fill_bytes()
+    without = source - fill
+    print("fill=%d bytes (%.4f %%) as directives" % (fill, 100.0 * fill / ROM_SIZE))
+    print("source-without-fill=%d of %d (%.4f %%)"
+          % (without, ROM_SIZE, 100.0 * without / ROM_SIZE))
+    leftovers = fill_leftovers(retail)
+    for start, length, value in leftovers:
+        print("GATE FAIL: the %d B run of 0x%02X at 0x%x is still INCBINed"
+              % (length, value, start))
+    ok = ok and not leftovers
     print("GATE %s" % ("PASS" if ok else "FAIL"))
     return 0 if ok else 1
 

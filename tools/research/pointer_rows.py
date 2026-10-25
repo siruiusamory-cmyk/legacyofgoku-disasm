@@ -11,6 +11,7 @@ ROOT = os.path.dirname(os.path.dirname(HERE))
 sys.path.insert(0, os.path.join(ROOT, "tools", "code"))
 
 import emit_code
+import fill_runs
 
 ROM = os.path.join(ROOT, "baserom.gba")
 ASM = os.path.join(ROOT, "asm", "remainder.s")
@@ -110,6 +111,11 @@ def tokens(text, bounds):
             out.append(("dcd", position, 4, line))
             position += 4
             continue
+        size = fill_runs.fill_line(line)
+        if size is not None:
+            out.append(("fill", position, size, line))
+            position += size
+            continue
         raise ValueError("the line %r at 0x%X has no source form" % (line, position))
     if position != ROM_SIZE:
         raise ValueError("the file covers %d B, not %d B" % (position, ROM_SIZE))
@@ -120,7 +126,7 @@ def painted(image, items):
     owner = bytearray(len(image))
     intervals = []
     for kind, begin, size, _line in items:
-        if kind not in ("raw", "dcd"):
+        if kind not in ("raw", "dcd", "fill"):
             continue
         if intervals and begin <= intervals[-1][1]:
             intervals[-1] = (intervals[-1][0], max(intervals[-1][1], begin + size))

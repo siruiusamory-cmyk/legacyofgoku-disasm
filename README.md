@@ -44,7 +44,8 @@ does not measure how much of the code has been turned into C.
 
 ## Progress
 
-60.2846 % of the ROM (5,057,041 of 8,388,608 bytes) builds from tracked source: the startup block
+72.1955 % of the ROM (6,056,196 of 8,388,608 bytes) builds from tracked source, and 60.2846 % of
+the image builds from source that is not its own padding: the startup block
 at `0x080000c0` in [asm/crt0.s](asm/crt0.s), every census code row, disassembled into `build/code/`
 by [tools/code/emit_code.py](tools/code/emit_code.py), all 532 records of the three lists the
 custom decompressor serves, decoded into rows, token plans, a palette and an image stream and
@@ -67,7 +68,9 @@ already carry, emitted as `DCD` lines naming that label by
 [tools/research/pointer_rows.py](tools/research/pointer_rows.py), and the three text tables whose
 rows tile into their own string pools - 109 rows at `0x080109f0`, 17 rows at `0x08010ec4` and the
 24-word table at `0x081c6224` that the reader at `0x08001830` scales by eight - re-encoded by
-[tools/research/text_rows.py](tools/research/text_rows.py). The
+[tools/research/text_rows.py](tools/research/text_rows.py), and the 7,385 uniform runs of one byte
+value, `0x00` or `0xFF` and 32 B or longer, that the image carries as padding, emitted as the
+assembler's own fill directives by [tools/code/fill_runs.py](tools/code/fill_runs.py). The
 rest is INCBIN
 slices of the retail image. Inside the noise-like family the generated runs leave 121,043 B that no
 byte-exact stream reaches - among them three streams whose Huffman tree shares a node, refused at

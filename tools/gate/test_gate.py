@@ -54,13 +54,20 @@ def test_the_source_count_is_the_slices_and_the_rest():
     raw = sum(length for _start, length in ranges)
     assert ranges and gate.interval_problems(ranges) == []
     assert ranges[0][0] == 0
-    assert ranges[-1][0] + ranges[-1][1] == gate.ROM_SIZE
+    assert gate.fill_bytes() > 0
     assert raw + gate.source_bytes() == gate.ROM_SIZE
     rows = gate.emit_code.census_rows()
     emitted = sum(row["end"] - row["address"] for row in gate.emit_code.code_rows(rows))
     generated = sum(length for _start, length in gate.generated_ranges())
     assert pointer_bytes() > 0
-    assert gate.source_bytes() == 0x78 + emitted + generated + pointer_bytes()
+    assert gate.source_bytes() == 0x78 + emitted + generated + pointer_bytes() + gate.fill_bytes()
+
+
+def test_a_fill_run_left_inside_a_slice_is_reported():
+    def check(root):
+        made(root, "asm/part.s", b"\tINCBIN\tbaserom.gba_0x0_0x50.extracted\n")
+        return gate.fill_leftovers(b"\x11" * 0x20 + b"\x00" * 0x30, root)
+    assert in_scratch(check) == [(0x20, 0x30, 0x00)]
 
 
 def test_a_double_counted_interval_is_refused_instead_of_passing_as_arithmetic():
@@ -207,6 +214,7 @@ def gate_run(monkeypatch, tmp_path, canonical=None, recomp=None):
     monkeypatch.setattr(gate, "tracked_rom_slices", lambda retail, root=None: [])
     monkeypatch.setattr(gate, "missing_slices", lambda root=None: [])
     monkeypatch.setattr(gate, "identity_ranges", lambda: [])
+    monkeypatch.setattr(gate, "fill_leftovers", lambda retail, root=None: [])
     monkeypatch.setattr(gate.lints, "run", lambda: [])
     monkeypatch.setattr(gate.lints, "run_cited_tests",
                         lambda pairs, launch=None: dict((pair, (0, "")) for pair in pairs))
