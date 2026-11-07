@@ -125,6 +125,9 @@ checks, and then the whole suite one file per process. A test that needs the ret
 
 ## Repository layout
 
+The [dialogue runtime notes](docs/DIALOGUE_RUNTIME.md) cover conversation cursors,
+page objects and sprite staging, with a retail-byte verifier and mutation tests.
+
 | Path | Contents |
 | --- | --- |
 | `asm/` | the assembly the image is built from: the transcribed startup block, the equates, the include list and the generated remainder |

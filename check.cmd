@@ -37,6 +37,8 @@ python -m pytest -q tools\research\test_credits_rows.py
 if errorlevel 1 exit /b 1
 python -m pytest -q tools\research\test_dialogue_rows.py
 if errorlevel 1 exit /b 1
+python -m pytest -q tools\research\test_dialogue_runtime.py
+if errorlevel 1 exit /b 1
 python -m pytest -q tools\research\test_message_rows.py
 if errorlevel 1 exit /b 1
 python -m pytest -q tools\research\test_text_rows.py

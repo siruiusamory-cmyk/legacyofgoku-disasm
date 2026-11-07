@@ -7,6 +7,9 @@ All notable changes to this tree are recorded here. The format follows
 
 ### Added
 
+- Dialogue runtime evidence and a read-only verifier for node traversal, persistent cursors,
+  page objects, sprite staging and affine padding; the retail rebuild remains byte-exact.
+
 - `.recomp.json`, the project entry the recompilation directory reads, with the retail game's sha1.
 - `docs/banner.png`, shown centred at the top of the README.
 - The repository layout, `extract.cmd`, `rebuild.cmd` and `scatter.ld` for the retail image.
