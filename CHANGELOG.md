@@ -7,6 +7,9 @@ All notable changes to this tree are recorded here. The format follows
 
 ### Added
 
+- Original player combat and sprite runtime findings, including corrected
+  dispatch, collision, animation and effect interpretations; no retail bytes change.
+
 - Dialogue runtime evidence and a read-only verifier for node traversal, persistent cursors,
   page objects, sprite staging and affine padding; the retail rebuild remains byte-exact.
 
