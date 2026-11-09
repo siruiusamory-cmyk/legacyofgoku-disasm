@@ -11,6 +11,7 @@ Start here, then follow the one page that answers your question.
 | Which bytes are the startup block, and what does it install? | [STARTUP.md](STARTUP.md) |
 | Which bytes are code, where does each start end, and what is still unclassified? | [CODE_SPLIT.md](CODE_SPLIT.md) |
 | What does a conversation do to the page, the OAM buffer and the staging area? | [DIALOGUE_RUNTIME.md](DIALOGUE_RUNTIME.md) |
+| Which original actor graphics and player combat accesses are established? | [COMBAT_RUNTIME.md](COMBAT_RUNTIME.md) |
 | What counts as source, and what is the finish line? | [DEFINITION_OF_DONE.md](DEFINITION_OF_DONE.md) |
 
 ## What this tree claims
